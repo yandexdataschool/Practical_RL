@@ -13,8 +13,8 @@ RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
 
 USER main
 
-RUN pip install --upgrade sklearn
-RUN mkdir ~/gym2 && cd ~/gym2 && git clone https://github.com/openai/gym.git && cd gym && pip install -e .[box2d]
+RUN pip install --upgrade sklearn tqdm
+RUN pip install --upgrade gym[all]
 
-RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade sklearn
-RUN mkdir ~/gym3 && cd ~/gym3 && git clone https://github.com/openai/gym.git && cd gym && /home/main/anaconda/envs/python3/bin/pip install -e .[box2d]
+RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade sklearn tqdm
+RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade gym[all]
