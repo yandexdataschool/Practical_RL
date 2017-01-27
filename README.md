@@ -14,11 +14,11 @@ A course on reinforcement learning in the wild.
 * 23.01.17 - created repo
 
 # Syllabus
-* _week0_ Welcome to the MDP
+* __week0__ Welcome to the MDP
  * Lecture: RL problems around us. Markov decision process. Simple solutions through combinatoric optimization.
  * Seminar: Frozenlake with genetic algorithms
     * HSE Homework deadline: _23.59 1.02.17_
-* _week1_ Monte-carlo methods
+* __week1__ Monte-carlo methods
  * Lecture: Recap. Crossentropy method in general and for RL. Extension to continuous state & action space. Limitations.
  * Seminar: Tabular CEM for Taxi-v0, deep CEM for box2d environments.
  
