@@ -1,0 +1,6 @@
+python pacman.py -p PacmanQAgent -x 100 -n 110 -l smallGrid
+python pacman.py -p PacmanQAgent -x 100 -n 110 -l mediumGrid
+python pacman.py -p PacmanQAgent -x 100 -n 110 -l mediumClassic
+python gridworld.py -a q -k 50 -n 0 -g BridgeGrid -e 1
+python crawler.py
+
