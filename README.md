@@ -9,6 +9,7 @@ A course on reinforcement learning in the wild.
 
 
 # Announcements
+* 10.02.17 - from now on, we'll formally describe homework and add useful links via ./week*/README.md files. [Example.](https://github.com/yandexdataschool/Practical_RL/blob/master/week0/README.md)
 * 9.02.17 - YSDA track started
 * 7.02.17 - HWs checked up
 * 6.02.17 - week2 uploaded
@@ -20,7 +21,8 @@ A course on reinforcement learning in the wild.
 # Syllabus
 * __week0__ Welcome to the MDP
  * Lecture: RL problems around us. Markov decision process. Simple solutions through combinatoric optimization.
- * Seminar: Frozenlake with genetic algorithms (HW description in week0/frozenlake.ipynb)
+ * Seminar: Frozenlake with genetic algorithms
+    * Homework description - [./week0/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week0/README.md)
     * HSE Homework deadline: _23.59 1.02.17_
     * YSDA Homework deadline: _23.59 19.02.17_
 * __week1__ Monte-carlo methods
@@ -29,8 +31,8 @@ A course on reinforcement learning in the wild.
     * HSE homework deadline: _23.59 8.02.17_
 * __week2__ Temporal Difference
  * Lecture: Discounted reward MDP. Value iteration. Q-learning. Temporal difference Vs Monte-Carlo.
- * Seminar: Tabular q-learning
-    * You have to do either ./week2/assignment (py2 only) or ./week2/alternative (any python)
+ * Seminar: Tabular q-learning 
+    * Homework description - see [./week2/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week2/README.md)
     * HSE homework deadline: _23.59 8.02.17_
 
 * __week3__ Value-based algorithms
