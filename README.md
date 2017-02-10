@@ -3,7 +3,7 @@ A course on reinforcement learning in the wild.
 Taught on-campus in HSE and YSDA (russian) and maintained to be friendly to online students (english or russian).
 
 Manifesto:
-* __Optimize for the curious.__ For all the materials that aren’t covered in detail, there will be links for more information and related materials (D.Silver/Sutton/blogs/whatever). Assignments will have bonus sections if you want to dig deeper.
+* __Optimize for the curious.__ For all the materials that aren’t covered in detail there will be links to more information and related materials (D.Silver/Sutton/blogs/whatever). Assignments will have bonus sections if you want to dig deeper.
 * __Practicality first.__ Everything essential to solving reinforcement learning problems is worth mentioning. We won't shun away from covering tricks and heuristics. For every major idea there should be a lab that allows to “feel” it on a practical problem.
 * __Git-course.__ Know a way to make course better? Noticed a typo in formula? Made the code more readable? Made a version for alternative framework? You're awesome! [Pull-request](https://help.github.com/articles/about-pull-requests/) it!
 
