@@ -1,8 +1,7 @@
-Useful links
-
-* Similar lecture by David Silver: https://www.youtube.com/watch?v=PnHCvfgC_ZA
-* Similar lecture by Pieter Abbeel: https://www.youtube.com/watch?v=ifma8G7LegE
-
+## Useful links
+* Similar lecture by David Silver (english): https://www.youtube.com/watch?v=PnHCvfgC_ZA
+* Similar lecture by Pieter Abbeel (english): https://www.youtube.com/watch?v=ifma8G7LegE
+* Qlearning guide from Habr (russian): https://habrahabr.ru/post/308094/
 
 ## Homework description:
 
