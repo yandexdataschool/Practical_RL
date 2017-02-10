@@ -1,7 +1,7 @@
 
 
 ## Useful links
-* Intro by David Silver (english) - `https://www.youtube.com/watch?v=2pWv7GOvuf0`
+* Video-intro by David Silver (english) - `https://www.youtube.com/watch?v=2pWv7GOvuf0`
 
 ## Metaheuristics for optimization
 * Guide to genetic algorithms (english) - `https://www.youtube.com/watch?v=ejxfTy4lI6I`
