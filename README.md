@@ -79,7 +79,7 @@ Manifesto:
  * Lecture: POMDP intro. Model-based solvers. RNN solvers. RNN tricks: attention, problems with normalization methods, pre-training.
  * Seminar: Deep kung-fu with recurrent A2C vs feedforward A2C
 
-* __week i+1__ Advanced exploration methods: intrinsic motivation.
+* __week i+1__ Advanced exploration methods: intrinsic motivation 
  * Lecture: Augmented rewards. Heuristics (UNREAL,density-based models), formal approach: information maximizing exploration. Model-based tricks(also refer mcts).
  * Seminar: Vime vs epsilon-greedy for Go9x9 (bonus 19x19)
 
@@ -100,12 +100,14 @@ Manifesto:
  * Seminar: Portfolio optimization as POMDP.
  
  
+# Course staff
+Course materials and teaching by
+- [Fedor Ratnikov](https://github.com/justheuristic/) - lectures, seminars, hw checkups
+- [Alexander Fritsler](https://github.com/Fritz449) - lectures, seminars, hw checkups
+- [Oleg Vasilev](https://github.com/Omrigan) - seminars, hw checkups, technical stuff
+- [Pavel Shvechikov](https://github.com/bestxolodec) - lectures, seminars, HW checkups
 
-
-
-
-
- 
-
- 
+# Contributors
+* Using pictures from http://ai.berkeley.edu/home.html
+* Other contributions: @omtcyfz
  
