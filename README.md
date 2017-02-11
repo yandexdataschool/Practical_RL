@@ -20,6 +20,7 @@ Manifesto:
 
 
 # Announcements
+* 11.02.17 - week2 success thresholds are now easier: get >+50 for LunarLander or >-180 for MountainCar. Solving env will yield bonus points.
 * 10.02.17 - from now on, we'll formally describe homework and add useful links via ./week*/README.md files. [Example.](https://github.com/yandexdataschool/Practical_RL/blob/master/week0/README.md)
 * 9.02.17 - YSDA track started
 * 7.02.17 - HWs checked up
