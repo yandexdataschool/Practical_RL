@@ -11,16 +11,32 @@ Manifesto:
 # Coordinates
 * __HSE__ classes are on mondays at 18-10 in Room 505
 * __YSDA__ classes are on thursdays at 18-00 in princeton
-* E-mail for submitting homeworks and stuff: __practicalrl17@gmail.com__ (anytask will follow soon)
+* E-mail for stuff: __practicalrl17@gmail.com__
 * Telegram chat room: https://telegram.me/practicalrl
 * Magic button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/yandexdataschool/practical_rl)
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
 * [Grading for YSDA and HSE](https://github.com/yandexdataschool/Practical_RL/wiki/%D0%9E%D1%82%D1%87%D1%91%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C,-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BA%D0%B8,-%D0%B4%D0%B5%D0%B4%D0%BB%D0%B0%D0%B9%D0%BD%D1%8B-(grading))
-* _Grading table - coming soon_
+
+# Homeworks
+[Anytask](http://anytask.org/course/147) - platform for submiting homework 
+
+
+| Group| Invite code |
+| --- | ----- |
+| HSE:                    | 1GCYUVh|
+| YDSA - Moscow on-site   | ZIyLkKb|
+| YDSA - remote           |  gN9fUAR|
+
+
+
 
 
 # Announcements
+<<<<<<< HEAD
 * 11.02.17 - week2 success thresholds are now easier: get >+50 for LunarLander or >-180 for MountainCar. Solving env will yield bonus points.
+=======
+* 13.02.17 - Added invites for anytask.org
+>>>>>>> 28dfb2f6717f5908e969b7a3804aabac74e08d97
 * 10.02.17 - from now on, we'll formally describe homework and add useful links via ./week*/README.md files. [Example.](https://github.com/yandexdataschool/Practical_RL/blob/master/week0/README.md)
 * 9.02.17 - YSDA track started
 * 7.02.17 - HWs checked up
@@ -80,7 +96,7 @@ Manifesto:
  * Lecture: POMDP intro. Model-based solvers. RNN solvers. RNN tricks: attention, problems with normalization methods, pre-training.
  * Seminar: Deep kung-fu with recurrent A2C vs feedforward A2C
 
-* __week i+1__ Advanced exploration methods: intrinsic motivation.
+* __week i+1__ Advanced exploration methods: intrinsic motivation 
  * Lecture: Augmented rewards. Heuristics (UNREAL,density-based models), formal approach: information maximizing exploration. Model-based tricks(also refer mcts).
  * Seminar: Vime vs epsilon-greedy for Go9x9 (bonus 19x19)
 
@@ -101,12 +117,14 @@ Manifesto:
  * Seminar: Portfolio optimization as POMDP.
  
  
+# Course staff
+Course materials and teaching by
+- [Fedor Ratnikov](https://github.com/justheuristic/) - lectures, seminars, hw checkups
+- [Alexander Fritsler](https://github.com/Fritz449) - lectures, seminars, hw checkups
+- [Oleg Vasilev](https://github.com/Omrigan) - seminars, hw checkups, technical stuff
+- [Pavel Shvechikov](https://github.com/bestxolodec) - lectures, seminars, HW checkups
 
-
-
-
-
- 
-
- 
+# Contributors
+* Using pictures from http://ai.berkeley.edu/home.html
+* Other contributions: @omtcyfz
  
