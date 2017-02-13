@@ -1,16 +1,16 @@
 # Practical_RL
 A course on reinforcement learning in the wild. 
-Taught on-campus in HSE and YSDA (russian) and maintained to be friendly to online students (english or russian).
+Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdataschool.com) (russian) and maintained to be friendly to online students (both english and russian).
 
 Manifesto:
-* __Optimize for the curious.__ For all the materials that aren’t covered in detail there will be links to more information and related materials (D.Silver/Sutton/blogs/whatever). Assignments will have bonus sections if you want to dig deeper.
+* __Optimize for the curious.__ For all the materials that aren’t covered in detail there are links to more information and related materials (D.Silver/Sutton/blogs/whatever). Assignments will have bonus sections if you want to dig deeper.
 * __Practicality first.__ Everything essential to solving reinforcement learning problems is worth mentioning. We won't shun away from covering tricks and heuristics. For every major idea there should be a lab that allows to “feel” it on a practical problem.
-* __Git-course.__ Know a way to make course better? Noticed a typo in formula? Made the code more readable? Made a version for alternative framework? You're awesome! [Pull-request](https://help.github.com/articles/about-pull-requests/) it!
+* __Git-course.__ Know a way to make the course better? Noticed a typo in a formula? Made the code more readable? Made a version for alternative framework? You're awesome! [Pull-request](https://help.github.com/articles/about-pull-requests/) it!
 
 
 # Coordinates
 * __HSE__ classes are on mondays at 18-10 in Room 505
-* __YSDA__ classes are on thursdays at 18-00 in princeton
+* __YSDA__ classes are on thursdays at 18-00 in "Princeton" classroom
 * E-mail for stuff: __practicalrl17@gmail.com__
 * Telegram chat room: https://telegram.me/practicalrl
 * Magic button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/yandexdataschool/practical_rl)
@@ -18,7 +18,7 @@ Manifesto:
 * [Grading for YSDA and HSE](https://github.com/yandexdataschool/Practical_RL/wiki/%D0%9E%D1%82%D1%87%D1%91%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C,-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BA%D0%B8,-%D0%B4%D0%B5%D0%B4%D0%BB%D0%B0%D0%B9%D0%BD%D1%8B-(grading))
 
 # Homeworks
-[Anytask](http://anytask.org/course/147) - platform for submiting homework 
+[Anytask](http://anytask.org/course/147) — a platform for submiting homework 
 
 
 | Group| Invite code |
