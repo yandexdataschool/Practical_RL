@@ -18,10 +18,17 @@ Manifesto:
 * [Grading for YSDA and HSE](https://github.com/yandexdataschool/Practical_RL/wiki/%D0%9E%D1%82%D1%87%D1%91%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C,-%D0%B4%D0%BE%D0%BC%D0%B0%D1%88%D0%BA%D0%B8,-%D0%B4%D0%B5%D0%B4%D0%BB%D0%B0%D0%B9%D0%BD%D1%8B-(grading))
 
 # Homeworks
-* [Anytask](http://anytask.org/course/147) - platform for submiting homework 
-* HSE:                     1GCYUVh
-* YDSA - Moscow on-site:   ZIyLkKb
-* YDSA - remote            gN9fUAR
+[Anytask](http://anytask.org/course/147) - platform for submiting homework 
+
+
+| Group| Invite code |
+| --- | ----- |
+| HSE:                    | 1GCYUVh|
+| YDSA - Moscow on-site   | ZIyLkKb|
+| YDSA - remote           |  gN9fUAR|
+
+
+
 
 
 # Announcements
