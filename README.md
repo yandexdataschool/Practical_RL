@@ -2,7 +2,7 @@
 A course on reinforcement learning in the wild. 
 Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdataschool.com) (russian) and maintained to be friendly to online students (both english and russian).
 
-Manifesto:
+#### Manifesto:
 * __Optimize for the curious.__ For all the materials that aren’t covered in detail there are links to more information and related materials (D.Silver/Sutton/blogs/whatever). Assignments will have bonus sections if you want to dig deeper.
 * __Practicality first.__ Everything essential to solving reinforcement learning problems is worth mentioning. We won't shun away from covering tricks and heuristics. For every major idea there should be a lab that allows to “feel” it on a practical problem.
 * __Git-course.__ Know a way to make the course better? Noticed a typo in a formula? Made the code more readable? Made a version for alternative framework? You're awesome! [Pull-request](https://help.github.com/articles/about-pull-requests/) it!
@@ -11,8 +11,8 @@ Manifesto:
 * __HSE__ classes are on mondays at 18-10 in Room 505
 * __YSDA__ classes are on thursdays at 18-00 in "Princeton" classroom
 * Magical button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/yandexdataschool/practical_rl) (may be down time to time)
-* Telegram [chat room](https://telegram.me/practicalrl)
-* How to submit homeworks: [Anytask instructions and grading rules](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
+* Telegram __[chat room](https://telegram.me/practicalrl)__
+* __How to submit homeworks:__ [Anytask instructions and grading rules](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
 * E-mail for everything else : __practicalrl17@gmail.com__
   * Please submit homeworks via Anytask, __not__ e-mail (see [this](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA)))
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
@@ -20,7 +20,7 @@ Manifesto:
 
 
 # Announcements
-* 14.02.17 - HSE deadlines for weeks 1-2 extended!
+* 14.02.17 - __HSE deadlines for weeks 1-2 extended!__
 * 14.02.17 - anytask invites moved [here](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
 * 14.02.17 - if you're from HSE track and we didn't reply to your week0 homework submission, raise panic!
 * 11.02.17 - week2 success thresholds are now easier: get >+50 for LunarLander or >-180 for MountainCar. Solving env will yield bonus points.
@@ -63,7 +63,6 @@ Manifesto:
  * Seminar:  Approximate Q-learning. (CartPole, MountainCar, Breakout)
 
 *somewhere here* introduction to theano
-
 
 * __week i+1__ Deep reinforcement learning 
  * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
