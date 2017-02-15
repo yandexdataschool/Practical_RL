@@ -1,6 +1,17 @@
-# qlearningAgents.py
-# ------------------
-## based on http://inst.eecs.berkeley.edu/~cs188/sp09/pacman.html
+"""
+Q-learning
+This file contains the same q-learning agent you implemented in the previous assignment.
+The only difference is that it doesn't need any other files with it, so you can use it as a standalone moule.
+
+Here's an example:
+>>>from qlearning import QLearningAgent
+
+>>>agent = QLearningAgent(alpha=0.5,epsilon=0.25,discount=0.99,
+                       getLegalActions = lambda s: actions_from_that_state)
+>>>action = agent.getAction(state)
+>>>agent.update(state,action, next_state,reward)
+>>>agent.epsilon *= 0.99
+"""
 
 import random,math
 
@@ -11,10 +22,9 @@ class QLearningAgent():
   """
     Q-Learning Agent
 
-    Instance variables you have access to
-      - self.epsilon (exploration prob)
-      - self.alpha (learning rate)
-      - self.discount (discount rate aka gamma)
+    The two main methods are 
+    - self.getAction(state) - returns agent's action in that state
+    - self.update(state,action,nextState,reward) - returns agent's next action
 
     Functions you should use
       - self.getLegalActions(state)
@@ -76,7 +86,6 @@ class QLearningAgent():
     
     best_action = None
 
-    "*** YOUR CODE HERE ***"
     best_action = possibleActions[np.argmax([self.getQValue(state, a) for a in possibleActions])]
     return best_action
 
@@ -103,7 +112,6 @@ class QLearningAgent():
     #agent parameters:
     epsilon = self.epsilon
 
-    "*** YOUR CODE HERE ***"
     if np.random.random()<=epsilon:
     	return random.choice(possibleActions)
     else:
@@ -123,7 +131,6 @@ class QLearningAgent():
     gamma = self.discount
     learning_rate = self.alpha
     
-    "*** YOUR CODE HERE ***"    
     reference_qvalue = reward + gamma * self.getValue(nextState)
     updated_qvalue = (1-learning_rate) * self.getQValue(state,action) + learning_rate * reference_qvalue
     self.setQValue(state,action,updated_qvalue)

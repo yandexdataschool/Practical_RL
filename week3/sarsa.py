@@ -1,7 +1,22 @@
-# Sarsa agent
-# ------------------
-## based on http://inst.eecs.berkeley.edu/~cs188/sp09/pacman.html
+"""
+Expected Value SARSA
+This file builds upon the same functions as Q-learning agent (qlearning.py).
 
+[assignment]
+The only thing you must implement is the getValue method.
+- Recall that V(s) in SARSA is not the maximal but the expected Q-value.
+- The expectation should be done under agent's policy (e-greedy).
+
+
+Here's usage example:
+>>>from sarsa import SarsaAgent
+
+>>>agent = SarsaAgent(alpha=0.1,epsilon=0.25,discount=0.99,
+                       getLegalActions = lambda s: actions_from_that_state)
+>>>action = agent.getAction(state)
+>>>agent.update(state,action, next_state,reward)
+>>>agent.epsilon *= 0.99
+"""
 import random,math
 
 import numpy as np
@@ -9,23 +24,17 @@ from collections import defaultdict
 
 class SarsaAgent():
   """
-    Q-Learning Agent
+    Classical SARSA agent.
+    
+    The two main methods are 
+    - self.getAction(state) - returns agent's action in that state
+    - self.update(state,action,reward,nextState,nextAction) - returns agent's next action
 
     Instance variables you have access to
       - self.epsilon (exploration prob)
       - self.alpha (learning rate)
       - self.discount (discount rate aka gamma)
 
-    Functions you should use
-      - self.getLegalActions(state)
-        which returns legal actions for a state
-      - self.getQValue(state,action)
-        which returns Q(state,action)
-      - self.setQValue(state,action,value)
-        which sets Q(state,action) := value
-    
-    !!!Important!!!
-    NOTE: please avoid using self._qValues directly to make code cleaner
   """
   def __init__(self,alpha,epsilon,discount,getLegalActions):
     "We initialize agent and Q-values here."
