@@ -1,6 +1,7 @@
-## Useful links
+## Materials
 * Similar lecture by David Silver (english): https://www.youtube.com/watch?v=PnHCvfgC_ZA
 * Similar lecture by Pieter Abbeel (english): https://www.youtube.com/watch?v=ifma8G7LegE
+* Lecture II by Dan Klein (english): https://www.youtube.com/watch?v=jUoZg513cdE
 * Qlearning guide from Habr (russian): https://habrahabr.ru/post/308094/
 
 ## Homework description:
