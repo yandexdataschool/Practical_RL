@@ -10,8 +10,9 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 # Coordinates
 * __HSE__ classes are on mondays at 18-10 in Room 505
 * __YSDA__ classes are on thursdays at 18-00 in "Princeton" classroom
+* Installing the libraries - [tutorial and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
 * Magical button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/yandexdataschool/practical_rl) (may be down time to time)
-* Telegram __[chat room](https://telegram.me/practicalrl)__
+* Telegram __[chat room](https://telegram.me/practicalrl)__ __(russian)__
 * __How to submit homeworks[HSE and YSDA only]:__ [anytask instructions and grading rules](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
 * E-mail for everything else : __practicalrl17@gmail.com__
   * Please submit homeworks via Anytask, __not__ e-mail (see [this](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA)))
