@@ -10,7 +10,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 # Coordinates and useful links
 * __HSE__ classes are on mondays at 18-10 in Room 505
 * __YSDA__ classes are on thursdays at 18-00 in "Princeton" classroom
-* Lectures [here](https://yadi.sk/d/loPpY45J3EAYfU)
+* Lecture slides are [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
 * Magical button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/yandexdataschool/practical_rl) (may be down time to time
@@ -23,7 +23,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
-* 16.02.17 - Lectures moved [here](https://yadi.sk/d/loPpY45J3EAYfU)
+* 16.02.17 - Lecture slides are now available through urls in README files for each week like [this](https://github.com/yandexdataschool/Practical_RL/tree/master/week1#materialshttps://github.com/yandexdataschool/Practical_RL/tree/master/week1#materials). You can also find full archive [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * 16.02.17 - __HSE homework 3 added__
 * 14.02.17 - __HSE deadlines for weeks 1-2 extended!__
 * 14.02.17 - anytask invites moved [here](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
