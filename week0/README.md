@@ -1,7 +1,7 @@
 
 
 ## Materials
-* Video-intro by David Silver (english) - `https://www.youtube.com/watch?v=2pWv7GOvuf0`
+* __[main]__ Video-intro by David Silver (english) - `https://www.youtube.com/watch?v=2pWv7GOvuf0`
 * Optional lecture by David Silver (english) - `https://www.youtube.com/watch?v=lfHX2hHRMVQ`
 * Intro lecture (russian) - `https://yadi.sk/i/bMo0qa-x3DoqkS`
 * Intro seminar (russian) - `https://yadi.sk/i/IBq2MjoS3DoqkY`
