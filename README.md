@@ -7,15 +7,16 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * __Practicality first.__ Everything essential to solving reinforcement learning problems is worth mentioning. We won't shun away from covering tricks and heuristics. For every major idea there should be a lab that allows to “feel” it on a practical problem.
 * __Git-course.__ Know a way to make the course better? Noticed a typo in a formula? Made the code more readable? Made a version for alternative framework? You're awesome! [Pull-request](https://help.github.com/articles/about-pull-requests/) it!
 
-# Coordinates
+# Coordinates and useful links
 * __HSE__ classes are on mondays at 18-10 in Room 505
 * __YSDA__ classes are on thursdays at 18-00 in "Princeton" classroom
-* Installing the libraries - [tutorial and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
-* Magical button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/yandexdataschool/practical_rl) (may be down time to time)
+* Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
+* Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
+* Magical button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/yandexdataschool/practical_rl) (may be down time to time
 * Telegram __[chat room](https://telegram.me/practicalrl)__ __(russian)__
+* English chat - [![Join the chat at https://gitter.im/yandexdataschool/Practical_RL](https://badges.gitter.im/yandexdataschool/CSC_deeplearning.svg)](https://gitter.im/yandexdataschool/Practical_RL?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 * __How to submit homeworks[HSE and YSDA only]:__ [anytask instructions and grading rules](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
-* E-mail for everything else : __practicalrl17@gmail.com__
-  * Please submit homeworks via Anytask, __not__ e-mail (see [this](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA)))
+* E-mail for everything else : __practicalrl17@gmail.com__ (please don't submit homeworks via e-mail)
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
 
