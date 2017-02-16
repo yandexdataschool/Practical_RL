@@ -1,8 +1,7 @@
 
 
 ## Materials
-[__Lecture__](https://docviewer.yandex.ru/?url=ya-disk-public%3A%2F%2FG3IXcG62RwNUGSSos%2BuGhtgXNfsBjP9RxUtUfgCffIk%3D%3A%2Flecture0.pdf&name=lecture0.pdf&c=58a61e7da325)
-
+* [__Lecture slides__](https://docviewer.yandex.ru/?url=ya-disk-public%3A%2F%2FG3IXcG62RwNUGSSos%2BuGhtgXNfsBjP9RxUtUfgCffIk%3D%3A%2Flecture0.pdf&name=lecture0.pdf&c=58a61e7da325)
 * __[main]__ Video-intro by David Silver (english) - `https://www.youtube.com/watch?v=2pWv7GOvuf0`
 * Optional lecture by David Silver (english) - `https://www.youtube.com/watch?v=lfHX2hHRMVQ`
 * Intro lecture (russian) - `https://yadi.sk/i/bMo0qa-x3DoqkS`
