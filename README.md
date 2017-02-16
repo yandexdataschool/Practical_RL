@@ -20,6 +20,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
+* 16.02.17 - __HSE homework 3 added__
 * 14.02.17 - __HSE deadlines for weeks 1-2 extended!__
 * 14.02.17 - anytask invites moved [here](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
 * 14.02.17 - if you're from HSE track and we didn't reply to your week0 homework submission, raise panic!
@@ -54,7 +55,8 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * __week3__ Value-based algorithms
  * Lecture: SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. Eligibility traces.
  * Seminar: Qlearning Vs SARSA Vs expected value sarsa in the wild
-  * Homework TBA veeery soon!
+  * Homework [description](https://github.com/yandexdataschool/Practical_RL/blob/master/week3/README.md)
+    * HSE homework deadline _23.59 22.02.17_
   
 
 ## Future lectures:
