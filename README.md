@@ -13,7 +13,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * Lecture slides are [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
-* Magical button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/yandexdataschool/practical_rl) (may be down time to time
+* Magical button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/yandexdataschool/practical_rl) (may be down time to time. If it won't load for 2-3 minutes, it's down)
 * Telegram __[chat room](https://telegram.me/practicalrl)__ __(russian)__
 * English chat - [![Join the chat at https://gitter.im/yandexdataschool/Practical_RL](https://badges.gitter.im/yandexdataschool/CSC_deeplearning.svg)](https://gitter.im/yandexdataschool/Practical_RL?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 * __How to submit homeworks[HSE and YSDA only]:__ [anytask instructions and grading rules](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
@@ -23,9 +23,10 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
+* 17.02.17 - __warning! we force-pushed into the repository. Please back-up your github files before you pull!__
 * 16.02.17 - Lecture slides are now available through urls in README files for each week like [this](https://github.com/yandexdataschool/Practical_RL/tree/master/week1#materialshttps://github.com/yandexdataschool/Practical_RL/tree/master/week1#materials). You can also find full archive [here](https://yadi.sk/d/loPpY45J3EAYfU).
-* 16.02.17 - __HSE homework 3 added__
-* 14.02.17 - __HSE deadlines for weeks 1-2 extended!__
+* 16.02.17 - HSE homework 3 added
+* 14.02.17 - HSE deadlines for weeks 1-2 extended!
 * 14.02.17 - anytask invites moved [here](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
 * 14.02.17 - if you're from HSE track and we didn't reply to your week0 homework submission, raise panic!
 * 11.02.17 - week2 success thresholds are now easier: get >+50 for LunarLander or >-180 for MountainCar. Solving env will yield bonus points.
@@ -51,6 +52,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Lecture: Crossentropy method in general and for RL. Extension to continuous state & action space. Limitations.
  * Seminar: Tabular CEM for Taxi-v0, deep CEM for box2d environments.
     * HSE homework deadline: _23.59 15.02.17_
+    * YSDA homework deadline: _23.59 26.02.17_
 * __week2__ Temporal Difference
  * Lecture: Discounted reward MDP. Value iteration. Q-learning. Temporal difference Vs Monte-Carlo.
  * Seminar: Tabular q-learning 
@@ -124,3 +126,4 @@ Course materials and teaching by
 * Using pictures from http://ai.berkeley.edu/home.html
 * Other contributions: [omtcyfz](https://github.com/omtcyfz) [dmittov](https://github.com/dmittov) [arogozhnikov](https://github.com/arogozhnikov)
  
+

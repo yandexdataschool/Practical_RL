@@ -12,6 +12,7 @@ For ease of access, we have 2 versions of the same homework. They feature the sa
 You can pick whichever one you prefer but mind the technical limitations. If you have a python2 on a local machine (NOT in docker), even if it's on Windows, we recommend the ./assignment one.
 
 ### ./assignment
+_this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
 This homework assignment works on __python2 only__. If you stick to py3, consider alternative homework. Or just install it for this homework alone and remove afterwards.
 
 This homework also requires some physical display (e.g. laptop monitor). It won't work on binder VM / headless server. Please run it on laptop or consider ./alternative
