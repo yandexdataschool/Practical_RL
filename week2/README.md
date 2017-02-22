@@ -2,6 +2,9 @@
 * [__Lecture slides__](https://docviewer.yandex.ru/?url=ya-disk-public%3A%2F%2FG3IXcG62RwNUGSSos%2BuGhtgXNfsBjP9RxUtUfgCffIk%3D%3A%2Flecture2.pdf&name=lecture2.pdf&c=58a61e22b9fb)
 * Similar lecture by David Silver (english): https://www.youtube.com/watch?v=PnHCvfgC_ZA
 * Similar lecture by Pieter Abbeel (english): https://www.youtube.com/watch?v=ifma8G7LegE
+
+## Bonus materials
+* Policy improvement theorems from Sutton book - http://webdocs.cs.ualberta.ca/~sutton/book/ebook/node42.html
 * Lecture II by Dan Klein (english): https://www.youtube.com/watch?v=jUoZg513cdE
 * Qlearning guide from Habr (russian): https://habrahabr.ru/post/308094/
 
