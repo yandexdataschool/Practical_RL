@@ -7,3 +7,5 @@
 
 ## Homework description
 * Just follow the [notebook](https://github.com/yandexdataschool/Practical_RL/blob/master/week1/crossentropy_method.ipynb)
+* __important__ the current newest version of gym force-stops environment in 200 steps even if you don't use env.monitor.
+  * This may ruin CEM on MountainCar. To avoid this, use gym.make("MountainCar-v0").env
