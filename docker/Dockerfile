@@ -5,6 +5,9 @@ LABEL maintainer "Alexander Panin <justheuristic@gmail.com>, Dmitry Mittov <mitt
 RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list && \
     apt-get -qq update && \
     apt-get install -y cmake \
+                       wget \
+                       unzip \
+                       git \
                        zlib1g-dev \
                        libjpeg-dev \
                        xvfb \
