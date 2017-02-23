@@ -31,15 +31,15 @@ RUN pip install --upgrade pip \
                            jupyter \
                            tqdm \
                            gym[all] \
-                           gym_pull \
-                           ppaquette-gym-doom \
                            matplotlib \
                            seaborn && \
     pip install --upgrade https://github.com/Theano/Theano/archive/master.zip \
                            https://github.com/Lasagne/Lasagne/archive/master.zip \
                            https://github.com/yandexdataschool/AgentNet/archive/master.zip \
                            tensorflow \
-                           keras                       
+                           keras     
+                           
+RUN pip install --upgrade  gym_pull ppaquette-gym-doom
 
 
 RUN pip3 install --upgrade pip \
