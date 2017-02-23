@@ -21,7 +21,7 @@ RUN pip install --upgrade gym[all]
 RUN pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
 RUN pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
 RUN pip install --upgrade https://github.com/yandexdataschool/AgentNet/archive/master.zip
-RUN pip install --upgrade tensorflow
+#RUN pip install --upgrade tensorflow
 RUN pip install --upgrade keras
 RUN pip install gym_pull
 RUN pip install ppaquette-gym-doom
@@ -32,6 +32,6 @@ RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade gym[all]
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade https://github.com/yandexdataschool/AgentNet/archive/master.zip
-RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade tensorflow
+#RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade tensorflow
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade keras
 #TODO py3 doom once it's no longer broken
