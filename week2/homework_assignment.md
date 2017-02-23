@@ -1,5 +1,5 @@
 
-### __Home assignment__ (5+ points)
+### __Home assignment__
 _this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
 
 This is an extension of main assignment for which you are _highly recommended to create a separate copy of ./assignment folder_.
