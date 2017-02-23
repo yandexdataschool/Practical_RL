@@ -1,5 +1,5 @@
 
-### __Bonus assignment__ (5+ points)
+### __Home assignment__ (5+ points)
 _this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
 
 This is an extension of main assignment for which you are _highly recommended to create a separate copy of ./assignment folder_.
@@ -29,9 +29,9 @@ You can call those methods anywhere you see state.
  * You can also change agent parameters. The simplest way is to hard-code them in [PacmanQAgent](https://github.com/yandexdataschool/Practical_RL/blob/master/week2/assignment/qlearningAgents.py#L140)
 
 ### Grading and what you need to submit
-* (+1 point) Any kind of solution that beats `mediumGrid`
-* (+3 points) Any solution that somehow solves `mediumClassic` without hard-coded behavious (hard-coding state space for pacman is okay).
-* (+1 points) Providing a setup that beats pacman under 5 minutes (can get much faster than that)
+* (6 point) Any kind of solution that beats `mediumGrid`
+* (3 points) Any solution that somehow solves `mediumClassic` without hard-coded behavious (hard-coding state space for pacman is okay).
+* (1 points) Providing a setup that beats pacman under 5 minutes (can get much faster than that)
 * More points if you try out something new and more effective.
 
 (HSE/YSDA) Please send us 
