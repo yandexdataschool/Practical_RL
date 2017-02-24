@@ -36,7 +36,7 @@ The default tabular q-learning requires unrealistic amount of experience to lear
 
 To speed up training you will need to implement a preprocessor that extracts new discrete features from state space. You can design these features to account only for the most important stuff around pacman. This time, it's okay to use environment-specific duct tape :)
 
-Please read tips on how to solve them 
+Please read tips on how to solve them [__here__](https://github.com/yandexdataschool/Practical_RL/blob/master/week2/homework_tips.md). Also, if you find some state spaces that work amaizingly good on pacman, weel free to propose a Pull Request with advices 
 
 (HSE/YSDA) Please send us 
 * The alternative qlearningAgents.py file (and any other files you modified)
