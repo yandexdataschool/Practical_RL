@@ -23,6 +23,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
+* 23.02.17 - YSDA homework 2 can be found [here](https://github.com/yandexdataschool/Practical_RL/tree/master/week2). If you're from HSE you can opt to submit either old or new whichever you prefer.
 * 17.02.17 - __warning! we force-pushed into the repository. Please back-up your github files before you pull!__
 * 16.02.17 - Lecture slides are now available through urls in README files for each week like [this](https://github.com/yandexdataschool/Practical_RL/tree/master/week1#materialshttps://github.com/yandexdataschool/Practical_RL/tree/master/week1#materials). You can also find full archive [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * 16.02.17 - HSE homework 3 added
@@ -58,6 +59,8 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Seminar: Tabular q-learning 
     * Homework description - see [./week2/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week2/README.md)
     * HSE homework deadline: _23.59 15.02.17_
+    * YSDA homework deadline: _23.59 5.03.17_
+    
 * __week3__ Value-based algorithms
  * Lecture: SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. Eligibility traces.
  * Seminar: Qlearning Vs SARSA Vs expected value sarsa in the wild
