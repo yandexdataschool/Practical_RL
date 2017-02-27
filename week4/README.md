@@ -42,6 +42,8 @@ If it just won't get installed, pick `BreakoutDeterministic-v0` and try to get a
 
 The task is to implement approximate Q-learning with experience replay and show that it works on `Acrobot-v1`,`LunarLander-v2` and `ppaquette/DoomBasic-v0` (or other versions of those environments).
 
+If you use tensorflow, there's a very convenient [notebook](https://github.com/yandexdataschool/Practical_RL/blob/master/week4/Seminar4.0_recap_approx_qlearning-tf.ipynb) for you to start (by [Scitator](https://github.com/Scitator))
+
 We, however, recommend you to read the lasagne/agentnet assignments briefly to get the grasp of what parameters to start from.
 
 Your're also recommended to fit your solution in a notebook (ipython/torch/r) unless your framework is incompatible with that. In the latter case, please supply us some notes on what code lies where.
