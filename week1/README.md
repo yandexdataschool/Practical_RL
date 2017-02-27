@@ -7,5 +7,6 @@
 
 ## Homework description
 * Just follow the [notebook](https://github.com/yandexdataschool/Practical_RL/blob/master/week1/crossentropy_method.ipynb)
+* During the `CartPole-v0` section (and similar envs), a window will pop up, displaying some game state. The window won't respond to direct input and is instead changes each time you call env.render(). Don't force-close this process, just ignore it until you complete the notebook.
 * __important__ the current newest version of gym force-stops environment in 200 steps even if you don't use env.monitor.
   * This may ruin CEM on MountainCar. To avoid this, use gym.make("MountainCar-v0").env
