@@ -23,7 +23,9 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
-* 17.02.17 - __warning! we force-pushed into the repository. Please back-up your github files before you pull!__
+* 24.02.17 - Dependencies updated ([same url](https://github.com/yandexdataschool/Practical_RL/issues/1)). Please install theano/lasagne/agentnet until week4.
+* 23.02.17 - YSDA homework 2 can be found [here](https://github.com/yandexdataschool/Practical_RL/tree/master/week2). If you're from HSE you can opt to submit either old or new whichever you prefer.
+* 17.02.17 - warning! we force-pushed into the repository. Please back-up your github files before you pull!
 * 16.02.17 - Lecture slides are now available through urls in README files for each week like [this](https://github.com/yandexdataschool/Practical_RL/tree/master/week1#materialshttps://github.com/yandexdataschool/Practical_RL/tree/master/week1#materials). You can also find full archive [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * 16.02.17 - HSE homework 3 added
 * 14.02.17 - HSE deadlines for weeks 1-2 extended!
@@ -58,19 +60,25 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Seminar: Tabular q-learning 
     * Homework description - see [./week2/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week2/README.md)
     * HSE homework deadline: _23.59 15.02.17_
+    * YSDA homework deadline: _23.59 5.03.17_
+    
 * __week3__ Value-based algorithms
  * Lecture: SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. Eligibility traces.
  * Seminar: Qlearning Vs SARSA Vs expected value sarsa in the wild
   * Homework [description](https://github.com/yandexdataschool/Practical_RL/blob/master/week3/README.md)
     * HSE homework deadline _23.59 22.02.17_
-  
+
+* __week3.5__ Deep learning recap
+ * Lecture: deep learning, convolutional nets, batchnorm, dropout, data augmentation and all that stuff.
+ * Seminar: Theano/Lasagne on mnist, simple deep q-learning with CartPole (TF version contrib is welcome)
+   * Homework - convnets on MNIST or simple deep q-learning
+    * HSE homework deadline _23.59 1.03.17_
 
 ## Future lectures:
 * __week4__ Approximate reinforcement learning
  * Lecture: Infinite/continuous state space. Value function approximation. Convergence conditions. Multiple agents trick.
  * Seminar:  Approximate Q-learning. (CartPole, MountainCar, Breakout)
 
-*somewhere here* introduction to theano
 
 * __week i+1__ Deep reinforcement learning 
  * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.

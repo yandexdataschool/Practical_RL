@@ -1,8 +1,4 @@
-
-### __Bonus assignment__ (5+ points)
-_this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
-
-This is an extension of main assignment for which you are _highly recommended to create a separate copy of ./assignment folder_.
+### __Pacman features__
 
 Try to solve larger grids for pacman setup.
 * python pacman.py -p PacmanQAgent -x N_TRAIN_GAMES -n N_TOTAL_GAMES -l __mediumGrid__
@@ -28,16 +24,4 @@ You can call those methods anywhere you see state.
  * Defining a function that extracts all features and calling it in [getQValue](https://github.com/yandexdataschool/Practical_RL/blob/master/week2/assignment/qlearningAgents.py#L38) and [setQValue](https://github.com/yandexdataschool/Practical_RL/blob/master/week2/assignment/qlearningAgents.py#L44) is probably enough.
  * You can also change agent parameters. The simplest way is to hard-code them in [PacmanQAgent](https://github.com/yandexdataschool/Practical_RL/blob/master/week2/assignment/qlearningAgents.py#L140)
 
-### Grading and what you need to submit
-* (+1 point) Any kind of solution that beats `mediumGrid`
-* (+3 points) Any solution that somehow solves `mediumClassic` without hard-coded behavious (hard-coding state space for pacman is okay).
-* (+1 points) Providing a setup that beats pacman under 5 minutes (can get much faster than that)
-* More points if you try out something new and more effective.
-
-(HSE/YSDA) Please send us 
-* The alternative qlearningAgents.py file (and any other files you modified)
-* A short description of what you did there
-* How to run it. Usually a `python pacman.py -p PacmanQAgent -x SOMETHING -n SOMETHING -l __mediumClassic__ -SOMETHING SOMETHING ...`
-
-If you have any problems or questions, feel free to ask them as usual (telegram, gitter, etc.).
-
+Also, don't forget to optimize ```learning_rate```, ```discount``` and ```epsilon``` params of model, this may also help to solve this env.
