@@ -23,7 +23,8 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
-* 24.02.17 - Dependencies updated ([same url](https://github.com/yandexdataschool/Practical_RL/issues/1)). Please install theano/lasagne/agentnet until week4.
+* 28.02.17 - (HSE) homework 4 published
+* 24.02.17 - Dependencies updated ([same url](https://github.com/yandexdataschool/Practical_RL/issues/1)). Please install theano/lasagne/agentnet until week4 or make sure you're familiar enough with your deep learning framework of choice.
 * 23.02.17 - YSDA homework 2 can be found [here](https://github.com/yandexdataschool/Practical_RL/tree/master/week2). If you're from HSE you can opt to submit either old or new whichever you prefer.
 * 17.02.17 - warning! we force-pushed into the repository. Please back-up your github files before you pull!
 * 16.02.17 - Lecture slides are now available through urls in README files for each week like [this](https://github.com/yandexdataschool/Practical_RL/tree/master/week1#materialshttps://github.com/yandexdataschool/Practical_RL/tree/master/week1#materials). You can also find full archive [here](https://yadi.sk/d/loPpY45J3EAYfU).
@@ -71,22 +72,22 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * __week3.5__ Deep learning recap
  * Lecture: deep learning, convolutional nets, batchnorm, dropout, data augmentation and all that stuff.
  * Seminar: Theano/Lasagne on mnist, simple deep q-learning with CartPole (TF version contrib is welcome)
-   * Homework - convnets on MNIST or simple deep q-learning
+  * Homework - convnets on MNIST or simple deep q-learning
     * HSE homework deadline _23.59 1.03.17_
-
-## Future lectures:
+    
 * __week4__ Approximate reinforcement learning
  * Lecture: Infinite/continuous state space. Value function approximation. Convergence conditions. Multiple agents trick.
- * Seminar:  Approximate Q-learning. (CartPole, MountainCar, Breakout)
-
-
+ * Seminar:  Approximate Q-learning with experience replay. (CartPole, Acrobot, Doom)
+  * Homework - convnets on MNIST or simple deep q-learning
+    * HSE homework deadline _23.59 8.03.17_
+## Future lectures:
 * __week i+1__ Deep reinforcement learning 
  * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
- * Seminar: Playing atari with deep reinforcement learning. Experience replay. (classwork = doombasic)
- 
-* __week i+1__ Policy-based methods
+ * Seminar: Double DQN, Dueling DQN, experience replay
+
+* __week i+1__ Policy gradient methods
  * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage), off-policy actor-critic (off-PAC), natural gradients(briefly), continuous action space(teaser). 
- * Seminar: a2c Vs qlearning for MountainCar/Doom, entropy regularization & tricks.
+ * Seminar: a2c Vs qlearning for MountainCar/Doom, entropy regularization & tricks, simple demo with continuous action spaces
  
 * __week i+1__ Trust Region Policy Optimization.
  * Lecture: Trust region policy optimization in detail.
