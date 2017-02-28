@@ -5,7 +5,7 @@
 
 ## More materials
 * __[recommended]__ How to _actually_ do deep reinforcement learning by J. Schulman - http://rll.berkeley.edu/deeprlcourse/docs/nuts-and-bolts.pdf
-* interactive [demo in your browser](http://cs.stanford.edu/people/karpathy/convnetjs/demo/rldemo.html) (karpathy)
+* interactive demos in your browser: [demo1](http://cs.stanford.edu/people/karpathy/convnetjs/demo/rldemo.html)(karpathy), [demo2](http://janhuenermann.com/projects/learning-to-drive)(Hünermann)
 * A guide to deep RL from ~scratch (nervana blog) - https://www.nervanasys.com/demystifying-deep-reinforcement-learning/
 * Another guide to DQN from ~scratch (rl4j) - https://rubenfiszel.github.io/posts/rl4j/2016-08-24-Reinforcement-Learning-and-DQN.html
 * Building deep q-network from ~scratch (blog) - https://jaromiru.com/2016/09/27/lets-make-a-dqn-theory/
