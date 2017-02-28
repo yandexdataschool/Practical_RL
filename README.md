@@ -61,7 +61,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Seminar: Tabular q-learning 
     * Homework description - see [./week2/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week2/README.md)
     * HSE homework deadline: _23.59 15.02.17_
-    * YSDA homework deadline: _23.59 5.03.17_
+    * YSDA homework deadline: _23.59 8.03.17_
     
 * __week3__ Value-based algorithms
  * Lecture: SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. Eligibility traces.
