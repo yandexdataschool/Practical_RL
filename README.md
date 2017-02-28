@@ -14,8 +14,8 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
 * Magical button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/yandexdataschool/practical_rl) (may be down time to time. If it won't load for 2-3 minutes, it's down)
+* Piazza [__invite link__](http://piazza.com/yandex_school_of_data_analysis/spring2017/rl) (english, discussion and Q&A board)
 * Telegram __[chat room](https://telegram.me/practicalrl)__ __(russian)__
-* English chat - [![Join the chat at https://gitter.im/yandexdataschool/Practical_RL](https://badges.gitter.im/yandexdataschool/CSC_deeplearning.svg)](https://gitter.im/yandexdataschool/Practical_RL?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 * __How to submit homeworks[HSE and YSDA only]:__ [anytask instructions and grading rules](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
 * E-mail for everything else : __practicalrl17@gmail.com__ (please don't submit homeworks via e-mail)
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
