@@ -1,4 +1,4 @@
-To simplify installation process, you can deploy a virtual machine with all dependencies pre-installed.
+To simplify installation process, you can deploy a container (~virtual machine) with all dependencies pre-installed.
 
 _tl;dr [dockerhub url](https://hub.docker.com/r/justheuristic/practical_rl/)_
 
