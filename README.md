@@ -81,28 +81,31 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Seminar:  Approximate Q-learning with experience replay. (CartPole, Acrobot, Doom)
   * Homework - convnets on MNIST or simple deep q-learning
     * HSE homework deadline _23.59 8.03.17_
-## Future lectures:
-* __week i+1__ Deep reinforcement learning 
- * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
- * Seminar: Double DQN, Dueling DQN, experience replay
 
-* __week i+1__ Policy gradient methods
+   
+## Future lectures:
+
+* __week5__ Deep reinforcement learning (coming 6.03.2017)
+ * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
+ * Seminar: Double DQN, Dueling DQN, experience replay on atari
+
+* __week6__ Policy gradient methods (coming 13.03.2017)
  * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage), off-policy actor-critic (off-PAC), natural gradients(briefly), continuous action space(teaser). 
  * Seminar: a2c Vs qlearning for MountainCar/Doom, entropy regularization & tricks, simple demo with continuous action spaces
- 
+
+*somewhere here comes RNN crash-course*
+
+* __week7__ Partially observable MDPs (coming 20.03.2017)
+ * Lecture: POMDP intro. Model-based solvers. RNN solvers. RNN tricks: attention, problems with normalization methods, pre-training.
+ * Seminar: Deep kung-fu & doom with recurrent A2C vs feedforward A2C
+
 * __week i+1__ Trust Region Policy Optimization.
  * Lecture: Trust region policy optimization in detail.
  * approximate TRPO vs approximate Q-learning for gym box2d envs (robotics-themed)
 
-* __week i+1__ Large/Continuous action space. Case study: recsys.
+* __week i+1__ RL in Large/Continuous action spaces.
  * Lecture: Continuous action space MDPs. Model-based approach (NAF). Actor-critic approach (dpg, svg). Trust Region Policy Optimization. Large discrete action space problem. Action embedding.
  * Seminar: Classic Control and BipedalWalker with ddpg Vs qNAF. https://gym.openai.com/envs/BipedalWalker-v2 .
-
-*somewhere here RNN crash-course*
-
-* __week i+1__ Partially observable MDPs
- * Lecture: POMDP intro. Model-based solvers. RNN solvers. RNN tricks: attention, problems with normalization methods, pre-training.
- * Seminar: Deep kung-fu with recurrent A2C vs feedforward A2C
 
 * __week i+1__ Advanced exploration methods: intrinsic motivation 
  * Lecture: Augmented rewards. Heuristics (UNREAL,density-based models), formal approach: information maximizing exploration. Model-based tricks(also refer mcts).
@@ -114,7 +117,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  
 * __week i+1__ Case studies I
  * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. KL(p||q) vs KL(q||p). Case study: machine ranslation, speech synthesis, conversation models.
- * Seminar: Optimizing Levenstein for word transcription
+ * Seminar: Optimizing Levenshtein distance with seq2seq for g2p 
 
 * __week i+1__ Hierarchical MDP
  * Lecture: MDP Vs real world. Sparse and delayed rewards. When Q-learning fails. Hierarchical MDP. Hierarchy as temporal abstraction. MDP with symbolic reasoning.
@@ -129,11 +132,12 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 Course materials and teaching by
 - [Fedor Ratnikov](https://github.com/justheuristic/) - lectures, seminars, hw checkups
 - [Alexander Fritsler](https://github.com/Fritz449) - lectures, seminars, hw checkups
-- [Oleg Vasilev](https://github.com/Omrigan) - seminars, hw checkups, technical stuff
+- [Oleg Vasilev](https://github.com/Omrigan) - seminars, hw checkups, technical support
 - [Pavel Shvechikov](https://github.com/bestxolodec) - lectures, seminars, HW checkups
 
 # Contributors
 * Using pictures from http://ai.berkeley.edu/home.html
+* Tensorflow assignments by [Scitator](https://github.com/Scitator) 
 * Other contributions: [omtcyfz](https://github.com/omtcyfz) [dmittov](https://github.com/dmittov) [arogozhnikov](https://github.com/arogozhnikov)
  
 
