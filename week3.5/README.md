@@ -18,8 +18,17 @@
 ## Homework
 Again, two options:
 
-If you are already familiar with lasagne or you are super-good with tensorflow/pytorch/similar, pick the _alternative_ option. Otherwise we highly recommend the first one as we'll need convolutional networks soon enough.
+If you are already familiar with lasagne or you are super-good with tensorflow/pytorch/similar, pick one of the _alternative_ options. Otherwise we highly recommend the first one as we'll need convolutional networks soon enough.
 
-* [__recommended__] Either go to Seminar3.5-*-mnist.ipynb and follow the instructions (ends with lasagne MNIST classifier)
-* [__alternative__] Or go to Seminar3.5-approx-q-learning.ipynb and follow the instructions (ends with simple NN for q-learning)
+* [__recommended__](https://github.com/yandexdataschool/Practical_RL/blob/master/week3.5/Seminar3.5-en-mnist.ipynb) go to Seminar3.5-*-mnist.ipynb and follow the instructions (ends with lasagne MNIST classifier)
+
+
+* [__alternative task__](https://github.com/yandexdataschool/Practical_RL/blob/master/week3.5/Seminar3.5-approx-qlearning.ipynb) go to Seminar3.5-approx-q-learning.ipynb and follow the instructions (ends with simple NN for q-learning)
+
+
+* [__alternative frameworks__] Implement the simple q-learning network that solves `CartPole-v0`. You're not required to implement experience replay / any advanced stuff, just set sgd learning rate to a small enough number (10^-4) and pray that trains smoothly.
+
+Here's a convenient translation to tensorflow: [notebook](https://github.com/yandexdataschool/Practical_RL/blob/master/week3.5/Seminar3.5-approx-qlearning-tf.ipynb)
+
+Agent can maintain low reward for long enough, but it should at least show some progress by the end of the default loop.
 

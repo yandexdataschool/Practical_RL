@@ -61,8 +61,9 @@ class EVSarsaAgent():
 
   def getValue(self, state):
     """
-      Returns max_action Q(state,action)
-      where the max is over legal actions.
+      Returns V(s) according to expected value SARSA algorithm
+      This should be equal to expected action q-value over action probabilities defined
+      by epsilon-greedy policy with current epsilon.
     """
     
     possibleActions = self.getLegalActions(state)
