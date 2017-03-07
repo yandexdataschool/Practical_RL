@@ -82,12 +82,13 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
   * Homework - convnets on MNIST or simple deep q-learning
     * HSE homework deadline _23.59 8.03.17_
 
+* __week5__ Deep reinforcement learning
+ * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
+ * Seminar: DQN on atari
+  * Homework - convnets on MNIST or simple deep q-learning
+    * HSE homework deadline _23.59 15.03.17_
    
 ## Future lectures:
-
-* __week5__ Deep reinforcement learning (coming 6.03.2017)
- * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
- * Seminar: Double DQN, Dueling DQN, experience replay on atari
 
 * __week6__ Policy gradient methods (coming 13.03.2017)
  * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage), off-policy actor-critic (off-PAC), natural gradients(briefly), continuous action space(teaser). 
