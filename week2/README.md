@@ -43,6 +43,7 @@ Please read tips on how to solve them [__here__](https://github.com/yandexdatasc
 * The alternative qlearningAgents.py file (and any other files you modified)
 * A short description of what you did there
 * How to run it. Usually something like `python pacman.py -p PacmanQAgent -x SOMETHING -n SOMETHING -l __mediumClassic__ -SOMETHING SOMETHING ...`
+* End of train/test log (or even whole log), including at least last iteration of learning and final statistics (especially winrate)
 
 To get 5 points, your algorithm should solve __mediumGrid__ more than 50% times. Creative features and outstanding performance on __mediumClassic__ yields bonus points!
  
