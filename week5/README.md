@@ -1,6 +1,7 @@
 ## Materials
 * Slides [soon be added]
-* This time we're covering an array of tricks that improve upon the previous lecture.
+
+* Video lecture (esp. second half) by J. Schulman - https://www.youtube.com/watch?v=h1-pj4Y9-kM
 * [recap] Slides on basic DQN, including target networks - https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf
 * Article on dueling DQN - https://arxiv.org/pdf/1511.06581.pdf
 * Article on double DQN - https://arxiv.org/abs/1509.06461
