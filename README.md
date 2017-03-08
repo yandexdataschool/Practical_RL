@@ -23,6 +23,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
+* 8.03.17 - YSDA deadlines announced for weeks 3 and 3.5, sry for only doing this now.
 * 01.03.17 - YSDA deadline on week2 homework moved to 08.03.17
 * 28.02.17 - (HSE) homework 4 published
 * 24.02.17 - Dependencies updated ([same url](https://github.com/yandexdataschool/Practical_RL/issues/1)). Please install theano/lasagne/agentnet until week4 or make sure you're familiar enough with your deep learning framework of choice.
@@ -96,19 +97,26 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage), off-policy actor-critic (off-PAC), natural gradients(briefly), continuous action space(teaser). 
  * Seminar: a2c Vs qlearning for MountainCar/Doom, entropy regularization & tricks, simple demo with continuous action spaces
 
-*somewhere here comes RNN crash-course*
+*somewhere here comes RNN crash-course* (coming 20.03.2017)
 
-* __week7__ Partially observable MDPs (coming 20.03.2017)
+* __week7__ Partially observable MDPs (coming 27.03.2017)
  * Lecture: POMDP intro. Model-based solvers. RNN solvers. RNN tricks: attention, problems with normalization methods, pre-training.
- * Seminar: Deep kung-fu & doom with recurrent A2C vs feedforward A2C
+ * Seminar: Deep kung-fu & doom with recurrent A3C vs feedforward A3C
 
-* __week i+1__ Trust Region Policy Optimization.
- * Lecture: Trust region policy optimization in detail.
- * approximate TRPO vs approximate Q-learning for gym box2d envs (robotics-themed)
+
+* __week i+1__ Case studies (coming 3.04.2017
+ * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. Seq2seq tasks: g2p, machine translation, conversation models. Tricks for seq2seq models. Financial world applications as RL problems. KL(p||q) vs KL(q||p) and generative adversarial nets. 
+ * Seminar: Optimizing Levenshtein distance with seq2seq for g2p OR using deterministic policy gradient for portfolio management.
+
+_The dark side clouds everything. From this point, impossible to see the future is._
 
 * __week i+1__ RL in Large/Continuous action spaces.
  * Lecture: Continuous action space MDPs. Model-based approach (NAF). Actor-critic approach (dpg, svg). Trust Region Policy Optimization. Large discrete action space problem. Action embedding.
  * Seminar: Classic Control and BipedalWalker with ddpg Vs qNAF. https://gym.openai.com/envs/BipedalWalker-v2 .
+
+* __week i+1__ Trust Region Policy Optimization.
+ * Lecture: Trust region policy optimization in detail.
+ * approximate TRPO vs approximate Q-learning for gym box2d envs (robotics-themed)
 
 * __week i+1__ Advanced exploration methods: intrinsic motivation 
  * Lecture: Augmented rewards. Heuristics (UNREAL,density-based models), formal approach: information maximizing exploration. Model-based tricks(also refer mcts).
@@ -118,9 +126,6 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Lecture: Improved exploration methods (quantile-based, etc.). Bayesian approach. Case study: Contextual bandits for RTB. 
  * Seminar: Bandits
  
-* __week i+1__ Case studies I
- * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. KL(p||q) vs KL(q||p). Case study: machine ranslation, speech synthesis, conversation models.
- * Seminar: Optimizing Levenshtein distance with seq2seq for g2p 
 
 * __week i+1__ Hierarchical MDP
  * Lecture: MDP Vs real world. Sparse and delayed rewards. When Q-learning fails. Hierarchical MDP. Hierarchy as temporal abstraction. MDP with symbolic reasoning.
