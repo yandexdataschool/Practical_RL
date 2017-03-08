@@ -28,12 +28,13 @@ Basically go to [the notebook](https://github.com/yandexdataschool/Practical_RL/
 
 This week's task is to implement (and hopefully compare) target networks, double DQN and/or duelling DQN and training on atari breakout.
 
+ * Tensorflow template: [cs294 assignment 3](https://github.com/berkeleydeeprlcourse/homework/tree/master/hw3)
+
 Implementing prioritized experience replay or bootstrap dqn or any other cool stuff yields you bonus points. You can also choose a different environment if you have issues with breakout, but don't get too complicated. E.g. your DQN will likely _fail_ on Montezuma Revenge unless you do weird stuff with reward function.
 
 We recommend you to upload your results to OpenAI gym and fit your solution in a notebook (ipython/torch/r) unless your framework is incompatible with that. In the latter case, please supply us some notes on what code lies where.
 
 Again,we recommend you to read the lasagne/agentnet assignments briefly to get the grasp of what parameters to start from.
-
 
 Bonus assignments remain exactly the same as in the first track.
 
