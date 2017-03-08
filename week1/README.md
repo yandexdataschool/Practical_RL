@@ -1,7 +1,7 @@
 ## Materials:
 * [__Lecture slides__](https://docviewer.yandex.ru/?url=ya-disk-public%3A%2F%2FG3IXcG62RwNUGSSos%2BuGhtgXNfsBjP9RxUtUfgCffIk%3D%3A%2Flecture1.pdf&name=lecture1.pdf&c=58a61ec9256c)
 * Lecture and seminar videos (russian) - [lecture](https://yadi.sk/i/5yf_4oGI3EDJhJ), [seminar](https://yadi.sk/i/dPsWYMK13EDJj7) _only covering crossentropy method_
-* Lecture by J Schulman with crossentropy method explained (english) - https://www.youtube.com/watch?v=aUrX-rP_ss4&list=PLCTc_C7itk-GaAMxmlChrkPnGKtjz8hv1
+* [__main__] Lecture by J Schulman with crossentropy method explained (english) - https://www.youtube.com/watch?v=aUrX-rP_ss4&list=PLCTc_C7itk-GaAMxmlChrkPnGKtjz8hv1
 * All monte-carlo methods - https://webdocs.cs.ualberta.ca/~sutton/book/ebook/node50.html
 * Article about CEM in general - https://people.smp.uq.edu.au/DirkKroese/ps/eormsCE.pdf
 * Article about CEM for optimization - https://people.smp.uq.edu.au/DirkKroese/ps/CEopt.pdf
