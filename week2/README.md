@@ -8,6 +8,7 @@
 * Policy improvement theorems from Sutton book - http://webdocs.cs.ualberta.ca/~sutton/book/ebook/node42.html
 * Lecture II by Dan Klein (english): https://www.youtube.com/watch?v=jUoZg513cdE
 * Qlearning guide from Habr (russian): https://habrahabr.ru/post/308094/
+* A great turorial/assignment on value-based methods from CS294 - https://github.com/berkeleydeeprlcourse/homework/blob/master/hw2/HW2.ipynb
 
 ## Homework description:
 
