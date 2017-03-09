@@ -30,6 +30,9 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * 23.02.17 - YSDA homework 2 can be found [here](https://github.com/yandexdataschool/Practical_RL/tree/master/week2). If you're from HSE you can opt to submit either old or new whichever you prefer.
 * 17.02.17 - warning! we force-pushed into the repository. Please back-up your github files before you pull!
 * 16.02.17 - Lecture slides are now available through urls in README files for each week like [this](https://github.com/yandexdataschool/Practical_RL/tree/master/week1#materialshttps://github.com/yandexdataschool/Practical_RL/tree/master/week1#materials). You can also find full archive [here](https://yadi.sk/d/loPpY45J3EAYfU).
+
+<details><summary>Previous announcements</summary>
+<p><!-- trick from http://stackoverflow.com/questions/32814161/how-to-make-spoiler-text-in-github-wiki-pages -->
 * 16.02.17 - HSE homework 3 added
 * 14.02.17 - HSE deadlines for weeks 1-2 extended!
 * 14.02.17 - anytask invites moved [here](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
@@ -44,6 +47,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * 27.01.17 - added course mail for homework submission: __practicalrl17@gmail.com__
 * 23.01.17 - first class happened
 * 23.01.17 - created repo
+</p></details>
 
 
 # Syllabus
