@@ -1,5 +1,5 @@
 # Practical_RL
-A course on reinforcement learning in the wild. 
+A course on reinforcement learning in the wild.
 Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdataschool.com) (russian) and maintained to be friendly to online students (both english and russian).
 
 #### Manifesto:
@@ -55,52 +55,53 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * __week0__ Welcome to the MDP
  * Lecture: RL problems around us. Markov decision process. Simple solutions through combinatoric optimization.
  * Seminar: Frozenlake with genetic algorithms
-    * Homework description - [./week0/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week0/README.md)
+ * Homework description - [week0/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week0/README.md)
     * HSE Homework deadline: _23.59 1.02.17_
     * YSDA Homework deadline: _23.59 19.02.17_
 * __week1__ Crossentropy method and monte-carlo algorithms
  * Lecture: Crossentropy method in general and for RL. Extension to continuous state & action space. Limitations.
  * Seminar: Tabular CEM for Taxi-v0, deep CEM for box2d environments.
+ * Homework description - [week1/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week1/README.md)
     * HSE homework deadline: _23.59 15.02.17_
     * YSDA homework deadline: _23.59 26.02.17_
 * __week2__ Temporal Difference
  * Lecture: Discounted reward MDP. Value iteration. Q-learning. Temporal difference Vs Monte-Carlo.
- * Seminar: Tabular q-learning 
-    * Homework description - see [./week2/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week2/README.md)
+ * Seminar: Tabular q-learning
+ * Homework description - [week2/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week2/README.md)
     * HSE homework deadline: _23.59 15.02.17_
     * YSDA homework deadline: _23.59 8.03.17_
-    
+
 * __week3__ Value-based algorithms
  * Lecture: SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. Eligibility traces.
  * Seminar: Qlearning Vs SARSA Vs expected value sarsa in the wild
-  * Homework [description](https://github.com/yandexdataschool/Practical_RL/blob/master/week3/README.md)
+ * Homework description - [week3/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week3/README.md)
     * HSE homework deadline _23.59 22.02.17_
     * YSDA homework deadline: _23.59 14.03.17_
 
 * __week3.5__ Deep learning recap
  * Lecture: deep learning, convolutional nets, batchnorm, dropout, data augmentation and all that stuff.
  * Seminar: Theano/Lasagne on mnist, simple deep q-learning with CartPole (TF version contrib is welcome)
-  * Homework - convnets on MNIST or simple deep q-learning
+ * Homework - convnets on MNIST or simple deep q-learning - [week3.5/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week3.5/README.md)
     * HSE homework deadline _23.59 1.03.17_
     * YSDA homework deadline: _23.59 14.03.17_ (5 pts)
-    
+
 * __week4__ Approximate reinforcement learning
  * Lecture: Infinite/continuous state space. Value function approximation. Convergence conditions. Multiple agents trick.
  * Seminar:  Approximate Q-learning with experience replay. (CartPole, Acrobot, Doom)
-  * Homework - convnets on MNIST or simple deep q-learning
+ * Homework - convnets on MNIST or simple deep q-learning - [week4/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week4/README.md)
     * HSE homework deadline _23.59 8.03.17_
     * YSDA homework deadline _23.59 14.03.17_
 
 * __week5__ Deep reinforcement learning
  * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
  * Seminar: DQN on atari
-  * Homework - convnets on MNIST or simple deep q-learning
+ * Homework - convnets on MNIST or simple deep q-learning - [week5/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week5/README.md)
     * HSE homework deadline _23.59 15.03.17_
-   
+
 ## Future lectures:
 
 * __week6__ Policy gradient methods (coming 13.03.2017)
- * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage), off-policy actor-critic (off-PAC), natural gradients(briefly), continuous action space(teaser). 
+ * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage), off-policy actor-critic (off-PAC), natural gradients(briefly), continuous action space(teaser).
  * Seminar: a2c Vs qlearning for MountainCar/Doom, entropy regularization & tricks, simple demo with continuous action spaces
 
 *somewhere here comes RNN crash-course* (coming 20.03.2017)
@@ -111,7 +112,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 * __week i+1__ Case studies (coming 3.04.2017
- * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. Seq2seq tasks: g2p, machine translation, conversation models. Tricks for seq2seq models. Financial world applications as RL problems. KL(p||q) vs KL(q||p) and generative adversarial nets. 
+ * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. Seq2seq tasks: g2p, machine translation, conversation models. Tricks for seq2seq models. Financial world applications as RL problems. KL(p||q) vs KL(q||p) and generative adversarial nets.
  * Seminar: Optimizing Levenshtein distance with seq2seq for g2p OR using deterministic policy gradient for portfolio management.
 
 _The dark side clouds everything. From this point, impossible to see the future is._
@@ -124,24 +125,24 @@ _The dark side clouds everything. From this point, impossible to see the future 
  * Lecture: Trust region policy optimization in detail.
  * approximate TRPO vs approximate Q-learning for gym box2d envs (robotics-themed)
 
-* __week i+1__ Advanced exploration methods: intrinsic motivation 
+* __week i+1__ Advanced exploration methods: intrinsic motivation
  * Lecture: Augmented rewards. Heuristics (UNREAL,density-based models), formal approach: information maximizing exploration. Model-based tricks(also refer mcts).
  * Seminar: Vime vs epsilon-greedy for Go9x9 (bonus 19x19)
 
 * __week i+1__ Advanced exploration methods: probablistic approach.
- * Lecture: Improved exploration methods (quantile-based, etc.). Bayesian approach. Case study: Contextual bandits for RTB. 
+ * Lecture: Improved exploration methods (quantile-based, etc.). Bayesian approach. Case study: Contextual bandits for RTB.
  * Seminar: Bandits
- 
+
 
 * __week i+1__ Hierarchical MDP
  * Lecture: MDP Vs real world. Sparse and delayed rewards. When Q-learning fails. Hierarchical MDP. Hierarchy as temporal abstraction. MDP with symbolic reasoning.
  * Seminar: Hierarchical RL for atari games with rare rewards (starting from pre-trained DQN)
- 
+
 * __week i+1__ Case studies II
  * Lecture: Direct policy optimization: finance.  Inverse Reinforcement Learning: personalized medial treatment, robotics.
  * Seminar: Portfolio optimization as POMDP.
- 
- 
+
+
 # Course staff
 Course materials and teaching by
 - [Fedor Ratnikov](https://github.com/justheuristic/) - lectures, seminars, hw checkups
@@ -151,7 +152,5 @@ Course materials and teaching by
 
 # Contributors
 * Using pictures from http://ai.berkeley.edu/home.html
-* Tensorflow assignments by [Scitator](https://github.com/Scitator) 
+* Tensorflow assignments by [Scitator](https://github.com/Scitator)
 * Other contributions: [omtcyfz](https://github.com/omtcyfz) [dmittov](https://github.com/dmittov) [arogozhnikov](https://github.com/arogozhnikov)
- 
-
