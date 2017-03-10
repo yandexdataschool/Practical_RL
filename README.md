@@ -33,6 +33,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 <details><summary>Previous announcements</summary>
 <p><!-- trick from http://stackoverflow.com/questions/32814161/how-to-make-spoiler-text-in-github-wiki-pages -->
+* 30.03.17 - YSDA deadlines announced for HW 4
 * 16.02.17 - HSE homework 3 added
 * 14.02.17 - HSE deadlines for weeks 1-2 extended!
 * 14.02.17 - anytask invites moved [here](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
@@ -88,6 +89,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Seminar:  Approximate Q-learning with experience replay. (CartPole, Acrobot, Doom)
   * Homework - convnets on MNIST or simple deep q-learning
     * HSE homework deadline _23.59 8.03.17_
+    * YSDA homework deadline _23.59 14.03.17_
 
 * __week5__ Deep reinforcement learning
  * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
