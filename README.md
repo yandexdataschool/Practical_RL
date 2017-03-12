@@ -91,7 +91,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Seminar:  Approximate Q-learning with experience replay. (CartPole, Acrobot, Doom)
  * Homework - convnets on MNIST or simple deep q-learning - [week4/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week4/README.md)
     * HSE homework deadline _23.59 8.03.17_
-    * YSDA homework deadline _23.59 14.03.17_
+    * YSDA homework deadline _23.59 19.03.17_
 
 * __week5__ Deep reinforcement learning
  * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
