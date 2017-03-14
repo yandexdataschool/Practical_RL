@@ -2,6 +2,7 @@
 * [__lecture slides__](https://docviewer.yandex.ru/?url=ya-disk-public%3A%2F%2FG3IXcG62RwNUGSSos%2BuGhtgXNfsBjP9RxUtUfgCffIk%3D%3A%2Flecture4.pdf&name=lecture4.pdf&c=58b0d2eb4e0f)
 * David Silver lecture - https://www.youtube.com/watch?v=UoPei5o4fps&t=3s
 * More practical and less theoretical lecture from MIT 6.S191 - https://www.youtube.com/watch?v=xWe58WGWmlk
+* Our [lecture](https://yadi.sk/i/AHDU2p_j3FT3nr), [seminar](https://yadi.sk/i/EeUeheri3FT3ra) (russian)
 * Karpathy's post on approximate RL - http://karpathy.github.io/2016/05/31/rl/
 
 ## More materials
