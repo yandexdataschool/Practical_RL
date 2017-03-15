@@ -97,7 +97,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * __week5__ Deep reinforcement learning
  * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
  * Seminar: DQN on atari
- * Homework - Breakout with DQN and advanced tricks - [week4/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week5/README.md)
+ * Homework - Breakout with DQN and advanced tricks - [week5/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week5/README.md)
     * HSE homework deadline _23.59 15.03.17_
 
 * __week6__ Policy gradient methods 
