@@ -23,6 +23,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
+* 15.03.16 - (hse) added week6 assignment and deadline
 * 10.03.17 - (ysda/hse students) __important__ please consider [Course Projects](https://github.com/yandexdataschool/Practical_RL/wiki/Course-projects) as an alternative way of completing the course.
 * 8.03.17 - YSDA deadlines announced for weeks 3 and 3.5, sry for only doing this now.
 * 01.03.17 - YSDA deadline on week2 homework moved to 08.03.17
@@ -89,21 +90,22 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * __week4__ Approximate reinforcement learning
  * Lecture: Infinite/continuous state space. Value function approximation. Convergence conditions. Multiple agents trick.
  * Seminar:  Approximate Q-learning with experience replay. (CartPole, Acrobot, Doom)
- * Homework - convnets on MNIST or simple deep q-learning - [week4/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week4/README.md)
+ * Homework - q-learning manually, experience replay - [week4/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week4/README.md)
     * HSE homework deadline _23.59 8.03.17_
     * YSDA homework deadline _23.59 19.03.17_
 
 * __week5__ Deep reinforcement learning
  * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
  * Seminar: DQN on atari
- * Homework - convnets on MNIST or simple deep q-learning - [week5/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week5/README.md)
+ * Homework - Breakout with DQN and advanced tricks - [week4/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week5/README.md)
     * HSE homework deadline _23.59 15.03.17_
 
-## Future lectures:
+* __week6__ Policy gradient methods 
+ * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage)
+ * Seminar: REINFORCE manually, advantage actor-critic for MountainCar  - [week6/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week6/README.md)
+    * HSE homework deadline _23.59 22.03.17_
 
-* __week6__ Policy gradient methods (coming 13.03.2017)
- * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage), off-policy actor-critic (off-PAC), natural gradients(briefly), continuous action space(teaser).
- * Seminar: a2c Vs qlearning for MountainCar/Doom, entropy regularization & tricks, simple demo with continuous action spaces
+## Future lectures:
 
 *somewhere here comes RNN crash-course* (coming 20.03.2017)
 
