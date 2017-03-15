@@ -23,6 +23,8 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
+* 16.03.16 - __week4 homework__ max score threshold for LunarLander reduced to -100
+* 16.03.16 - (hse) shifted deadline for week5
 * 15.03.16 - (hse) added week6 assignment and deadline
 * 10.03.17 - (ysda/hse students) __important__ please consider [Course Projects](https://github.com/yandexdataschool/Practical_RL/wiki/Course-projects) as an alternative way of completing the course.
 * 8.03.17 - YSDA deadlines announced for weeks 3 and 3.5, sry for only doing this now.
@@ -98,7 +100,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Lecture: Deep Q-learning/sarsa/whatever. Heuristics & motivation behind them: experience replay, target networks, double/dueling/bootstrap DQN, etc.
  * Seminar: DQN on atari
  * Homework - Breakout with DQN and advanced tricks - [week5/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week5/README.md)
-    * HSE homework deadline _23.59 15.03.17_
+    * HSE homework deadline _23.59 22.03.17_
 
 * __week6__ Policy gradient methods 
  * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage)
