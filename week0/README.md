@@ -9,6 +9,7 @@
 * Deep learning course (if you want to learn in parallel) - https://github.com/yandexdataschool/HSE_deeplearning
 
 ## Metaheuristics for optimization
+* Evolution methods for RL (article, english) - https://arxiv.org/abs/1703.03864
 * Guide to genetic algorithms (english) - https://www.youtube.com/watch?v=ejxfTy4lI6I
 * Another guide to genetic algorithm (english) - https://www.youtube.com/watch?v=zwYV11a__HQ
 * PDF on Differential evolution (english) - http://jvanderw.une.edu.au/DE_1.pdf
