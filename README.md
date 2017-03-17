@@ -101,6 +101,8 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Seminar: DQN on atari
  * Homework - Breakout with DQN and advanced tricks - [week5/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week5/README.md)
     * HSE homework deadline _23.59 22.03.17_
+    * HSE homework deadline _23.59 26.03.17_
+
 
 * __week6__ Policy gradient methods 
  * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage)
