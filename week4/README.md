@@ -35,6 +35,12 @@ pip install gym_pull
 pip install ppaquette-gym-doom
 ```
 
+For macOS (OS X) install brew and then
+```
+brew install boost boost-python sdl2 cmake
+pip install ppaquette-gym-doom
+````
+
 If it just won't get installed, pick `BreakoutDeterministic-v0` and try to get average reward >= +10
   
 
