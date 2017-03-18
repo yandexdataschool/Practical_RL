@@ -1,5 +1,5 @@
 ## Materials
-* Slides [here](https://yadi.sk/i/OzcVw7IT3FvCmS)
+* Slides [here](https://yadi.sk/i/P02qoHng3G7oMt)
 
 * Video lecture (esp. second half) by J. Schulman - https://www.youtube.com/watch?v=h1-pj4Y9-kM
 * Article on dueling DQN - https://arxiv.org/pdf/1511.06581.pdf
