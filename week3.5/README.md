@@ -16,7 +16,6 @@
 * Srsly, just google `"deep learning %s"%s for s in what_you_want_to_know`.
 
 ## Homework
-Again, two options:
 
 If you are already familiar with lasagne or you are super-good with tensorflow/pytorch/similar, pick one of the _alternative_ options. Otherwise we highly recommend the first one as we'll need convolutional networks soon enough.
 
@@ -25,8 +24,13 @@ If you are already familiar with lasagne or you are super-good with tensorflow/p
 
 * [__alternative task__](https://github.com/yandexdataschool/Practical_RL/blob/master/week3.5/Seminar3.5-approx-qlearning.ipynb) go to Seminar3.5-approx-q-learning.ipynb and follow the instructions (ends with simple NN for q-learning)
 
+* [__alternative frameworks__] 
+The equivalent of recommended track would be 
+* [tensorflow] learning through this [google course](https://www.udacity.com/course/deep-learning--ud730) from start till "Convolutional neural networks" (inclusive).
+* [manual/other] surviving past assignment2 of [cs231](http://cs231n.github.io/)
 
-* [__alternative frameworks__] Implement the simple q-learning network that solves `CartPole-v0`. You're not required to implement experience replay / any advanced stuff, just set sgd learning rate to a small enough number (10^-4) and pray that trains smoothly.
+* [__alternative task and frameworks__]
+Implement the simple q-learning network that solves `CartPole-v0`. You're not required to implement experience replay / any advanced stuff, just set sgd learning rate to a small enough number (10^-4) and pray that trains smoothly.
 
 Here's a convenient translation to tensorflow: [notebook](https://github.com/yandexdataschool/Practical_RL/blob/master/week3.5/Seminar3.5-approx-qlearning-tf.ipynb)
 
