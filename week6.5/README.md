@@ -16,7 +16,9 @@ You guessed, two options
 
 ### Lasagne option
 
-<TBA>
+Follow the [first notebook](https://github.com/yandexdataschool/Practical_RL/blob/master/week6.5/char_rnn.ipynb) and implement a simple character-level RNN with pure lasagne. The homework part __(X points)__ is at the very end of that notebook.
+
+Proceed with [seq2seq](https://github.com/yandexdataschool/Practical_RL/blob/master/week6.5/seq2seq.ipynb) notebook for the second part of homework assignment __(Y points)__.
 
 ### Alternative
 
