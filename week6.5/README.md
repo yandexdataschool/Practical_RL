@@ -7,6 +7,7 @@
 * LSTM explained in detail by colah - http://colah.github.io/posts/2015-08-Understanding-LSTMs/
 
 ## More materials
+* Seq2seq lecture - https://www.youtube.com/watch?v=G5RY_SUJih4
 * "Awesome rnn" entry point - https://github.com/kjw0612/awesome-rnn
 
 
