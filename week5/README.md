@@ -11,6 +11,7 @@
 
 ## More materials
 * [recommended] An overview of deep reinforcement learning - https://arxiv.org/pdf/1701.07274v1.pdf
+* Reinforcement learning architectures list - https://github.com/5vision/deep-reinforcement-learning-networks
 * Building deep q-network from ~scratch (blog) - https://jaromiru.com/2016/09/27/lets-make-a-dqn-theory/
 * Another guide guide to DQN from ~scratch (blog) - https://rubenfiszel.github.io/posts/rl4j/2016-08-24-Reinforcement-Learning-and-DQN.html
 * Article on asynchronuous methods in deep RL - https://arxiv.org/abs/1602.01783
