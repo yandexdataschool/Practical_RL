@@ -15,8 +15,8 @@ just lunch ipython and get hands dirty:
 
 ```bash
 $ sudo su
-# export THEANO_FLAGS='cuda.root=/usr/local/cuda,device=gpu,floatX=float32'
-# export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
-# jupyter notebook
+$ export THEANO_FLAGS='cuda.root=/usr/local/cuda,device=gpu,floatX=float32'
+$ export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
+$ jupyter notebook
 ```
 
