@@ -23,6 +23,8 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
+* 25.03.16 - __HSE important__ next monday lecture is postponed by 1 week due to HSE mid-term exams. Deadlines have been postponed accordingly.
+* 25.03.16 - __week5__ you can submit any atari game you want.
 * 16.03.16 - __week4 homework__ max score threshold for LunarLander reduced to -100
 * 16.03.16 - (hse) shifted deadline for week5
 * 15.03.16 - (hse) added week6 assignment and deadline
@@ -107,7 +109,12 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * __week6__ Policy gradient methods 
  * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage)
  * Seminar: REINFORCE manually, advantage actor-critic for MountainCar  - [week6/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week6/README.md)
-    * HSE homework deadline _23.59 22.03.17_
+    * HSE homework deadline _23.59 2.04.17_
+    
+* __week6.5__ RNN recap
+ * Lecture: recurrent neura networks for sequences. GRU/LSTM. Gradient clipping. Seq2seq
+ * Seminar: char-rnn and simple seq2seq
+    * HSE homework deadline __23.59 5.04.17__
 
 ## Future lectures:
 
