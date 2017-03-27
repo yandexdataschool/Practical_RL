@@ -1,7 +1,7 @@
 ## Materials
 * Slides [here](https://yadi.sk/i/P02qoHng3G7oMt)
-
 * Video lecture (esp. second half) by J. Schulman - https://www.youtube.com/watch?v=h1-pj4Y9-kM
+* Our [lecture](https://yadi.sk/i/yBO0q4mI3GAxYd), [seminar](https://yadi.sk/i/oWC2M5803GAyFB) (russian)
 * Article on dueling DQN - https://arxiv.org/pdf/1511.06581.pdf
 * Article on double DQN - https://arxiv.org/abs/1509.06461
 * Article on prioritized experience replay - https://arxiv.org/abs/1511.05952
@@ -11,6 +11,7 @@
 
 ## More materials
 * [recommended] An overview of deep reinforcement learning - https://arxiv.org/pdf/1701.07274v1.pdf
+* Reinforcement learning architectures list - https://github.com/5vision/deep-reinforcement-learning-networks
 * Building deep q-network from ~scratch (blog) - https://jaromiru.com/2016/09/27/lets-make-a-dqn-theory/
 * Another guide guide to DQN from ~scratch (blog) - https://rubenfiszel.github.io/posts/rl4j/2016-08-24-Reinforcement-Learning-and-DQN.html
 * Article on asynchronuous methods in deep RL - https://arxiv.org/abs/1602.01783
