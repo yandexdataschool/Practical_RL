@@ -118,43 +118,29 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 ## Future lectures:
 
-*somewhere here comes RNN crash-course* (coming 20.03.2017)
-
-* __week7__ Partially observable MDPs (coming 27.03.2017)
+* __week7__ Partially observable MDPs (under construction now)
  * Lecture: POMDP intro. Model-based solvers. RNN solvers. RNN tricks: attention, problems with normalization methods, pre-training.
  * Seminar: Deep kung-fu & doom with recurrent A3C vs feedforward A3C
 
+* __week 8__ Case studies 1
+ * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. Seq2seq tasks: g2p, machine translation, conversation models. Tricks for seq2seq models. KL(p||q) vs KL(q||p) and generative adversarial nets.
+ * Seminar: Optimizing Levenshtein distance with seq2seq for g2p
 
-* __week i+1__ Case studies (coming 3.04.2017
- * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. Seq2seq tasks: g2p, machine translation, conversation models. Tricks for seq2seq models. Financial world applications as RL problems. KL(p||q) vs KL(q||p) and generative adversarial nets.
- * Seminar: Optimizing Levenshtein distance with seq2seq for g2p OR using deterministic policy gradient for portfolio management.
-
-_The dark side clouds everything. From this point, impossible to see the future is._
-
-* __week i+1__ RL in Large/Continuous action spaces.
- * Lecture: Continuous action space MDPs. Model-based approach (NAF). Actor-critic approach (dpg, svg). Trust Region Policy Optimization. Large discrete action space problem. Action embedding.
+* __week 9__ RL in Large/Continuous action spaces.
+ * Lecture: Continuous action space MDPs. Value-based approach (NAF). Special case algorithms (dpg, svg). Case study:finance. Large discrete action space problem. Action embedding.
  * Seminar: Classic Control and BipedalWalker with ddpg Vs qNAF. https://gym.openai.com/envs/BipedalWalker-v2 .
 
-* __week i+1__ Trust Region Policy Optimization.
- * Lecture: Trust region policy optimization in detail.
- * approximate TRPO vs approximate Q-learning for gym box2d envs (robotics-themed)
+* __week 10__ Trust Region Policy Optimization.
+ * Lecture: Trust region policy optimization in detail. NPO/TRPO.
+ * approximate TRPO vs approximate Q-learning for gym box2d envs (robotics-themed).
 
-* __week i+1__ Advanced exploration methods: intrinsic motivation
- * Lecture: Augmented rewards. Heuristics (UNREAL,density-based models), formal approach: information maximizing exploration. Model-based tricks(also refer mcts).
- * Seminar: Vime vs epsilon-greedy for Go9x9 (bonus 19x19)
+* __week 11__ Advanced exploration methods
+ * Lecture1: Improved exploration methods (quantile-based, etc.) for bandits. Bayesian approach. Case study: Contextual bandits for RTB.
+ * Lecture2: Augmented rewards. Density-based models, UNREAL, variational information maximizing exploration, bayesian optimization with BNNs.
 
-* __week i+1__ Advanced exploration methods: probablistic approach.
- * Lecture: Improved exploration methods (quantile-based, etc.). Bayesian approach. Case study: Contextual bandits for RTB.
- * Seminar: Bandits
-
-
-* __week i+1__ Hierarchical MDP
- * Lecture: MDP Vs real world. Sparse and delayed rewards. When Q-learning fails. Hierarchical MDP. Hierarchy as temporal abstraction. MDP with symbolic reasoning.
- * Seminar: Hierarchical RL for atari games with rare rewards (starting from pre-trained DQN)
-
-* __week i+1__ Case studies II
- * Lecture: Direct policy optimization: finance.  Inverse Reinforcement Learning: personalized medial treatment, robotics.
- * Seminar: Portfolio optimization as POMDP.
+* __week 12__ Advanced RL topics
+ * Lecture 1: Hierarchical MDP. MDP Vs real world. Sparse and delayed rewards. When Q-learning fails. Hierarchical MDP. Hierarchy as temporal abstraction. MDP with symbolic reasoning. 
+ * Lecture 2: Knowledge Transfer in RL & Inverse Reinforcement Learning: basics; personalized medical treatment; robotics.
 
 
 # Course staff
@@ -166,5 +152,6 @@ Course materials and teaching by
 
 # Contributors
 * Using pictures from http://ai.berkeley.edu/home.html
+* Massively refering [CS294](http://rll.berkeley.edu/deeprlcourse/)
 * Tensorflow assignments by [Scitator](https://github.com/Scitator)
-* Other contributions: [omtcyfz](https://github.com/omtcyfz) [dmittov](https://github.com/dmittov) [arogozhnikov](https://github.com/arogozhnikov)
+* Other awesome people: see contributors
