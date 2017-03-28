@@ -31,14 +31,13 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * 10.03.17 - (ysda/hse students) __important__ please consider [Course Projects](https://github.com/yandexdataschool/Practical_RL/wiki/Course-projects) as an alternative way of completing the course.
 * 8.03.17 - YSDA deadlines announced for weeks 3 and 3.5, sry for only doing this now.
 * 01.03.17 - YSDA deadline on week2 homework moved to 08.03.17
+<details><summary>Previous announcements</summary>
+<p><!-- trick from http://stackoverflow.com/questions/32814161/how-to-make-spoiler-text-in-github-wiki-pages -->
 * 28.02.17 - (HSE) homework 4 published
 * 24.02.17 - Dependencies updated ([same url](https://github.com/yandexdataschool/Practical_RL/issues/1)). Please install theano/lasagne/agentnet until week4 or make sure you're familiar enough with your deep learning framework of choice.
 * 23.02.17 - YSDA homework 2 can be found [here](https://github.com/yandexdataschool/Practical_RL/tree/master/week2). If you're from HSE you can opt to submit either old or new whichever you prefer.
 * 17.02.17 - warning! we force-pushed into the repository. Please back-up your github files before you pull!
 * 16.02.17 - Lecture slides are now available through urls in README files for each week like [this](https://github.com/yandexdataschool/Practical_RL/tree/master/week1#materialshttps://github.com/yandexdataschool/Practical_RL/tree/master/week1#materials). You can also find full archive [here](https://yadi.sk/d/loPpY45J3EAYfU).
-
-<details><summary>Previous announcements</summary>
-<p><!-- trick from http://stackoverflow.com/questions/32814161/how-to-make-spoiler-text-in-github-wiki-pages -->
 * 30.03.17 - YSDA deadlines announced for HW 4
 * 16.02.17 - HSE homework 3 added
 * 14.02.17 - HSE deadlines for weeks 1-2 extended!
@@ -118,27 +117,27 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 ## Future lectures:
 
-* __week7__ Partially observable MDPs (under construction now)
+* __week7__ Partially observable MDPs (under construction now, on-campus 3-6.04.2017)
  * Lecture: POMDP intro. Model-based solvers. RNN solvers. RNN tricks: attention, problems with normalization methods, pre-training.
  * Seminar: Deep kung-fu & doom with recurrent A3C vs feedforward A3C
 
-* __week 8__ Case studies 1
+* __week 8__ Case studies 1 (approx 10.04.17)
  * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. Seq2seq tasks: g2p, machine translation, conversation models. Tricks for seq2seq models. KL(p||q) vs KL(q||p) and generative adversarial nets.
  * Seminar: Optimizing Levenshtein distance with seq2seq for g2p
 
-* __week 9__ RL in Large/Continuous action spaces.
+* __week 9__ RL in Large/Continuous action spaces. (approx 17.04.17)
  * Lecture: Continuous action space MDPs. Value-based approach (NAF). Special case algorithms (dpg, svg). Case study:finance. Large discrete action space problem. Action embedding.
- * Seminar: Classic Control and BipedalWalker with ddpg Vs qNAF. https://gym.openai.com/envs/BipedalWalker-v2 .
+ * Seminar: Classic Control and BipedalWalker with ddpg Vs qNAF. https://gym.openai.com/envs/BipedalWalker-v2 . Financial bot as bonus track.
 
-* __week 10__ Trust Region Policy Optimization.
+* __week 10__ Trust Region Policy Optimization. (approx 24.05.17)
  * Lecture: Trust region policy optimization in detail. NPO/TRPO.
- * approximate TRPO vs approximate Q-learning for gym box2d envs (robotics-themed).
+ * Seminar: approximate TRPO vs approximate Q-learning for gym box2d envs (robotics-themed).
 
-* __week 11__ Advanced exploration methods
+* __week 11__ Advanced exploration methods (appox 1.05.17)
  * Lecture1: Improved exploration methods (quantile-based, etc.) for bandits. Bayesian approach. Case study: Contextual bandits for RTB.
  * Lecture2: Augmented rewards. Density-based models, UNREAL, variational information maximizing exploration, bayesian optimization with BNNs.
 
-* __week 12__ Advanced RL topics
+* __week 12__ Advanced RL topics (approx 8.05.17)
  * Lecture 1: Hierarchical MDP. MDP Vs real world. Sparse and delayed rewards. When Q-learning fails. Hierarchical MDP. Hierarchy as temporal abstraction. MDP with symbolic reasoning. 
  * Lecture 2: Knowledge Transfer in RL & Inverse Reinforcement Learning: basics; personalized medical treatment; robotics.
 
