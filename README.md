@@ -109,6 +109,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance theorem(advantage), advantage actor-critic (incl.n-step advantage)
  * Seminar: REINFORCE manually, advantage actor-critic for MountainCar  - [week6/README.md](https://github.com/yandexdataschool/Practical_RL/blob/master/week6/README.md)
     * HSE homework deadline _23.59 2.04.17_
+    * YSDA deadline _23.59 6.04.2017_
     
 * __week6.5__ RNN recap
  * Lecture: recurrent neura networks for sequences. GRU/LSTM. Gradient clipping. Seq2seq
