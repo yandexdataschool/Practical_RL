@@ -24,5 +24,5 @@ Non neural approach:
 
 # Homework
 Homework is platform and framewerk independent, so choose the ones which suit you best, but pay attention on how many you will need to implement youself in case of nonstandart ones.
-Instructions and suggestions could be found in [homework notebook]().
+Instructions and suggestions could be found in [homework notebook](https://github.com/yandexdataschool/Practical_RL/blob/master/week7/pomdp_homework.ipynb).
 
