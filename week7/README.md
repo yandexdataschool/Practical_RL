@@ -21,7 +21,7 @@ _Links on all articles mentioned during the lecture could be found in "Reference
 * SOTA in scalable approximate __offline__ planning:  [SARSOP](http://www.roboticsproceedings.org/rss04/p9.pdf) and [PLEASE](http://www.aaai.org/ocs/index.php/SOCS/SOCS15/paper/viewFile/10686/10627) which is build on top of the former
 * SOTA in scalable approximate __online__ planning: [DESPOT](https://arxiv.org/pdf/1609.03250v1.pdf)
 * Not SOTA but very useful and enlightening __online__ planning approach: [POMCP](https://papers.nips.cc/paper/4031-monte-carlo-planning-in-large-pomdps.pdf)
-* [Realizations of SARSOP, DESPOT and MCVI in C++] (http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/)
+* [Realizations of SARSOP, DESPOT and MCVI in C++](http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/)
 * Recent approaches combining  POMDP planning with learning on top of neural networks: [Predictron](https://openreview.net/pdf?id=BkJsCIcgl), [historgram filter](https://openreview.net/pdf?id=ByvJuTigl) and [QMDP-Net](https://arxiv.org/pdf/1703.06692.pdf)
 
 
