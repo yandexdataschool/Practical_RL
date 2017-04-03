@@ -1,3 +1,5 @@
+[under construction, will get stable by monday 20.00 gmt]
+
 # Materials
 
 _Links on all articles mentioned during the lecture could be found in "References" at the very end of the presentation slides. All other interesing links which contribute to the topic of POMDP are presented below_
