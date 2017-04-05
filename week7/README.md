@@ -10,7 +10,7 @@ _Links on all articles mentioned during the lecture could be found in "Reference
 * _[alternative]_ Yet another mini-lecture touching on POMDP by S.S. Baveja - [video](https://www.youtube.com/watch?v=SE56KgF7aVc)
 
 ## POMDP Learning
-* DRQN lecture by Fritx448 (russian) - [video](https://www.youtube.com/watch?v=bE5DIJvZexc)
+* DRQN lecture by Fritz448 (russian) - [video](https://www.youtube.com/watch?v=bE5DIJvZexc)
 * [Data efficient learning in continous POMDP](https://arxiv.org/abs/1602.02523v1)
 * [Managing wind farms with bayesian POMDP](http://ascelibrary.org/doi/abs/10.1061/(ASCE)CP.1943-5487.0000390)
 * [Bayesian learning and decision-making in dynamic environments](http://www.jmlr.org/papers/volume12/ross11a/ross11a.pdf)
