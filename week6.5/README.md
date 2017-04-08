@@ -9,7 +9,7 @@
 ## More materials
 * Seq2seq lecture - https://www.youtube.com/watch?v=G5RY_SUJih4
 * "Awesome rnn" entry point - https://github.com/kjw0612/awesome-rnn
-
+* OpenAI research on sentiment analysis that sheds some light on what's inside LSTM language model.
 
 # Homework description
 
