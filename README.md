@@ -121,6 +121,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
  * Lecture: POMDP intro. Model-based solvers. RNN solvers. RNN tricks: attention, problems with normalization methods, pre-training.
  * Seminar: Deep kung-fu & doom with recurrent A3C and DRQN
     * HSE homework deadline _23.59 16.04.17_ (kung fu assignment is worth 6pts isntead of 3)
+    * HSE homework deadline _23.59 19.04.17_
     
 
 ## Future lectures:
