@@ -18,13 +18,15 @@
 
 ## Homework
 
-Homework assignment is described in the notebook.
+Homework assignment is described in the [main notebook](https://github.com/yandexdataschool/Practical_RL/blob/week8/week8/8.1_translation_scst.ipynb).
 
-Other frameworks: as usual, your task remains the same as in the main track:
-- Implement or borrow seq2seq model for grapheme to phoneme task
+It's kinda lengthy, but fear not, that's mostly due to formatting.
+
+__Other frameworks__: as usual, your task remains the same as in the main track:
+- Implement or borrow seq2seq model for the same translation task
   * Neat tenworflow [repo](https://github.com/cmusphinx/g2p-seq2seq)
   * __Important__ - this repo uses simplified phoneme dict - make sure you change preprocessing phase to meaningfully compare results.
 - Implement self-critical sequence training ( = basic policy gradient with a special baseline, see notebook)
-- Beat the benchmarks (notebook: last section)
+- Beat the baseline (main notebook: step6)
   
-Even if you decide to use custom frameworks, it is highly recommended that you reuse evaluation metrics (e.g. min Levenshtein) from the default assignment notebook
+Even if you decide to use custom frameworks, it is highly recommended that you reuse evaluation code (e.g. min Levenshtein) from the main notebook to avoid confusion.
