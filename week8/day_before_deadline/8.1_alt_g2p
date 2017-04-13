@@ -1,0 +1,1018 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Week 8 alternative: sequence learning\n",
+    "\n",
+    "__Warning:__ This is a __\"one day before deadline\"__ version of the homework. It's total worth is 8pts (base) instead of 10. Only resort to it if it's you're desperate.\n",
+    "\n",
+    "This time we'll solve a problem of transribing english words, also known as g2p (grapheme2phoneme)\n",
+    "\n",
+    " * word (sequence of letters) -> transcipt (sequence of phonemes)\n",
+    "\n",
+    " \n",
+    "Some letters correspond to several phonemes and others - to none, so we use encoder-decoder architecture to figure that out.\n",
+    "\n",
+    "This kind of architectures is about converting anything to anything, including\n",
+    " * Machine translation and spoken dialogue systems (same as g2p)\n",
+    " * [Image captioning](http://mscoco.org/dataset/#captions-challenge2015) and [image2latex](https://openai.com/requests-for-research/#im2latex) (convolutional encoder, recurrent decoder)\n",
+    " * Generating [images by captions](https://arxiv.org/abs/1511.02793) (recurrent encoder, convolutional decoder)\n",
+    " \n",
+    "\n",
+    "We chose grapheme2phoneme for this task as it is faster to train even on CPU.\n",
+    "\n",
+    "Since you have already done step1-2 in RNN assignment, we trust you to __read carefully__ through already implemented functions instead of reimplementing them for the third time.\n",
+    "\n",
+    "__Contributors:__ This notebook is brought to you by\n",
+    "* Yandex [MT team](https://tech.yandex.com/translate/)\n",
+    "* Dmitry Emelyanenko aka [TixFeniks](https://github.com/tixfeniks)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Step 1: preprocessing\n",
+    "\n",
+    "We shall store dataset as a dictionary\n",
+    "`{ word1:[transcript1,transcript2,...], word2:[...],...}`.\n",
+    "\n",
+    "This is mostly due to the fact that many words have several possible transcriptions."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "from collections import defaultdict\n",
+    "word_to_transcripts = defaultdict(list) #{word:[transcript1,transcript2,...]}\n",
+    "\n",
+    "with open(\"cmu.utf\") as fin:\n",
+    "    for line in fin:\n",
+    "        line = line.split()\n",
+    "        word= line[0].upper().split('(')[0]+';'\n",
+    "        transcript = line[1:]+[\"END\"]\n",
+    "        \n",
+    "        word_to_transcripts[word].append(transcript)\n",
+    "    \n",
+    "print (\"size = \",len(word_to_transcripts))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "#get all unique letters (a.k.a. source dictionary)\n",
+    "\n",
+    "all_words = word_to_transcripts.keys()\n",
+    "\n",
+    "letters = list(set(''.join(all_words)))\n",
+    "letter_to_ix = {l:i for i,l in enumerate(letters)}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "#get all unique phonemes (a.k.a. target dictionary)\n",
+    "\n",
+    "all_transcripts = [ts for all_ts in word_to_transcripts.values() for ts in all_ts]\n",
+    "\n",
+    "phonemes = list(set([ph for ts in all_transcripts for ph in ts]))+[\"START\"]\n",
+    "phoneme_to_ix = {ph:i for i,ph in enumerate(phonemes)}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "#Special tokens\n",
+    "PAD_ix=-1\n",
+    "EOS_ix_phonemes=phonemes.index(\"END\")\n",
+    "BOS_ix_phonemes = phonemes.index(\"START\")\n",
+    "EOS_ix_letters=letters.index(\";\")\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Draw word/transcript length distributions to estimate the scope of the task."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "%matplotlib inline\n",
+    "plt.figure(figsize=[8,4])\n",
+    "plt.subplot(1,2,1)\n",
+    "plt.title(\"words\")\n",
+    "plt.hist(list(map(len,all_words)),bins=25);\n",
+    "\n",
+    "plt.subplot(1,2,2)\n",
+    "plt.title('transcipts')\n",
+    "plt.hist(list(map(len,all_transcripts)),bins=25);\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Step 2: auxiliary functions\n",
+    "\n",
+    "we need some helper functions that\n",
+    "* convert data from strings to integer matrices\n",
+    "* sample random minibatches"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "def as_matrix(sequences,token_to_i, max_len=None,PAX_ix=PAD_ix):\n",
+    "    \"\"\"\n",
+    "    convert variable length token sequences into  fixed size matrix\n",
+    "    example usage: \n",
+    "    >>>print( as_matrix(words[:3],letter_to_ix))\n",
+    "    [[15 22 21 28 27 13 -1 -1 -1 -1 -1]\n",
+    "     [30 21 15 15 21 14 28 27 13 -1 -1]\n",
+    "     [25 37 31 34 21 20 37 21 28 19 13]]\n",
+    "    \"\"\"\n",
+    "    max_len = max_len or max(map(len,sequences))\n",
+    "    \n",
+    "    matrix = np.zeros((len(sequences),max_len),dtype='int8') +PAD_ix\n",
+    "    for i,seq in enumerate(sequences):\n",
+    "        row_ix = list(map(token_to_i.get,seq))[:max_len]\n",
+    "        matrix[i,:len(row_ix)] = row_ix\n",
+    "    \n",
+    "    return matrix"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "import random\n",
+    "def sample_batch(words,word_to_transcripts, batch_size):\n",
+    "    \"\"\"\n",
+    "    sample random batch of words and random correct transcript for each word\n",
+    "    example usage:\n",
+    "    batch_x,batch_y = sample_batch(train_words, word_to_transcripts,10)\n",
+    "    \"\"\"\n",
+    "    \n",
+    "    #choose words\n",
+    "    batch_words = np.random.choice(words,size=batch_size)\n",
+    "    \n",
+    "    #choose transcripts\n",
+    "    batch_transcript_candidates = map(word_to_transcripts.get,batch_words)\n",
+    "    batch_transcripts = map(random.choice,batch_transcript_candidates)\n",
+    "    \n",
+    "    return as_matrix(batch_words,letter_to_ix), as_matrix(batch_transcripts,phoneme_to_ix)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### split the dataset\n",
+    "\n",
+    "We hold out 20% of all words to be used for validation.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "from sklearn.cross_validation import train_test_split\n",
+    "\n",
+    "train_words,test_words = train_test_split(all_words,test_size=0.1,random_state=42)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Step 3: Build encoder-decoder (1 point)\n",
+    "\n",
+    "__assignment starts here__\n",
+    "\n",
+    "Our architecture consists of two main blocks:\n",
+    "* Encoder reads words character by character and outputs code vector (usually a function of last RNN state)\n",
+    "* Decoder takes that code vector and produces transcripts phoneme by phoneme.\n",
+    "\n",
+    "In this section, we'll implement __encoder__ the same way you did for week6.5."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "scrolled": true
+   },
+   "outputs": [],
+   "source": [
+    "#you may want to switch to gpu:\n",
+    "#%env THEANO_FLAGS=device=gpu,floatX=float32\n",
+    "\n",
+    "import theano\n",
+    "import theano.tensor as T\n",
+    "\n",
+    "import lasagne\n",
+    "from lasagne.layers import *"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "One more note: in this assignment, we'll be using classes as namespaces:\n",
+    "\n",
+    "```\n",
+    "class my_pocket:\n",
+    "    coin = \"$\"\n",
+    "    coins = coin*3\n",
+    "    mobile = \"nokia 3310\"\n",
+    "    \n",
+    ">>>print my_pocket.coins\n",
+    "$$$\n",
+    ">>>print my_pocket.mobile\n",
+    "nokia 3310\n",
+    "```\n",
+    "\n",
+    "\n",
+    "Your first assignment is to implement encoder network using lasagne layers."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "class encoder:\n",
+    "    \"\"\"encoder rnn\"\"\"\n",
+    "    \n",
+    "    #input tokens and mask\n",
+    "    input_sequence = T.matrix('token sequence','int32')\n",
+    "    input_mask = T.neq(input_sequence,PAD_ix)\n",
+    "    \n",
+    "    inp = InputLayer(shape=(None, None),input_var=input_sequence,name='encoder input')\n",
+    "    \n",
+    "    mask = <a layer similar to inp that takes input_mask>\n",
+    "    \n",
+    "    #embedding\n",
+    "    emb = EmbeddingLayer(<which layer?>,\n",
+    "                         <how many letters?>,\n",
+    "                         output_size=40)\n",
+    "    \n",
+    "    #encoder rnn\n",
+    "    rnn = GRULayer(incoming=<which layer?>,\n",
+    "                   num_units=512,\n",
+    "                   mask_input=<which layer?>)\n",
+    "    \n",
+    "    #slice last time-step of encoder rnn\n",
+    "    rnn_last = SliceLayer(rnn,-1,axis=1,name='last rnn time-step')\n",
+    "    \n",
+    "    #compute decoder initial state\n",
+    "    code = DenseLayer(rnn_last,512,nonlinearity=T.tanh)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Decoder\n",
+    "\n",
+    "In this section, we will define __one step__ of decoder (just like we defined one step of agent last week).\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "from agentnet.memory import RNNCell,GRUCell,LSTMCell\n",
+    "from agentnet.resolver import ProbabilisticResolver"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "class decoder:\n",
+    "    \"\"\"single step of decoder rnn\"\"\"\n",
+    "    \n",
+    "    inp = InputLayer((None,),name=\"prev phoneme\")\n",
+    "    \n",
+    "    emb = EmbeddingLayer(inp, len(phonemes), 50)\n",
+    "    \n",
+    "    #decoder memory\n",
+    "    prev_gru = InputLayer((None,512))\n",
+    "    gru = GRUCell(<...>,<...>) #use shift-tab (docs) to figure out what goes here\n",
+    "    \n",
+    "    logits = DenseLayer(gru,len(phonemes),nonlinearity=None)\n",
+    "    \n",
+    "    #probabilities\n",
+    "    probs = NonlinearityLayer(logits,T.nnet.softmax)\n",
+    "    \n",
+    "    #output phonemes\n",
+    "    out = ProbabilisticResolver(probs,assume_normalized=True)\n",
+    "    \n",
+    "    #log-probabilities\n",
+    "    logprobs = NonlinearityLayer(logits,T.nnet.logsoftmax)\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Wire it all together (1 point)\n",
+    "\n",
+    "Here we define functions for model _inference_ (both greedy and sampled)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "def get_mask_by_eos(is_eos):\n",
+    "    \"\"\"takes indicator of \"it ends now\", returns mask.\n",
+    "    Ignores everything after first end.\"\"\"\n",
+    "    assert is_eos.ndim==2\n",
+    "    is_right_after_eos = T.concatenate([T.zeros_like(is_eos[:,:1]),is_eos[:,:-1]],-1)\n",
+    "    is_after_eos = T.eq(T.cumsum(is_right_after_eos,axis=-1),0).astype('uint8')\n",
+    "    return is_after_eos"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "from agentnet import Recurrence\n",
+    "from collections import OrderedDict as od\n",
+    "class model:\n",
+    "    #maximum output length for inference\n",
+    "    n_steps = theano.shared(max(map(len,all_transcripts)))\n",
+    "    \n",
+    "    #initial inputs: indices of \"START\" special phoneme.\n",
+    "    l_start = InputLayer((None,),T.zeros_like(encoder.input_sequence[:,0])+BOS_ix_phonemes)\n",
+    "\n",
+    "    #Here we define recurrence: it's a custom recurrent layer, acting exactly like Agent, \n",
+    "    #except it's a lasagne layer.\n",
+    "    \n",
+    "    rec = Recurrence(\n",
+    "        #recurrent states\n",
+    "        state_variables=od({decoder.gru:<what decoder.gru becomes on next tick?>,\n",
+    "                            decoder.out:<where decode.out goes on next tick?}),\n",
+    "        \n",
+    "        #initial values for recurrent states\n",
+    "        state_init={decoder.out:l_start,\n",
+    "                    decoder.gru:<what is initial value for decoder.gru?>,},\n",
+    "        \n",
+    "        tracked_outputs=(decoder.out,decoder.probs,decoder.logprobs),\n",
+    "        \n",
+    "        unroll_scan=False,\n",
+    "        n_steps=n_steps\n",
+    "    )\n",
+    "    \n",
+    "    weights = get_all_params(rec,trainable=True)\n",
+    "    \n",
+    "    \n",
+    "    #sample mode\n",
+    "    predicted_transcripts,probs_seq,logprobs_seq = get_output(rec[decoder.out,decoder.probs,decoder.logprobs])\n",
+    "    auto_updates = rec.get_automatic_updates()\n",
+    "\n",
+    "    #output mask\n",
+    "    mask = get_mask_by_eos(T.eq(predicted_transcripts,EOS_ix_phonemes))\n",
+    "    \n",
+    "    generate_sample = theano.function([encoder.input_sequence],predicted_transcripts,\n",
+    "                                      updates=auto_updates)\n",
+    "    \n",
+    "    #greedy mode (picking max-probability actions on each step)\n",
+    "    greedy_transcripts = get_output(rec[decoder.out],recurrence_flags={\"greedy\":True})\n",
+    "    greedy_auto_updates = rec.get_automatic_updates()\n",
+    "    \n",
+    "    greedy_mask = <compute mask for greedy transcripts>,\n",
+    "    \n",
+    "    generate_greedy = theano.function([<what goes in?>],<what goes out?>,\n",
+    "                                       updates=greedy_auto_updates)\n",
+    "    \n",
+    "\n",
+    "    @staticmethod\n",
+    "    def transcribe(word,sample=False):\n",
+    "        assert word.endswith(\";\")\n",
+    "        \n",
+    "        #convert to matrix\n",
+    "        word_ix = as_matrix([word.upper()],letter_to_ix)\n",
+    "        \n",
+    "        #generate output\n",
+    "        if sample:\n",
+    "            trans_ix = model.generate_sample(word_ix)[0]\n",
+    "        else:\n",
+    "            trans_ix = model.generate_greedy(word_ix)[0]\n",
+    "        \n",
+    "        #convert from int32 to string\n",
+    "        transcript = list(map(phonemes.__getitem__,trans_ix))\n",
+    "        \n",
+    "        #crop padding\n",
+    "        if \"END\" in transcript:\n",
+    "            transcript = transcript[:transcript.index(\"END\")+1]\n",
+    "            \n",
+    "        return ' '.join(transcript)\n",
+    "        \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "#test untrained model\n",
+    "#should be random\n",
+    "print(model.transcribe(\"LASAGNE;\",sample=True)) #sample mode\n",
+    "print(model.transcribe(\"LASAGNE;\"))             #inference mode\n",
+    "\n",
+    "\n",
+    "#praise Cthulhu!"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Scoring function\n",
+    "\n",
+    "LogLikelihood is a poor estimator of model performance.\n",
+    "* If we predict zero probability once, it shouldn't ruin entire model.\n",
+    "* It is enough to learn just one transcript if there are several correct ones.\n",
+    "* What matters is which output will we produce if we __take most likely phoneme on each step.__\n",
+    "\n",
+    "Therefore, we will use minimal Levenshtein distance.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "import editdistance #!pip install editdistance\n",
+    "\n",
+    "def get_distance(word,transcript):\n",
+    "    \"\"\"A function that takes word and predicted transcripts\"\"\"\n",
+    "    references = word_to_transcripts[word]\n",
+    "    assert len(references)!=0,\"wrong/unknown word\"\n",
+    "    return min(editdistance.eval(transcript,ref) for ref in references)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "def score(bsize=100):\n",
+    "    \"\"\"a function that computes levenshtein distance for bsize random samples\"\"\"\n",
+    "    \n",
+    "    batch_words = np.random.choice(test_words,size=bsize)#<pick bsize random words from test_words>\n",
+    "    \n",
+    "    <for each word, predict using sample=False>\n",
+    "    distances = <then compute get_distance for each word in batch_words and corresponding predction>\n",
+    "    \n",
+    "    return np.array(distances,dtype='float32')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "#should be around 20-30, then quickly get below 5 after first training epochs\n",
+    "[score(100).mean() for _ in range(10)]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Step 4: Supervised pre-training\n",
+    "\n",
+    "Here we pre-train our neural network via maximum likelihood fit"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "from agentnet.learning.generic import get_values_for_actions\n",
+    "\n",
+    "class llh_trainer:\n",
+    "\n",
+    "    #variable for correct answers\n",
+    "    reference_answers = T.imatrix(\"reference transcripts\")\n",
+    "    \n",
+    "    #shift 1 step to the past to get \"previous answers\"\n",
+    "    prev_answers = T.concatenate([T.zeros_like(reference_answers[:,:1])+BOS_ix_phonemes,\n",
+    "                                  reference_answers[:,:-1]],axis=1)\n",
+    "    \n",
+    "    #mask on prev answers\n",
+    "    input_mask = get_mask_by_eos(T.eq(prev_answers,EOS_ix_phonemes))\n",
+    "    \n",
+    "    #create input layers\n",
+    "    l_sequence = InputLayer((None,None),prev_answers)\n",
+    "    l_mask = InputLayer((None,None),input_mask)\n",
+    "    \n",
+    "    #teacher-forced trainer\n",
+    "    rec = Recurrence(state_variables=od({decoder.gru:decoder.prev_gru}),\n",
+    "                     input_sequences={decoder.inp:l_sequence},\n",
+    "                     state_init={decoder.gru:encoder.code},\n",
+    "                     tracked_outputs=(decoder.probs,decoder.logprobs),\n",
+    "                     unroll_scan=False,\n",
+    "                     mask_input=l_mask)\n",
+    "    \n",
+    "    \n",
+    "    #get log-probabilities\n",
+    "    logprobs_seq = get_output(rec[decoder.logprobs])\n",
+    "    auto_updates = rec.get_automatic_updates()\n",
+    "    \n",
+    "    #compute mean crossentropy\n",
+    "    crossentropy = -get_values_for_actions(logprobs_seq,reference_answers)\n",
+    "    \n",
+    "    loss = T.sum(crossentropy*input_mask)/T.sum(input_mask)\n",
+    "    \n",
+    "    #get all params\n",
+    "    weights = get_all_params(rec,trainable=True)\n",
+    "\n",
+    "    #weight updates                 \n",
+    "    updates = <compute weight updates>\n",
+    "    \n",
+    "    train_step = theano.function([encoder.input_sequence,reference_answers],loss,\n",
+    "                                 updates=auto_updates+updates)\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "from IPython.display import clear_output\n",
+    "from tqdm import tqdm,trange #or use tqdm_notebook,tnrange\n",
+    "\n",
+    "loss_history=[]\n",
+    "editdist_history = []\n",
+    "\n",
+    "for i in trange(25000):\n",
+    "    loss_history.append(\n",
+    "            llh_trainer.train_step(*sample_batch(train_words,word_to_transcripts,32)))\n",
+    "    \n",
+    "    if (i+1)%100==0:\n",
+    "        clear_output(True)\n",
+    "        current_scores = score()\n",
+    "        editdist_history.append(current_scores.mean())\n",
+    "        plt.figure(figsize=(8,4))\n",
+    "        plt.subplot(121)\n",
+    "        plt.hist(current_scores, bins = 20)\n",
+    "        plt.subplot(122)\n",
+    "        plt.plot(editdist_history)\n",
+    "        plt.grid()\n",
+    "        plt.show()\n",
+    "        print( np.mean(loss_history[-10:]),np.mean(editdist_history[-10:]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "model.transcribe(\"EXAMPLE;\").split()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Step 5: Policy gradient (3 pts)\n",
+    "\n",
+    "First we need to define loss function as a custom theano operation.\n",
+    "\n",
+    "The simple way to do so is\n",
+    "```\n",
+    "@theano.compile.as_op(input_types,output_type(s),infer_shape)\n",
+    "def my_super_function(inputs):\n",
+    "    return outputs\n",
+    "```\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "__Your task__ is to implement `_compute_levenshtein` function that takes matrices of words and transcripts, along with input masks, then converts those to actual words and phonemes and computes min-levenshtein via __get_distance__ function above.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "@theano.compile.as_op([T.imatrix]*4,[T.fvector],lambda _,shapes: [shapes[0][:1]])\n",
+    "def _compute_levenshtein(words_ix,words_mask,transcripts_ix,transcripts_mask):\n",
+    "    \"\"\"\n",
+    "    A custom theano operation that computes levenshtein loss for predicted transcripts.\n",
+    "    \n",
+    "    Params:\n",
+    "    - words_ix - a matrix of letter indices, shape=[batch_size,word_length]\n",
+    "    - words_mask - a matrix of zeros/ones, \n",
+    "       1 means \"word is still not finished\"\n",
+    "       0 means \"word has already finished and this is padding\"\n",
+    "    \n",
+    "    - transcripts_mask - a matrix of phoneme indices, shape=[batch_size,transcript_length]\n",
+    "    - transctips_mask - a matrix of zeros/ones, similar to words_mask but for transcripts_ix\n",
+    "    \n",
+    "    \n",
+    "    Please implement the function and make sure it passes tests from the next cell.\n",
+    "    \n",
+    "    \"\"\"\n",
+    "\n",
+    "    #convert words to strings\n",
+    "    <your code here>\n",
+    "    words = <restore words (a list of strings) from words_ix and words_mask>\n",
+    "    \n",
+    "    assert type(words) is list and type(words[0]) is str and len(words)==len(words_ix)\n",
+    "    \n",
+    "    #convert transcripts to lists\n",
+    "    <your code here>\n",
+    "    transcripts = <restore transcripts (a list of lists of phonemes) from transcripts_ix and transcripts_mask\n",
+    "\n",
+    "    assert type(words) is list and type(words[0]) is str and len(words)==len(words_ix)\n",
+    "\n",
+    "    #computes levenstein distances. can be arbitrary python code.\n",
+    "    <your code here>\n",
+    "    distances = <apply get_distance to each pair of [words,transcripts]>\n",
+    "    \n",
+    "    assert type(distances) in (list,tuple,np.ndarray) and len(distances) == len(words_ix)\n",
+    "    \n",
+    "    distances = np.array(list(distances),dtype='float32')\n",
+    "    return distances\n",
+    "\n",
+    "#forbid gradient\n",
+    "from theano.gradient import disconnected_grad\n",
+    "def compute_levenshtein(*args):\n",
+    "    return disconnected_grad(_compute_levenshtein(*[arg.astype('int32') for arg in args]))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Below is a simple __test suite__ to make sure your implementation is correct"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "#sample random batch of (words, correct transcripts, wrong transcripts)\n",
+    "batch_words = np.random.choice(train_words, size=100 )\n",
+    "batch_transcripts = list(map(random.choice,map(word_to_transcripts.get,batch_words )))\n",
+    "batch_transcripts_wrong = np.random.choice(all_transcripts,size=100)\n",
+    "\n",
+    "batch_words_ix = T.constant(as_matrix(batch_words,letter_to_ix))\n",
+    "batch_transcripts_ix = T.constant(as_matrix(batch_transcripts,phoneme_to_ix))\n",
+    "batch_transcripts_wrong_ix = T.constant(as_matrix(batch_transcripts_wrong,phoneme_to_ix))\n",
+    "\n",
+    "batch_words_mask = get_mask_by_eos(T.eq(batch_words_ix,EOS_ix_letters))\n",
+    "batch_transcripts_mask = get_mask_by_eos(T.eq(batch_transcripts_ix,EOS_ix_phonemes))\n",
+    "batch_transcripts_wrong_mask = get_mask_by_eos(T.eq(batch_transcripts_wrong_ix,EOS_ix_phonemes))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "#assert compute_levenshtein works correctly\n",
+    "correct_answers_score = compute_levenshtein(batch_words_ix,batch_words_mask,\n",
+    "                                            batch_transcripts_ix,batch_transcripts_mask).eval()\n",
+    "\n",
+    "assert np.all(correct_answers_score==0),\"a correct transcript got nonzero levenshtein score!\"\n",
+    "\n",
+    "wrong_answers_score = compute_levenshtein(batch_words_ix,batch_words_mask,\n",
+    "                                            batch_transcripts_wrong_ix,batch_transcripts_wrong_mask).eval()\n",
+    "\n",
+    "true_wrong_answers_score = np.array(list(map(get_distance,batch_words,batch_transcripts_wrong)))\n",
+    "\n",
+    "assert np.all(wrong_answers_score==true_wrong_answers_score),\"for some word symbolic levenshtein is different from actual levenshtein distance\"\n",
+    "\n",
+    "print(\"Everything seems right!\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Once you got it working...\n",
+    "\n",
+    "\n",
+    "* You may now want to __remove/comment asserts__ from function code for a slight speed-up.\n",
+    "\n",
+    "* There's a more detailed tutorial on custom theano ops here: [docs](http://deeplearning.net/software/theano/extending/extending_theano.html), [example](https://gist.github.com/justheuristic/9f4ffef6162a8089c3260fc3bbacbf46)."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Self-critical policy gradient\n",
+    "\n",
+    "In this section you'll implement algorithm called self-critical sequence training (here's an [article](https://arxiv.org/abs/1612.00563)).\n",
+    "\n",
+    "The algorithm is a vanilla policy gradient with a special baseline. \n",
+    "\n",
+    "$$ \\nabla J = E_{x \\sim p(s)} E_{y \\sim \\pi(y|x)} \\nabla log \\pi(y|x) \\cdot (R(x,y) - b(x)) $$\n",
+    "\n",
+    "Here reward R(x,y) is a __negative levenshtein distance__ (since we minimize it). The baseline __b(x)__ represents how well model fares on word __x__.\n",
+    "\n",
+    "In practice, this means that we compute baseline as a score of greedy transcription, $b(x) = R(x,y_{greedy}(x)) $.\n",
+    "\n",
+    "Luckily, we already obtained the required outputs: `model.greedy_transcripts, model.greedy_mask` and we only need to compute levenshtein using `compute_levenshtein` function.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "from agentnet.learning.generic import get_values_for_actions\n",
+    "\n",
+    "class trainer:    \n",
+    "    \n",
+    "    rewards = -compute_levenshtein(encoder.input_sequence,encoder.input_mask,\n",
+    "                                   model.predicted_transcripts,model.mask,)\n",
+    "    \n",
+    "    baseline = <compute __negative__ levenshtein for greedy mode (aka inference mode)>\n",
+    "    \n",
+    "    #compute advantage using rewards and baseline\n",
+    "    advantage = <your code - compute advantage>\n",
+    "    \n",
+    "    \n",
+    "    #compute log_pi(a_t|s_t), shape = [batch,seq_length]\n",
+    "    phoneme_logprobs = get_values_for_actions(model.logprobs_seq,model.predicted_transcripts)\n",
+    "    \n",
+    "    #policy gradient\n",
+    "    J = phoneme_logprobs*advantage[:,None]\n",
+    "    \n",
+    "    #regularize with negative entropy\n",
+    "    entropy = <compute matrix of shape [batch,seq_length] of entropy, H=-sum(p*log_p), don't forget the sign!>\n",
+    "\n",
+    "    \n",
+    "    \n",
+    "    \n",
+    "    #loss function and updates\n",
+    "    loss = -T.sum(J*model.mask) / model.mask.sum()\n",
+    "    loss -= 0.01*(entropy*model.mask).sum() / model.mask.sum()\n",
+    "    \n",
+    "    grads = T.grad(loss,model.weights)\n",
+    "    grads = lasagne.updates.total_norm_constraint(grads,10)\n",
+    "\n",
+    "    updates = lasagne.updates.adam(grads, model.weights,learning_rate=1e-4)\n",
+    "\n",
+    "    train_step = theano.function([encoder.input_sequence],loss,\n",
+    "                                 updates = model.auto_updates+model.greedy_auto_updates+updates)\n",
+    "    \n",
+    "    \n",
+    "    \n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Policy gradient training\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "for i in trange(100000):\n",
+    "    loss_history.append(\n",
+    "        trainer.train_step(sample_batch(train_words,word_to_transcripts,32)[0])\n",
+    "        )\n",
+    "    \n",
+    "    if (i+1)%100==0:\n",
+    "        clear_output(True)\n",
+    "        current_scores = score()\n",
+    "        editdist_history.append(current_scores.mean())\n",
+    "        plt.figure(figsize=(8,4))\n",
+    "        plt.subplot(121)\n",
+    "        plt.hist(current_scores, bins = 20)\n",
+    "        plt.subplot(122)\n",
+    "        plt.plot(editdist_history)\n",
+    "        plt.grid()\n",
+    "        plt.show()\n",
+    "        print( np.mean(loss_history[-10:]),np.mean(editdist_history[-10:]))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": [
+    "model.transcribe(\"EXAMPLE;\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Results"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true,
+    "scrolled": true
+   },
+   "outputs": [],
+   "source": [
+    "predicted_transcripts = list(map(str.split,map(model.transcribe,tqdm(test_words))))\n",
+    "distances = map(get_score,test_words,predicted_transcripts)\n",
+    "\n",
+    "print \"Mean Levenshtein distance:\",np.mean(distances)\n",
+    "print \"Word Error Rate\", np.mean(np.array(distances)!=0)\n",
+    "plt.hist(distances,range=[0,10]);"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Step 6: Make it actually work (3+ pts)\n",
+    "\n",
+    "In this section we want you to get\n",
+    "\n",
+    "* __Levenshtein <= 0.5__ (+1 if <= 0.4, +2/0.35)\n",
+    "* __WER <= 0.35__ (+1 if <= 0.3, +2/0.25)\n",
+    "\n",
+    "We recommend the following architecture\n",
+    "\n",
+    "```\n",
+    "encoder---decoder\n",
+    "\n",
+    "           P(y|h)\n",
+    "             ^\n",
+    " LSTM  ->   LSTM\n",
+    "  ^          ^\n",
+    " GRU   ->   GRU\n",
+    "  ^          ^\n",
+    "input       y_prev\n",
+    "```\n",
+    "with __both__ RNNs having more units then the default gru.\n",
+    "\n",
+    "You will probably need to adjust pre-training time for such a network.\n",
+    "\n",
+    "It's okay to modify the code above without copy-pasting it."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 2",
+   "language": "python",
+   "name": "python2"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 2
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython2",
+   "version": "2.7.13"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 1
+}
