@@ -117,19 +117,21 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
     * HSE homework deadline __23.59 5.04.17__
     * YSDA deadline _23.59 9.04.2017_
 
-* __week7__ Partially observable MDPs (under construction now, on-campus 3-6.04.2017)
+* __week7__ Partially observable MDPs
   * Lecture: POMDP intro. Model-based solvers. RNN solvers. RNN tricks: attention, problems with normalization methods, pre-training.
   * Seminar: Deep kung-fu & doom with recurrent A3C and DRQN
-     * HSE homework deadline _23.59 16.04.17_ (kung fu assignment is worth 6pts isntead of 3)
-     * HSE homework deadline _23.59 19.04.17_
+     * HSE homework deadline _23.59 16.04.17_ (first submission; kung fu assignment is worth 6pts isntead of 3)
+     * YSDA homework deadline _23.59 19.04.17_ (first submission)
     
+* __week 8__ Case studies 1 (approx 10.04.17)
+  * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. Seq2seq tasks: g2p, machine translation, conversation models, image captioning.
+  * Seminar: Simple neural machine translation with self-critical policy gradient
+     * HSE deadline _23.59 30.04.17_ (first submission)
+     * YSDA deadline _23.59 30.05.17_ (first submission)
 
 ## Future lectures:
 
 
-* __week 8__ Case studies 1 (approx 10.04.17)
-  * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. Seq2seq tasks: g2p, machine translation, conversation models. Tricks for seq2seq models. KL(p||q) vs KL(q||p) and generative adversarial nets.
-  * Seminar: Optimizing Levenshtein distance with seq2seq for g2p
 
 * __week 9__ RL in Large/Continuous action spaces. (approx 17.04.17)
   * Lecture: Continuous action space MDPs. Value-based approach (NAF). Special case algorithms (dpg, svg). Case study:finance. Large discrete action space problem. Action embedding.
