@@ -15,6 +15,7 @@
 * Building deep q-network from ~scratch (blog) - https://jaromiru.com/2016/09/27/lets-make-a-dqn-theory/
 * Another guide guide to DQN from ~scratch (blog) - https://rubenfiszel.github.io/posts/rl4j/2016-08-24-Reinforcement-Learning-and-DQN.html
 * Article on asynchronuous methods in deep RL - https://arxiv.org/abs/1602.01783
+* Successor representations for reinforcement learning - [article](https://arxiv.org/abs/1606.02396), [video](https://www.youtube.com/watch?v=kNqXCn7K-BM&feature=youtu.be)
 * [recap] Slides on basic DQN, including target networks - https://www.cs.toronto.edu/~vmnih/docs/dqn.pdf
 
 
