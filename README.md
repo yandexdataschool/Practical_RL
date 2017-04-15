@@ -13,7 +13,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * Lecture slides are [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
-* Magical button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/yandexdataschool/practical_rl) (may be down time to time. If it won't load for 2-3 minutes, it's down)
+* Magical button that creates VM: [![Binder](http://mybinder.org/badge.svg)](http://mybinder.org:/repo/justheuristic/practical_rl)  (press me. may be down time to time. If it won't load for 2-3 minutes, it's down)
 * Telegram __[chat room](https://telegram.me/practicalrl)__ __(russian)__
 * Gitter __[chat room](https://gitter.im/yandexdataschool/Practical_RL)__ __(english)__
 * __How to submit homeworks[HSE and YSDA only]:__ [anytask instructions and grading rules](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
