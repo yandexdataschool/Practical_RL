@@ -20,6 +20,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * E-mail for everything else : __practicalrl17@gmail.com__ (please don't submit homeworks via e-mail)
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
+* A large list of RL materials - [awesome rl](https://github.com/aikorea/awesome-rl)
 
 
 # Announcements
