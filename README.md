@@ -24,6 +24,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
+* 22.04.16 - YSDA deadlines for week8 set to 30th of __april__ (previously 30 may, which was a typo).
 * 25.03.16 - __HSE important__ next monday lecture is postponed by 1 week due to HSE mid-term exams. Deadlines have been postponed accordingly.
 * 25.03.16 - __week5__ you can submit any atari game you want.
 * 16.03.16 - __week4 homework__ max score threshold for LunarLander reduced to -100
@@ -124,29 +125,30 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
      * HSE homework deadline _23.59 16.04.17_ (first submission; kung fu assignment is worth 6pts isntead of 3)
      * YSDA homework deadline _23.59 19.04.17_ (first submission)
     
-* __week 8__ Case studies 1 (approx 10.04.17)
+* __week 8__ Case studies 1
   * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. Seq2seq tasks: g2p, machine translation, conversation models, image captioning.
   * Seminar: Simple neural machine translation with self-critical policy gradient
      * HSE deadline _23.59 30.04.17_ (first submission)
-     * YSDA deadline _23.59 30.05.17_ (first submission)
+     * YSDA deadline _23.59 30.04.17_ (first submission)
+
+* __week 9__ Advanced exploration methods (in progress, finishes approx 27.04.17)
+  * Lecture1: Improved exploration methods for bandits. UCB, Thompson Sampling, bayesian approach.
+  * Lecture2: Augmented rewards. Density-based models, UNREAL, variational information maximizing exploration, bayesian optimization with BNNs.
+  * Seminar: bayesian exploration for contextual bandits
+
 
 ## Future lectures:
 
-
-
-* __week 9__ RL in Large/Continuous action spaces. (approx 17.04.17)
+* __week 9__ RL in Large/Continuous action spaces.
   * Lecture: Continuous action space MDPs. Value-based approach (NAF). Special case algorithms (dpg, svg). Case study:finance. Large discrete action space problem. Action embedding.
   * Seminar: Classic Control and BipedalWalker with ddpg Vs qNAF. https://gym.openai.com/envs/BipedalWalker-v2 . Financial bot as bonus track.
 
-* __week 10__ Trust Region Policy Optimization. (approx 24.05.17)
+* __week 10__ Trust Region Policy Optimization.
   * Lecture: Trust region policy optimization in detail. NPO/TRPO.
   * Seminar: approximate TRPO vs approximate Q-learning for gym box2d envs (robotics-themed).
 
-* __week 11__ Advanced exploration methods (appox 1.05.17)
-  * Lecture1: Improved exploration methods (quantile-based, etc.) for bandits. Bayesian approach. Case study: Contextual bandits for RTB.
-  * Lecture2: Augmented rewards. Density-based models, UNREAL, variational information maximizing exploration, bayesian optimization with BNNs.
 
-* __week 12__ Advanced RL topics (approx 8.05.17)
+* __week 12__ Advanced RL topics
   * Lecture 1: Hierarchical MDP. MDP Vs real world. Sparse and delayed rewards. When Q-learning fails. Hierarchical MDP. Hierarchy as temporal abstraction. MDP with symbolic reasoning. 
  * Lecture 2: Knowledge Transfer in RL & Inverse Reinforcement Learning: basics; personalized medical treatment; robotics.
 
