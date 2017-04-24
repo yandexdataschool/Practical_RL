@@ -4,9 +4,8 @@
 _Links on all articles mentioned during the lecture could be found in "References" at the very end of the presentation slides. All other interesing links which contribute to the topic of POMDP are presented below_
 
 ## Basics
-* Our [lecture](https://yadi.sk/i/pMdw-_uI3Gke7Z) and [seminar](https://yadi.sk/i/s1EEuEVd3Gke8k)
+* Our [lecture](https://yadi.sk/i/pMdw-_uI3Gke7Z) and [seminar](https://yadi.sk/i/s1EEuEVd3Gke8k) (russian)
 * A lecture on basics by Andrew NG (english, LQ) - [video](https://www.youtube.com/watch?v=yCqPMD6coO8)
-* our lectures are underway...
 * A lecture on lecture by 5vision (russian) - [video](https://www.youtube.com/watch?v=_dkaynuKUFE)
 * _[alternative]_ Chalkboard-style 2-part lecture by B. Ravindran.  - [part1](https://www.youtube.com/watch?v=9G_KevA8DFY), [part2](https://www.youtube.com/watch?v=dMOUp7YzUpQ)
 * _[alternative]_ Yet another mini-lecture touching on POMDP by S.S. Baveja - [video](https://www.youtube.com/watch?v=SE56KgF7aVc)
