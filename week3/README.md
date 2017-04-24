@@ -7,10 +7,7 @@
 
 ## More materials
 * Eligibility traces from Sutton's book - [url](http://incompleteideas.net/sutton/book/ebook/node72.html)
-* Video on monte-carlo tree search - https://www.youtube.com/watch?v=Yf8vKTIQzHs
-* Udacity video on monte-carlo tree search (2 parts) - https://www.youtube.com/watch?v=onBYsen2_eA
-* Post on MCTS (monte-carlo tree search) - http://www.cameronius.com/research/mcts/about/index.html
-* Guide to MCTS - https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/
+
 
 ## Homework description
 
