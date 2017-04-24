@@ -1,7 +1,8 @@
 ## Materials
 * [Slides](https://yadi.sk/i/7TkZUDkt3GoPXE)
+* Our [lecture](https://yadi.sk/i/-U5w4NpJ3H5TWD), [seminar](https://yadi.sk/i/W3N7-6is3H5TWN)
 * The only relevant video-lecture we could find - [video](https://www.youtube.com/watch?v=2tKNpzUvDc4	)
-* Will hopefully record our lecture in both russian and english soon!
+* Will hopefully record our lecture in english soon!
 * Self-critical sequence traning [original article](https://arxiv.org/abs/1612.00563)
 
 
