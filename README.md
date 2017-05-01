@@ -24,6 +24,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
+* 1.05.16 - UPD - week8 deadlines have been prolonged till the end of holidays
 * 22.04.16 - YSDA deadlines for week8 set to 30th of __april__ (previously 30 may, which was a typo).
 * 25.03.16 - __HSE important__ next monday lecture is postponed by 1 week due to HSE mid-term exams. Deadlines have been postponed accordingly.
 * 25.03.16 - __week5__ you can submit any atari game you want.
@@ -128,25 +129,26 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * __week 8__ Case studies 1
   * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. Seq2seq tasks: g2p, machine translation, conversation models, image captioning.
   * Seminar: Simple neural machine translation with self-critical policy gradient
-     * HSE deadline _23.59 30.04.17_ (first submission)
-     * YSDA deadline _23.59 30.04.17_ (first submission)
+     * HSE deadline _23.59 10.05.17_ (first submission)
+     * YSDA deadline _23.59 10.05.17_ (first submission)
 
-* __week 9__ Advanced exploration methods (in progress, finishes approx 27.04.17)
+* __week 9__ Advanced exploration methods
   * Lecture1: Improved exploration methods for bandits. UCB, Thompson Sampling, bayesian approach.
   * Lecture2: Augmented rewards. Density-based models, UNREAL, variational information maximizing exploration, bayesian optimization with BNNs.
   * Seminar: bayesian exploration for contextual bandits
-
-
-## Future lectures:
-
-* __week 9__ RL in Large/Continuous action spaces.
-  * Lecture: Continuous action space MDPs. Value-based approach (NAF). Special case algorithms (dpg, svg). Case study:finance. Large discrete action space problem. Action embedding.
-  * Seminar: Classic Control and BipedalWalker with ddpg Vs qNAF. https://gym.openai.com/envs/BipedalWalker-v2 . Financial bot as bonus track.
 
 * __week 10__ Trust Region Policy Optimization.
   * Lecture: Trust region policy optimization in detail. NPO/TRPO.
   * Seminar: approximate TRPO vs approximate Q-learning for gym box2d envs (robotics-themed).
 
+
+
+
+## Future lectures:
+
+* __week 11__ RL in Large/Continuous action spaces.
+  * Lecture: Continuous action space MDPs. Value-based approach (NAF). Special case algorithms (dpg, svg). Case study:finance. Large discrete action space problem. Action embedding.
+  * Seminar: Classic Control and BipedalWalker with ddpg Vs qNAF. https://gym.openai.com/envs/BipedalWalker-v2 . Financial bot as bonus track.
 
 * __week 12__ Advanced RL topics
   * Lecture 1: Hierarchical MDP. MDP Vs real world. Sparse and delayed rewards. When Q-learning fails. Hierarchical MDP. Hierarchy as temporal abstraction. MDP with symbolic reasoning. 
