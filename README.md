@@ -152,7 +152,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 * __week 12__ Advanced RL topics
   * Lecture 1: Hierarchical MDP. MDP Vs real world. Sparse and delayed rewards. When Q-learning fails. Hierarchical MDP. Hierarchy as temporal abstraction. MDP with symbolic reasoning. 
- * Lecture 2: Knowledge Transfer in RL & Inverse Reinforcement Learning: basics; personalized medical treatment; robotics.
+  * Lecture 2: Knowledge Transfer in RL & Inverse Reinforcement Learning: basics; personalized medical treatment; robotics.
 
 
 # Course staff
