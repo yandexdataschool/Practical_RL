@@ -9,7 +9,7 @@ This section covers some steroids for policy gradient methods, along with a cool
 * Original articles - [TRPO](https://arxiv.org/abs/1502.05477), [NPG](https://papers.nips.cc/paper/2073-a-natural-policy-gradient.pdf)
 
 
-* __Assignment:__ seminar_TRPO.ipynb.
+* __Assignment:__ [seminar_TRPO.ipynb](https://github.com/yandexdataschool/Practical_RL/blob/master/yet_anoter_week/seminar_TRPO.ipynb)
   * TF version: [pending]
 
 ## Model-based RL: Planning
@@ -22,10 +22,9 @@ This section covers some steroids for policy gradient methods, along with a cool
  * Another guide to MCTS - [url](https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/)
  * Our lecture - [pending]
 
-* __Assignment:__ seminar_MCTS.ipynb
+* __Assignment:__ [seminar_MCTS.ipynb](https://github.com/yandexdataschool/Practical_RL/blob/master/yet_anoter_week/seminar_MCTS.ipynb)
 
 * [__bonus__] Integrating learning and planning (D. Silver) - [video-lecture](https://www.youtube.com/watch?v=ItMutbeOHtc&t=1241s)
-* [__Basic lectures on planning - lectures 2-6 of cs188 - 
 * Approximating the MCTS optimal actions - 5vision solution for deephack.RL, code by Mikhail Pavlov - [repo](https://github.com/5vision/uct_atari)
 
 ## Reinforcement learning in large/continuous action spaces
