@@ -34,11 +34,7 @@ While you already know algorithms that will work with continuously many actions,
  * Stochastic value gradient - [article](https://arxiv.org/abs/1510.09142)
  * Q-learning with normalized advantage functions - [article](https://arxiv.org/abs/1603.00748), [code1](https://github.com/carpedm20/NAF-tensorflow), [code2](http://bit.ly/2qx2087)
  * Embedding large discrete action spaces for RL - [article](https://arxiv.org/pdf/1512.07679.pdf)
-
-## Hierarchical reinforcement learning
-A hierarchical version of MDP useful for naturally hierarchical problems as well as problems with rare rewards.
-[pending]
-
+ * Lecture by A. Seleznev, 5vision (russian) - [video](www.youtube.com/watch?v=j1L2FnanXPo&t=119m45s)
 
 ## Other
 * Learning by imitation - [video](https://www.youtube.com/watch?v=kl_G95uKTHw), [assignment](http://rll.berkeley.edu/deeprlcourse/docs/hw1.pdf)(berkeley cs294)
