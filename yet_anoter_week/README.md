@@ -3,7 +3,7 @@ In this week you can find several sections covering advanced topics in RL, along
 ## Advanced policy gradient methods
 This section covers some steroids for policy gradient methods, along with a cool general trick called 
 
-* [__main__] NPG and TRPO by J. Schulman - [video](https://www.youtube.com/watch?v=_t5fpZuuf-4)
+* Lecture on NPG and TRPO by J. Schulman - [video](https://www.youtube.com/watch?v=_t5fpZuuf-4)
 * Alternative lecture on TRPO and open problems by... J. schulman - [video](https://www.youtube.com/watch?v=gb5Q2XL5c8A)
 * Our [__slides__](https://yadi.sk/i/9j6S4WVp3HgEdn) on TRPO, video: [pending]
 * Original articles - [TRPO](https://arxiv.org/abs/1502.05477), [NPG](https://papers.nips.cc/paper/2073-a-natural-policy-gradient.pdf)
@@ -13,18 +13,19 @@ This section covers some steroids for policy gradient methods, along with a cool
   * TF version: [pending]
 
 ## Model-based RL: Planning
-* __[intro]__ Planning by dynamic programming (D. Silver) - [video](https://www.youtube.com/watch?v=Nd1-UUMVfz4), [videos 2-6 from CS188](https://www.youtube.com/channel/UCHBzJsIcRIVuzzHVYabikTQ)
-* __[main]__ Monte-carlo tree search
- *  Udacity video on monte-carlo tree search (first part of a chain) - [video](https://www.youtube.com/watch?v=onBYsen2_eA)
- * Reminder: UCB-1 - [slides](https://www.cs.bham.ac.uk/internal/courses/robotics/lectures/ucb1.pdf)
- * Monte-carlo tree search step-by-step by J.Levine - [video](https://www.youtube.com/watch?v=UXW2yZndl7U)
- * Guide to MCTS (monte-carlo tree search) - [post](http://www.cameronius.com/research/mcts/about/index.html)
- * Another guide to MCTS - [url](https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/)
- * Our lecture - [pending]
+* Planning by dynamic programming (D. Silver) - [video](https://www.youtube.com/watch?v=Nd1-UUMVfz4)
+* Planning via tree search [videos 2-6 from CS188](https://www.youtube.com/channel/UCHBzJsIcRIVuzzHVYabikTQ)
+* Monte-carlo tree search
+  *  Udacity video on monte-carlo tree search (first part of a chain) - [video](https://www.youtube.com/watch?v=onBYsen2_eA)
+  * Reminder: UCB-1 - [slides](https://www.cs.bham.ac.uk/internal/courses/robotics/lectures/ucb1.pdf)
+  * Monte-carlo tree search step-by-step by J.Levine - [video](https://www.youtube.com/watch?v=UXW2yZndl7U)
+  * Guide to MCTS (monte-carlo tree search) - [post](http://www.cameronius.com/research/mcts/about/index.html)
+  * Another guide to MCTS - [url](https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/)
+  * Our lecture - [pending]
+* Integrating learning and planning (D. Silver) - [video](https://www.youtube.com/watch?v=ItMutbeOHtc&t=1241s)
 
 * __Assignment:__ [seminar_MCTS.ipynb](https://github.com/yandexdataschool/Practical_RL/blob/master/yet_anoter_week/seminar_MCTS.ipynb)
 
-* [__bonus__] Integrating learning and planning (D. Silver) - [video-lecture](https://www.youtube.com/watch?v=ItMutbeOHtc&t=1241s)
 * Approximating the MCTS optimal actions - 5vision solution for deephack.RL, code by Mikhail Pavlov - [repo](https://github.com/5vision/uct_atari)
 
 ## Reinforcement learning in large/continuous action spaces
