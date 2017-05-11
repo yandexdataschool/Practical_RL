@@ -146,6 +146,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * __week 11__ Model-based RL: Planning
   * Seminar: MCTS
      * HSE deadline _23.59 18.05.17_ (first & last submission)
+     * YSDA deadline _23.59 18.05.17_ (first & last submission)
   
 
 
