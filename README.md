@@ -140,8 +140,13 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * __week 10__ Trust Region Policy Optimization.
   * Lecture: Trust region policy optimization in detail. NPO/TRPO.
   * Seminar: approximate TRPO vs approximate Q-learning for gym box2d envs (robotics-themed).
+     * HSE deadline _23.59 18.05.17_ (first & last submission)
+     * YSDA deadline _23.59 18.05.17_ (first & last submission)
 
-
+* __week 11__ Model-based RL: Planning
+  * Seminar: MCTS
+     * HSE deadline _23.59 18.05.17_ (first & last submission)
+  
 
 
 ## Future lectures:
