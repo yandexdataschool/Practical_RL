@@ -21,7 +21,7 @@ This section covers some steroids for policy gradient methods, along with a cool
   * Monte-carlo tree search step-by-step by J.Levine - [video](https://www.youtube.com/watch?v=UXW2yZndl7U)
   * Guide to MCTS (monte-carlo tree search) - [post](http://www.cameronius.com/research/mcts/about/index.html)
   * Another guide to MCTS - [url](https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/)
-  * Our lecture - [pending]
+  * Our lecture - [part1](https://yadi.sk/i/3PM9zCP33J3ub3) (intro), part2(pomdp) - [pending]
 * Integrating learning and planning (D. Silver) - [video](https://www.youtube.com/watch?v=ItMutbeOHtc&t=1241s)
 
 * __Assignment:__ [seminar_MCTS.ipynb](https://github.com/yandexdataschool/Practical_RL/blob/master/yet_another_week/seminar_MCTS.ipynb)
