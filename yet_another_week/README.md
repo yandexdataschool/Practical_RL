@@ -16,7 +16,7 @@ This section covers some steroids for policy gradient methods, along with a cool
 * Planning by dynamic programming (D. Silver) - [video](https://www.youtube.com/watch?v=Nd1-UUMVfz4)
 * Planning via tree search [videos 2-6 from CS188](https://www.youtube.com/channel/UCHBzJsIcRIVuzzHVYabikTQ)
 * Our lecture:
-  * Slides [part1](https://yadi.sk/i/3PM9zCP33J3ub3) (intro), part2(pomdp) - [pending]
+  * Slides [part1](https://yadi.sk/i/3PM9zCP33J3ub3) (intro), part2(pomdp) - [https://yadi.sk/i/M03xvZ2y3JMQre]
   * [Lecture](https://yadi.sk/i/lOAUu7o13JBHFz) & [seminar](https://yadi.sk/i/bkmjEZrk3JBHGF)
 * Monte-carlo tree search
   *  Udacity video on monte-carlo tree search (first part of a chain) - [video](https://www.youtube.com/watch?v=onBYsen2_eA)
