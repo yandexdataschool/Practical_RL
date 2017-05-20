@@ -61,9 +61,9 @@ class QLearningAgent(ReinforcementAgent):
     	return 0.0
 
     "*** YOUR CODE HERE ***"
-    raise NotImplementedError
-
-    return 0.
+    #raise NotImplementedError
+    value = max([getQValue(self, state, action) for action in possibleActions])
+    return value
     
   def getPolicy(self, state):
     """
@@ -79,7 +79,9 @@ class QLearningAgent(ReinforcementAgent):
     best_action = None
 
     "*** YOUR CODE HERE ***"
-    raise NotImplementedError
+    #raise NotImplementedError
+    actions_values = [(action,getQValue(self, state, action)) for action in possibleActions]
+    best_action = sorted(actions_values, key = lambda a,v: v)[-1][0]
 
     return best_action
 
@@ -94,7 +96,7 @@ class QLearningAgent(ReinforcementAgent):
       HINT: To pick randomly from a list, use random.choice(list)
 
     """
-    
+    import util
     # Pick Action
     possibleActions = self.getLegalActions(state)
     action = None
@@ -107,7 +109,11 @@ class QLearningAgent(ReinforcementAgent):
     epsilon = self.epsilon
 
     "*** YOUR CODE HERE ***"
-    raise NotImplementedError    
+    #raise NotImplementedError
+    if util.flipCoin(epsilon):
+        action = np.random.choice(possibleActions)
+    else:
+        action = getPolicy(self, state)
 
     return action
 
@@ -125,12 +131,13 @@ class QLearningAgent(ReinforcementAgent):
     learning_rate = self.alpha
     
     "*** YOUR CODE HERE ***"
-    raise NotImplementedError
+    #raise NotImplementedError
     
-    reference_qvalue = PleaseImplementMe
-    updated_qvalue = PleaseImplementMe
+    reference_qvalue = getQValue(self, state, action)
+    computed_qvalue = reward + gamma * getValue(self, nextState)
+    updated_qvalue = learning_rate * computed_qvalue + (1 - learning_rate) * reference_qvalue
 
-    self.setQValue(PleaseImplementMe,PleaseImplementMe,updated_qvalue)
+    self.setQValue(state,action,updated_qvalue)
 
 
 #---------------------#end of your code#---------------------#
