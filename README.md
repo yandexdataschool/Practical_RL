@@ -8,8 +8,9 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 * __Git-course.__ Know a way to make the course better? Noticed a typo in a formula? Found a useful link? Made the code more readable? Made a version for alternative framework? You're awesome! [Pull-request](https://help.github.com/articles/about-pull-requests/) it!
 
 # Coordinates and useful links
-* __HSE__ classes are on mondays at 18-10 in Room 505
-* __YSDA__ classes are on thursdays at 18-00 in "Princeton" classroom
+* __HSE__ classes are happening on demand in Q&A mode (ping [Yozhik](jheuristic@yandex-team.ru if you want one)
+* __YSDA__ classes are over until next term. 
+* For RL reading group, ping [Pasha](1xolodec@gmail.com)
 * Lecture slides are [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
@@ -24,19 +25,21 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
-* 17.05.16 - !ATTENTION ysda and hse students! - there's a suspicion that anytask sometimes fails to send homework assignments. Please check that all your assignments are sent (sometimes we receive empty submissions). We will binge-check all newly sent assignments so don't worry about timing. Also this is most likely us being over suspicious, we post this warning just in case.
-* 1.05.16 - UPD - week8 deadlines have been prolonged till the end of holidays
-* 22.04.16 - YSDA deadlines for week8 set to 30th of __april__ (previously 30 may, which was a typo).
-* 25.03.16 - __HSE important__ next monday lecture is postponed by 1 week due to HSE mid-term exams. Deadlines have been postponed accordingly.
-* 25.03.16 - __week5__ you can submit any atari game you want.
-* 16.03.16 - __week4 homework__ max score threshold for LunarLander reduced to -100
-* 16.03.16 - (hse) shifted deadline for week5
-* 15.03.16 - (hse) added week6 assignment and deadline
+* 12.06.17 - The course is over for this term. Please fill in the [feedback form](https://docs.google.com/forms/d/12EV1bweIsFqwysXYvBXiU77MVRLqkwyTq79JCkybukY) once you finished it. _Next term_: full tracks for tensorflow & pytorch, more ballanced assignment difficuly + whatever you vote for in the form. _Leftovers_: We'll add english materials videolecture week8 this week.
+* 12.06.17 - Attention @HSE students, please make sure you submit your homeworks at least 3 days prior to global term deadline for your department (even if it's coming next september).
+<details><summary>Previous announcements</summary>
+<p><!-- trick from http://stackoverflow.com/questions/32814161/how-to-make-spoiler-text-in-github-wiki-pages -->
+* 17.05.17 - !ATTENTION ysda and hse students! - there's a suspicion that anytask sometimes fails to send homework assignments. Please check that all your assignments are sent (sometimes we receive empty submissions). We will binge-check all newly sent assignments so don't worry about timing. Also this is most likely us being over suspicious, we post this warning just in case.
+* 1.05.17 - UPD - week8 deadlines have been prolonged till the end of holidays
+* 22.04.17 - YSDA deadlines for week8 set to 30th of __april__ (previously 30 may, which was a typo).
+* 25.03.17 - __HSE important__ next monday lecture is postponed by 1 week due to HSE mid-term exams. Deadlines have been postponed accordingly.
+* 25.03.17 - __week5__ you can submit any atari game you want.
+* 16.03.17 - __week4 homework__ max score threshold for LunarLander reduced to -100
+* 16.03.17 - (hse) shifted deadline for week5
+* 15.03.17 - (hse) added week6 assignment and deadline
 * 10.03.17 - (ysda/hse students) __important__ please consider [Course Projects](https://github.com/yandexdataschool/Practical_RL/wiki/Course-projects) as an alternative way of completing the course.
 * 8.03.17 - YSDA deadlines announced for weeks 3 and 3.5, sry for only doing this now.
 * 01.03.17 - YSDA deadline on week2 homework moved to 08.03.17
-<details><summary>Previous announcements</summary>
-<p><!-- trick from http://stackoverflow.com/questions/32814161/how-to-make-spoiler-text-in-github-wiki-pages -->
 * 28.02.17 - (HSE) homework 4 published
 * 24.02.17 - Dependencies updated ([same url](https://github.com/yandexdataschool/Practical_RL/issues/1)). Please install theano/lasagne/agentnet until week4 or make sure you're familiar enough with your deep learning framework of choice.
 * 23.02.17 - YSDA homework 2 can be found [here](https://github.com/yandexdataschool/Practical_RL/tree/master/week2). If you're from HSE you can opt to submit either old or new whichever you prefer.
