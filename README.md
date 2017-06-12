@@ -25,7 +25,7 @@ Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdata
 
 
 # Announcements
-* 12.06.17 - The course is over for this term. Please fill in the [feedback form](https://docs.google.com/forms/d/12EV1bweIsFqwysXYvBXiU77MVRLqkwyTq79JCkybukY) once you finished it. _Next term_: full tracks for tensorflow & pytorch, more ballanced assignment difficuly + whatever you vote for in the form. _Leftovers_: We'll add english materials videolecture week8 this week.
+* 12.06.17 - The course is over for this term. Please fill in the [feedback form](https://docs.google.com/forms/d/12EV1bweIsFqwysXYvBXiU77MVRLqkwyTq79JCkybukY) once you finished it. _Next term_: full tracks for tensorflow & pytorch, more ballanced assignment difficuly + whatever you vote for in the form. Meanwhile, we'll still monitor issues and pull requests at least twice a week. We're also gonna add english videolecture for week8 later this week.
 * 12.06.17 - Attention @HSE students, please make sure you submit your homeworks at least 3 days prior to global term deadline for your department (even if it's coming next september).
 <details><summary>Previous announcements</summary>
 <p><!-- trick from http://stackoverflow.com/questions/32814161/how-to-make-spoiler-text-in-github-wiki-pages -->
