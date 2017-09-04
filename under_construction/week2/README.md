@@ -6,6 +6,7 @@
 * Alternative lecture by John Schulmann (english): https://www.youtube.com/watch?v=IL3gVyJMmhg
 
 ## Bonus materials
+* Sutton's definitive guide to monte-carlo methods - http://incompleteideas.net/sutton/book/ebook/node50.html
 * Policy improvement theorems from Sutton book - http://webdocs.cs.ualberta.ca/~sutton/book/ebook/node42.html
 * Lecture II by Dan Klein (english): https://www.youtube.com/watch?v=jUoZg513cdE
 * Qlearning guide from Habr (russian): https://habrahabr.ru/post/308094/
