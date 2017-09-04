@@ -1,3 +1,6 @@
+# DISCLAIMER
+__This content refers to a finished course taught on Autumn 2017. Fall 2017 course is available at [fall17](https://github.com/yandexdataschool/Practical_RL/tree/fall17) branch__ 
+
 # Practical_RL
 A course on reinforcement learning in the wild.
 Taught on-campus in [HSE](https://cs.hse.ru) and [Yandex SDA](https://yandexdataschool.com) (russian) and maintained to be friendly to online students (both english and russian).
