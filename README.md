@@ -16,7 +16,7 @@ Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be frien
 
 * Telegram __[chat room](https://telegram.me/practicalrl_fall2017)__ __(russian)__. 
 * Gitter __[chat room](https://gitter.im/yandexdataschool/Practical_RL)__ __(english)__
-* Piazza (all question and announcements) __rl101__(piazza.com/cs_hse/fall2017/rl101) (access code: __rl101__)
+* Piazza - all question and announcements: [rl101](piazza.com/cs_hse/fall2017/rl101). Access code is __rl101__
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
 * A large list of RL materials - [awesome rl](https://github.com/aikorea/awesome-rl)
