@@ -1,4 +1,4 @@
-# Practical_RL v2.0
+# Practical_RL Fall 2017
 A course on reinforcement learning in the wild.
 Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be friendly to online students (both english and russian).
 
@@ -14,8 +14,9 @@ Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be frien
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
 * Magical button that creates VM: TODO (press me. may be down time to time. If it won't load for 2-3 minutes, it's down)
 
-* Telegram __[chat room](https://telegram.me/practicalrl)__ __(russian)__. 
+* Telegram __[chat room](https://telegram.me/practicalrl_fall2017)__ __(russian)__. 
 * Gitter __[chat room](https://gitter.im/yandexdataschool/Practical_RL)__ __(english)__
+* Piazza (all question and announcements) __rl101__(piazza.com/cs_hse/fall2017/rl101) (access code: __rl101__)
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
 * A large list of RL materials - [awesome rl](https://github.com/aikorea/awesome-rl)
