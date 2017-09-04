@@ -7,22 +7,29 @@ Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be frien
 * __Practicality first.__ Everything essential to solving reinforcement learning problems is worth mentioning. We won't shun away from covering tricks and heuristics. For every major idea there should be a lab that allows to “feel” it on a practical problem.
 * __Git-course.__ Know a way to make the course better? Noticed a typo in a formula? Found a useful link? Made the code more readable? Made a version for alternative framework? You're awesome! [Pull-request](https://help.github.com/articles/about-pull-requests/) it!
 
-# Coordinates and useful links
-* __HSE__ classes are happening on mondays, 18-10 till 21-00. [room number TBA] 
- * Everyone who wants to attend the course ping _jheuristic@yandex-team.ru_
- * Everyone who wants to attend RL reading group ping [Pavel Shvechikov](1xolodec@gmail.com)
+# General information
 
 * Lecture slides are [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
 * Magical button that creates VM: TODO (press me. may be down time to time. If it won't load for 2-3 minutes, it's down)
 
-* Telegram __[chat room](https://telegram.me/practicalrl)__ __(russian)__. Also __reading group [chat room](https://t.me/theoreticalrl)__
+* Telegram __[chat room](https://telegram.me/practicalrl)__ __(russian)__. 
 * Gitter __[chat room](https://gitter.im/yandexdataschool/Practical_RL)__ __(english)__
-* E-mail for everything else : __practicalrl17@gmail.com__ (please don't submit homeworks via anytask, not e-mail)
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
 * A large list of RL materials - [awesome rl](https://github.com/aikorea/awesome-rl)
+
+# HSE students
+* __HSE__ classes are happening on mondays, 18-10 till 21-00. [room number 327] 
+ * Everyone who wants to attend the course ping _jheuristic@yandex-team.ru_
+* __Anytask__ TBA
+
+
+# RL reading group
+* __Reading group [chat room](https://t.me/theoreticalrl)__
+* Everyone who wants to attend RL reading group ping [Pavel Shvechikov](1xolodec@gmail.com)
+
 
 
 # Announcements
@@ -53,7 +60,7 @@ Course materials and teaching by
 
 
 # v2.0 changes
-* Be
+* Be 
 * Our notation is now compatible with Sutton's.
 * Longer-term homeworks now available.
 * Reworked & reballanced assignments: week0, [more tba]
