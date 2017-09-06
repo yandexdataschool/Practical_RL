@@ -12,7 +12,7 @@ Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be frien
 * Lecture slides are [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
-* Magical button that creates VM: TODO (press me. may be down time to time. If it won't load for 2-3 minutes, it's down)
+* Magical button that creates VM: https://beta.mybinder.org/v2/gh/yandexdataschool/Practical_RL/fall17 (may be down time to time. If it won't load for 2-3 minutes, it's down)
 * Gitter __[chat room](https://gitter.im/yandexdataschool/Practical_RL)__ __(english)__
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
