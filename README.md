@@ -13,19 +13,19 @@ Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be frien
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
 * Magical button that creates VM: TODO (press me. may be down time to time. If it won't load for 2-3 minutes, it's down)
-
-* Telegram __[chat room](https://telegram.me/practicalrl_fall2017)__ __(russian)__. 
 * Gitter __[chat room](https://gitter.im/yandexdataschool/Practical_RL)__ __(english)__
-* Piazza - all question and announcements: [rl101](piazza.com/cs_hse/fall2017/rl101). Access code is __rl101__
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
 * A large list of RL materials - [awesome rl](https://github.com/aikorea/awesome-rl)
 
-# HSE students
-* __HSE__ classes are happening on mondays, 18-10 till 21-00. [room number 327] 
- * Everyone who wants to attend the course ping _jheuristic@yandex-team.ru_
-* __Anytask__ TBA
+# Enrollment guide
+__HSE__ classes are happening on mondays, 18-10 till 21-00. [room number 327] 
 
+1. Bookmark repo https://github.com/yandexdataschool/Practical_RL/tree/fall17
+2. Join telegram chat https://t.me/practicalrl_fall2017
+3. Enroll to anytak __TBA__
+4. Join piazza (questions and announcement service) https://piazza.com/cs_hse/fall2017/rl101/home with access code __rl101__
+5. Everyone who wants to attend the course ping _jheuristic@yandex-team.ru_
 
 # RL reading group
 * __Reading group [chat room](https://t.me/theoreticalrl)__
