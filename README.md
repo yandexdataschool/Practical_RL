@@ -21,11 +21,13 @@ Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be frien
 # Enrollment guide
 __HSE__ classes are happening on mondays, 18-10 till 21-00. [room number 327] 
 
+Everyone who wants to attend the course ping _jheuristic@yandex-team.ru_
+
 1. Bookmark repo https://github.com/yandexdataschool/Practical_RL/tree/fall17
 2. Join telegram chat https://t.me/practicalrl_fall2017
 3. Enroll to anytak __TBA__
 4. Join piazza (questions and announcement service) https://piazza.com/cs_hse/fall2017/rl101/home with access code __rl101__
-5. Everyone who wants to attend the course ping _jheuristic@yandex-team.ru_
+
 
 # RL reading group
 * __Reading group [chat room](https://t.me/theoreticalrl)__
