@@ -38,13 +38,60 @@ Everyone who wants to attend the course ping _jheuristic@yandex-team.ru_
 # Announcements
 * 2017.09.04 - first class just happened. Anytask submission form TBA
 
-
 # Syllabus
+
+The syllabus is approximate: the lectures may occur in a slightly different order and some topics may end up taking two weeks.
+
 * __week0__ Welcome to Reinforcement Learning
-  * Lecture: RL problems around us. Decision processes. Blackbox optimization; evolutionary strategies. Stochastic optimization; crossentropy method.
-  * Seminar: Crossentropy method & approximate crossentropy method.
+  * Lecture: RL problems around us. Decision processes. Basic genetic algorithms
+  * Seminar: Welcome into openai gym, basic genetic algorithms
   * Homework description - todo
     * HSE Homework deadline: _23.59 15.09.17_
+
+* __week1__ RL as blackbox optimization
+  * Lecture: Recap on genetic algorithms; Evolutionary strategies. Stochastic optimization, Crossentropy method. Parameter space search vs action space search.
+  * Seminar: Tabular CEM for Taxi-v0, deep CEM for box2d environments.
+
+* __week2__ Value-based methods
+  * Lecture: Discounted reward MDP. Value-based approach. Value iteration. Policy iteration. Discounted reward fails.
+  * Seminar: Value iteration.
+
+* __week3__ Model-free reinforcement learning
+  * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
+  * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
+
+[Deep learning recap goes here]
+
+* __week4__ Approximate reinforcement learning
+  * Lecture: Infinite/continuous state space. Value function approximation. Convergence conditions. Multiple agents trick; experience replay, target networks, double/dueling/bootstrap DQN, etc.
+  * Seminar:  Approximate Q-learning with experience replay. (CartPole, Atari)
+
+* __week5__ Exploration in reinforcement learning
+  * Lecture: Contextual bandits. Thompson Sampling, UCB, bayesian UCB. Exploration in model-based RL, MCTS. "Deep" heuristics for exploration.
+  * Seminar: bayesian exploration for contextual bandits. UCB for MCTS.
+
+* __week6__ Policy gradient methods I
+  * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance reduction(baseline), advantage actor-critic (incl. GAE)
+  * Seminar: REINFORCE, advantage actor-critic
+
+[Recurrent neural nets recap goes here]
+
+* __week7__ Partially observable MDPs
+  * Lecture: POMDP intro. POMDP learning (agents with memory). POMDP planning (POMCP, etc)
+  * Seminar: Deep kung-fu & doom with recurrent A3C and DRQN
+    
+* __week8__ Applications II
+  * Lecture: Reinforcement Learning as a general way to optimize non-differentiable loss. G2P, machine translation, conversation models, image captioning, discrete GANs. Self-critical sequence training.
+  * Seminar: Simple neural machine translation with self-critical sequence training
+
+* __week9__ Policy gradient methods II
+  * Lecture: Trust region policy optimization. NPO/PPO. Deterministic policy gradient. DDPG. Bonus: DPG for discrete action spaces.
+  * Seminar: Approximate TRPO for simple robotic tasks.
+
+[Maybe a bonus lecture here]
+
+
+
 
 
 # Course staff
@@ -55,15 +102,15 @@ Course materials and teaching by
 - [Alexander Fritsler](https://github.com/Fritz449) - lectures, seminars, hw checkups
 
 # Contributions
-* Using pictures from http://ai.berkeley.edu/home.html
-* Massively refering [CS294](http://rll.berkeley.edu/deeprlcourse/)
-* Tensorflow assignments by [Scitator](https://github.com/Scitator)
-* A lot of fixes from 
+* Using pictures from [Berkeley AI course](http://ai.berkeley.edu/home.html)
+* Massively refering to [CS294](http://rll.berkeley.edu/deeprlcourse/)
+* Sevaral tensorflow assignments by [Scitator](https://github.com/Scitator)
+* A lot of fixes from [arogozhnikov](https://github.com/arogozhnikov)
 * Other awesome people: see github contributors
 
 
-# v2.0 changes
-* Be 
-* Our notation is now compatible with Sutton's.
-* Longer-term homeworks now available.
-* Reworked & reballanced assignments: week0, [more tba]
+# fall17 changes
+* Better support for tensorflow & pytorch
+* Our notation is now compatible with Sutton's
+* Reworked & reballanced some assignments
+* Added more practice on model-based RL
