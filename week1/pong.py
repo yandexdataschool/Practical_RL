@@ -5,12 +5,12 @@ from scipy.misc import imresize
 from gym.core import Wrapper
 from gym.spaces.box import Box
 
-def make_breakout():
+def make_pong():
     """creates breakout env with all preprocessing done for you"""
-    return PreprocessAtari(gym.make("BreakoutDeterministic-v0"))
+    return PreprocessAtari(gym.make("PongDeterministic-v0"))
 
 class PreprocessAtari(Wrapper):
-    def __init__(self,env,height=64,width=64,
+    def __init__(self,env,height=42,width=42,
                  crop=lambda img: img[34:34+160],n_frames=4):
         """A gym wrapper that reshapes, crops and scales image into the desired shapes"""
         super(PreprocessAtari, self).__init__(env)
