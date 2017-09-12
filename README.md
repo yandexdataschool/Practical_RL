@@ -2,6 +2,10 @@
 A course on reinforcement learning in the wild.
 Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be friendly to online students (both english and russian).
 
+
+__Note:__ This branch follows the  live course held in HSE during fall'17 (probably right now). For full content from previous iteration, go [here](https://github.com/yandexdataschool/practical_rl/tree/master).
+
+
 #### Manifesto:
 * __Optimize for the curious.__ For all the materials that aren’t covered in detail there are links to more information and related materials (D.Silver/Sutton/blogs/whatever). Assignments will have bonus sections if you want to dig deeper.
 * __Practicality first.__ Everything essential to solving reinforcement learning problems is worth mentioning. We won't shun away from covering tricks and heuristics. For every major idea there should be a lab that allows to “feel” it on a practical problem.
