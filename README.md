@@ -40,6 +40,10 @@ Everyone who wants to attend the course on-campus ping _jheuristic@yandex-team.r
 
 
 # Announcements
+* 2017.09.13 - Gym website seems to have gone down indefinitely. Therefore,
+ - week0 homework: Bonus I counts as 2 points if you beat mean reward +5.0 for Taxi-v1 or +0.95 on frozenlake8x8
+ - week1 homework: Instead of 1 point for task 2.2 and 3 points for 2.3 you get 4 points for 2.3. 
+ - Since you can't submit, just ignore and instructions to do so. We'll push them this weekend to avoid merge conflicts for students.
 * 2017.09.04 - first class just happened. Anytask submission form TBA
 
 # Syllabus
