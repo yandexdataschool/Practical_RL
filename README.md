@@ -18,7 +18,7 @@ Everyone who wants to attend the course on-campus ping _jheuristic@yandex-team.r
 
 1. Bookmark repo https://github.com/yandexdataschool/Practical_RL/tree/fall17
 2. Join telegram chat https://t.me/practicalrl_fall2017
-3. __(only HSE students)__ Enroll to http://anytask.org/course/228 with invite code __lmQLmU3__ 
+3. __Homework submission (only HSE students):__ Enroll to http://anytask.org/course/228 with invite code __lmQLmU3__ 
 4. Join piazza (questions and announcement service) https://piazza.com/cs_hse/fall2017/rl101/home with access code __rl101__
 5. __(only HSE students)__  Read [course rules](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
 
