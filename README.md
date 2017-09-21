@@ -65,6 +65,7 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 * __week2__ Value-based methods
   * Lecture: Discounted reward MDP. Value-based approach. Value iteration. Policy iteration. Discounted reward fails.
   * Seminar: Value iteration.
+    * HSE Homework deadline: _23.59 29.09.17_
 
 * __week3__ Model-free reinforcement learning
   * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
