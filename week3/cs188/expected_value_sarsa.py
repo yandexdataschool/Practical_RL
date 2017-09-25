@@ -37,13 +37,13 @@ class EVSarsaAgent():
       - self.discount (discount rate aka gamma)
 
   """
-  def __init__(self,alpha,epsilon,discount,getLegalActions):
+  def __init__(self,alpha,epsilon,gamma,actionFn):
     "We initialize agent and Q-values here."
-    self.getLegalActions= getLegalActions
+    self.getLegalActions=actionFn 
     self._qValues = defaultdict(lambda:defaultdict(lambda:0))
     self.alpha = alpha
     self.epsilon = epsilon
-    self.discount = discount
+    self.gamma=gamma
     
   def getQValue(self, state, action):
     """
