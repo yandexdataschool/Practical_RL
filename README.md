@@ -12,7 +12,7 @@ __Note:__ This branch follows the  live course held in HSE during fall'17 (proba
 * __Git-course.__ Know a way to make the course better? Noticed a typo in a formula? Found a useful link? Made the code more readable? Made a version for alternative framework? You're awesome! [Pull-request](https://help.github.com/articles/about-pull-requests/) it!
 
 # Enrollment guide
-__HSE__ classes are happening on mondays, 18-10 till 21-00. [room number 327] 
+__HSE__ classes are happening on mondays, 18-10 till 21-00. [lecture 317, seminar 503] 
 
 Everyone who wants to attend the course on-campus ping _jheuristic@yandex-team.ru_
 
