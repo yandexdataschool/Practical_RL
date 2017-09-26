@@ -1,5 +1,5 @@
 ### Materials
-* [__Lecture slides__] - TODO
+* [__Lecture slides__] - [here](https://yadi.sk/i/6Bq-X58o3Mzenn)
 * Russian materials:
  - Recap of value iteration & Q_learning - [video](https://yadi.sk/i/I7XcP6vU3ExNrT)
  - Q-learning seminar - [video](https://yadi.sk/i/XbqNQmjm3ExNsq)
@@ -16,9 +16,11 @@
 * Eligibility traces from Sutton's book - [url](http://incompleteideas.net/sutton/book/ebook/node72.html)
 * Blog post on eligibility traces - [url](http://pierrelucbacon.com/traces/)
 
-### Homework
+### Assignments
 
-The first part of today's seminar will happen outside <s>the box</s> jupyter notebook.
+This week's practice will require you to pick __either ./seminar_main or ./seminar_alternative__ as first part and then __go to ./homework__ and follow instructions in [the notebook](https://github.com/yandexdataschool/Practical_RL/blob/fall17/week3/homework/homework.ipynb)
+
+Below are some guidelines on what to do in seminar_main/_alternative.
 
 ### ./seminar_main
 _this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
