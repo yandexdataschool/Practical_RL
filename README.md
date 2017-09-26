@@ -16,7 +16,7 @@ __HSE__ classes are happening on mondays, 18-10 till 21-00. [lecture 317, semina
 
 Everyone who wants to attend the course on-campus ping _jheuristic@yandex-team.ru_
 
-1. Bookmark repo https://github.com/yandexdataschool/Practical_RL/tree/fall17
+1. All course materials are in this repository.
 2. Join telegram chat https://t.me/practicalrl_fall2017
 3. __Homework submission (only HSE students):__ Enroll to http://anytask.org/course/228 with invite code __lmQLmU3__ 
 4. Join piazza (questions and announcement service) https://piazza.com/cs_hse/fall2017/rl101/home with access code __rl101__
@@ -40,6 +40,7 @@ Everyone who wants to attend the course on-campus ping _jheuristic@yandex-team.r
 
 
 # Announcements
+* 2017.09.24 - Week3 homework published, we're sorry for the delay
 * 2017.09.13 - Gym website seems to have gone down indefinitely. Therefore,
  - week0 homework: Bonus I counts as 2 points if you beat mean reward +5.0 for Taxi-v1 or +0.95 on frozenlake8x8
  - week1 homework: Instead of 1 point for task 2.2 and 3 points for 2.3 you get 4 points for 2.3. 
@@ -70,8 +71,12 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 * __week3__ Model-free reinforcement learning
   * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
   * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
-
-[Deep learning recap goes here]
+  * HSE Homework deadline: _23.59 6.10.17_
+  
+* __week3.5__ - deep learning recap 
+  * Lecture: Deep learning 101
+  * Seminar: Simple image classification with convnets
+  * HSE Homework deadline: _23.59 6.10.17
 
 * __week4__ Approximate reinforcement learning
   * Lecture: Infinite/continuous state space. Value function approximation. Convergence conditions. Multiple agents trick; experience replay, target networks, double/dueling/bootstrap DQN, etc.
