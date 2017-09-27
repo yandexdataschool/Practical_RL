@@ -1,24 +1,26 @@
+#### __Lecture slides__ - [here](https://yadi.sk/i/6Bq-X58o3Mzenn)
 ### Materials
-* [__Lecture slides__] - TODO
 * Russian materials:
- - Recap of value iteration & Q_learning - [video](https://yadi.sk/i/I7XcP6vU3ExNrT)
- - Q-learning seminar - [video](https://yadi.sk/i/XbqNQmjm3ExNsq)
- - More on value-based methods - [video 2](https://yadi.sk/i/I7XcP6vU3ExNrT)
- - Sarsa & stuff - [seminar2](https://yadi.sk/i/XbqNQmjm3ExNsq)
+   - Recap of value iteration & Q_learning - [video](https://yadi.sk/i/I7XcP6vU3ExNrT)
+   - Q-learning seminar - [video](https://yadi.sk/i/XbqNQmjm3ExNsq)
+   - More on value-based methods - [video 2](https://yadi.sk/i/I7XcP6vU3ExNrT)
+   - Sarsa & stuff - [seminar2](https://yadi.sk/i/XbqNQmjm3ExNsq)
 * English materials:
- - Lecture by David Silver (english) - [video part I](https://www.youtube.com/watch?v=PnHCvfgC_ZA), [video part II](https://www.youtube.com/watch?v=0g4j2k_Ggc4&t=43s)
- - Alternative lecture by Pieter Abbeel (english) - [video](https://www.youtube.com/watch?v=ifma8G7LegE)
- - Alternative lecture by John Schulmann (english) - [video](https://www.youtube.com/watch?v=IL3gVyJMmhg)
- - Blog post on q-learning Vs SARSA - [url](https://studywolf.wordpress.com/2013/07/01/reinforcement-learning-sarsa-vs-q-learning/)
+   - Lecture by David Silver (english) - [video part I](https://www.youtube.com/watch?v=PnHCvfgC_ZA), [video part II](https://www.youtube.com/watch?v=0g4j2k_Ggc4&t=43s)
+   - Alternative lecture by Pieter Abbeel (english) - [video](https://www.youtube.com/watch?v=ifma8G7LegE)
+   - Alternative lecture by John Schulmann (english) - [video](https://www.youtube.com/watch?v=IL3gVyJMmhg)
+   - Blog post on q-learning Vs SARSA - [url](https://studywolf.wordpress.com/2013/07/01/reinforcement-learning-sarsa-vs-q-learning/)
 
 ### More materials
 * N-step temporal difference from Sutton's book - [url](http://incompleteideas.net/sutton/book/ebook/node73.html)
 * Eligibility traces from Sutton's book - [url](http://incompleteideas.net/sutton/book/ebook/node72.html)
 * Blog post on eligibility traces - [url](http://pierrelucbacon.com/traces/)
 
-### Homework
+### Assignments
 
-The first part of today's seminar will happen outside <s>the box</s> jupyter notebook.
+This week's practice will require you to pick __either ./seminar_main or ./seminar_alternative__ as first part and then __go to ./homework__ and follow instructions in [the notebook](https://github.com/yandexdataschool/Practical_RL/blob/fall17/week3/homework/homework.ipynb)
+
+Below are some guidelines on what to do in seminar_main/_alternative.
 
 ### ./seminar_main
 _this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
