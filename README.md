@@ -40,6 +40,7 @@ Everyone who wants to attend the course on-campus ping _jheuristic@yandex-team.r
 
 
 # Announcements
+* 2017.10.02 - week4 homework is yet to be published, week3 and week4 deadlines are shifted one week into the future.
 * 2017.09.24 - Week3 homework published, we're sorry for the delay
 * 2017.09.13 - Gym website seems to have gone down indefinitely. Therefore,
  - week0 homework: Bonus I counts as 2 points if you beat mean reward +5.0 for Taxi-v1 or +0.95 on frozenlake8x8
@@ -71,16 +72,17 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 * __week3__ Model-free reinforcement learning
   * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
   * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
-  * HSE Homework deadline: _23.59 6.10.17_
+  * HSE Homework deadline: _23.59 13.10.17
   
 * __week3.5__ - deep learning recap 
   * Lecture: Deep learning 101
   * Seminar: Simple image classification with convnets
-  * HSE Homework deadline: _23.59 6.10.17
+  * HSE Homework deadline: _23.59 13.10.17
 
 * __week4__ Approximate reinforcement learning
   * Lecture: Infinite/continuous state space. Value function approximation. Convergence conditions. Multiple agents trick; experience replay, target networks, double/dueling/bootstrap DQN, etc.
   * Seminar:  Approximate Q-learning with experience replay. (CartPole, Atari)
+  * HSE Homework deadline: _23.59 20.10.17
 
 * __week5__ Exploration in reinforcement learning
   * Lecture: Contextual bandits. Thompson Sampling, UCB, bayesian UCB. Exploration in model-based RL, MCTS. "Deep" heuristics for exploration.
