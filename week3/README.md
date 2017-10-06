@@ -1,4 +1,4 @@
-#### __Lecture slides__ - [here](https://yadi.sk/i/6Bq-X58o3Mzenn)
+#### __Lecture slides__ - [here](https://yadi.sk/i/54qWKtDB3NDeuh)
 ### Materials
 * Russian materials:
    - Recap of value iteration & Q_learning - [video](https://yadi.sk/i/I7XcP6vU3ExNrT)
