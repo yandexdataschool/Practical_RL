@@ -1,4 +1,5 @@
-[this week is still largely under construction]
+### Slides - [here](https://yadi.sk/i/SBcIBg5M3NcKee)
+
 ## Exploration and exploitation
 * [__main__] David Silver lecture on exploration and expoitation - [video](https://www.youtube.com/watch?v=sGuiWX07sKw)
 * Alternative lecture by J. Schulman - [video](https://www.youtube.com/watch?v=SfCa1HQMkuw)
