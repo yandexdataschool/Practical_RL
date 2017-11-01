@@ -14,27 +14,6 @@
 
 # Homework description
 
-You guessed, two options
+This week's practice gets you acquainted with basics of recurrent neural networks. For simplicity, we'll train them on character language modelling task. Pick any one of `seminar_lasagne`, `seminar_lasagne_ingraph` or `seminar_tf`.
 
-### Lasagne option
-
-Follow the [first notebook](https://github.com/yandexdataschool/Practical_RL/blob/master/week6.5/char_rnn.ipynb) and implement a simple character-level RNN with pure lasagne. The homework part __(4 points)__ is at the very end of that notebook.
-
-Proceed with [seq2seq](https://github.com/yandexdataschool/Practical_RL/blob/master/week6.5/seq2seq.ipynb) notebook for the second part of homework assignment __(6 points)__.
-
-### Alternative
-
-In this assignment, you will need to implement two things __(pts are same)__:
-* A generative RNN model for one of datasets below or for your custom dataset (anything from clickbait to pokemon names)
-* A conditional generative model for either [formula]->[common_name] task for molecules dataset below or image captioning [or similar custom dataset].
-
-Some helper materials:
-* CS231 rnn [assignment](http://cs231n.github.io/assignments2016/assignment3/)
-* "Deep models for text and sequences" section of [this course](https://www.udacity.com/course/deep-learning--ud730)
-
-
-### Datasets
-- Names: https://github.com/yandexdataschool/HSE_deeplearning/blob/master/week4/names
-- Molecules: https://yadi.sk/d/sYZnG5hK33ktL4
-- Questions: https://yadi.sk/d/Dn68_NFx3GBSc8
-
+As for difference btwn `seminar_lasagne` and `seminar_lasagne_ingraph` - ingraph version shows a lower-level interface to recurrent neural networks. It also requires you to install `pip install https://github.com/yandexdataschool/agentnet/archive/master.zip`. Out-of-graph version cover higher-level syntax from native lasagne.
