@@ -22,9 +22,7 @@
 
 ## Homework
 
-Homework assignment is described in the [main notebook](https://github.com/yandexdataschool/Practical_RL/blob/master/week8/8.1_translation_scst.ipynb).
-
-It's kinda lengthy, but fear not, that's mostly due to formatting.
+As usual, go to practice_theano.ipynb or practice_tf.ipynb and follow instructions from there.
 
 __Other frameworks__: as usual, your task remains the same as in the main track:
 - Implement or borrow seq2seq model for the same translation task
