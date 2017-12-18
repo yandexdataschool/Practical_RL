@@ -14,28 +14,5 @@
 
 ## Homework
 
-As usual, "lasagne way" and "other way"
-
-#### Lasagne way
-
-First go to Seminar6.0 notebook and implement a vanilla REINFORCE algorithm from scratch. Follow up by playing with advantage actor-critic in Seminar 6.1 - just follow the steps you'll find in the notebook.
-
-#### Other way
-
-This week's task is to implement REINFORCE on any continuous state space env (simplest being CartPole-v0) and advantage actor-critic on LunarLander-v2.
-
-You will find some helpful materials there:
-* Tensorflow similar assignment: [cs294 assignment 4](https://github.com/berkeleydeeprlcourse/homework/blob/master/hw4/homework.md)
-
-
-_[copy-pasted section]_
-
-We recommend you to upload your results to OpenAI gym and fit your solution in a notebook (ipython/torch/r) unless your framework is incompatible with that. In the latter case, please supply us some notes on what code lies where.
-
-Again, we recommend you to read the lasagne/agentnet assignments briefly to get the grasp of what parameters to start from.
-
-Bonus assignments remain exactly the same as in the first track.
-
-Blindly copy-pasting code from any publically available demos will result in us interrogating you about every signifficant line of code to make sure you at least understand (and regret) what you copypasted.
-
+As usual, pick reinfoce_<framework_name>.ipynb for starters and then proceed with homework_<framework_name>.ipynb.
 
