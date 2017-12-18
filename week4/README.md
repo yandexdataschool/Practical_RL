@@ -34,5 +34,6 @@ From now on, we have two tracks, theano and tensorflow. We'll also add pytorch s
 
 You can choose whichever track you want, but unless you're expertly familiar with your framework, we recommend you to start by completing the task in lasagne and only then reproduce your solution in your chosen framework.
 
+Begin with `seminar_<framework>.ipynb` and then proceed with `homework_<framework>.ipynb`.
 
-Main assignment - `TODO`
+__Note: you're not required to submit assignments in all three frameworks. Pick one and go with it. Maybe switch it occasionally if you want more challenge. __
