@@ -1,6 +1,13 @@
 import tensorflow as tf
 import keras.layers as L
 
+# This code implements a single-GRU seq2seq model. You will have to improve it later in the assignment.
+# Note 1: when using several recurrent layers TF can mixed up the weights of different recurrent layers.
+# In that case, make sure you both create AND use each rnn/gru/lstm/custom layer in a unique variable scope
+# e.g. with tf.variable_scope("first_lstm"): new_cell, new_out = self.lstm_1(...)
+#      with tf.variable_scope("second_lstm"): new_cell2, new_out2 = self.lstm_2(...)
+# Note 2: everything you need for decoding should be stored in model state (output list of both encode and decode)
+# e.g. for attention, you should store all encoder sequence and input mask there in addition to lstm/gru states.
 
 class BasicTranslationModel:
     def __init__(self, name, inp_voc, out_voc,
