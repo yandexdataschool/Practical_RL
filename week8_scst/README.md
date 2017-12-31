@@ -16,20 +16,10 @@
   * [task-oriented conversation system](https://arxiv.org/abs/1703.07055)
   * [generating dialogues](https://arxiv.org/abs/1606.01541)
   * [sequential adversarial networks](https://arxiv.org/abs/1609.05473) (a.k.a. SeqGAN)
-  * A large overview for machine translation (touching on RL, including RL failures) - [article](https://arxiv.org/abs/1609.08144)
-  * How _not_ to evaluate conversation models - [article](https://arxiv.org/abs/1603.08023)
-* Overview of other non-games applications ("that article again") - https://arxiv.org/abs/1701.07274
+  * A large overview for machine translation (touching on RL, including RL failures) - [arxiv](https://arxiv.org/abs/1609.08144)
+  * How _not_ to evaluate conversation models - [arxiv](https://arxiv.org/abs/1603.08023)
+* Overview of other non-games applications ("that article again") - [arxiv](https://arxiv.org/abs/1701.07274)
 
 ## Homework
 
 As usual, go to practice_theano.ipynb or practice_tf.ipynb and follow instructions from there.
-
-__Other frameworks__: as usual, your task remains the same as in the main track:
-- Implement or borrow seq2seq model for the same translation task
-  * Neat tenworflow [repo](https://github.com/cmusphinx/g2p-seq2seq)
-  * __Important__ - this repo uses simplified phoneme dict - make sure you change preprocessing phase to meaningfully compare results.
-- Implement self-critical sequence training ( = basic policy gradient with a special baseline, see notebook)
-- Beat the baseline (main notebook: step6)
-  
-Even if you decide to use custom frameworks, it is highly recommended that you reuse evaluation code (e.g. min Levenshtein) from the main notebook to avoid confusion.
-
