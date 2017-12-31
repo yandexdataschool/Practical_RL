@@ -18,10 +18,6 @@ __Note:__ This week's materials cover the basics of neural nets and deep learnin
   * [Theano tutorial](https://www.youtube.com/watch?v=OU8I1oJ9HhI)
   * [Pytorch tutorial](https://www.youtube.com/watch?v=VMcRWYEKmhw)
 
-- [reading] on weight initialization: [blog post](http://andyljones.tumblr.com/post/110998971763/an-explanation-of-xavier-initialization)
-- [reading] pretty much all the module 1 of http://cs231n.github.io/
-
-
 ## Bonus materials
 * Karpathy's course on deep learning (english) - http://cs231n.github.io/
 * A neat little play-ground where you can train small NNs and see what they actually learn - [playground](http://playground.tensorflow.org/)
