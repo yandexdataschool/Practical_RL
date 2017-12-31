@@ -6,6 +6,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted 
 RUN apt-get -qq update
 
 RUN apt-get install -y gcc g++ wget unzip
+RUN apt-get install -y libstdc++6
 RUN apt-get install -y libopenblas-dev liblapack-dev libsdl2-dev libboost-all-dev 
 RUN apt-get install -y cmake zlib1g-dev libjpeg-dev 
 RUN apt-get install -y xvfb libav-tools xorg-dev python-opengl python3-opengl
