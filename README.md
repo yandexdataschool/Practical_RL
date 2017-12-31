@@ -1,4 +1,4 @@
-# Practical_RL Fall 2017
+# Practical_RL
 A course on reinforcement learning in the wild.
 Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be friendly to online students (both english and russian).
 
@@ -9,8 +9,6 @@ Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be frien
 * __Git-course.__ Know a way to make the course better? Noticed a typo in a formula? Found a useful link? Made the code more readable? Made a version for alternative framework? You're awesome! [Pull-request](https://help.github.com/articles/about-pull-requests/) it!
 
 # Course info
-__ Fall'17 track is officially over. All materials are published here. __
-
 * Lecture slides are [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
