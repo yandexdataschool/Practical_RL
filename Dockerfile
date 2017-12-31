@@ -16,6 +16,7 @@ RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
 USER main
 
 RUN pip install --upgrade pip
+RUN curl https://bootstrap.pypa.io/ez_setup.py -o - | /home/main/anaconda2/bin/python  #fix easy_install
 RUN pip install --upgrade sklearn tqdm nltk editdistance joblib
 RUN pip install --upgrade gym[all]
 RUN pip install --upgrade http://download.pytorch.org/whl/cu80/torch-0.3.0.post4-cp27-cp27mu-linux_x86_64.whl 
@@ -30,6 +31,7 @@ RUN pip install ppaquette-gym-doom
 
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade pip
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade sklearn tqdm nltk editdistance joblib
+RUN curl https://bootstrap.pypa.io/ez_setup.py -o - | /home/main/anaconda2/envs/python3/bin/python  #fix easy_install
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade gym[all]
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade http://download.pytorch.org/whl/cu80/torch-0.3.0.post4-cp35-cp35m-linux_x86_64.whl 
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade torchvision
@@ -38,4 +40,5 @@ RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade keras
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade https://github.com/yandexdataschool/AgentNet/archive/master.zip
+
 #TODO py3 doom once it's no longer broken
