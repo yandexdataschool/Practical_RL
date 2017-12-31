@@ -8,7 +8,7 @@
 
 ## Homework description
 * Go to the [notebook](https://github.com/yandexdataschool/Practical_RL/blob/fall17/week0/frozenlake.ipynb)
-  * If you haven't installed everything yet, try [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/binder_build)
+  * If you haven't installed everything yet, try [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master)
 * You can find homework and bonus assignment descriptions at the end of that notebook.
 * Note: so far it's enough to say `pip install gym` on top of any data-science-stuffed python, but we'd appreciate if you gradually switch to [full installation](https://github.com/openai/gym#installing-everything).
 
