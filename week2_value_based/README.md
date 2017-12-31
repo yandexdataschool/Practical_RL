@@ -25,5 +25,7 @@
 
 
 ## Homework description:
-* __Part I:__ Go to `seminar1_VI.ipynb` notebook in this week's folder and follow guidelines from there.
-* __Part II:__ Go to `seminar2_MCTS.ipynb` notebook in this week's folder and... you guessed it, follow guidelines from there.
+
+The main assignment is `seminar1_VI.ipynb` notebook in this week's folder.
+
+If you're interested in model-based RL at scale, go through __Materials: planning__ section and proceed with `seminar2_MCTS.ipynb` notebook.
