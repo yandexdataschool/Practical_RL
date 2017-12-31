@@ -18,7 +18,9 @@
 
 ### Assignments
 
-This week's practice will require you to pick __either ./seminar_main or ./seminar_alternative__ as first part and then __go to ./homework__ and follow instructions in `./homework/homework.ipynb`
+This week's practice will require you to pick __one of__ `./seminar_main` and `./seminar_alternative` as first part.
+
+Then `./homework` and follow instructions in `./homework/homework.ipynb`
 
 Below are some guidelines on what to do in seminar_main/_alternative.
 
