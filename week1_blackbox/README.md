@@ -4,13 +4,9 @@
 * [__main__] Lecture by J Schulman with crossentropy method explained (english) - [url](https://www.youtube.com/watch?v=aUrX-rP_ss4&list=PLCTc_C7itk-GaAMxmlChrkPnGKtjz8hv1)
 
 ## Homework description
-* Just follow the [notebook](https://github.com/yandexdataschool/Practical_RL/blob/fall17/week1/crossentropy_method.ipynb)
+* Just follow the `crossentropy_method.ipynb`
 * During the `CartPole-v0` section (and similar envs), a window will pop up, displaying some game state. The window won't respond to direct input and is instead changes each time you call env.render(). Don't force-close this process, just ignore it until you complete the notebook.
 * __important__ the current newest version of gym force-stops environment in 200 steps even if you don't use env.monitor.
   * This may ruin CEM on MountainCar. To avoid this, use gym.make("MountainCar-v0").env when creating env.
 
-
-## Project opportunity
-
-* The first project opportunity is to implement the Evolutionary Strategies.
-* More stuff [here](http://bit.ly/2xUJ1Ft)
+* If you wanna do more cool stuff, try implementing the Evolutionary Strategies for atari - see `project_starter_evolution_strategies.ipynb`
