@@ -18,7 +18,7 @@
 
 ### Assignments
 
-This week's practice will require you to pick __either ./seminar_main or ./seminar_alternative__ as first part and then __go to ./homework__ and follow instructions in [the notebook](https://github.com/yandexdataschool/Practical_RL/blob/fall17/week3/homework/homework.ipynb)
+This week's practice will require you to pick __either ./seminar_main or ./seminar_alternative__ as first part and then __go to ./homework__ and follow instructions in `./homework/homework.ipynb`
 
 Below are some guidelines on what to do in seminar_main/_alternative.
 
@@ -40,7 +40,7 @@ python pacman.py -p PacmanQAgent -x 5000 -n 5010 -l smallGrid # example
 * Make sure you can tune agent to beat ./run_crawler.sh
  * on windows, just run `python crawler.py` from cmd in the project directory
 * other ./run* files are mostly for your amusement. 
-  * ./run_pacman.sh will need more epochs to converge, see [comments](https://github.com/yandexdataschool/Practical_RL/blob/fall17/week3/seminar_main/run_pacman.sh)
+  * ./run_pacman.sh will need more epochs to converge, see [comments](https://github.com/yandexdataschool/Practical_RL/blob/master/week3/seminar_main/run_pacman.sh)
   * on windows, just copy the type `python pacman.py -p PacmanQAgent -x 2000 -n 2010 -l smallGrid` in cmd from assignemnt dir
 (YSDA/HSE) Please submit only qlearningAgents.py file and include a brief text report as comments in it.
 
