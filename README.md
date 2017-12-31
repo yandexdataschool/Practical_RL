@@ -12,7 +12,7 @@ Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be frien
 * Lecture slides are [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
-* Magical button that creates VM: [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/binder_build)
+* Magical button that launches you into course environment: [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master)
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
 * A large list of RL materials - [awesome rl](https://github.com/aikorea/awesome-rl)
@@ -55,7 +55,7 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
   * HSE Homework deadline: _23.59 13.10.17
   
-* __week3.5__ - deep learning recap 
+* __week4_recap__ - deep learning recap 
   * Lecture: Deep learning 101
   * Seminar: Simple image classification with convnets
   * HSE Homework deadline: _23.59 13.10.17
@@ -73,7 +73,7 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance reduction(baseline), advantage actor-critic (incl. GAE)
   * Seminar: REINFORCE, advantage actor-critic
 
-* __week6.5__ Recurrent neural networks recap
+* __week7_recap__ Recurrent neural networks recap
   * Lecture: Problems with sequential data. Recurrent neural netowks. Backprop through time. Vanishing & exploding gradients. LSTM, GRU. Gradient clipping
   * Seminar: character-level RNN language model
 
