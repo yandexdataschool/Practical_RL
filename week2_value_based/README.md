@@ -20,13 +20,10 @@
   * Guide to MCTS (monte-carlo tree search) - [post](http://www.cameronius.com/research/mcts/about/index.html)
   * Another guide to MCTS - [url](https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/)
 * Integrating learning and planning (D. Silver) - [video](https://www.youtube.com/watch?v=ItMutbeOHtc&t=1241s)
+* Approximating the MCTS optimal actions - 5vision solution for deephack.RL, code by Mikhail Pavlov - [repo](https://github.com/5vision/uct_atari)
+
 
 
 ## Homework description:
-* __Part I:__ Go to seminar1_VI.ipynb notebook in this week's folder and follow guidelines from there.
-* __Part II:__ Go to seminar2_MCTS.ipynb notebook in this week's folder and follow guidelines from there.
-
-
-## Other
-* Approximating the MCTS optimal actions - 5vision solution for deephack.RL, code by Mikhail Pavlov - [repo](https://github.com/5vision/uct_atari)
-
+* __Part I:__ Go to `seminar1_VI.ipynb` notebook in this week's folder and follow guidelines from there.
+* __Part II:__ Go to `seminar2_MCTS.ipynb` notebook in this week's folder and... you guessed it, follow guidelines from there.
