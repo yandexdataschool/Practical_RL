@@ -3,7 +3,7 @@
 * Our [lecture](https://yadi.sk/i/AHDU2p_j3FT3nr), [seminar](https://yadi.sk/i/EeUeheri3FT3ra) (russian)
 
 
-* David Silver lecture - [video](https://www.youtube.com/watch?v=UoPei5o4fps&t=3s)
+* David Silver lecture - [video](https://www.youtube.com/watch?v=UoPei5o4fps)
 * More practical and less theoretical lecture from MIT 6.S191 - [video](https://www.youtube.com/watch?v=xWe58WGWmlk)
 * Understanding approximate q-learning - [url](https://danieltakeshi.github.io/2016/10/31/going-deeper-into-reinforcement-learning-understanding-q-learning-and-linear-function-approximation/)
 * Karpathy's post on approximate RL - [url](http://karpathy.github.io/2016/05/31/rl/)
