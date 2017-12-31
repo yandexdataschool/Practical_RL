@@ -5,7 +5,7 @@ Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be frien
 
 #### Manifesto:
 * __Optimize for the curious.__ For all the materials that aren’t covered in detail there are links to more information and related materials (D.Silver/Sutton/blogs/whatever). Assignments will have bonus sections if you want to dig deeper.
-* __Practicality first.__ Everything essential to solving reinforcement learning problems is worth mentioning. We won't shun away from covering tricks and heuristics. For every major idea there should be a lab that allows to “feel” it on a practical problem.
+* __Practicality first.__ Everything essential to solving reinforcement learning problems is worth mentioning. We won't shun away from covering tricks and heuristics. For every major idea there should be a lab that makes you to “feel” it on a practical problem.
 * __Git-course.__ Know a way to make the course better? Noticed a typo in a formula? Found a useful link? Made the code more readable? Made a version for alternative framework? You're awesome! [Pull-request](https://help.github.com/articles/about-pull-requests/) it!
 
 # Course info
@@ -19,7 +19,7 @@ Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be frien
 
 # RL reading group
 * __Reading group [chat room](https://t.me/theoreticalrl)__
-* Everyone who wants to attend RL reading group ping [Pavel Shvechikov](1xolodec@gmail.com)
+* Everyone who wants to attend RL reading group ping Pavel Shvechikov - `1xolodec@gmail.com`
 
 
 # Announcements
@@ -40,7 +40,6 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Lecture: RL problems around us. Decision processes. Basic genetic algorithms
   * Seminar: Welcome into openai gym, basic genetic algorithms
   * Homework description - see week0/README.md
-    * HSE Homework deadline: _23.59 15.09.17_
 
 * __week1__ RL as blackbox optimization
   * Lecture: Recap on genetic algorithms; Evolutionary strategies. Stochastic optimization, Crossentropy method. Parameter space search vs action space search.
