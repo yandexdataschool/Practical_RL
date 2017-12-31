@@ -3,7 +3,7 @@ __Note:__ This week's materials cover the basics of neural nets and deep learnin
 ## Materials
 * [__Lecture slides__](https://yadi.sk/i/yAO2AJ3M3EKP8g)
 
-- __In russian: __
+- __In russian:__
   * Basic lecture on deep learning - [video](https://yadi.sk/i/yyHZub6R3Ej5dV)
   * Deep learning frameworks - [video](https://yadi.sk/i/hDIkaR4H3EtnXM) 
   * [Tensorflow tutorial](https://www.youtube.com/watch?v=FQ660T4uu7k) (english only for now. Links are welcome)
@@ -42,7 +42,7 @@ __Note:__ in this and all following weeks you're only required to get through pr
 
 #### What to choose?
 * The simplest choice is PyTorch: it's basically ye olde numpy with automatic gradients and a lot of pre-implemented DL stuff... except all the functions have different names.
-* If you want to be familiar with production-related stuff from day 1, choose TensorFlow. It's much more convenient to deploy (to non-python or to mobiles). The catch is that all those conveniences become __in__conveniences once you want to write something simple in jupyter.
+* If you want to be familiar with production-related stuff from day 1, choose TensorFlow. It's much more convenient to deploy (to non-python or to mobiles). The catch is that all those conveniences become inconveniences once you want to write something simple in jupyter.
 * Theano works like tensorflow but it offers a numpy-compatible interface and comes with built-in graph optimization. The payoff is that theano is not as popular as the first two. It is also not meant as a producton framework so deploying to mobiles may be a problem.
 
 * It's not like choosing house at Hogwarts, you'll be able to switch between frameworks easily once you master the underlying principles.
