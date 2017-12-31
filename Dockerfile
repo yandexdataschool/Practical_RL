@@ -16,7 +16,7 @@ RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
 USER main
 
 RUN pip install --upgrade pip
-RUN pip install --upgrade sklearn tqdm nltk editdistance
+RUN pip install --upgrade sklearn tqdm nltk editdistance joblib
 RUN pip install --upgrade gym[all]
 RUN pip install --upgrade http://download.pytorch.org/whl/cu80/torch-0.3.0.post4-cp27-cp27mu-linux_x86_64.whl 
 RUN pip install --upgrade torchvision 
@@ -29,7 +29,7 @@ RUN pip install gym_pull
 RUN pip install ppaquette-gym-doom
 
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade pip
-RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade sklearn tqdm nltk editdistance
+RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade sklearn tqdm nltk editdistance joblib
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade gym[all]
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade http://download.pytorch.org/whl/cu80/torch-0.3.0.post4-cp35-cp35m-linux_x86_64.whl 
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade torchvision
