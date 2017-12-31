@@ -3,32 +3,18 @@ A course on reinforcement learning in the wild.
 Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be friendly to online students (both english and russian).
 
 
-__Note:__ This branch follows the  live course held in HSE during fall'17 (probably right now). For full content from previous iteration, go [here](https://github.com/yandexdataschool/practical_rl/tree/master).
-
-
 #### Manifesto:
 * __Optimize for the curious.__ For all the materials that aren’t covered in detail there are links to more information and related materials (D.Silver/Sutton/blogs/whatever). Assignments will have bonus sections if you want to dig deeper.
 * __Practicality first.__ Everything essential to solving reinforcement learning problems is worth mentioning. We won't shun away from covering tricks and heuristics. For every major idea there should be a lab that allows to “feel” it on a practical problem.
 * __Git-course.__ Know a way to make the course better? Noticed a typo in a formula? Found a useful link? Made the code more readable? Made a version for alternative framework? You're awesome! [Pull-request](https://help.github.com/articles/about-pull-requests/) it!
 
-# Enrollment guide
-__HSE__ classes are happening on mondays, 18-10 till 21-00. [lecture 317, seminar 503] 
-
-Everyone who wants to attend the course on-campus ping _jheuristic@yandex-team.ru_
-
-1. All course materials are in this repository.
-2. Join telegram chat https://t.me/practicalrl_fall2017
-3. __Homework submission (only HSE students):__ Enroll to http://anytask.org/course/228 with invite code __lmQLmU3__ 
-4. Join piazza (questions and announcement service) https://piazza.com/cs_hse/fall2017/rl101/home with access code __rl101__
-5. __(only HSE students)__  Read [course rules](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading-(HSE-and-YSDA))
-
-
 # Course info
+__ Fall'17 track is officially over. All materials are published here. __
 
 * Lecture slides are [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
-* Magical button that creates VM: https://beta.mybinder.org/v2/gh/yandexdataschool/Practical_RL/binder_build (may be down time to time. If it won't load for 2-3 minutes, it's down)
+* Magical button that creates VM: [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/binder_build)
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
 * A large list of RL materials - [awesome rl](https://github.com/aikorea/awesome-rl)
@@ -38,8 +24,8 @@ Everyone who wants to attend the course on-campus ping _jheuristic@yandex-team.r
 * Everyone who wants to attend RL reading group ping [Pavel Shvechikov](1xolodec@gmail.com)
 
 
-
 # Announcements
+* 2017.12.29 - HSE track for fall'2017 is offically over. Next is spring'18 @ HSE & YSDA.
 * 2017.10.02 - week4 homework is yet to be published, week3 and week4 deadlines are shifted one week into the future.
 * 2017.09.24 - Week3 homework published, we're sorry for the delay
 * 2017.09.13 - Gym website seems to have gone down indefinitely. Therefore,
@@ -62,12 +48,10 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Lecture: Recap on genetic algorithms; Evolutionary strategies. Stochastic optimization, Crossentropy method. Parameter space search vs action space search.
   * Seminar: Tabular CEM for Taxi-v0, deep CEM for box2d environments.
   * Homework description - see week1/README.md
-    * HSE Homework deadline: _23.59 22.09.17_
 
 * __week2__ Value-based methods
   * Lecture: Discounted reward MDP. Value-based approach. Value iteration. Policy iteration. Discounted reward fails.
   * Seminar: Value iteration.
-    * HSE Homework deadline: _23.59 29.09.17_
 
 * __week3__ Model-free reinforcement learning
   * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
@@ -92,7 +76,9 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance reduction(baseline), advantage actor-critic (incl. GAE)
   * Seminar: REINFORCE, advantage actor-critic
 
-[Recurrent neural nets recap goes here]
+* __week6.5__ Recurrent neural networks recap
+  * Lecture: Problems with sequential data. Recurrent neural netowks. Backprop through time. Vanishing & exploding gradients. LSTM, GRU. Gradient clipping
+  * Seminar: character-level RNN language model
 
 * __week7__ Partially observable MDPs
   * Lecture: POMDP intro. POMDP learning (agents with memory). POMDP planning (POMCP, etc)
@@ -106,10 +92,7 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Lecture: Trust region policy optimization. NPO/PPO. Deterministic policy gradient. DDPG. Bonus: DPG for discrete action spaces.
   * Seminar: Approximate TRPO for simple robotic tasks.
 
-[Maybe a bonus lecture here]
-
-
-
+[A few bonus lectures here]
 
 
 # Course staff
