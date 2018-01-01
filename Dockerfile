@@ -14,8 +14,8 @@ RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
 
 
 USER main
-RUN conda uninstall gcc
-RUN conda install -c serge-sans-paille gcc_49
+RUN conda uninstall -y gcc
+RUN conda install -y -c serge-sans-paille gcc_49
 #RUN conda install -y libgcc  # fix https://github.com/ContinuumIO/anaconda-issues/issues/483
 RUN pip install --upgrade pip
 RUN pip install --upgrade --ignore-installed setuptools  #fix https://github.com/tensorflow/tensorflow/issues/622
