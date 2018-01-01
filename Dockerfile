@@ -28,10 +28,13 @@ RUN pip install gym_pull
 RUN pip install ppaquette-gym-doom
 
 
-# python3: fix `GLIBCXX_3.4.20' not found - conda's libgcc blocked system's gcc-4.9 and libstdc++6
-RUN bash -c "conda update -y conda && source activate python3 && conda uninstall -y libgcc && source deactivate"
 
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade pip
+
+# python3: fix `GLIBCXX_3.4.20' not found - conda's libgcc blocked system's gcc-4.9 and libstdc++6
+RUN bash -c "conda update -y conda && source activate python3 && conda uninstall -y libgcc && source deactivate"
+RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade matplotlib numpy scipy pandas
+
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade sklearn tqdm nltk editdistance joblib
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade --ignore-installed setuptools  #fix https://github.com/tensorflow/tensorflow/issues/622
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade gym[all]
