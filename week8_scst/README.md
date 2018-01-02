@@ -3,7 +3,7 @@
 * Our [lecture](https://yadi.sk/i/-U5w4NpJ3H5TWD), [seminar](https://yadi.sk/i/W3N7-6is3H5TWN)
 * English lectures
   * Lecture by Mohammad Norouzi - [cs294 video](https://www.youtube.com/watch?v=fZNyHoXgV7M&index=24&list=PLkFD6_40KJIwTmSbCv9OVJB3YaO4sFwkX)
-  * Optional lecture on conversarion systems - [video](https://www.youtube.com/watch?v=2tKNpzUvDc4	)
+  * Optional lecture on conversation systems - [video](https://www.youtube.com/watch?v=2tKNpzUvDc4	)
 * Will hopefully record our lecture in english soon!
 * Self-critical sequence traning [original article](https://arxiv.org/abs/1612.00563)
 
