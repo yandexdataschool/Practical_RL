@@ -7,6 +7,11 @@
 * Will hopefully record our lecture in english soon!
 * Self-critical sequence traning [original article](https://arxiv.org/abs/1612.00563)
 
+## Practice
+As usual, go to practice_{your framework}.ipynb and follow instructions from there.
+
+Binder quickstart (1 hour): [pytorch](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master?filepath=week8_seq2seq%2Fpractice_torch.ipynb), [tensorflow](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master?filepath=week8_seq2seq%2Fpractice_tf.ipynb), [theano](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master?filepath=week8_seq2seq%2Fpractice_theano.ipynb)
+
 
 ## More materials
 * An [awesome post](http://distill.pub/2016/augmented-rnns/) explaining attention and long-term memory models.
@@ -22,6 +27,3 @@
   * How _not_ to evaluate conversation models - [arxiv](https://arxiv.org/abs/1603.08023)
 * Overview of other non-games applications ("that article again") - [arxiv](https://arxiv.org/abs/1701.07274)
 
-## Homework
-
-As usual, go to practice_theano.ipynb or practice_tf.ipynb and follow instructions from there.
