@@ -10,7 +10,7 @@
 ## Practice
 As usual, go to practice_{your framework}.ipynb and follow instructions from there.
 
-Binder quickstart (1 hour): [pytorch](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master?filepath=week8_seq2seq%2Fpractice_torch.ipynb), [tensorflow](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master?filepath=week8_seq2seq%2Fpractice_tf.ipynb), [theano](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master?filepath=week8_seq2seq%2Fpractice_theano.ipynb)
+Binder quickstart (lasts 1 hour): [pytorch](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master?filepath=week8_seq2seq%2Fpractice_torch.ipynb), [tensorflow](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master?filepath=week8_seq2seq%2Fpractice_tf.ipynb), [theano](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master?filepath=week8_seq2seq%2Fpractice_theano.ipynb)
 
 
 ## More materials
