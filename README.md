@@ -18,6 +18,12 @@ Taught on-campus at [HSE](https://cs.hse.ru)(russian) and maintained to be frien
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
 * A large list of RL materials - [awesome rl](https://github.com/aikorea/awesome-rl)
 
+# HSE and YSDA students
+**This section is stricly for on-campus HSE and YSDA students**
+* Anytask course is http://anytask.org/course/272
+* **HSE** invite is `reHroOk`
+* **YSDA** invite is TBA
+
 # RL reading group
 * __Reading group [chat room](https://t.me/theoreticalrl)__
 * Everyone who wants to attend RL reading group ping Pavel Shvechikov - `1xolodec@gmail.com`
