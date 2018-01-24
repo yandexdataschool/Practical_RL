@@ -36,7 +36,7 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 * [__week1__](https://github.com/yandexdataschool/Practical_RL/tree/master/week1_intro) RL as blackbox optimization
   * Lecture: RL problems around us. Decision processes. Stochastic optimization, Crossentropy method. Parameter space search vs action space search.
   * Seminar: Welcome into openai gym. Tabular CEM for Taxi-v0, deep CEM for box2d environments.
-  * Homework description - see week1/README.md
+  * Homework description - see week1/README.md. **Deadline: 28.01.18 23:59**
 
 TBA
 
