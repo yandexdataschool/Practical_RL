@@ -50,9 +50,3 @@ Yes, we know that <your_language/framework_name> is infinitely superior in all a
 __Final grade__ is a sum of points, divided by 20 and rounded down. You cannot have a mark above 10. 
 
 
-## Recommended trajectory
-
-There will be several assignments and also an optional course project for ~40 points.
-
-It's ultimately your decision, but there are a few "recommended" course trajectories you may want to consider.
-
