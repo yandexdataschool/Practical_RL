@@ -18,14 +18,8 @@ Taught on-campus at [HSE](https://cs.hse.ru) and YSDA(russian)  and maintained t
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
 * A large list of RL materials - [awesome rl](https://github.com/aikorea/awesome-rl)
+* [RL reading group](https://github.com/yandexdataschool/Practical_RL/wiki/RL-reading-group)
 
-
-# RL reading group
-* __Reading group [chat room](https://t.me/theoreticalrl)__
-* Everyone who wants to attend RL reading group ping Pavel Shvechikov - `1xolodec@gmail.com`
-
-
-# Announcements
 
 # Syllabus
 
