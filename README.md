@@ -20,9 +20,7 @@ Taught on-campus at [HSE](https://cs.hse.ru) and YSDA(russian)  and maintained t
 
 # HSE and YSDA students
 **This section is stricly for on-campus HSE and YSDA students**
-* Anytask course is http://anytask.org/course/272
-* **HSE** invite is `reHroOk`
-* **YSDA** invite is TBA
+Moved to https://github.com/yandexdataschool/Practical_RL/blob/master/GRADING.md
 
 # RL reading group
 * __Reading group [chat room](https://t.me/theoreticalrl)__
