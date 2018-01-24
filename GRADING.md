@@ -1,4 +1,5 @@
 # Homeworks
+**This section is stricly for on-campus HSE and YSDA students**
 This course uses Anytask — a platform for submitting homeworks. Below are the invite codes onto it.
 
 * Anytask course is http://anytask.org/course/272
