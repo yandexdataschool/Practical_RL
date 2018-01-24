@@ -37,6 +37,9 @@ If you want to resubmit your home assignment, write about it in cirtain anytask 
 
 If you think that you have a special circumstances (like your grandmother's wedding) that prevented you from completing an assignment in time, ping course staff. We can cancel penalty for you.
 
+## Cheating 
+Using code parts from either other students or from the internet is forbidden. Cheaters can be punished in various ways from zeroing out some parts of a specific assignment to unsatisfactory grade for the course.  
+
 ## Frameworks
 One can use any languages/frameworks beyond the recommended one at his own risk.
 Srsly, if you’re not Andrej Karpathy or Volodymyr Mnih or something, at least consider the recommended way;
