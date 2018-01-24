@@ -32,11 +32,12 @@ In particular, submissions past deadline will be penalized by __-0.5__ point per
 
 Homework can't yield negative amount of points, even if submitted 2 years past deadline.
 
+If you think that you have a special circumstances (like your grandmother's wedding) that prevented you from completing an assignment in time, ping course staff. We can cancel penalty for you.
+
+## Resubmition 
 __Homeworks that got imperfect grade can be re-submitted__
 
-If you want to resubmit your home assignment, write about it in cirtain anytask week.
-
-If you think that you have a special circumstances (like your grandmother's wedding) that prevented you from completing an assignment in time, ping course staff. We can cancel penalty for you.
+This privilege can be grated by a staff member who is checking a home assignment. 
 
 ## Cheating 
 Using code parts from either other students or from the internet is forbidden. Cheaters can be punished in various ways from zeroing out some parts of a specific assignment to unsatisfactory grade for the course.  
