@@ -58,7 +58,7 @@ class MDP:
 
     def get_all_states(self):
         """ return a tuple of all possiblestates """
-        return sorted(tuple(self._transition_probs.keys()))
+        return tuple(self._transition_probs.keys())
 
     def get_possible_actions(self, state):
         """ return a tuple of possible actions in a given state """
