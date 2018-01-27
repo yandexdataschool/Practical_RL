@@ -15,10 +15,14 @@ RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
 
 USER main
 RUN pip install --upgrade pip
-RUN pip install --upgrade --ignore-installed importlib 
 RUN pip install --upgrade --ignore-installed setuptools  #fix https://github.com/tensorflow/tensorflow/issues/622
 RUN pip install --upgrade sklearn tqdm nltk editdistance joblib
-RUN pip install --upgrade gym[all]
+
+# install all gym stuff except mujoco - it fails at "import importlib.util" (no module named util)
+RUN pip install --upgrade gym
+RUN pip install --upgrade gym[atari]
+RUN pip install --upgrade gym[box2d]
+
 RUN pip install --upgrade http://download.pytorch.org/whl/cu80/torch-0.3.0.post4-cp27-cp27mu-linux_x86_64.whl 
 RUN pip install --upgrade torchvision 
 RUN pip install --upgrade keras
