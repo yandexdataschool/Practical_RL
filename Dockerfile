@@ -15,6 +15,7 @@ RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
 
 USER main
 RUN pip install --upgrade pip
+RUN pip uninstall -y importlib && pip install importlib
 RUN pip install --upgrade --ignore-installed setuptools  #fix https://github.com/tensorflow/tensorflow/issues/622
 RUN pip install --upgrade sklearn tqdm nltk editdistance joblib
 RUN pip install --upgrade gym[all]
