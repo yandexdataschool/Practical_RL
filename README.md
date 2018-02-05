@@ -40,7 +40,7 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 * [__week3__](https://github.com/yandexdataschool/Practical_RL/tree/master/week3_model_free) Model-free reinforcement learning
   * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
   * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
-  * Homework description - see week3/README.md. **Deadline: 2018.02.11 23:59**
+  * Homework description - see week3/README.md. **Deadline: 2018.02.15 23:59**
 
 # Course staff
 Course materials and teaching by
