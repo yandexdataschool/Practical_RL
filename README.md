@@ -30,10 +30,17 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 * [__week1__](https://github.com/yandexdataschool/Practical_RL/tree/master/week1_intro) RL as blackbox optimization
   * Lecture: RL problems around us. Decision processes. Stochastic optimization, Crossentropy method. Parameter space search vs action space search.
   * Seminar: Welcome into openai gym. Tabular CEM for Taxi-v0, deep CEM for box2d environments.
-  * Homework description - see week1/README.md. **Deadline: 28.01.18 23:59**
+  * Homework description - see week1/README.md. **Deadline: 2018.01.28 23:59**
+  
+* [__week2__](https://github.com/yandexdataschool/Practical_RL/tree/master/week2_value_based) Value-based methods
+  * Lecture: Discounted reward MDP. Value-based approach. Value iteration. Policy iteration. Discounted reward fails.
+  * Seminar: Value iteration.  
+  * Homework description - see week2/README.md. **Deadline: 2018.02.11 23:59**
 
-TBA
-
+* [__week3__](https://github.com/yandexdataschool/Practical_RL/tree/master/week3_model_free) Model-free reinforcement learning
+  * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
+  * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
+  * Homework description - see week3/README.md. **Deadline: 2018.02.15 23:59**
 
 # Course staff
 Course materials and teaching by
@@ -49,9 +56,3 @@ Course materials and teaching by
 * A lot of fixes from [arogozhnikov](https://github.com/arogozhnikov)
 * Other awesome people: see github contributors
 
-
-# fall17 changes
-* Better support for tensorflow & pytorch
-* Our notation is now compatible with Sutton's
-* Reworked & reballanced some assignments
-* Added more practice on model-based RL

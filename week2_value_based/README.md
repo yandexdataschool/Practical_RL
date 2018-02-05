@@ -1,5 +1,5 @@
 ## Materials
-* [__Lecture slides__](https://yadi.sk/i/6Bq-X58o3Mzenn)
+* [__Lecture slides__](https://docs.google.com/presentation/d/1Tnt4w0DDCwgGIo8Dh9-004veILxHekXOlTddmz0O5Tc/edit?usp=sharing)
 * Our videos from last term: [lecture](https://yadi.sk/i/cVawsPkK3EtGJj),[seminar](https://yadi.sk/i/dQmolwOy3EtGNK) (russian)
 * __[main]__ lecture by David Silver - [url](https://www.youtube.com/watch?v=Nd1-UUMVfz4)
 * Alternative lecture by Pieter Abbeel (english): [part 1](https://www.youtube.com/watch?v=i0o-ui1N35U), [part 2](https://www.youtube.com/watch?v=Csiiv6WGzKM)
