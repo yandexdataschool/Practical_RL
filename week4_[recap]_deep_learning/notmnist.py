@@ -17,7 +17,7 @@ def load_notmnist(path='./notMNIST_small',letters='ABCDEFGHIJ',
     data,labels = [],[]
     print("Parsing...")
     for img_path in glob(os.path.join(path,'*/*')):
-        class_i = img_path.split('/')[-2]
+        class_i = img_path.split(os.sep)[-2]
         if class_i not in letters: continue
         try:
             data.append(imresize(imread(img_path), img_shape))
