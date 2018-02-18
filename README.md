@@ -11,7 +11,7 @@ Taught on-campus at [HSE](https://cs.hse.ru) and YSDA(russian)  and maintained t
 # Course info
 * Lecture slides are [here](https://yadi.sk/d/loPpY45J3EAYfU).
 * Telegram chat room for YSDA & HSE students is [here](https://t.me/rlspring18)
-* Grading rules for YSDA & HSE students is [here](https://github.com/yandexdataschool/Practical_RL/blob/master/GRADING.md)
+* Grading rules for YSDA & HSE students is [here](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading)
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
 * Magical button that launches you into course environment: [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master)
