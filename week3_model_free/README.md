@@ -12,8 +12,8 @@
    - Blog post on q-learning Vs SARSA - [url](https://studywolf.wordpress.com/2013/07/01/reinforcement-learning-sarsa-vs-q-learning/)
 
 ### More materials
-* N-step temporal difference from Sutton's book - [url](http://incompleteideas.net/sutton/book/ebook/node73.html)
-* Eligibility traces from Sutton's book - [url](http://incompleteideas.net/sutton/book/ebook/node72.html)
+* N-step temporal difference from Sutton's book - [suttonbook](http://incompleteideas.net/book/bookdraft2018jan1.pdf) __chapter 7__
+* Eligibility traces from Sutton's book - [suttonbook](http://incompleteideas.net/book/bookdraft2018jan1.pdf) __chapter 12__
 * Blog post on eligibility traces - [url](http://pierrelucbacon.com/traces/)
 
 ### Assignments
