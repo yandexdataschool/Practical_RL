@@ -6,9 +6,9 @@ __Note:__ This week's materials cover the basics of neural nets and deep learnin
 - __In russian:__
   * Basic lecture on deep learning - [video](https://yadi.sk/i/yyHZub6R3Ej5dV)
   * Deep learning frameworks - [video](https://yadi.sk/i/hDIkaR4H3EtnXM) 
+  * [Pytorch tutorial](https://yadi.sk/i/O3mQ76u43So3h9) __recommended__
   * [Tensorflow tutorial](https://www.youtube.com/watch?v=FQ660T4uu7k) (english only for now. Links are welcome)
-  * [Theano tutorial](https://yadi.sk/i/54STsEBVpubkn) (russian)
-  * [Pytorch tutorial](https://www.youtube.com/watch?v=VMcRWYEKmhw) (english only for now. Links are welcome)
+  * [Theano tutorial](https://yadi.sk/i/54STsEBVpubkn)
 
 - __In english:__
   * Intro to neural nets and backprop (english) - [video](https://www.youtube.com/watch?v=uXt8qF2Zzfo)
