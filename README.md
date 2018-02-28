@@ -39,13 +39,15 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Seminar: Value iteration.  
   * Homework description - see week2/README.md. 
   * ** HSE Deadline: 2018.02.11 23:59**
-  * ** YSDA Deadline: 2018.03.05 23.59**
+  * ** YSDA Deadline: part1 2018.03.05 23.59, part2 2018.03.12 23.59**
+  
 
 * [__week3__](https://github.com/yandexdataschool/Practical_RL/tree/master/week3_model_free) Model-free reinforcement learning
   * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
   * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
   * Homework description - see week3/README.md. 
   * **HSE Deadline: 2018.02.15 23:59**
+  * ** YSDA Deadline: 2018.03.12 23.59**
      
 * [__week4_recap__](https://github.com/yandexdataschool/Practical_RL/tree/master/week4_%5Brecap%5D_deep_learning) - deep learning recap 
   * Lecture: Deep learning 101
