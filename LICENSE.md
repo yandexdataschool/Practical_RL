@@ -21,9 +21,4 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-If one uses a significant chunk of this software (>100 SLOC), authors
-would appreciate if one mentions the practical_rl as the source of the
-aforementioned chunk. Such mention, however, is not required and this
-paragraph bears no legal power.
-
-For more information, please refer to [http://unlicense.org]
+For more information, please refer to <http://unlicense.org>
