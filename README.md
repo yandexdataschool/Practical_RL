@@ -14,7 +14,9 @@ Taught on-campus at [HSE](https://cs.hse.ru) and YSDA(russian)  and maintained t
 * Grading rules for YSDA & HSE students is [here](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading)
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
-* Magical button that launches you into course environment: [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master)
+* Magical button that launches you into course environment: 
+    * [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master) - comes will all libraries pre-installed. May be down time to time.
+    * If it's down, try [__google colab__](https://colab.research.google.com/) or [__azure notebooks__](http://notebooks.azure.com/). Those last longer, but they will require you to run installer commands (see ./Dockerfile).
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
 
@@ -39,13 +41,15 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Seminar: Value iteration.  
   * Homework description - see week2/README.md. 
   * ** HSE Deadline: 2018.02.11 23:59**
-  * ** YSDA Deadline: 2018.03.05 23.59**
+  * ** YSDA Deadline: part1 2018.03.05 23.59, part2 2018.03.12 23.59**
+  
 
 * [__week3__](https://github.com/yandexdataschool/Practical_RL/tree/master/week3_model_free) Model-free reinforcement learning
   * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
   * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
   * Homework description - see week3/README.md. 
   * **HSE Deadline: 2018.02.15 23:59**
+  * ** YSDA Deadline: 2018.03.12 23.59**
      
 * [__week4_recap__](https://github.com/yandexdataschool/Practical_RL/tree/master/week4_%5Brecap%5D_deep_learning) - deep learning recap 
   * Lecture: Deep learning 101
