@@ -1,9 +1,8 @@
 #### __Lecture slides__ - [here](https://yadi.sk/i/54qWKtDB3NDeuh)
 ### Materials
 * Russian materials:
-   - Recap of value iteration & Q_learning - [video](https://yadi.sk/i/cVawsPkK3EtGJj)
+   - Lecture - [video](https://yadi.sk/i/jcQ1Bg8n3SrhuQ)
    - Q-learning seminar - [video](https://yadi.sk/i/dQmolwOy3EtGNK)
-   - More on value-based methods - [video 2](https://yadi.sk/i/I7XcP6vU3ExNrT)
    - Sarsa & stuff - [seminar2](https://yadi.sk/i/XbqNQmjm3ExNsq)
 * English materials:
    - Lecture by David Silver (english) - [video part I](https://www.youtube.com/watch?v=PnHCvfgC_ZA), [video part II](https://www.youtube.com/watch?v=0g4j2k_Ggc4&t=43s)
