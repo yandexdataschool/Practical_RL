@@ -7,6 +7,11 @@
 
 
 ## More materials
+* Actually proving the policy gradient for discounted rewards - [article](https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf)
+* On variance of policy gradient and optimal baselines: [article](https://papers.nips.cc/paper/4264-analysis-and-improvement-of-policy-gradient-estimation.pdf), another [article](https://arxiv.org/pdf/1301.2315.pdf)
+
+
+
 * Generalizing log-derivative trick - [url](http://blog.shakirm.com/2015/11/machine-learning-trick-of-the-day-5-log-derivative-trick/)
 * Combining policy gradient and q-learning - [arxiv](https://arxiv.org/abs/1611.01626)
 * Bayesian perspective on why reparameterization & logderivative tricks matter (Vetrov's take) - [pdf](https://www.sdsj.ru/slides/Vetrov.pdf)
