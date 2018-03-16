@@ -54,7 +54,6 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 * [__week4_recap__](https://github.com/yandexdataschool/Practical_RL/tree/master/week4_%5Brecap%5D_deep_learning) - deep learning recap 
   * Lecture: Deep learning 101
   * Seminar: Simple image classification with convnets
-  * **HSE Deadline: 2018.02.26 23:59**
 
 * [__week4__](https://github.com/yandexdataschool/Practical_RL/tree/master/week4_approx_rl) Approximate reinforcement learning
   * Lecture: Infinite/continuous state space. Value function approximation. Convergence conditions. Multiple agents trick; experience replay, target networks, double/dueling/bootstrap DQN, etc.
