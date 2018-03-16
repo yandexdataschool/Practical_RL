@@ -59,6 +59,7 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 * [__week4__](https://github.com/yandexdataschool/Practical_RL/tree/master/week4_approx_rl) Approximate reinforcement learning
   * Lecture: Infinite/continuous state space. Value function approximation. Convergence conditions. Multiple agents trick; experience replay, target networks, double/dueling/bootstrap DQN, etc.
   * Seminar:  Approximate Q-learning with experience replay. (CartPole, Atari)
+  ** YSDA Deadline: 2018.03.20 23.30**
 
 * [__week5__](https://github.com/yandexdataschool/Practical_RL/tree/master/week5_explore) Exploration in reinforcement learning
   * Lecture: Contextual bandits. Thompson Sampling, UCB, bayesian UCB. Exploration in model-based RL, MCTS. "Deep" heuristics for exploration.
