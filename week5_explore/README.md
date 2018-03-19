@@ -1,4 +1,4 @@
-### Slides - [here](https://yadi.sk/i/SBcIBg5M3NcKee)
+### Slides - [here](https://yadi.sk/i/H0zVBROe3TWWHz)
 
 ## Exploration and exploitation
 * [__main__] David Silver lecture on exploration and expoitation - [video](https://www.youtube.com/watch?v=sGuiWX07sKw)
