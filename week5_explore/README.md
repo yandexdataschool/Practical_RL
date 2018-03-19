@@ -22,9 +22,9 @@ You will also need Bayesian Neural Networks. You will need theano/lasagne for th
 # either
 conda install Theano
 # or
-pip install —upgrade https://github.com/Theano/Theano/archive/master.zip
+pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
 # and then lasagne
-pip install —upgrade https://github.com/Lasagne/Lasagne/archive/master.zip```
+pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
 ```
 
 Everything else is in the notebook :)
