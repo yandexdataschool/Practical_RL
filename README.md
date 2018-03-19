@@ -89,11 +89,13 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   
 
 # Course staff
-Course materials and teaching by
-- [Fedor Ratnikov](https://github.com/justheuristic/) - lectures, seminars, hw checkups
-- [Oleg Vasilev](https://github.com/Omrigan) - seminars, hw checkups, technical support
+Course materials and teaching by: _[unordered]_
 - [Pavel Shvechikov](https://github.com/bestxolodec) - lectures, seminars, hw checkups, reading group
+- [Oleg Vasilev](https://github.com/Omrigan) - seminars, hw checkups, technical support
 - [Alexander Fritsler](https://github.com/Fritz449) - lectures, seminars, hw checkups
+- [Nikita Putintsev](https://github.com/qwasser) - seminars, hw checkups, organizing our hot mess
+- [Fedor Ratnikov](https://github.com/justheuristic/) - lectures, seminars, hw checkups
+- [Alexey Umnov](https://github.com/alexeyum) - seminars, hw checkups
 
 # Contributions
 * Using pictures from [Berkeley AI course](http://ai.berkeley.edu/home.html)
