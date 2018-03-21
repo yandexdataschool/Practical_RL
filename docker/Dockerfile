@@ -40,6 +40,8 @@ RUN pip install --upgrade pip \
                            https://github.com/Lasagne/Lasagne/archive/master.zip \
                            https://github.com/yandexdataschool/AgentNet/archive/master.zip \
                            tensorflow \
+                           http://download.pytorch.org/whl/cu80/torch-0.3.0.post4-cp27-cp27mu-linux_x86_64.whl \
+                           torchvision \
                            keras     
                            
 RUN pip install --upgrade  gym_pull ppaquette-gym-doom
@@ -57,6 +59,8 @@ RUN pip3 install --upgrade pip \
     pip3 install --upgrade https://github.com/Theano/Theano/archive/master.zip \
                            https://github.com/Lasagne/Lasagne/archive/master.zip \
                            https://github.com/yandexdataschool/AgentNet/archive/master.zip \
+                           http://download.pytorch.org/whl/cu80/torch-0.3.0.post4-cp35-cp35m-linux_x86_64.whl \
+                           torchvision \
                            tensorflow \
                            keras && \                           
     python3 -m ipykernel.kernelspec
