@@ -64,6 +64,8 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 * [__week5__](https://github.com/yandexdataschool/Practical_RL/tree/master/week5_explore) Exploration in reinforcement learning
   * Lecture: Contextual bandits. Thompson Sampling, UCB, bayesian UCB. Exploration in model-based RL, MCTS. "Deep" heuristics for exploration.
   * Seminar: bayesian exploration for contextual bandits. UCB for MCTS.
+  
+  * ** YSDA Deadline: 2018.03.30 23.30**
 
 * [__week6__](https://github.com/yandexdataschool/Practical_RL/tree/master/week6_policy_based) Policy gradient methods I
   * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance reduction(baseline), advantage actor-critic (incl. GAE)
