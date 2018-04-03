@@ -3,12 +3,15 @@
 ## Exploration and exploitation
 * [__main__] David Silver lecture on exploration and expoitation - [video](https://www.youtube.com/watch?v=sGuiWX07sKw)
 * Alternative lecture by J. Schulman - [video](https://www.youtube.com/watch?v=SfCa1HQMkuw)
+* Alternative lecture by N. de Freitas (with bayesian opt) - [video](https://www.youtube.com/watch?v=vz3D36VXefI)
 * Our lectures (russian) 
   - "mathematical" lecture (by Alexander Vorobev) '17 - [slides](https://yadi.sk/i/JAeItALT3JmvCL), [video](https://yadi.sk/i/bVHmu9gt3Hi9Ym)
   - "engineering" lecture '18 - [video](https://yadi.sk/i/_myWJ13O3TdzXo)
-* Our lecture on exploration with bayesian neural networks - [slides](https://yadi.sk/i/OANpkyFn3Jmv4J)
+  
+  
   
 ## More materials 
+* Gittins Index - the less heuristical approach to bandit exploration - [article](http://www.ece.mcgill.ca/~amahaj1/projects/bandits/book/2013-bandit-computations.pdf)
 * "Deep" version: variational information maximizing exploration - [video](https://www.youtube.com/watch?v=sRIjxxjVrnY)
   * Same topics in russian - [video](https://yadi.sk/i/_2_0yqeW3HDbcn)
 * Lecture covering intrinsically motivated reinforcement learning - [video](https://www.youtube.com/watch?v=aJI_9SoBDaQ)
