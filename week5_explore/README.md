@@ -3,7 +3,9 @@
 ## Exploration and exploitation
 * [__main__] David Silver lecture on exploration and expoitation - [video](https://www.youtube.com/watch?v=sGuiWX07sKw)
 * Alternative lecture by J. Schulman - [video](https://www.youtube.com/watch?v=SfCa1HQMkuw)
-* Our lecture (russian) - [slides](https://yadi.sk/i/JAeItALT3JmvCL), [video](https://yadi.sk/i/bVHmu9gt3Hi9Ym)
+* Our lectures (russian) 
+  - "mathematical" lecture (by Alexander Vorobev) '17 - [slides](https://yadi.sk/i/JAeItALT3JmvCL), [video](https://yadi.sk/i/bVHmu9gt3Hi9Ym)
+  - "engineering" lecture '18 - [video](https://yadi.sk/i/_myWJ13O3TdzXo)
 * Our lecture on exploration with bayesian neural networks - [slides](https://yadi.sk/i/OANpkyFn3Jmv4J)
   
 ## More materials 
