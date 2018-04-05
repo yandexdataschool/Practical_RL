@@ -33,7 +33,7 @@ RUN pip install --upgrade pip \
     pip install --upgrade sklearn \
                            jupyter \
                            tqdm \
-                           gym[all] \
+                           gym gym[box2d] gym[atari] \
                            matplotlib \
                            seaborn && \
     pip install --upgrade https://github.com/Theano/Theano/archive/master.zip \
@@ -53,7 +53,7 @@ RUN pip3 install --upgrade pip \
     pip3 install --upgrade sklearn \
                            jupyter \
                            tqdm \
-                           gym[all] \
+                           gym gym[box2d] gym[atari] \
                            matplotlib \
                            seaborn && \
     pip3 install --upgrade https://github.com/Theano/Theano/archive/master.zip \
