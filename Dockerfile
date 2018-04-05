@@ -26,6 +26,11 @@ RUN pip install --upgrade keras
 RUN pip install gym_pull
 RUN pip install ppaquette-gym-doom
 
+
+#fix binder's broken ee  & setuptools in py3; issue: https://bit.ly/2q7ICwu
+RUN curl https://bootstrap.pypa.io/ez_setup.py -o - | /home/main/anaconda/envs/python3/bin/python
+
+
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade pip
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade sklearn tqdm
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade gym[all]
