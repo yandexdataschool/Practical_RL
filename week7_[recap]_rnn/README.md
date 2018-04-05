@@ -1,7 +1,7 @@
 ## Materials
 * [Slides](https://yadi.sk/i/-Iqdhg483GDyoN)
 * CS231 lecture on RNNs - [video](https://www.youtube.com/watch?v=iX5V1WpxxkY)
-* Our [lecture](https://yadi.sk/i/XHmT5hO53GcCKV), [seminar](https://yadi.sk/i/19twHESN3GcGKQ) (both russian)
+* Our [lecture](https://yadi.sk/i/XHmT5hO53GcCKV), [seminar(pytorch)](https://yadi.sk/i/nCch5I8S3TsXh5), [seminar(theano)](https://yadi.sk/i/19twHESN3GcGKQ) (both russian)
 * [alternative] Brief lecture on RNN by nervana - [video](https://www.youtube.com/watch?v=Ukgii7Yd_cU)
 * [alternative] More detailed lecture by Y. Bengio - [video](https://www.youtube.com/watch?v=xK-bzjIQkmM)
 * Great reading by Karpathy - [blog post](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
