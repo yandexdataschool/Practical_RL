@@ -23,6 +23,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted 
                        liblapack-dev \
                        libsdl2-dev \
                        libboost-all-dev \
+                       graphviz \
                        gcc \
                        g++ && \
     ln -s /usr/bin/swig3.0 /usr/bin/swig
@@ -33,6 +34,7 @@ RUN pip install --upgrade pip \
     pip install --upgrade sklearn \
                            jupyter \
                            tqdm \
+                           graphviz \
                            gym gym[box2d] gym[atari] \
                            matplotlib \
                            seaborn && \
@@ -53,6 +55,7 @@ RUN pip3 install --upgrade pip \
     pip3 install --upgrade sklearn \
                            jupyter \
                            tqdm \
+                           graphviz \
                            gym gym[box2d] gym[atari] \
                            matplotlib \
                            seaborn && \
