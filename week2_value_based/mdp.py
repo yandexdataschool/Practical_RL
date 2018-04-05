@@ -8,8 +8,9 @@ try:
     from IPython.display import display
     from graphviz import Digraph
     import graphviz
+    has_graphviz = True
 except:
-    pass
+    has_graphviz = False
 
 
 def weighted_choice(v, p):
