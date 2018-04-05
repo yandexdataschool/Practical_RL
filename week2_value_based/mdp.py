@@ -3,15 +3,25 @@
 import sys
 import random
 import numpy as np
+
+try:
+    from IPython.display import display
+    from graphviz import Digraph
+    import graphviz
+except:
+    pass
+
+
 def weighted_choice(v, p):
-   total = sum(p)
-   r = random.uniform(0, total)
-   upto = 0
-   for c, w in zip(v,p):
-      if upto + w >= r:
-         return c
-      upto += w
-   assert False, "Shouldn't get here"
+    total = sum(p)
+    r = random.uniform(0, total)
+    upto = 0
+    for c, w in zip(v, p):
+        if upto + w >= r:
+            return c
+        upto += w
+    assert False, "Shouldn't get here"
+
 
 class MDP:
     def __init__(self, transition_probs, rewards, initial_state=None):
@@ -70,7 +80,8 @@ class MDP:
 
     def get_next_states(self, state, action):
         """ return a dictionary of {next_state1 : P(next_state1 | state, action), next_state2: ...} """
-        assert action in self.get_possible_actions(state), "cannot do action %s from state %s" % (action, state)
+        assert action in self.get_possible_actions(
+            state), "cannot do action %s from state %s" % (action, state)
         return self._transition_probs[state][action]
 
     def get_transition_prob(self, state, action, next_state):
@@ -79,24 +90,29 @@ class MDP:
 
     def get_reward(self, state, action, next_state):
         """ return the reward you get for taking action in state and landing on next_state"""
-        assert action in self.get_possible_actions(state), "cannot do action %s from state %s" % (action, state)
-        return self._rewards.get(state, {}).get(action, {}).get(next_state, 0.0)
+        assert action in self.get_possible_actions(
+            state), "cannot do action %s from state %s" % (action, state)
+        return self._rewards.get(state, {}).get(action, {}).get(next_state,
+                                                                0.0)
 
     def reset(self):
         """ reset the game, return the initial state"""
         if self._initial_state is None:
-            self._current_state = random.choice(tuple(self._transition_probs.keys()))
+            self._current_state = random.choice(
+                tuple(self._transition_probs.keys()))
         elif self._initial_state in self._transition_probs:
             self._current_state = self._initial_state
         elif callable(self._initial_state):
             self._current_state = self._initial_state()
         else:
-            raise ValueError("initial state %s should be either a state or a function() -> state" % self._initial_state)
+            raise ValueError(
+                "initial state %s should be either a state or a function() -> state" % self._initial_state)
         return self._current_state
 
     def step(self, action):
         """ take action, return next_state, reward, is_done, empty_info """
-        possible_states, probs = zip(*self.get_next_states(self._current_state, action).items())
+        possible_states, probs = zip(
+            *self.get_next_states(self._current_state, action).items())
         next_state = weighted_choice(possible_states, p=probs)
         reward = self.get_reward(self._current_state, action, next_state)
         is_done = self.is_terminal(next_state)
@@ -108,30 +124,43 @@ class MDP:
 
     def _check_param_consistency(self, transition_probs, rewards):
         for state in transition_probs:
-            assert isinstance(transition_probs[state], dict), "transition_probs for %s should be a dictionary " \
-                                                              "but is instead %s" % (
-                                                              state, type(transition_probs[state]))
+            assert isinstance(transition_probs[state],
+                              dict), "transition_probs for %s should be a dictionary " \
+                                     "but is instead %s" % (
+                                         state, type(transition_probs[state]))
             for action in transition_probs[state]:
-                assert isinstance(transition_probs[state][action], dict), "transition_probs for %s, %s should be a " \
-                                                                          "a dictionary but is instead %s" % (
-                                                                              state, action,
-                                                                              type(transition_probs[state, action]))
+                assert isinstance(transition_probs[state][action],
+                                  dict), "transition_probs for %s, %s should be a " \
+                                         "a dictionary but is instead %s" % (
+                                             state, action,
+                                             type(transition_probs[
+                                                      state, action]))
                 next_state_probs = transition_probs[state][action]
-                assert len(next_state_probs) != 0, "from state %s action %s leads to no next states" % (state, action)
+                assert len(
+                    next_state_probs) != 0, "from state %s action %s leads to no next states" % (
+                    state, action)
                 sum_probs = sum(next_state_probs.values())
-                assert abs(sum_probs - 1) <= 1e-10, "next state probabilities for state %s action %s " \
-                                                    "add up to %f (should be 1)" % (state, action, sum_probs)
+                assert abs(
+                    sum_probs - 1) <= 1e-10, "next state probabilities for state %s action %s " \
+                                             "add up to %f (should be 1)" % (
+                                                 state, action, sum_probs)
         for state in rewards:
-            assert isinstance(rewards[state], dict), "rewards for %s should be a dictionary " \
-                                                     "but is instead %s" % (state, type(transition_probs[state]))
+            assert isinstance(rewards[state],
+                              dict), "rewards for %s should be a dictionary " \
+                                     "but is instead %s" % (
+                                         state, type(transition_probs[state]))
             for action in rewards[state]:
-                assert isinstance(rewards[state][action], dict), "rewards for %s, %s should be a " \
-                                                                 "a dictionary but is instead %s" % (
-                                                                 state, action, type(transition_probs[state, action]))
+                assert isinstance(rewards[state][action],
+                                  dict), "rewards for %s, %s should be a " \
+                                         "a dictionary but is instead %s" % (
+                                             state, action, type(
+                                                 transition_probs[
+                                                     state, action]))
         msg = "The Enrichment Center once again reminds you that Android Hell is a real place where" \
               " you will be sent at the first sign of defiance. "
         assert None not in transition_probs, "please do not use None as a state identifier. " + msg
         assert None not in rewards, "please do not use None as an action identifier. " + msg
+
 
 class FrozenLakeEnv(MDP):
     """
@@ -178,62 +207,181 @@ class FrozenLakeEnv(MDP):
         ],
     }
 
-
     def __init__(self, desc=None, map_name="4x4", slip_chance=0.2):
         if desc is None and map_name is None:
             raise ValueError('Must provide either desc or map_name')
         elif desc is None:
             desc = self.MAPS[map_name]
-        assert ''.join(desc).count('S') == 1, "this implementation supports having exactly one initial state"
-        assert all(c in "SFHG" for c in ''.join(desc)), "all cells must be either of S, F, H or G"
+        assert ''.join(desc).count(
+            'S') == 1, "this implementation supports having exactly one initial state"
+        assert all(c in "SFHG" for c in
+                   ''.join(desc)), "all cells must be either of S, F, H or G"
 
-        self.desc = desc = np.asarray(list(map(list,desc)),dtype='str')
+        self.desc = desc = np.asarray(list(map(list, desc)), dtype='str')
         self.lastaction = None
 
         nrow, ncol = desc.shape
         states = [(i, j) for i in range(nrow) for j in range(ncol)]
-        actions = ["left","down","right","up"]
+        actions = ["left", "down", "right", "up"]
 
         initial_state = states[np.array(desc == b'S').ravel().argmax()]
 
         def move(row, col, movement):
-            if movement== 'left':
-                col = max(col-1,0)
-            elif movement== 'down':
-                row = min(row+1,nrow-1)
-            elif movement== 'right':
-                col = min(col+1,ncol-1)
-            elif movement== 'up':
-                row = max(row-1,0)
+            if movement == 'left':
+                col = max(col - 1, 0)
+            elif movement == 'down':
+                row = min(row + 1, nrow - 1)
+            elif movement == 'right':
+                col = min(col + 1, ncol - 1)
+            elif movement == 'up':
+                row = max(row - 1, 0)
             else:
-                raise("invalid action")
+                raise ("invalid action")
             return (row, col)
 
-        transition_probs = {s : {} for s in states}
-        rewards = {s : {} for s in states}
-        for (row,col) in states:
-            if desc[row, col]  in "GH": continue
+        transition_probs = {s: {} for s in states}
+        rewards = {s: {} for s in states}
+        for (row, col) in states:
+            if desc[row, col] in "GH": continue
             for action_i in range(len(actions)):
                 action = actions[action_i]
                 transition_probs[(row, col)][action] = {}
                 rewards[(row, col)][action] = {}
-                for movement_i in [(action_i - 1) % len(actions), action_i, (action_i + 1) % len(actions)]:
+                for movement_i in [(action_i - 1) % len(actions), action_i,
+                                   (action_i + 1) % len(actions)]:
                     movement = actions[movement_i]
                     newrow, newcol = move(row, col, movement)
-                    prob = (1. - slip_chance) if movement == action else (slip_chance / 2.)
+                    prob = (1. - slip_chance) if movement == action else (
+                            slip_chance / 2.)
                     if prob == 0: continue
-                    if (newrow, newcol) not in transition_probs[row,col][action]:
-                        transition_probs[row,col][action][newrow, newcol] = prob
+                    if (newrow, newcol) not in transition_probs[row, col][
+                        action]:
+                        transition_probs[row, col][action][
+                            newrow, newcol] = prob
                     else:
-                        transition_probs[row, col][action][newrow, newcol] += prob
+                        transition_probs[row, col][action][
+                            newrow, newcol] += prob
                     if desc[newrow, newcol] == 'G':
-                        rewards[row,col][action][newrow, newcol] = 1.0
+                        rewards[row, col][action][newrow, newcol] = 1.0
 
         MDP.__init__(self, transition_probs, rewards, initial_state)
 
     def render(self):
         desc_copy = np.copy(self.desc)
         desc_copy[self._current_state] = '*'
-        print('\n'.join(map(''.join,desc_copy)), end='\n\n')
+        print('\n'.join(map(''.join, desc_copy)), end='\n\n')
 
 
+def plot_graph(mdp, graph_size='10,10', s_node_size='1,5',
+               a_node_size='0,5', rankdir='LR', ):
+    """
+    Function for pretty drawing MDP graph with graphviz library.
+    Requirements:
+    graphviz : https://www.graphviz.org/
+    for ubuntu users: sudo apt-get install graphviz
+    python library for graphviz
+    for pip users: pip install graphviz
+    :param mdp:
+    :param graph_size: size of graph plot
+    :param s_node_size: size of state nodes
+    :param a_node_size: size of action nodes
+    :param rankdir: order for drawing
+    :return: dot object
+    """
+    s_node_attrs = {'shape': 'doublecircle',
+                    'color': 'lightgreen',
+                    'style': 'filled',
+                    'width': str(s_node_size),
+                    'height': str(s_node_size),
+                    'fontname': 'Arial',
+                    'fontsize': '24'}
+
+    a_node_attrs = {'shape': 'circle',
+                    'color': 'lightpink',
+                    'style': 'filled',
+                    'width': str(a_node_size),
+                    'height': str(a_node_size),
+                    'fontname': 'Arial',
+                    'fontsize': '20'}
+
+    s_a_edge_attrs = {'style': 'bold',
+                      'color': 'red',
+                      'ratio': 'auto'}
+
+    a_s_edge_attrs = {'style': 'dashed',
+                      'color': 'blue',
+                      'ratio': 'auto',
+                      'fontname': 'Arial',
+                      'fontsize': '16'}
+
+    graph = Digraph(name='MDP')
+    graph.attr(rankdir=rankdir, size=graph_size)
+    for state_node in mdp._transition_probs:
+        graph.node(state_node, **s_node_attrs)
+
+        for posible_action in mdp.get_possible_actions(state_node):
+            action_node = state_node + "-" + posible_action
+            graph.node(action_node,
+                       label=str(posible_action),
+                       **a_node_attrs)
+            graph.edge(state_node, state_node + "-" +
+                       posible_action, **s_a_edge_attrs)
+
+            for posible_next_state in mdp.get_next_states(state_node,
+                                                          posible_action):
+                probability = mdp.get_transition_prob(
+                    state_node, posible_action, posible_next_state)
+                reward = mdp.get_reward(
+                    state_node, posible_action, posible_next_state)
+
+                if reward != 0:
+                    label_a_s_edge = 'p = ' + str(probability) + \
+                                     '  ' + 'reward =' + str(reward)
+                else:
+                    label_a_s_edge = 'p = ' + str(probability)
+
+                graph.edge(action_node, posible_next_state,
+                           label=label_a_s_edge, **a_s_edge_attrs)
+    return graph
+
+
+def plot_graph_with_state_values(mdp, state_values):
+    """ Plot graph with state values"""
+    graph = plot_graph(mdp)
+    for state_node in mdp._transition_probs:
+        value = state_values[state_node]
+        graph.node(state_node,
+                   label=str(state_node) + '\n' + 'V =' + str(value)[:4])
+    return display(graph)
+
+
+def get_optimal_action_for_plot(mdp, state_values, state, gamma=0.9):
+    """ Finds optimal action using formula above. """
+    if mdp.is_terminal(state): return None
+    next_actions = mdp.get_possible_actions(state)
+    q_values = [get_action_value(mdp, state_values, state, action, gamma) for
+                action in next_actions]
+    optimal_action = next_actions[np.argmax(q_values)]
+    return optimal_action
+
+
+def plot_graph_optimal_strategy_and_state_values(mdp, state_values):
+    """ Plot graph with state values and """
+    graph = plot_graph(mdp)
+    opt_s_a_edge_attrs = {'style': 'bold',
+                          'color': 'green',
+                          'ratio': 'auto',
+                          'penwidth': '6'}
+
+    for state_node in mdp._transition_probs:
+        value = state_values[state_node]
+        graph.node(state_node,
+                   label=str(state_node) + '\n' + 'V =' + str(value)[:4])
+        for action in mdp.get_possible_actions(state_node):
+            if action == get_optimal_action_for_plot(mdp,
+                                                     state_values,
+                                                     state_node,
+                                                     gamma):
+                graph.edge(state_node, state_node + "-" + action,
+                           **opt_s_a_edge_attrs)
+    return display(graph)
