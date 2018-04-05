@@ -38,7 +38,7 @@ RUN pip install ppaquette-gym-doom
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade pip
 
 # fix https://github.com/tensorflow/tensorflow/issues/622
-RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade --I setuptools
+RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade --ignore-installed setuptools
 
 # python3: fix `GLIBCXX_3.4.20' not found - conda's libgcc blocked system's gcc-4.9 and libstdc++6
 RUN bash -c "conda update -y conda && source activate python3 && conda uninstall -y libgcc && source deactivate"
