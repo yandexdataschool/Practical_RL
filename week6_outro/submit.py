@@ -48,3 +48,9 @@ def submit_bandits(scores, email, token):
          int(scores[thompson_sampling_agent][int(5e3) - 1])))
 
     grader.submit(email, token)
+
+
+def submit_mcts(total_reward, email, token):
+    grader = grading.Grader("Giz88DiCEei4TA70mSDOBg")
+    grader.set_answer("L1HgT", int(total_reward))
+    grader.submit(email, token)
