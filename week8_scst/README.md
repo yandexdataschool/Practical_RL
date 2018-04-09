@@ -1,5 +1,5 @@
 ## Materials
-* [Slides](https://yadi.sk/i/5Ji8Fic23PTmsx)
+* [Slides](https://yadi.sk/i/2oUkKL8m3UFFe8)
 * Our [lecture](https://yadi.sk/i/-U5w4NpJ3H5TWD) & [seminar](https://yadi.sk/i/W3N7-6is3H5TWN) (russian)
 * English lectures
   * Lecture by Mohammad Norouzi - [cs294 video](https://www.youtube.com/watch?v=fZNyHoXgV7M&index=24&list=PLkFD6_40KJIwTmSbCv9OVJB3YaO4sFwkX)
