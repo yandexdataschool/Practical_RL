@@ -1,4 +1,5 @@
-[__slides__](https://docs.google.com/presentation/d/15Z_AVBsO9VuOSZ5uY-Q4by3tHKiRSENchhAKHhCxIOc/present?token=AC4w5VgM6o7lCOmwtNFI3lfzyPv2PHOpRQ%3A1511795215658&includes_info_params=1#slide=id.g1d8d5bc58c_0_4)
+* [__slides #1 (trpo)__](https://docs.google.com/presentation/d/15Z_AVBsO9VuOSZ5uY-Q4by3tHKiRSENchhAKHhCxIOc/present?token=AC4w5VgM6o7lCOmwtNFI3lfzyPv2PHOpRQ%3A1511795215658&includes_info_params=1#slide=id.g1d8d5bc58c_0_4)
+* [__slides #2 (dpg)__](https://yadi.sk/i/uV6IA-C23UTn7c)
 
 ## Materials
 This section covers some steroids for policy gradient methods, along with a cool general trick called 
