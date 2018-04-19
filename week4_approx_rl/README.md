@@ -23,6 +23,7 @@
 * Video on asynchronuous methods (Mnih) - [video](https://www.youtube.com/watch?v=9sx1_u2qVhQ)
 
 ## DQN tutorials
+* [in pytorch] A great series starting from simple DQN to all the cool new stuff - [url](https://github.com/higgsfield/RL-Adventure)
 * A guide to deep RL from ~scratch (nervana blog) - [url](https://www.nervanasys.com/demystifying-deep-reinforcement-learning/)
 * Building deep q-network from ~scratch (blog) - [url](https://jaromiru.com/2016/09/27/lets-make-a-dqn-theory/)
 * Another guide guide to DQN from ~scratch (blog) - [url](https://rubenfiszel.github.io/posts/rl4j/2016-08-24-Reinforcement-Learning-and-DQN.html)
