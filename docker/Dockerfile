@@ -23,17 +23,18 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted 
                        liblapack-dev \
                        libsdl2-dev \
                        libboost-all-dev \
+                       graphviz \
                        gcc \
                        g++ && \
     ln -s /usr/bin/swig3.0 /usr/bin/swig
 
-RUN pip install --upgrade pip \
-                           scipy \
-                           numpy && \
+RUN pip install --upgrade pip==9.0.3 && \
+    pip install --upgrade numpy scipy && \
     pip install --upgrade sklearn \
                            jupyter \
                            tqdm \
-                           gym[all] \
+                           graphviz \
+                           gym gym[box2d] gym[atari] \
                            matplotlib \
                            seaborn && \
     pip install --upgrade https://github.com/Theano/Theano/archive/master.zip \
@@ -47,13 +48,13 @@ RUN pip install --upgrade pip \
 RUN pip install --upgrade  gym_pull ppaquette-gym-doom
 
 
-RUN pip3 install --upgrade pip \
-                           scipy \
-                           numpy && \
+RUN pip3 install --upgrade pip==9.0.3 && \
+    pip3 install --upgrade numpy scipy && \
     pip3 install --upgrade sklearn \
                            jupyter \
                            tqdm \
-                           gym[all] \
+                           graphviz \
+                           gym gym[box2d] gym[atari] \
                            matplotlib \
                            seaborn && \
     pip3 install --upgrade https://github.com/Theano/Theano/archive/master.zip \
