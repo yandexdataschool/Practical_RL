@@ -15,6 +15,7 @@ Go to `seminar_TRPO_<framework>.ipynb` and follow instructions in the notebook.
 
 ## More: Reinforcement learning in large/continuous action spaces
 While you already know algorithms that will work with continuously many actions, it can't hurt to learn something more specialized.
+ * Lecture by J. Schulman - [video](https://www.youtube.com/watch?v=jmMsNQ2eug4)
  * Q-learning with normalized advantage functions - [article](https://arxiv.org/abs/1603.00748), [code1](https://github.com/carpedm20/NAF-tensorflow), [code2](http://bit.ly/2qx2087)
  * Deterministic policy gradient - [article](https://arxiv.org/pdf/1512.07679.pdf), [post+code](https://yanpanlau.github.io/2016/10/11/Torcs-Keras.html)
  * Stochastic value gradient - [article](https://arxiv.org/abs/1510.09142)
