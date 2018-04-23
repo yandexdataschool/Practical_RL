@@ -1,6 +1,7 @@
 In this week you can find several sections covering advanced topics in RL, along with less advanced topics that we couldn't squeeze into the main track
 
 ## Other
+* Distributional RL - [video](https://www.youtube.com/watch?v=bsuvM1jO-4w)
 * Learning by imitation - [video](https://www.youtube.com/watch?v=kl_G95uKTHw), [assignment](http://rll.berkeley.edu/deeprlcourse/docs/hw1.pdf)(berkeley cs294)
 * Knowledge transfer in RL - [video](https://www.youtube.com/watch?v=Hx4XpVdJOI0)(berkeley cs294)
 * Inverse reinforcement learning 
