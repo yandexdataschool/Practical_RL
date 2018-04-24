@@ -14,7 +14,7 @@ RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
 
 
 USER main
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip==9.0.3
 RUN pip install --upgrade --ignore-installed setuptools  #fix https://github.com/tensorflow/tensorflow/issues/622
 RUN pip install --upgrade sklearn tqdm nltk editdistance joblib graphviz
 
@@ -35,7 +35,7 @@ RUN pip install ppaquette-gym-doom
 
 
 
-RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade pip
+RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade pip==9.0.3
 
 # fix https://github.com/tensorflow/tensorflow/issues/622
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade --ignore-installed setuptools
