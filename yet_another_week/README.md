@@ -1,4 +1,4 @@
-__[week11 slides](https://yadi.sk/i/ngB_BcNx3UggK6)__
+__Our slides:__ __[inverse/imitation rl](https://yadi.sk/i/ngB_BcNx3UggK6);__ __[multi-agent 101](https://yadi.sk/i/XrFgmdCy3Vtd4k);__ __[multi-agent 102](https://docs.google.com/presentation/d/1AiSZnWGHWU_34QZ0fqdCGIXWUX_bC-0zz3kc3VVcPCA/edit?usp=sharing);__ __[hierarchical rl](https://yadi.sk/i/LkNiKxMz3Vtcr3)__
 
 
 In this week you can find several sections covering advanced topics in RL, along with less advanced topics that we couldn't squeeze into the main track
