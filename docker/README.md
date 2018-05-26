@@ -13,7 +13,7 @@ Below are the instructions for both approaches.
 ## Kitematic
 Find justheuristic/practical_rl in the search menu. Download and launch the container.
 
-Click on "web preview" screen in the top-right __or__ go to settings, ports and fing at which port your jupyter is located, usually 32***.
+Click on "web preview" screen in the top-right __or__ go to settings, ports and find at which port your jupyter is located, usually 32***.
 
 ## Native
 `docker run -it -v <local_dir>:/notebooks -p <local_port>:8888 justheuristic/practical_rl sh ../run_jupyter.sh`
