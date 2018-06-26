@@ -27,7 +27,7 @@ Then you can access your jupyter in a browser at `localhost:<local_port>/?token=
 ## Manual
 Build container
 
-`$ docker build -t rl .`
+`$ docker build -t dl .`
 
 
 Run it
