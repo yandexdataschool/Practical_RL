@@ -18,7 +18,9 @@
 ### Assignments
 
 Just as usual, start with `seminar_qlearning.ipynb` and then proceed to `homework.ipynb`. 
-If you're running on a local machine (e.g. your pc) with python2, you can also try `seminar_py2` (see below).
+
+
+(optional) If you're running on a local machine (e.g. your pc) with python2, you can also try `seminar_py2`. It has some neat RL problems with cool visualizations.
 
 ### ./seminar_py2
 _this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
