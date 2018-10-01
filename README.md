@@ -15,7 +15,7 @@ Taught on-campus at [HSE](https://cs.hse.ru) and [YSDA](https://yandexdataschool
 * Online student __[survival guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)__
 * Installing the libraries - [guide and issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1)
 * Magical button that launches you into course environment: 
-    * [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master) - comes will all libraries pre-installed. May be down time to time.
+    * [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master) - comes with all libraries pre-installed. May be down time to time.
     * If it's down, try [__google colab__](https://colab.research.google.com/) or [__azure notebooks__](http://notebooks.azure.com/). Those last longer, but they will require you to run installer commands (see ./Dockerfile).
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform) for everything that didn't go through e-mail.
 * [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL)
