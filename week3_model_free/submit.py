@@ -38,7 +38,7 @@ def submit_qlearning2(rewards, email, token):
 def submit_qlearning_all(rewards_q1, rewards_q2, email, token):
     grader = grading.Grader("XbjcGd7xEeeDzRKutDCmyA")
     
-	flag1 = np.mean(rewards_q1[-10:])
+    flag1 = np.mean(rewards_q1[-10:])
     grader.set_answer("5NB4z", flag1)
 
     flag2 = np.mean(rewards_q2[-10:])
