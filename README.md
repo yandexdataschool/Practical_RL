@@ -102,7 +102,7 @@ Course materials and teaching by: _[unordered]_
 # Contributions
 * Using pictures from [Berkeley AI course](http://ai.berkeley.edu/home.html)
 * Massively refering to [CS294](http://rll.berkeley.edu/deeprlcourse/)
-* Sevaral tensorflow assignments by [Scitator](https://github.com/Scitator)
+* Several tensorflow assignments by [Scitator](https://github.com/Scitator)
 * A lot of fixes from [arogozhnikov](https://github.com/arogozhnikov)
 * Other awesome people: see github [contributors](https://github.com/yandexdataschool/Practical_RL/graphs/contributors)
 
