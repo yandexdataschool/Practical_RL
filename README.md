@@ -1,4 +1,6 @@
 # Practical_RL
+** Announce - new HSE track will start in late january, YSDA soon after. Tons of changes incoming. We'll also fix all the issues :) **
+
 A course on reinforcement learning in the wild.
 Taught on-campus at [HSE](https://cs.hse.ru) and [YSDA](https://yandexdataschool.com/)  and maintained to be friendly to online students (both english and russian).
 
