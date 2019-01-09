@@ -13,10 +13,10 @@ def submit_interface(policy, email, token):
     actions = {'left': 0, 'stop': 1, 'right': 2}
 
     for t in range(TIME_LIMIT):
-        s, r, done, _ = env.step(policy(t))
+        s, r, done, _ = env.step(policy(s, t))
         if done:
             break
-    else: 
+    else:
         s = [-1]
     grader = grading.Grader("3T7pSSz0EeifGhJb4HAv7A")
     grader.set_answer("sDilm", s[0])
