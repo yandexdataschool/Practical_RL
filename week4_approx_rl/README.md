@@ -10,7 +10,8 @@
 
 ## More materials
 * __[recommended]__ How to _actually_ do deep reinforcement learning by J. Schulman - [pdf](http://rll.berkeley.edu/deeprlcourse/docs/nuts-and-bolts.pdf)
-* __[recommended]__ An overview of deep reinforcement learning - [arxiv](https://arxiv.org/pdf/1701.07274v1.pdf)
+* __[recommended]__ [Spinning up](https://spinningup.openai.com/en/latest/) - a massive repository of deep RL knowledge
+* __[recommended]__ A table of collateral effects of reinforcement learning in games - [table](https://docs.google.com/spreadsheets/d/e/2PACX-1vRPiprOaC3HsCf5Tuum8bRfzYUiKLRqJmbOoC-32JorNdfyTiRRsR7Ea5eWtvsWzuxo8bjOxCG84dAg/pubhtml?fbclid=IwAR114qpVxlzU8vO8BiMRbpPKUIci8sHsOoUZ16-_0yVtABr6AW1-AZKFXWg)
 * DQN and modiffications - lecture by J. Schulman - [video](https://www.youtube.com/watch?v=h1-pj4Y9-kM)
 * * interactive demos in your browser: [demo1](http://cs.stanford.edu/people/karpathy/convnetjs/demo/rldemo.html)(karpathy), [demo2](http://janhuenermann.com/projects/learning-to-drive)(Hünermann)
 * Reinforcement learning architectures list - [repo](https://github.com/5vision/deep-reinforcement-learning-networks)
@@ -21,6 +22,7 @@
 * Article on asynchronuous methods in deep RL - [arxiv](https://arxiv.org/abs/1602.01783)
 * Successor representations for reinforcement learning - [article](https://arxiv.org/abs/1606.02396), [video](https://www.youtube.com/watch?v=kNqXCn7K-BM&feature=youtu.be)
 * Video on asynchronuous methods (Mnih) - [video](https://www.youtube.com/watch?v=9sx1_u2qVhQ)
+* An overview of deep reinforcement learning - [arxiv](https://arxiv.org/pdf/1701.07274v1.pdf)
 
 ## DQN tutorials
 * [in pytorch] A great series starting from simple DQN to all the cool new stuff - [url](https://github.com/higgsfield/RL-Adventure)
