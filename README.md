@@ -1,6 +1,6 @@
 
 # Practical_RL
- course on reinforcement learning in the wild.
+An open course on reinforcement learning in the wild.
 Taught on-campus at [HSE](https://cs.hse.ru) and [YSDA](https://yandexdataschool.com/)  and maintained to be friendly to online students (both english and russian).
 
 __Note:__ this branch is an on-campus version of the for __spring 2019 YSDA and HSE students__. For full course materials, switch to the [master branch](https://github.com/yandexdataschool/Practical_RL/tree/master).
@@ -52,6 +52,6 @@ Course materials and teaching by: _[unordered]_
 * Several tensorflow assignments by [Scitator](https://github.com/Scitator)
 * A lot of fixes from [arogozhnikov](https://github.com/arogozhnikov)
 * Other awesome people: see github [contributors](https://github.com/yandexdataschool/Practical_RL/graphs/contributors)
-* [Alexey Umnov](https://github.com/alexeyum) helped us a lot during spring2018 
+* [Alexey Umnov](https://github.com/alexeyum) helped us a lot during spring2018
 
 
