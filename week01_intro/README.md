@@ -21,7 +21,11 @@
 * Longer video on Ant Colony Algorithm (english) - [video](https://www.youtube.com/watch?v=xpyKmjJuqhk)
 
 
-## Homework description
+## Practice assignment
+Instant dive:
+* __gym_interface__: https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week01_intro/seminar_gym_interface.ipynb
+* __gym_interface__: https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week01_intro/crossentropy_method.ipynb
+
 * Open `gym_interface.ipynb` and follow instructions from there
   * If you haven't installed everything yet, try [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master)
 * After you're done there, proceed to `crossentropy_method.ipynb`
