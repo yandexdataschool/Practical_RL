@@ -22,10 +22,9 @@
 
 
 ## Practice assignment
-Instant dive in: [__seminar_gym_interface__](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week01_intro/seminar_gym_interface.ipynb), [__gym_interface__](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week01_intro/crossentropy_method.ipynb)
+Instant dive in: [__seminar_gym_interface__](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week01_intro/seminar_gym_interface.ipynb), [__crossentropy_method__](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week01_intro/crossentropy_method.ipynb)
 
 * Open `gym_interface.ipynb` and follow instructions from there
-  * If you haven't installed everything yet, try [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master)
 * After you're done there, proceed to `crossentropy_method.ipynb`
 * You can find homework and bonus assignment descriptions at the end of that notebook.
 * Note: so far it's enough to say `pip install gym` on top of any data-science-stuffed python, but we'd appreciate if you gradually switch to [full installation](https://github.com/openai/gym#installing-everything).
