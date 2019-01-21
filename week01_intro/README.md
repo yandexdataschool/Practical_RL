@@ -1,5 +1,5 @@
 ## Materials:
-* [__Lecture slides__](https://yadi.sk/i/sbc0ZCKx3RRGbW)
+* [__Lecture slides__](https://yadi.sk/i/-EUHXUXOTC5t9Q)
 * __Russian:__
   * Intro to RL - [video](https://yadi.sk/i/bMo0qa-x3DoqkS)
   * Blackbox optimization - [video](https://yadi.sk/i/5yf_4oGI3EDJhJ)
