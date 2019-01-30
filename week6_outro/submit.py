@@ -1,15 +1,15 @@
 import sys
-import numpy as np
 sys.path.append("..")
+
 import grading
 
 
-def submit_bandits(scores, email, token):
+def submit_bandits(agents, scores, email, token):
     epsilon_greedy_agent = None
     ucb_agent = None
     thompson_sampling_agent = None
 
-    for agent in scores:
+    for agent in agents:
         if "EpsilonGreedyAgent" in agent.name:
             epsilon_greedy_agent = agent.name
         if "UCBAgent" in agent.name:
@@ -24,12 +24,12 @@ def submit_bandits(scores, email, token):
     grader = grading.Grader("VL9tBt7zEeewFg5wtLgZkA")
     grader.set_answer(
         "YQLYE",
-        (int(scores[epsilon_greedy_agent][int(1e4) - 1]) - 
+        (int(scores[epsilon_greedy_agent][int(1e4) - 1]) -
          int(scores[epsilon_greedy_agent][int(5e3) - 1])))
 
     grader.set_answer(
         "FCHOZ",
-        (int(scores[epsilon_greedy_agent][int(1e4) - 1]) - 
+        (int(scores[epsilon_greedy_agent][int(1e4) - 1]) -
          int(scores[ucb_agent][int(1e4) - 1])))
 
     grader.set_answer(
