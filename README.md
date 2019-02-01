@@ -41,6 +41,7 @@ Course materials and teaching by: _[unordered]_
 - [Nikita Putintsev](https://github.com/qwasser) - seminars, hw checkups, organizing our hot mess
 - [Alexander Fritsler](https://github.com/Fritz449) - lectures, seminars, hw checkups
 - [Oleg Vasilev](https://github.com/Omrigan) - seminars, hw checkups, technical support
+- [Dmitry Nikulin](https://github.com/pastafarianist) - tons of fixes, far and wide
 - [Mikhail Konobeev](https://github.com/MichaelKonobeev) - seminars, hw checkups
 - [Ivan Kharitonov](https://github.com/neer201) - seminars, hw checkups
 - [Ravil Khasanov](https://github.com/zshrav) - seminars, hw checkups
