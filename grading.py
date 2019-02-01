@@ -33,6 +33,7 @@ class Grader(object):
             print('Submitted to Coursera platform. See results on assignment page!')
         elif u'details' in response and u'learnerMessage' in response[u'details']:
             print(response[u'details'][u'learnerMessage'])
+            print("Hint: try generating new token and make sure you spelled it correctly")
         else:
             print("Unknown response from Coursera: {}".format(request.status_code))
             print(response)
