@@ -4,7 +4,7 @@
 * __[main]__ lecture by David Silver - [url](https://www.youtube.com/watch?v=Nd1-UUMVfz4)
 * Alternative lecture by Pieter Abbeel (english): [part 1](https://www.youtube.com/watch?v=i0o-ui1N35U), [part 2](https://www.youtube.com/watch?v=Csiiv6WGzKM)
 * Alternative lecture by John Schulmann (english): [video](https://www.youtube.com/watch?v=IL3gVyJMmhg)
-* Definitive guide in policy/value iteration from Sutton: start from page 81 [here](http://incompleteideas.net/sutton/book/bookdraft2017june19.pdf).
+* Definitive guide in policy/value iteration from Sutton: start from page 81 [here](http://incompleteideas.net/book/the-book-2nd.html).
 
 
 ## Homework description:
