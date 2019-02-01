@@ -1,6 +1,8 @@
-import sys
 import numpy as np
+
+import sys
 sys.path.append("..")
+
 import grading
 
 
@@ -16,7 +18,7 @@ def submit_experience_replay(rewards_replay, rewards_baseline, email, token):
 
     grader.submit(email, token)
 
-    
+
 def submit_qlearning1(rewards, email, token):
     flag1 = np.mean(rewards[-10:])
 
@@ -37,7 +39,7 @@ def submit_qlearning2(rewards, email, token):
 
 def submit_qlearning_all(rewards_q1, rewards_q2, email, token):
     grader = grading.Grader("XbjcGd7xEeeDzRKutDCmyA")
-    
+
     flag1 = np.mean(rewards_q1[-10:])
     grader.set_answer("5NB4z", flag1)
 
