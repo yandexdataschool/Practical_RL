@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import re
-import requests
 import json
+
+import requests
 
 
 class Grader(object):
@@ -17,10 +17,10 @@ class Grader(object):
 
     def submit(self, email, token):
         submission = {
-                    "assignmentKey": self.assignment_key,
-                    "submitterEmail": email,
-                    "secret": token,
-                    "parts": {}
+            "assignmentKey": self.assignment_key,
+            "submitterEmail": email,
+            "secret": token,
+            "parts": {}
         }
         for part, output in self.answers.items():
             if output is not None:
