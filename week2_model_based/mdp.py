@@ -1,17 +1,10 @@
 # most of this code was politely stolen from https://github.com/berkeleydeeprlcourse/homework/
-# all creadit goes to https://github.com/abhishekunique (if i got the author right)
-import sys
+# all credit goes to https://github.com/abhishekunique (if i got the author right)
+
 import random
+
 import numpy as np
-def weighted_choice(v, p):
-   total = sum(p)
-   r = random.uniform(0, total)
-   upto = 0
-   for c, w in zip(v,p):
-      if upto + w >= r:
-         return c
-      upto += w
-   assert False, "Shouldn't get here"
+
 
 class MDP:
     def __init__(self, transition_probs, rewards, initial_state=None):
@@ -97,7 +90,7 @@ class MDP:
     def step(self, action):
         """ take action, return next_state, reward, is_done, empty_info """
         possible_states, probs = zip(*self.get_next_states(self._current_state, action).items())
-        next_state = weighted_choice(possible_states, p=probs)
+        next_state = np.random.choice(possible_states, p=probs)
         reward = self.get_reward(self._current_state, action, next_state)
         is_done = self.is_terminal(next_state)
         self._current_state = next_state
@@ -110,7 +103,7 @@ class MDP:
         for state in transition_probs:
             assert isinstance(transition_probs[state], dict), "transition_probs for %s should be a dictionary " \
                                                               "but is instead %s" % (
-                                                              state, type(transition_probs[state]))
+                                                                  state, type(transition_probs[state]))
             for action in transition_probs[state]:
                 assert isinstance(transition_probs[state][action], dict), "transition_probs for %s, %s should be a " \
                                                                           "a dictionary but is instead %s" % (
@@ -127,11 +120,13 @@ class MDP:
             for action in rewards[state]:
                 assert isinstance(rewards[state][action], dict), "rewards for %s, %s should be a " \
                                                                  "a dictionary but is instead %s" % (
-                                                                 state, action, type(transition_probs[state, action]))
+                                                                     state, action,
+                                                                     type(transition_probs[state, action]))
         msg = "The Enrichment Center once again reminds you that Android Hell is a real place where" \
               " you will be sent at the first sign of defiance. "
         assert None not in transition_probs, "please do not use None as a state identifier. " + msg
         assert None not in rewards, "please do not use None as an action identifier. " + msg
+
 
 class FrozenLakeEnv(MDP):
     """
@@ -178,7 +173,6 @@ class FrozenLakeEnv(MDP):
         ],
     }
 
-
     def __init__(self, desc=None, map_name="4x4", slip_chance=0.2):
         if desc is None and map_name is None:
             raise ValueError('Must provide either desc or map_name')
@@ -187,32 +181,32 @@ class FrozenLakeEnv(MDP):
         assert ''.join(desc).count('S') == 1, "this implementation supports having exactly one initial state"
         assert all(c in "SFHG" for c in ''.join(desc)), "all cells must be either of S, F, H or G"
 
-        self.desc = desc = np.asarray(list(map(list,desc)),dtype='str')
+        self.desc = desc = np.asarray(list(map(list, desc)), dtype='str')
         self.lastaction = None
 
         nrow, ncol = desc.shape
         states = [(i, j) for i in range(nrow) for j in range(ncol)]
-        actions = ["left","down","right","up"]
+        actions = ["left", "down", "right", "up"]
 
         initial_state = states[np.array(desc == b'S').ravel().argmax()]
 
         def move(row, col, movement):
-            if movement== 'left':
-                col = max(col-1,0)
-            elif movement== 'down':
-                row = min(row+1,nrow-1)
-            elif movement== 'right':
-                col = min(col+1,ncol-1)
-            elif movement== 'up':
-                row = max(row-1,0)
+            if movement == 'left':
+                col = max(col - 1, 0)
+            elif movement == 'down':
+                row = min(row + 1, nrow - 1)
+            elif movement == 'right':
+                col = min(col + 1, ncol - 1)
+            elif movement == 'up':
+                row = max(row - 1, 0)
             else:
-                raise("invalid action")
+                raise ("invalid action")
             return (row, col)
 
-        transition_probs = {s : {} for s in states}
-        rewards = {s : {} for s in states}
-        for (row,col) in states:
-            if desc[row, col]  in "GH": continue
+        transition_probs = {s: {} for s in states}
+        rewards = {s: {} for s in states}
+        for (row, col) in states:
+            if desc[row, col] in "GH": continue
             for action_i in range(len(actions)):
                 action = actions[action_i]
                 transition_probs[(row, col)][action] = {}
@@ -222,18 +216,16 @@ class FrozenLakeEnv(MDP):
                     newrow, newcol = move(row, col, movement)
                     prob = (1. - slip_chance) if movement == action else (slip_chance / 2.)
                     if prob == 0: continue
-                    if (newrow, newcol) not in transition_probs[row,col][action]:
-                        transition_probs[row,col][action][newrow, newcol] = prob
+                    if (newrow, newcol) not in transition_probs[row, col][action]:
+                        transition_probs[row, col][action][newrow, newcol] = prob
                     else:
                         transition_probs[row, col][action][newrow, newcol] += prob
                     if desc[newrow, newcol] == 'G':
-                        rewards[row,col][action][newrow, newcol] = 1.0
+                        rewards[row, col][action][newrow, newcol] = 1.0
 
         MDP.__init__(self, transition_probs, rewards, initial_state)
 
     def render(self):
         desc_copy = np.copy(self.desc)
         desc_copy[self._current_state] = '*'
-        print('\n'.join(map(''.join,desc_copy)), end='\n\n')
-
-
+        print('\n'.join(map(''.join, desc_copy)), end='\n\n')
