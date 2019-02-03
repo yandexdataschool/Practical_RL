@@ -17,8 +17,16 @@
 
 ### Assignments
 
-Just as usual, start with `seminar_qlearning.ipynb` and then proceed to `homework.ipynb`. 
+Just as usual, start with 
+- `seminar_qlearning.ipynb` 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/tree/spring19/_under_construction/week3_model_free/seminar_qlearning.ipynb)
 
+and then proceed to 
+
+- `homework.ipynb`
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/tree/spring19/_under_construction/week3_model_free/homework.ipynb)
+
+Please pay attention for uncommenting first lines in code if you use Colab.
 
 (optional) If you're running on a local machine (e.g. your pc) with python2, you can also try `seminar_py2`. It has some neat RL problems with cool visualizations.
 
