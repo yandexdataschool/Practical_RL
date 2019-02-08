@@ -44,7 +44,7 @@ Course materials and teaching by: _[unordered]_
 - [Dmitry Nikulin](https://github.com/pastafarianist) - tons of fixes, far and wide
 - [Mikhail Konobeev](https://github.com/MichaelKonobeev) - seminars, hw checkups
 - [Ivan Kharitonov](https://github.com/neer201) - seminars, hw checkups
-- [Ravil Khasanov](https://github.com/zshrav) - seminars, hw checkups
+- [Ravil Khisamov](https://github.com/zshrav) - seminars, hw checkups
 - [Fedor Ratnikov](https://github.com/justheuristic) - admin stuff
 
 # Contributions
