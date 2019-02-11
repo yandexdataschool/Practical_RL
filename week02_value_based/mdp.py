@@ -289,7 +289,7 @@ def plot_graph(mdp, graph_size='10,10', s_node_size='1,5',
     :return: dot object
     """
     s_node_attrs = {'shape': 'doublecircle',
-                    'color': 'lightgreen',
+                    'color': '#85ff75',
                     'style': 'filled',
                     'width': str(s_node_size),
                     'height': str(s_node_size),
