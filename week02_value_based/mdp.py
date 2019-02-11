@@ -5,7 +5,6 @@ import random
 import numpy as np
 
 try:
-    from IPython.display import display
     from graphviz import Digraph
     import graphviz
     has_graphviz = True
@@ -290,7 +289,7 @@ def plot_graph(mdp, graph_size='10,10', s_node_size='1,5',
     :return: dot object
     """
     s_node_attrs = {'shape': 'doublecircle',
-                    'color': 'lightgreen',
+                    'color': '#85ff75',
                     'style': 'filled',
                     'width': str(s_node_size),
                     'height': str(s_node_size),
@@ -353,20 +352,24 @@ def plot_graph_with_state_values(mdp, state_values):
         value = state_values[state_node]
         graph.node(state_node,
                    label=str(state_node) + '\n' + 'V =' + str(value)[:4])
-    return display(graph)
+    return graph
 
 
 def get_optimal_action_for_plot(mdp, state_values, state, gamma=0.9):
     """ Finds optimal action using formula above. """
     if mdp.is_terminal(state): return None
     next_actions = mdp.get_possible_actions(state)
+    try:
+        from mdp_get_action_value import get_action_value
+    except ImportError:
+        raise ImportError("Implement get_action_value(mdp, state_values, state, action, gamma) in the file \"mdp_get_action_value.py\".")
     q_values = [get_action_value(mdp, state_values, state, action, gamma) for
                 action in next_actions]
     optimal_action = next_actions[np.argmax(q_values)]
     return optimal_action
 
 
-def plot_graph_optimal_strategy_and_state_values(mdp, state_values):
+def plot_graph_optimal_strategy_and_state_values(mdp, state_values, gamma=0.9):
     """ Plot graph with state values and """
     graph = plot_graph(mdp)
     opt_s_a_edge_attrs = {'style': 'bold',
@@ -385,4 +388,4 @@ def plot_graph_optimal_strategy_and_state_values(mdp, state_values):
                                                      gamma):
                 graph.edge(state_node, state_node + "-" + action,
                            **opt_s_a_edge_attrs)
-    return display(graph)
+    return graph

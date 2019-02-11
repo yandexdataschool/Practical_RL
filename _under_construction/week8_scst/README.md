@@ -18,7 +18,7 @@ Binder quickstart (lasts 1 hour): [![Binder](https://mybinder.org/badge.svg)](ht
 * [BLEU](http://www.aclweb.org/anthology/P02-1040.pdf) and [CIDEr](https://arxiv.org/pdf/1411.5726.pdf) articles.
 * Image captioning
   * MSCOCO captioning [challenge](http://mscoco.org/dataset/#captions-challenge2015)
-  * Captioning baseline [notebook](https://github.com/yandexdataschool/HSE_deeplearning/blob/master/week7/captioning_solution_ars.ipynb)
+  * Captioning tutorial [notebook](https://github.com/yandexdataschool/Practical_DL/tree/980121c7b3147ed28a7c1360df5038d3432b8cc3/week07_seq2seq)
 * Other articles on reinforcement learning for natural language: 
   * [task-oriented conversation system](https://arxiv.org/abs/1703.07055)
   * [generating dialogues](https://arxiv.org/abs/1606.01541)

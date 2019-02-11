@@ -11,15 +11,24 @@
    - Blog post on q-learning Vs SARSA - [url](https://studywolf.wordpress.com/2013/07/01/reinforcement-learning-sarsa-vs-q-learning/)
 
 ### More materials
-* N-step temporal difference from Sutton's book - [suttonbook](http://incompleteideas.net/book/bookdraft2018jan1.pdf) __chapter 7__
-* Eligibility traces from Sutton's book - [suttonbook](http://incompleteideas.net/book/bookdraft2018jan1.pdf) __chapter 12__
+* N-step temporal difference from Sutton's book - [suttonbook](http://incompleteideas.net/book/RLbook2018.pdf) __chapter 7__
+* Eligibility traces from Sutton's book - [suttonbook](http://incompleteideas.net/book/RLbook2018.pdf) __chapter 12__
 * Blog post on eligibility traces - [url](http://pierrelucbacon.com/traces/)
 
 ### Assignments
 
-Just as usual, start with `seminar_qlearning.ipynb` and then proceed to `homework.ipynb`. 
+Just as usual, start with 
+- `seminar_qlearning.ipynb` 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week03_model_free/seminar_qlearning.ipynb)
 
+and then proceed to 
 
+- `homework.ipynb`
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week03_model_free/homework.ipynb)
+
+Please pay attention for uncommenting first lines in code if you use Colab.
+
+---
 (optional) If you're running on a local machine (e.g. your pc) with python2, you can also try `seminar_py2`. It has some neat RL problems with cool visualizations.
 
 ### ./seminar_py2
@@ -40,7 +49,7 @@ python pacman.py -p PacmanQAgent -x 5000 -n 5010 -l smallGrid # example
 * Make sure you can tune agent to beat ./run_crawler.sh
  * on windows, just run `python crawler.py` from cmd in the project directory
 * other ./run* files are mostly for your amusement. 
-  * ./run_pacman.sh will need more epochs to converge, see [comments](https://github.com/yandexdataschool/Practical_RL/blob/master/week3_model_free/seminar_py2/run_pacman.sh)
+  * ./run_pacman.sh will need more epochs to converge, see [comments](https://github.com/yandexdataschool/Practical_RL/blob/spring19/week03_model_free/seminar_py2/run_pacman.sh)
   * on windows, just copy the type `python pacman.py -p PacmanQAgent -x 2000 -n 2010 -l smallGrid` in cmd from assignemnt dir
 (YSDA/HSE) Please submit only qlearningAgents.py file and include a brief text report as comments in it.
 
