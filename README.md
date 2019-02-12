@@ -38,12 +38,16 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Seminar: Welcome into openai gym. Tabular CEM for Taxi-v0, deep CEM for box2d environments.
   * Homework description - see week1/README.md. 
 
-* [__week02_value_based__](./week02_value_based) Introduction
-  * Lecture: RL problems around us. Decision processes. Stochastic optimization, Crossentropy method. Parameter space search vs action space search.
-  * Seminar: Welcome into openai gym. Tabular CEM for Taxi-v0, deep CEM for box2d environments.
-  * Homework description - see week1/README.md. 
-
-
+* [__week02_value_based__](./week02_value_based) Value-based methods
+  * Lecture: Discounted reward MDP. Value-based approach. Value iteration. Policy iteration. Discounted reward fails.
+  * Seminar: Value iteration.  
+  * Homework description - see week2/README.md. 
+  
+* [__week03_model_free__](./week03_model_free) Model-free reinforcement learning
+  * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
+  * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
+  * Homework description - see week3/README.md. 
+  
 
 # Course staff
 Course materials and teaching by: _[unordered]_
