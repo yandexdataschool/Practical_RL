@@ -47,7 +47,17 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
   * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
   * Homework description - see week3/README.md. 
-  
+
+* __week04__ Approximate (deep) RL
+* __week05__ Exploration
+* __week06__ Policy Gradient methods
+* __week07__ Applications I
+* __week{++i}__ Partially Observed MDP
+* __week{++i}__ Advanced policy-based methods
+* __week{++i}__ Applications II
+* __week{++i}__ Distributional reinforcement learning
+* __week{++i}__ Inverse RL and Imitation Learning
+
 
 # Course staff
 Course materials and teaching by: _[unordered]_
@@ -68,5 +78,4 @@ Course materials and teaching by: _[unordered]_
 * A lot of fixes from [arogozhnikov](https://github.com/arogozhnikov)
 * Other awesome people: see github [contributors](https://github.com/yandexdataschool/Practical_RL/graphs/contributors)
 * [Alexey Umnov](https://github.com/alexeyum) helped us a lot during spring2018
-
 
