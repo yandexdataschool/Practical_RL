@@ -27,16 +27,17 @@ class Grader(object):
                 submission["parts"][part] = {"output": output}
             else:
                 submission["parts"][part] = dict()
-        request = requests.post(self.submission_page, data=json.dumps(submission))
-        response = request.json()
-        if request.status_code == 201:
+        response = requests.post(self.submission_page, data=json.dumps(submission))
+        if response.status_code == 201:
             print('Submitted to Coursera platform. See results on assignment page!')
-        elif u'details' in response and u'learnerMessage' in response[u'details']:
-            print(response[u'details'][u'learnerMessage'])
-            print("Hint: try generating new token and make sure you spelled it correctly")
         else:
-            print("Unknown response from Coursera: {}".format(request.status_code))
-            print(response)
+            d = response.json()
+            if d is not None and u'details' in d and u'learnerMessage' in d[u'details']:
+                print(d[u'details'][u'learnerMessage'])
+                print("Hint: try generating new token and make sure you spelled it correctly")
+            else:
+                print("Unknown response from Coursera: {}".format(response.status_code))
+                print(d)
 
     def set_answer(self, part, answer):
         """Adds an answer for submission. Answer is expected either as string, number, or
