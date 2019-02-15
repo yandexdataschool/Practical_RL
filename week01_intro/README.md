@@ -13,6 +13,7 @@
 
 ## More materials:
 * __[recommended]__ - awesome openai post about evolution strategies - [blog post](https://blog.openai.com/evolution-strategies/), [article](https://arxiv.org/abs/1703.03864)
+* __[recommended]__ - formal explanation of crossentropy method in [general](https://people.smp.uq.edu.au/DirkKroese/ps/CEEncycl.pdf) and for [optimization](https://people.smp.uq.edu.au/DirkKroese/ps/CEopt.pdf)
 * Deep learning course (if you want to learn in parallel) - https://github.com/yandexdataschool/HSE_deeplearning
 * Video on genetic algorithms (english) - [video](https://www.youtube.com/watch?v=ejxfTy4lI6I)
 * Another guide to genetic algorithm (english) - [video](https://www.youtube.com/watch?v=zwYV11a__HQ)
