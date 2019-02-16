@@ -11,7 +11,7 @@ class Grader(object):
         Assignment key is the way to tell Coursera which problem is being submitted.
         """
         self.submission_page = \
-            'https://www.coursera.org/api/onDemandProgrammingScriptSubmissions.v1'
+            'https://hub.coursera-apps.org/api/onDemandProgrammingScriptSubmissions.v1'
         self.assignment_key = assignment_key
         self.answers = {part: None for part in all_parts}
 
