@@ -18,6 +18,7 @@
 * Article on dueling DQN - [arxiv](https://arxiv.org/pdf/1511.06581.pdf)
 * Article on double DQN - [arxiv](https://arxiv.org/abs/1509.06461)
 * Article on prioritized experience replay - [arxiv](https://arxiv.org/abs/1511.05952)
+* Article on Rainbow: Combining Improvements in Deep Reinforcement Learning - [arxiv](https://arxiv.org/abs/1710.02298)
 * Article on bootstrap DQN - [pdf](https://papers.nips.cc/paper/6501-deep-exploration-via-bootstrapped-dqn.pdf), [summary](http://pemami4911.github.io/paper-summaries/2016/08/16/Deep-exploration.html)
 * Article on asynchronuous methods in deep RL - [arxiv](https://arxiv.org/abs/1602.01783)
 * Successor representations for reinforcement learning - [article](https://arxiv.org/abs/1606.02396), [video](https://www.youtube.com/watch?v=kNqXCn7K-BM&feature=youtu.be)
@@ -33,9 +34,13 @@
 
 ## Practice
 
+< legacy >
 From now on, we have two tracks, theano and tensorflow. We'll also add pytorch support soon.
 
 You can choose whichever track you want, but unless you're expertly familiar with your framework, we recommend you to start by completing the task in lasagne and only then reproduce your solution in your chosen framework.
+
+< relevant >
+Pytorch is supported best now for this task.
 
 Begin with `seminar_<framework>.ipynb` and then proceed with `homework_<framework>.ipynb`.
 
