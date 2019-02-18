@@ -34,8 +34,8 @@
 
 ## Practice
 
-* Seminar: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/_under_construction/week4_approx_rl/seminar_pytorch.ipynb)
-* Homework: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/_under_construction/week4_approx_rl/homework_pytorch_main.ipynb#scrollTo=KVvvo7k_ap8w)
+* Seminar: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week04_approx_rl/seminar_pytorch.ipynb)
+* Homework: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week04_approx_rl/homework_pytorch_main.ipynb#scrollTo=KVvvo7k_ap8w)
 
 
 From now on, we have two tracks, for pytorch and tensorflow. However, pytorch track is somewhat better supported by the course team. You can choose whichever track you want, but unless you're expertly familiar with your framework, we recommend you to start by completing the task in pytorch and only then reproduce your solution in your chosen framework.
