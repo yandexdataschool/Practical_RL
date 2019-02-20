@@ -72,7 +72,7 @@ class MDP:
 
     def get_possible_actions(self, state):
         """ return a tuple of possible actions in a given state """
-        return tuple(self._transition_probs.get(state, {}).keys())
+        return sorted(tuple(self._transition_probs.get(state, {}).keys()))
 
     def is_terminal(self, state):
         """ return True if state is terminal or False if it isn't """
@@ -113,7 +113,8 @@ class MDP:
         """ take action, return next_state, reward, is_done, empty_info """
         possible_states, probs = zip(
             *self.get_next_states(self._current_state, action).items())
-        next_state = weighted_choice(possible_states, p=probs)
+        next_state_idx = weighted_choice(len(possible_states), p=probs)
+        next_state = possible_states[next_state_idx]
         reward = self.get_reward(self._current_state, action, next_state)
         is_done = self.is_terminal(next_state)
         self._current_state = next_state
