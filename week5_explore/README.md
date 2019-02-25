@@ -1,4 +1,4 @@
-The main assignment is `week5.ipynb`[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week5_explore/week5.ipynb) 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week5_explore/week5.ipynb) 
 
 ### Slides - [here](https://yadi.sk/i/H0zVBROe3TWWHz)
 
