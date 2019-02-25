@@ -10,7 +10,7 @@ def load_notmnist(path='./notMNIST_small',letters='ABCDEFGHIJ',
     # download data if it's missing. If you have any problems, go to the urls and load it manually.
     if not os.path.exists(path):
         print("Downloading data...")
-        assert os.system('curl http://yaroslavvb.com/upload/notMNIST/notMNIST_small.tar.gz > notMNIST_small.tar.gz') == 0
+        assert os.system('wget http://yaroslavvb.com/upload/notMNIST/notMNIST_small.tar.gz') == 0
         print("Extracting ...")
         assert os.system('tar -zxvf notMNIST_small.tar.gz > untar_notmnist.log') == 0
     
