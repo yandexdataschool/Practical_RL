@@ -38,7 +38,7 @@ This homework assignment works on __python2 only__. If you stick to py3, conside
 This homework also requires some physical display (e.g. laptop monitor). It won't work on binder VM / headless server. Please run it on laptop or consider ./seminar_alternative
 
 
-* You need to implement **QLearining** algorithm.  If you're running go to ```seminar_main/``` folder and open file ```qlearningAgent.py```.
+* You need to implement **QLearining** algorithm.
 
 Once you're done, run use those commands:
 ```
