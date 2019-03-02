@@ -39,11 +39,10 @@ This homework also requires some display (e.g. laptop monitor). It won't work on
 
 Solution ways:
 
-1) Run it on laptop.
-2) Run Xvfb (first cell of the "homework.ipynb" should be run) and then find the next instructions in Section "Cell of the remote display preparation".
+1. Run it on laptop.
+2. Run Xvfb (first cell of the "homework.ipynb" should be run) and then find the next instructions in Section "Cell of the remote display preparation".
 
-
-* You need to implement **QLearining** algorithm.  If you're running go to ```seminar_py2/``` folder and open file ```qlearningAgent.py```.
+* You need to implement **QLearining** algorithm.
 
 Once you're done, run use those commands:
 ```
