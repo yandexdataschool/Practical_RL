@@ -90,7 +90,7 @@ class MDP:
     def step(self, action):
         """ take action, return next_state, reward, is_done, empty_info """
         possible_states, probs = zip(*self.get_next_states(self._current_state, action).items())
-        next_state = possible_states[np.random.choice(np.arange(possible_states.shape[0]), p=probs)]
+        next_state = possible_states[np.random.choice(np.arange(len(possible_states)), p=probs)]
         reward = self.get_reward(self._current_state, action, next_state)
         is_done = self.is_terminal(next_state)
         self._current_state = next_state
