@@ -4,6 +4,8 @@ USER root
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
 RUN apt-get -qq update
+# W: GPG error: http://archive.ubuntu.com trusty-backports InRelease:
+# The following signatures couldn't be verified because the public key is not available
 
 RUN apt-get install -y gcc-4.9 g++-4.9 libstdc++6 wget unzip
 RUN apt-get install -y libopenblas-dev liblapack-dev libsdl2-dev libboost-all-dev graphviz
@@ -32,7 +34,11 @@ RUN pip install --upgrade https://github.com/yandexdataschool/AgentNet/archive/m
 RUN pip install gym_pull
 RUN pip install ppaquette-gym-doom
 
-
+# BUILD ERROR:
+# Could not build doom-py: Command '['make', '-j', '3']' returned non-zero exit
+# status 2. (HINT: are you sure cmake is installed? You might also be missing a
+# library. Try running 'apt-get install -y python-numpy cmake zlib1g-dev libjpeg-dev
+# libboost-all-dev gcc libsdl2-dev wget unzip'
 
 
 RUN /home/main/anaconda/envs/python3/bin/pip install --upgrade pip==9.0.3
