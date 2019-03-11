@@ -9,9 +9,8 @@
 * Self-critical sequence traning [original article](https://arxiv.org/abs/1612.00563)
 
 ## Practice
-As usual, go to practice_{your framework}.ipynb above and follow instructions from there. [pytorch](https://github.com/yandexdataschool/Practical_RL/blob/master/week8_scst/practice_torch.ipynb), [tensorflow](https://github.com/yandexdataschool/Practical_RL/blob/master/week8_scst/practice_tf.ipynb), [theano](https://github.com/yandexdataschool/Practical_RL/blob/master/week8_scst/practice_theano.ipynb)
 
-Binder quickstart (lasts 1 hour): [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master)
+As usual, go to practice_{your framework}.ipynb above and follow instructions from there. [pytorch](./practice_torch.ipynb), [tensorflow](./practice_tf.ipynb), [theano](./practice_theano.ipynb)
 
 ## More materials
 * An [awesome post](http://distill.pub/2016/augmented-rnns/) explaining attention and long-term memory models.
