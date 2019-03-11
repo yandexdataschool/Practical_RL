@@ -18,20 +18,4 @@
 * Adversarial review of policy gradient - [blog](http://www.argmin.net/2018/02/20/reinforce/)
 
 
-## Homework
-
-As usual, pick reinfoce_<framework_name>.ipynb for starters and then proceed with homework_<framework_name>.ipynb.
-
-To run seminar notebook in colab
-* run it [here](https://colab.research.google.com/github/yandexdataschool/Practical_DL/blob/fall18/week10_rl/reinforce_pytorch.ipynb#scrollTo=y9nfDwJY3sGI)
-* paste this to install libraries
-```
-!pip install gym
-!apt-get install -y xvfb
-!wget https://raw.githubusercontent.com/yandexdataschool/Practical_DL/fall18/xvfb
-!apt-get install -y python-opengl ffmpeg
-!pip install pyglet==1.2.4
-
-!bash ./xvfb start
-%env DISPLAY=:1
-```
+Run seminar notebook in colab [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week06_policy_based/reinforce_pytorch.ipynb)

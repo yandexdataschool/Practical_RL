@@ -8,7 +8,8 @@
 * Alternative lecture by N. de Freitas (with bayesian opt) - [video](https://www.youtube.com/watch?v=vz3D36VXefI)
 * Our lectures (russian) 
   - "mathematical" lecture (by Alexander Vorobev) '17 - [slides](https://yadi.sk/i/JAeItALT3JmvCL), [video](https://yadi.sk/i/bVHmu9gt3Hi9Ym)
-  - "engineering" lecture '18 - [video](https://yadi.sk/i/_myWJ13O3TdzXo)
+  - "practical" lecture '18 - [video](https://yadi.sk/i/_myWJ13O3TdzXo)
+  - Seminar - [video](https://yadi.sk/i/du7FLXs13TdzZS)
   
   
   
