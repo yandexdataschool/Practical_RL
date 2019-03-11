@@ -10,6 +10,9 @@
 
 ## Practice
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week07_seq2seq/practice_torch.ipynb)
+
+
 As usual, go to practice_{your framework}.ipynb above and follow instructions from there. [pytorch](./practice_torch.ipynb), [tensorflow](./practice_tf.ipynb), [theano](./practice_theano.ipynb)
 
 ## More materials
