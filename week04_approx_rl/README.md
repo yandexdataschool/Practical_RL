@@ -1,5 +1,5 @@
 ## Materials
-* [__lecture slides I__](https://yadi.sk/i/kGPiXpse3NR3n8), [__slides II__](https://docs.google.com/presentation/d/1HEfIyKT0rIuUQCGAsR1PIVGirccDXu5LQvxhVUjuIqM)
+* [__slides__](https://docs.google.com/presentation/d/1HEfIyKT0rIuUQCGAsR1PIVGirccDXu5LQvxhVUjuIqM)
 * Our [lecture](https://yadi.sk/i/AHDU2p_j3FT3nr), [second lecture](https://yadi.sk/i/yBO0q4mI3GAxYd), [seminar](https://yadi.sk/i/EeUeheri3FT3ra) (russian)
 
 
