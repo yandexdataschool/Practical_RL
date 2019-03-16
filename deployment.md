@@ -15,7 +15,7 @@
     rm ../github.bundle && \
     git stash && \
     git merge --ff-only bundle/coursera && \
-    git stash pop
+    git -c core.fileMode=false stash pop
     ```
 3.  Locally:
     ```bash
