@@ -49,7 +49,7 @@ def submit_assigment(
 
     mdp = MDP(transition_probs, rewards, initial_state='s0')
 
-    test_Vs = {s: i for i, s in enumerate(mdp.get_all_states())}
+    test_Vs = {s: i for i, s in enumerate(sorted(mdp.get_all_states()))}
     qvalue1 = get_action_value(mdp, test_Vs, 's1', 'a0', 0.9)
     qvalue2 = get_action_value(mdp, test_Vs, 's4', 'a1', 0.9)
 
