@@ -13,6 +13,7 @@
 * OpenAI research on sentiment analysis that sheds some light on what's inside LSTM language model.
 
 # Homework description
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week07_%5Brecap%5D_rnn/seminar_pytorch.ipynb)
 
 This week's practice gets you acquainted with basics of recurrent neural networks. For simplicity, we'll train them on character language modelling task. Pick any one of `seminar_lasagne`, `seminar_lasagne_ingraph` or `seminar_tf`.
 
