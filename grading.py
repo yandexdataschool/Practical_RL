@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import json
+from pprint import pprint
 
 import requests
 
@@ -32,12 +33,10 @@ class Grader(object):
             print('Submitted to Coursera platform. See results on assignment page!')
         else:
             d = response.json()
-            if d is not None and u'details' in d and u'learnerMessage' in d[u'details']:
-                print(d[u'details'][u'learnerMessage'])
-                print("Hint: try generating new token and make sure you spelled it correctly")
-            else:
-                print("Unknown response from Coursera: {}".format(response.status_code))
-                print(d)
+            print('Submission to Coursera returned with HTTP error {status}.'.format(status=response.status_code))
+            print('You can try generating a new token and make sure you spelled it correctly.')
+            print('Here is the full response:')
+            pprint(d)
 
     def set_answer(self, part, answer):
         """Adds an answer for submission. Answer is expected either as string, number, or
