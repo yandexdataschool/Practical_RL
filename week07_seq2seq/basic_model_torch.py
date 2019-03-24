@@ -1,7 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.autograd import Variable
 
 # Note: unlike official pytorch tutorial, this model doesn't process one sample at a time
 # because it's slow on GPU.  instead it uses masks just like ye olde theano/tensorflow.
@@ -65,8 +64,9 @@ class BasicTranslationModel(nn.Module):
         In other words, logp are probabilities of __current__ output at each tick, not the next one
         therefore you can get likelihood as logprobas * tf.one_hot(out,n_tokens)
         """
+        device = next(self.parameters()).device
         batch_size = inp.shape[0]
-        bos = Variable(torch.LongTensor([self.out_voc.bos_ix] * batch_size))
+        bos = torch.tensor([self.out_voc.bos_ix] * batch_size, dtype=torch.long, device=device)
         logits_seq = [torch.log(to_one_hot(bos, len(self.out_voc)) + eps)]
 
         hid_state = self.encode(inp, **flags)
@@ -87,9 +87,10 @@ class BasicTranslationModel(nn.Module):
         :return: output tokens int32[batch,time] and
                  log-probabilities of all tokens at each tick, [batch,time,n_tokens]
         """
+        device = next(self.parameters()).device
         batch_size = inp.shape[0]
-        bos = Variable(torch.LongTensor([self.out_voc.bos_ix] * batch_size))
-        mask = Variable(torch.ones(batch_size).type(torch.ByteTensor))
+        bos = torch.tensor([self.out_voc.bos_ix] * batch_size, dtype=torch.long, device=device)
+        mask = torch.ones(batch_size, dtype=torch.uint8, device=device)
         logits_seq = [torch.log(to_one_hot(bos, len(self.out_voc)) + eps)]
         out_seq = [bos]
 
@@ -115,7 +116,7 @@ class BasicTranslationModel(nn.Module):
 
 ### Utility functions ###
 
-def infer_mask(seq, eos_ix, batch_first=True, include_eos=True, type=torch.FloatTensor):
+def infer_mask(seq, eos_ix, batch_first=True, include_eos=True, dtype=torch.float):
     """
     compute length given output indices and eos code
     :param seq: tf matrix [time,batch] if batch_first else [batch,time]
@@ -124,7 +125,7 @@ def infer_mask(seq, eos_ix, batch_first=True, include_eos=True, type=torch.Float
     :returns: lengths, int32 vector of shape [batch]
     """
     assert seq.dim() == 2
-    is_eos = (seq == eos_ix).type(torch.FloatTensor)
+    is_eos = (seq == eos_ix).to(dtype=torch.float)
     if include_eos:
         if batch_first:
             is_eos = torch.cat((is_eos[:,:1]*0, is_eos[:, :-1]), dim=1)
@@ -132,9 +133,9 @@ def infer_mask(seq, eos_ix, batch_first=True, include_eos=True, type=torch.Float
             is_eos = torch.cat((is_eos[:1,:]*0, is_eos[:-1, :]), dim=0)
     count_eos = torch.cumsum(is_eos, dim=1 if batch_first else 0)
     mask = count_eos == 0
-    return mask.type(type)
+    return mask.to(dtype=dtype)
 
-def infer_length(seq, eos_ix, batch_first=True, include_eos=True, type=torch.LongTensor):
+def infer_length(seq, eos_ix, batch_first=True, include_eos=True, dtype=torch.long):
     """
     compute mask given output indices and eos code
     :param seq: tf matrix [time,batch] if time_major else [batch,time]
@@ -142,16 +143,15 @@ def infer_length(seq, eos_ix, batch_first=True, include_eos=True, type=torch.Lon
     :param include_eos: if True, the time-step where eos first occurs is has mask = 1
     :returns: mask, float32 matrix with '0's and '1's of same shape as seq
     """
-    mask = infer_mask(seq, eos_ix, batch_first, include_eos, type)
+    mask = infer_mask(seq, eos_ix, batch_first, include_eos, dtype)
     return torch.sum(mask, dim=1 if batch_first else 0)
 
 
 def to_one_hot(y, n_dims=None):
     """ Take integer y (tensor or variable) with n dims and convert it to 1-hot representation with n+1 dims. """
-    y_tensor = y.data if isinstance(y, Variable) else y
-    y_tensor = y_tensor.type(torch.LongTensor).view(-1, 1)
+    y_tensor = y.data
+    y_tensor = y_tensor.to(dtype=torch.long).view(-1, 1)
     n_dims = n_dims if n_dims is not None else int(torch.max(y_tensor)) + 1
-    y_one_hot = torch.zeros(y_tensor.size()[0], n_dims).scatter_(1, y_tensor, 1)
+    y_one_hot = torch.zeros(y_tensor.size()[0], n_dims, device=y.device).scatter_(1, y_tensor, 1)
     y_one_hot = y_one_hot.view(*y.shape, -1)
-    return Variable(y_one_hot) if isinstance(y, Variable) else y_one_hot
-
+    return y_one_hot
