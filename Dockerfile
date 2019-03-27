@@ -2,7 +2,7 @@ FROM andrewosh/binder-base
 MAINTAINER Alexander Panin <justheuristic@gmail.com>
 USER root
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+#RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
 RUN apt-get -qq update
 # W: GPG error: http://archive.ubuntu.com trusty-backports InRelease:
 # The following signatures couldn't be verified because the public key is not available
