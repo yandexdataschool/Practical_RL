@@ -3,22 +3,8 @@ FROM python:3.7-slim
 RUN pip install --no-cache --upgrade pip && \
     pip install --no-cache notebook
 
-# create user with a home directory
-ARG NB_USER
-ARG NB_UID
-ENV USER ${NB_USER}
-ENV HOME /home/${NB_USER}
-
-RUN adduser --disabled-password \
-    --gecos "Default user" \
-    --uid ${NB_UID} \
-    ${NB_USER}
-WORKDIR ${HOME}
-USER ${USER}
-
-
 #RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
-#RUN apt-get -qq update
+RUN apt-get -qq update
 # W: GPG error: http://archive.ubuntu.com trusty-backports InRelease:
 # The following signatures couldn't be verified because the public key is not available
 
@@ -48,6 +34,19 @@ RUN pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
 RUN pip install --upgrade https://github.com/yandexdataschool/AgentNet/archive/master.zip
 RUN pip install gym_pull
 # RUN pip install ppaquette-gym-doom
+
+# create user with a home directory
+ARG NB_USER
+ARG NB_UID
+ENV USER ${NB_USER}
+ENV HOME /home/${NB_USER}
+
+RUN adduser --disabled-password \
+    --gecos "Default user" \
+    --uid ${NB_UID} \
+    ${NB_USER}
+WORKDIR ${HOME}
+USER ${USER}
 
 # BUILD ERROR:
 # Could not build doom-py: Command '['make', '-j', '3']' returned non-zero exit
