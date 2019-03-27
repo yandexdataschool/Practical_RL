@@ -25,7 +25,7 @@ RUN pip install --upgrade gym
 RUN pip install --upgrade gym[atari]
 RUN pip install --upgrade gym[box2d]
 
-RUN pip install --upgrade http://download.pytorch.org/whl/cu80/torch-0.3.0.post4-cp27-cp27mu-linux_x86_64.whl 
+RUN pip install --upgrade https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp37-cp37m-linux_x86_64.whl
 RUN pip install --upgrade torchvision 
 RUN pip install --upgrade keras
 RUN pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
