@@ -8,7 +8,8 @@ RUN apt-get -qq update
 # W: GPG error: http://archive.ubuntu.com trusty-backports InRelease:
 # The following signatures couldn't be verified because the public key is not available
 
-RUN apt-get install -y gcc-4.9 g++-4.9 libstdc++6 wget unzip
+# RUN apt-get install -y gcc-4.9 g++-4.9 libstdc++6 wget unzip
+RUN apt-get install -y gcc g++ libstdc++6 wget unzip
 RUN apt-get install -y libopenblas-dev liblapack-dev libsdl2-dev libboost-all-dev graphviz
 RUN apt-get install -y cmake zlib1g-dev libjpeg-dev 
 RUN apt-get install -y xvfb libav-tools xorg-dev python-opengl python3-opengl
