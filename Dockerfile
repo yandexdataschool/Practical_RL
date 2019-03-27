@@ -16,8 +16,6 @@ RUN apt-get install -y xvfb libav-tools xorg-dev python-opengl python3-opengl
 RUN apt-get -y install swig3.0
 RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
 
-
-USER main
 RUN pip install --upgrade pip==9.0.3
 RUN pip install --upgrade --ignore-installed setuptools  #fix https://github.com/tensorflow/tensorflow/issues/622
 RUN pip install --upgrade sklearn tqdm nltk editdistance joblib graphviz
