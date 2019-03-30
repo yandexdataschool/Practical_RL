@@ -14,7 +14,7 @@ RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
 
 RUN pip install --upgrade pip==9.0.3
 RUN pip install --upgrade --ignore-installed setuptools  #fix https://github.com/tensorflow/tensorflow/issues/622
-RUN pip install --upgrade sklearn tqdm nltk editdistance joblib graphviz pandas
+RUN pip install --upgrade sklearn tqdm nltk editdistance joblib graphviz pandas matplotlib
 
 # install all gym stuff except mujoco - it fails at "import importlib.util" (no module named util)
 RUN pip install --upgrade gym
