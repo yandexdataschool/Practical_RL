@@ -22,7 +22,7 @@ __Note:__ this branch is an on-campus version of the for __spring 2019 YSDA and 
 * Virtual course environment: 
     * [Installing dependencies](https://github.com/yandexdataschool/Practical_RL/issues/1) on your local machine (recommended).
     * [__google colab__](https://colab.research.google.com/) - set open -> github -> yandexdataschool/pracical_rl -> {branch name} and select any notebook you want.
-    * Alternatives: [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/yandexdataschool/Practical_RL/master) and [Azure Notebooks](https://notebooks.azure.com/).
+    * Alternatives: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/yandexdataschool/practical_rl/spring19) and [Azure Notebooks](https://notebooks.azure.com/).
 
 
 # Additional materials
