@@ -1,6 +1,6 @@
 ## Materials
 * [__slides__](https://docs.google.com/presentation/d/1HEfIyKT0rIuUQCGAsR1PIVGirccDXu5LQvxhVUjuIqM)
-* Our [lecture](https://yadi.sk/i/AHDU2p_j3FT3nr), [second lecture](https://yadi.sk/i/yBO0q4mI3GAxYd), [seminar](https://yadi.sk/i/EeUeheri3FT3ra) (russian)
+* Our [lecture](https://yadi.sk/i/Gd9yWV1dpuB7BQ), [seminar](https://yadi.sk/i/mvtKAIRN2yKU2g) (russian)
 
 
 * David Silver lecture - [video](https://www.youtube.com/watch?v=UoPei5o4fps)
