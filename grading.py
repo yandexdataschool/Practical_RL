@@ -28,7 +28,11 @@ class Grader(object):
                 submission["parts"][part] = {"output": output}
             else:
                 submission["parts"][part] = dict()
-        response = requests.post(self.submission_page, data=json.dumps(submission))
+        response = requests.post(
+            self.submission_page,
+            data=json.dumps(submission),
+            timeout=10.0,
+        )
         if response.status_code == 201:
             print('Submitted to Coursera platform. See results on assignment page!')
         else:
