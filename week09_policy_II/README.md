@@ -10,7 +10,7 @@ This section covers some steroids for policy gradient methods, along with a cool
 * Original articles - [TRPO](https://arxiv.org/abs/1502.05477), [NPG](https://papers.nips.cc/paper/2073-a-natural-policy-gradient.pdf)
 
 ## Practice
-Go to `seminar_TRPO_<framework>.ipynb` and follow instructions in the notebook.
+* Seminar: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week09_policy_II/seminar_TRPO_pytorch.ipynb)
 
 
 ## More: Reinforcement learning in large/continuous action spaces
