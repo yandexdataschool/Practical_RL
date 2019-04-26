@@ -22,5 +22,5 @@ Just as usual, start with  `seminar_MCTS.ipynb`
 
 * Integrating learning and planning (D. Silver) - [video](https://www.youtube.com/watch?v=ItMutbeOHtc)
 * Approximating the MCTS optimal actions - 5vision solution for deephack.RL, code by Mikhail Pavlov - [repo](https://github.com/5vision/uct_atari)
-* Alpha Go, Alpha Go Master, Alpha Go Zero
+* Alpha Go - [explanation](https://medium.com/@jonathan_hui/alphago-how-it-works-technically-26ddcc085319)
 * Monte Carlo Planning in POMDP [pdf](https://papers.nips.cc/paper/4031-monte-carlo-planning-in-large-pomdps.pdf)
