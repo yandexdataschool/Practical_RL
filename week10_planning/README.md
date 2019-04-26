@@ -1,7 +1,10 @@
-### Assignments
+## Assignments
+
 Just as usual, start with  `seminar_MCTS.ipynb` 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week10_planning/seminar_MCTS.ipynb)
-### Materials: planning
+
+## Materials: planning
+
 * Planning by dynamic programming (D. Silver) - [video](https://www.youtube.com/watch?v=Nd1-UUMVfz4)
 * Planning via tree search [videos 2-6 from CS188](https://www.youtube.com/channel/UCHBzJsIcRIVuzzHVYabikTQ)
 * Our lecture:
@@ -14,8 +17,10 @@ Just as usual, start with  `seminar_MCTS.ipynb`
   * Reminder: UCB-1 - [slides](https://www.cs.bham.ac.uk/internal/courses/robotics/lectures/ucb1.pdf)
   * Guide to MCTS - [url](https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/) 
   or [cached](https://webcache.googleusercontent.com/search?q=cache:jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/)
-### Supplementary materials
+
+## Supplementary materials
+
 * Integrating learning and planning (D. Silver) - [video](https://www.youtube.com/watch?v=ItMutbeOHtc)
 * Approximating the MCTS optimal actions - 5vision solution for deephack.RL, code by Mikhail Pavlov - [repo](https://github.com/5vision/uct_atari)
 * Alpha Go, Alpha Go Master, Alpha Go Zero
-* [Monte Carlo Planning in POMDP](https://papers.nips.cc/paper/4031-monte-carlo-planning-in-large-pomdps.pdf)
+* Monte Carlo Planning in POMDP [pdf](https://papers.nips.cc/paper/4031-monte-carlo-planning-in-large-pomdps.pdf)
