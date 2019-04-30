@@ -6,7 +6,7 @@ This section covers some steroids for policy gradient methods, along with a cool
 
 * Lecture on NPG and TRPO by J. Schulman - [video](https://www.youtube.com/watch?v=_t5fpZuuf-4)
 * Alternative lecture on TRPO and open problems by... J. Schulman - [video](https://www.youtube.com/watch?v=gb5Q2XL5c8A)
-* Our videos: [lecture](https://yadi.sk/i/OP0B1BEj3UcmW9), [seminar(pytorch)](https://yadi.sk/i/D8mHrKM63UcmWh) [seminar(theano)](https://yadi.sk/i/b0ol2gUV3HiKKJ) (russian)
+* Our videos: [lecture](https://yadi.sk/i/c7GR1kAAJc00Og), [seminar(pytorch)](https://yadi.sk/i/OGZJJjkQH_7h5g) [seminar(theano)](https://yadi.sk/i/b0ol2gUV3HiKKJ) (russian)
 * Original articles - [TRPO](https://arxiv.org/abs/1502.05477), [NPG](https://papers.nips.cc/paper/2073-a-natural-policy-gradient.pdf)
 
 ## Practice
