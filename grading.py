@@ -28,12 +28,16 @@ class Grader(object):
                 submission["parts"][part] = {"output": output}
             else:
                 submission["parts"][part] = dict()
-        response = requests.post(self.submission_page, data=json.dumps(submission))
+        response = requests.post(
+            self.submission_page,
+            data=json.dumps(submission),
+            timeout=10.0,
+        )
         if response.status_code == 201:
             print('Submitted to Coursera platform. See results on assignment page!')
         else:
             d = response.json()
-            print('Submission to Coursera returned with HTTP error {status}.'.format(status=response.status_code))
+            print('Submission to Coursera returned with HTTP status code {status}.'.format(status=response.status_code))
             print('You can try generating a new token and make sure you spelled it correctly.')
             print('Here is the full response:')
             pprint(d)
