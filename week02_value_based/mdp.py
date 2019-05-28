@@ -1,5 +1,5 @@
 # most of this code was politely stolen from https://github.com/berkeleydeeprlcourse/homework/
-# all creadit goes to https://github.com/abhishekunique (if i got the author right)
+# all credit goes to https://github.com/abhishekunique (if i got the author right)
 import sys
 import random
 import numpy as np
@@ -10,17 +10,6 @@ try:
     has_graphviz = True
 except:
     has_graphviz = False
-
-
-def weighted_choice(v, p):
-    total = sum(p)
-    r = random.uniform(0, total)
-    upto = 0
-    for c, w in zip(v, p):
-        if upto + w >= r:
-            return c
-        upto += w
-    assert False, "Shouldn't get here"
 
 
 class MDP:
@@ -113,7 +102,7 @@ class MDP:
         """ take action, return next_state, reward, is_done, empty_info """
         possible_states, probs = zip(
             *self.get_next_states(self._current_state, action).items())
-        next_state = weighted_choice(possible_states, p=probs)
+        next_state = possible_states[np.random.choice(np.arange(len(possible_states)), p=probs)]
         reward = self.get_reward(self._current_state, action, next_state)
         is_done = self.is_terminal(next_state)
         self._current_state = next_state
