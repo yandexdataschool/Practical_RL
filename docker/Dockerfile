@@ -41,7 +41,7 @@ RUN pip install --upgrade pip==9.0.3 && \
                            https://github.com/Lasagne/Lasagne/archive/master.zip \
                            https://github.com/yandexdataschool/AgentNet/archive/master.zip \
                            tensorflow \
-                           http://download.pytorch.org/whl/cpu/torch-0.4.1-cp27-cp27mu-linux_x86_64.whl \
+                           https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp27-cp27mu-linux_x86_64.whl \
                            torchvision \
                            keras     
                            
@@ -60,7 +60,7 @@ RUN pip3 install --upgrade pip==9.0.3 && \
     pip3 install --upgrade https://github.com/Theano/Theano/archive/master.zip \
                            https://github.com/Lasagne/Lasagne/archive/master.zip \
                            https://github.com/yandexdataschool/AgentNet/archive/master.zip \
-                           http://download.pytorch.org/whl/cpu/torch-0.4.1-cp35-cp35m-linux_x86_64.whl \
+                           https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp35-cp35m-linux_x86_64.whl \
                            torchvision \
                            tensorflow \
                            keras && \                           
