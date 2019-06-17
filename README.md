@@ -3,8 +3,6 @@
 An open course on reinforcement learning in the wild.
 Taught on-campus at [HSE](https://cs.hse.ru) and [YSDA](https://yandexdataschool.com/)  and maintained to be friendly to online students (both english and russian).
 
-__Note:__ this branch is an on-campus version of the for __spring 2019 YSDA and HSE students__. For full course materials, switch to the [master branch](https://github.com/yandexdataschool/Practical_RL/tree/master).
-
 
 #### Manifesto:
 * __Optimize for the curious.__ For all the materials that aren’t covered in detail there are links to more information and related materials (D.Silver/Sutton/blogs/whatever). Assignments will have bonus sections if you want to dig deeper.
@@ -50,15 +48,40 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
   * Homework description - see week3/README.md. 
 
-* __week04__ Approximate (deep) RL
-* __week05__ Exploration
-* __week06__ Policy Gradient methods
-* __week07__ Applications I
-* __week{++i}__ Partially Observed MDP
-* __week{++i}__ Advanced policy-based methods
-* __week{++i}__ Applications II
-* __week{++i}__ Distributional reinforcement learning
-* __week{++i}__ Inverse RL and Imitation Learning
+* [__recap_deep_learning__](./week04_\[recap\]_deep_learning) - deep learning recap 
+  * Lecture: Deep learning 101
+  * Seminar: Intro to pytorch/tensorflow, simple image classification with convnets
+
+* [__week04_approx_rl__](./week04_approx_rl) Approximate (deep) RL
+  * Lecture: Infinite/continuous state space. Value function approximation. Convergence conditions. Multiple agents trick; experience replay, target networks, double/dueling/bootstrap DQN, etc.
+  * Seminar:  Approximate Q-learning with experience replay. (CartPole, Atari)
+  
+* [__week05_explore__](./week05_explore) Exploration
+  * Lecture: Contextual bandits. Thompson Sampling, UCB, bayesian UCB. Exploration in model-based RL, MCTS. "Deep" heuristics for exploration.
+  * Seminar: bayesian exploration for contextual bandits. UCB for MCTS.
+
+* [__week06_policy__](./week06_policy) Policy Gradient methods
+  * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance reduction(baseline), advantage actor-critic (incl. GAE)
+  * Seminar: REINFORCE, advantage actor-critic
+
+* [__week07_seq2seq__](./week07_seq2seq) Reinforcement Learning for Sequence Models
+  * Lecture: Problems with sequential data. Recurrent neural netowks. Backprop through time. Vanishing & exploding gradients. LSTM, GRU. Gradient clipping
+  * Seminar: character-level RNN language model
+
+* [__week08_pomdp__](./week08_pomdp) Partially Observed MDP
+  * Lecture: POMDP intro. POMDP learning (agents with memory). POMDP planning (POMCP, etc)
+  * Seminar: Deep kung-fu & doom with recurrent A3C and DRQN
+  
+* [__week09_policy_II__](./week09_policy_II) Advanced policy-based methods
+  * Lecture: Trust region policy optimization. NPO/PPO. Deterministic policy gradient. DDPG
+  * Seminar: Approximate TRPO for simple robot control.
+
+* [__week10_planning__](./week10_planning) Model-based RL & Co
+  * Lecture: Model-Based RL, Planning in General, Imitation Learning and Inverse Reinforcement Learning
+  * Seminar: MCTS for toy tasks
+
+* [__yet_another_week__](./yet_another_week) Inverse RL and Imitation Learning
+  * All that cool RL stuff that you won't learn from this course :)
 
 
 # Course staff
