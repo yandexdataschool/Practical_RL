@@ -60,7 +60,7 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Lecture: Contextual bandits. Thompson Sampling, UCB, bayesian UCB. Exploration in model-based RL, MCTS. "Deep" heuristics for exploration.
   * Seminar: bayesian exploration for contextual bandits. UCB for MCTS.
 
-* [__week06_policy__](./week06_policy) Policy Gradient methods
+* [__week06_policy_based__](./week06_policy_based) Policy Gradient methods
   * Lecture: Motivation for policy-based, policy gradient, logderivative trick, REINFORCE/crossentropy method, variance reduction(baseline), advantage actor-critic (incl. GAE)
   * Seminar: REINFORCE, advantage actor-critic
 
