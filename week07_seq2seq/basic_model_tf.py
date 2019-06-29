@@ -7,7 +7,9 @@ import keras.layers as L
 # e.g. with tf.variable_scope("first_lstm"): new_cell, new_out = self.lstm_1(...)
 #      with tf.variable_scope("second_lstm"): new_cell2, new_out2 = self.lstm_2(...)
 # Note 2: everything you need for decoding should be stored in model state (output list of both encode and decode)
-# e.g. for attention, you should store all encoder sequence and input mask there in addition to lstm/gru states.
+# e.g. for attention, you should store all encoder sequence and input mask
+# there in addition to lstm/gru states.
+
 
 class BasicTranslationModel:
     def __init__(self, name, inp_voc, out_voc,
@@ -25,16 +27,16 @@ class BasicTranslationModel:
             self.dec0 = tf.nn.rnn_cell.GRUCell(hid_size)
             self.logits = L.Dense(len(out_voc))
 
-
-            # run on dummy output to .build all layers (and therefore create weights)
+            # run on dummy output to .build all layers (and therefore create
+            # weights)
             inp = tf.placeholder('int32', [None, None])
             out = tf.placeholder('int32', [None, None])
             h0 = self.encode(inp)
-            h1 = self.decode(h0,out[:,0])
+            h1 = self.decode(h0, out[:, 0])
             # h2 = self.decode(h1,out[:,1]) etc.
 
-        self.weights = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope=name)
-
+        self.weights = tf.get_collection(
+            tf.GraphKeys.TRAINABLE_VARIABLES, scope=name)
 
     def encode(self, inp, **flags):
         """
@@ -46,9 +48,9 @@ class BasicTranslationModel:
         inp_emb = self.emb_inp(inp)
 
         _, enc_last = tf.nn.dynamic_rnn(
-                          self.enc0, inp_emb,
-                          sequence_length=inp_lengths,
-                          dtype = inp_emb.dtype)
+            self.enc0, inp_emb,
+            sequence_length=inp_lengths,
+            dtype=inp_emb.dtype)
 
         dec_start = self.dec_start(enc_last)
         return [dec_start]
@@ -63,9 +65,9 @@ class BasicTranslationModel:
 
         [prev_dec] = prev_state
 
-        prev_emb = self.emb_out(prev_tokens[:,None])[:,0]
+        prev_emb = self.emb_out(prev_tokens[:, None])[:, 0]
 
-        new_dec_out,new_dec_state = self.dec0(prev_emb, prev_dec)
+        new_dec_out, new_dec_state = self.dec0(prev_emb, prev_dec)
 
         output_logits = self.logits(new_dec_out)
 
@@ -83,10 +85,10 @@ class BasicTranslationModel:
         In other words, logp are probabilities of __current__ output at each tick, not the next one
         therefore you can get likelihood as logprobas * tf.one_hot(out,n_tokens)
         """
-        first_state = self.encode(inp,**flags)
+        first_state = self.encode(inp, **flags)
 
         batch_size = tf.shape(inp)[0]
-        bos = tf.fill([batch_size],self.out_voc.bos_ix)
+        bos = tf.fill([batch_size], self.out_voc.bos_ix)
         first_logits = tf.log(tf.one_hot(bos, len(self.out_voc)) + eps)
 
         def step(blob, y_prev):
@@ -94,25 +96,31 @@ class BasicTranslationModel:
             h_new, logits = self.decode(h_prev, y_prev, **flags)
             return list(h_new) + [logits]
 
-        results = tf.scan(step,initializer=list(first_state)+[first_logits],
+        results = tf.scan(step, initializer=list(first_state) + [first_logits],
                           elems=tf.transpose(out))
 
         # gather state and logits, each of shape [time,batch,...]
         states_seq, logits_seq = results[:-1], results[-1]
 
         # add initial state and logits
-        logits_seq = tf.concat((first_logits[None], logits_seq),axis=0)
+        logits_seq = tf.concat((first_logits[None], logits_seq), axis=0)
         states_seq = [tf.concat((init[None], states), axis=0)
                       for init, states in zip(first_state, states_seq)]
 
-        #convert from [time,batch,...] to [batch,time,...]
+        # convert from [time,batch,...] to [batch,time,...]
         logits_seq = tf.transpose(logits_seq, [1, 0, 2])
         states_seq = [tf.transpose(states, [1, 0] + list(range(2, states.shape.ndims)))
                       for states in states_seq]
 
         return tf.nn.log_softmax(logits_seq)
 
-    def symbolic_translate(self, inp, greedy=False, max_len = None, eps = 1e-30, **flags):
+    def symbolic_translate(
+            self,
+            inp,
+            greedy=False,
+            max_len=None,
+            eps=1e-30,
+            **flags):
         """
         takes symbolic int32 matrix of hebrew words, produces output tokens sampled
         from the model and output log-probabilities for all possible tokens at each tick.
@@ -126,29 +134,31 @@ class BasicTranslationModel:
         first_state = self.encode(inp, **flags)
 
         batch_size = tf.shape(inp)[0]
-        bos = tf.fill([batch_size],self.out_voc.bos_ix)
+        bos = tf.fill([batch_size], self.out_voc.bos_ix)
         first_logits = tf.log(tf.one_hot(bos, len(self.out_voc)) + eps)
-        max_len = tf.reduce_max(tf.shape(inp)[1])*2
+        max_len = tf.reduce_max(tf.shape(inp)[1]) * 2
 
-        def step(blob,t):
+        def step(blob, t):
             h_prev, y_prev = blob[:-2], blob[-1]
             h_new, logits = self.decode(h_prev, y_prev, **flags)
-            y_new = tf.argmax(logits,axis=-1) if greedy else tf.multinomial(logits,1)[:,0]
-            return list(h_new) + [logits, tf.cast(y_new,y_prev.dtype)]
+            y_new = tf.argmax(logits, axis=-
+                              1) if greedy else tf.multinomial(logits, 1)[:, 0]
+            return list(h_new) + [logits, tf.cast(y_new, y_prev.dtype)]
 
-        results = tf.scan(step, initializer=list(first_state) + [first_logits, bos],
-                          elems=[tf.range(max_len)])
+        results = tf.scan(step, initializer=list(first_state) +
+                          [first_logits, bos], elems=[tf.range(max_len)])
 
         # gather state, logits and outs, each of shape [time,batch,...]
-        states_seq, logits_seq, out_seq = results[:-2], results[-2], results[-1]
+        states_seq, logits_seq, out_seq = results[:-
+                                                  2], results[-2], results[-1]
 
         # add initial state, logits and out
-        logits_seq = tf.concat((first_logits[None],logits_seq),axis=0)
+        logits_seq = tf.concat((first_logits[None], logits_seq), axis=0)
         out_seq = tf.concat((bos[None], out_seq), axis=0)
         states_seq = [tf.concat((init[None], states), axis=0)
                       for init, states in zip(first_state, states_seq)]
 
-        #convert from [time,batch,...] to [batch,time,...]
+        # convert from [time,batch,...] to [batch,time,...]
         logits_seq = tf.transpose(logits_seq, [1, 0, 2])
         out_seq = tf.transpose(out_seq)
         states_seq = [tf.transpose(states, [1, 0] + list(range(2, states.shape.ndims)))
@@ -157,21 +167,27 @@ class BasicTranslationModel:
         return out_seq, tf.nn.log_softmax(logits_seq)
 
 
-
 ### Utility functions ###
 
-def initialize_uninitialized(sess = None):
+def initialize_uninitialized(sess=None):
     """
     Initialize unitialized variables, doesn't affect those already initialized
     :param sess: in which session to initialize stuff. Defaults to tf.get_default_session()
     """
     sess = sess or tf.get_default_session()
-    global_vars          = tf.global_variables()
-    is_not_initialized   = sess.run([tf.is_variable_initialized(var) for var in global_vars])
-    not_initialized_vars = [v for (v, f) in zip(global_vars, is_not_initialized) if not f]
+    global_vars = tf.global_variables()
+    is_not_initialized = sess.run(
+        [tf.is_variable_initialized(var) for var in global_vars])
+    not_initialized_vars = [
+        v for (
+            v,
+            f) in zip(
+            global_vars,
+            is_not_initialized) if not f]
 
     if len(not_initialized_vars):
         sess.run(tf.variables_initializer(not_initialized_vars))
+
 
 def infer_length(seq, eos_ix, time_major=False, dtype=tf.int32):
     """
@@ -182,9 +198,10 @@ def infer_length(seq, eos_ix, time_major=False, dtype=tf.int32):
     """
     axis = 0 if time_major else 1
     is_eos = tf.cast(tf.equal(seq, eos_ix), dtype)
-    count_eos = tf.cumsum(is_eos,axis=axis,exclusive=True)
-    lengths = tf.reduce_sum(tf.cast(tf.equal(count_eos,0),dtype),axis=axis)
+    count_eos = tf.cumsum(is_eos, axis=axis, exclusive=True)
+    lengths = tf.reduce_sum(tf.cast(tf.equal(count_eos, 0), dtype), axis=axis)
     return lengths
+
 
 def infer_mask(seq, eos_ix, time_major=False, dtype=tf.float32):
     """
@@ -196,7 +213,8 @@ def infer_mask(seq, eos_ix, time_major=False, dtype=tf.float32):
     axis = 0 if time_major else 1
     lengths = infer_length(seq, eos_ix, time_major=time_major)
     mask = tf.sequence_mask(lengths, maxlen=tf.shape(seq)[axis], dtype=dtype)
-    if time_major: mask = tf.transpose(mask)
+    if time_major:
+        mask = tf.transpose(mask)
     return mask
 
 
@@ -209,11 +227,8 @@ def select_values_over_last_axis(values, indices):
     """
     assert values.shape.ndims == 3 and indices.shape.ndims == 2
     batch_size, seq_len = tf.shape(indices)[0], tf.shape(indices)[1]
-    batch_i = tf.tile(tf.range(0,batch_size)[:, None],[1,seq_len])
-    time_i = tf.tile(tf.range(0,seq_len)[None, :],[batch_size,1])
+    batch_i = tf.tile(tf.range(0, batch_size)[:, None], [1, seq_len])
+    time_i = tf.tile(tf.range(0, seq_len)[None, :], [batch_size, 1])
     indices_nd = tf.stack([batch_i, time_i, indices], axis=-1)
 
-    return tf.gather_nd(values,indices_nd)
-
-
-
+    return tf.gather_nd(values, indices_nd)

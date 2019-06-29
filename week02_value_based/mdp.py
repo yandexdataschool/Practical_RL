@@ -1,5 +1,6 @@
 # most of this code was politely stolen from https://github.com/berkeleydeeprlcourse/homework/
-# all credit goes to https://github.com/abhishekunique (if i got the author right)
+# all credit goes to https://github.com/abhishekunique (if i got the
+# author right)
 import sys
 import random
 import numpy as np
@@ -8,7 +9,7 @@ try:
     from graphviz import Digraph
     import graphviz
     has_graphviz = True
-except:
+except BaseException:
     has_graphviz = False
 
 
@@ -95,14 +96,16 @@ class MDP:
             self._current_state = self._initial_state()
         else:
             raise ValueError(
-                "initial state %s should be either a state or a function() -> state" % self._initial_state)
+                "initial state %s should be either a state or a function() -> state" %
+                self._initial_state)
         return self._current_state
 
     def step(self, action):
         """ take action, return next_state, reward, is_done, empty_info """
         possible_states, probs = zip(
             *self.get_next_states(self._current_state, action).items())
-        next_state = possible_states[np.random.choice(np.arange(len(possible_states)), p=probs)]
+        next_state = possible_states[np.random.choice(
+            np.arange(len(possible_states)), p=probs)]
         reward = self.get_reward(self._current_state, action, next_state)
         is_done = self.is_terminal(next_state)
         self._current_state = next_state
@@ -123,7 +126,7 @@ class MDP:
                                          "a dictionary but is instead %s" % (
                                              state, action,
                                              type(transition_probs[
-                                                      state, action]))
+                                                 state, action]))
                 next_state_probs = transition_probs[state][action]
                 assert len(
                     next_state_probs) != 0, "from state %s action %s leads to no next states" % (
@@ -231,7 +234,8 @@ class FrozenLakeEnv(MDP):
         transition_probs = {s: {} for s in states}
         rewards = {s: {} for s in states}
         for (row, col) in states:
-            if desc[row, col] in "GH": continue
+            if desc[row, col] in "GH":
+                continue
             for action_i in range(len(actions)):
                 action = actions[action_i]
                 transition_probs[(row, col)][action] = {}
@@ -241,10 +245,11 @@ class FrozenLakeEnv(MDP):
                     movement = actions[movement_i]
                     newrow, newcol = move(row, col, movement)
                     prob = (1. - slip_chance) if movement == action else (
-                            slip_chance / 2.)
-                    if prob == 0: continue
+                        slip_chance / 2.)
+                    if prob == 0:
+                        continue
                     if (newrow, newcol) not in transition_probs[row, col][
-                        action]:
+                            action]:
                         transition_probs[row, col][action][
                             newrow, newcol] = prob
                     else:
@@ -346,12 +351,14 @@ def plot_graph_with_state_values(mdp, state_values):
 
 def get_optimal_action_for_plot(mdp, state_values, state, gamma=0.9):
     """ Finds optimal action using formula above. """
-    if mdp.is_terminal(state): return None
+    if mdp.is_terminal(state):
+        return None
     next_actions = mdp.get_possible_actions(state)
     try:
         from mdp_get_action_value import get_action_value
     except ImportError:
-        raise ImportError("Implement get_action_value(mdp, state_values, state, action, gamma) in the file \"mdp_get_action_value.py\".")
+        raise ImportError(
+            "Implement get_action_value(mdp, state_values, state, action, gamma) in the file \"mdp_get_action_value.py\".")
     q_values = [get_action_value(mdp, state_values, state, action, gamma) for
                 action in next_actions]
     optimal_action = next_actions[np.argmax(q_values)]

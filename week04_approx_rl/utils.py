@@ -5,6 +5,7 @@ import torch
 from torch import nn
 import os
 
+
 def get_cum_discounted_rewards(rewards, gamma):
     """
     evaluates cumulative discounted rewards:
@@ -36,7 +37,8 @@ def play_and_log_episode(env, agent, gamma=0.99, t_max=10000):
         v_agent.append(max_q_value)
         q_spreads.append(max_q_value - min_q_value)
         if step > 0:
-            td_errors.append(np.abs(rewards[-1] + gamma * v_agent[-1] - v_agent[-2]))
+            td_errors.append(
+                np.abs(rewards[-1] + gamma * v_agent[-1] - v_agent[-2]))
 
         action = qvalues.argmax(axis=-1)[0]
 
@@ -69,7 +71,7 @@ def img_by_obs(obs, state_dim):
     return obs.reshape([-1, state_dim[2]])
 
 
-def is_enough_ram(min_available_gb = 0.1):
+def is_enough_ram(min_available_gb=0.1):
     mem = psutil.virtual_memory()
     return mem.available >= min_available_gb * (1024 ** 3)
 
@@ -77,7 +79,8 @@ def is_enough_ram(min_available_gb = 0.1):
 def linear_decay(init_val, final_val, cur_step, total_steps):
     if cur_step >= total_steps:
         return final_val
-    return (init_val * (total_steps - cur_step) + final_val * cur_step) / total_steps
+    return (init_val * (total_steps - cur_step) +
+            final_val * cur_step) / total_steps
 
 
 def smoothen(values):
