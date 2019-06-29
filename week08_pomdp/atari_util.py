@@ -1,9 +1,8 @@
 """Auxilary files for those who wanted to solve breakout with CEM or policy gradient"""
 import numpy as np
-import gym
-from scipy.misc import imresize
 from gym.core import Wrapper
 from gym.spaces.box import Box
+from skimage.transform import resize
 
 
 class PreprocessAtari(Wrapper):
@@ -18,13 +17,10 @@ class PreprocessAtari(Wrapper):
         self.dim_order = dim_order
 
         n_channels = (3 * n_frames) if color else n_frames
-        obs_shape = [
-            n_channels,
-            height,
-            width] if dim_order == 'theano' else [
-            height,
-            width,
-            n_channels]
+        obs_shape = \
+            [n_channels, height, width] \
+            if dim_order == 'theano' else \
+            [height, width, n_channels]
         self.observation_space = Box(0.0, 1.0, obs_shape)
         self.framebuffer = np.zeros(obs_shape, 'float32')
 
@@ -57,7 +53,7 @@ class PreprocessAtari(Wrapper):
     def preproc_image(self, img):
         """what happens to the observation"""
         img = self.crop(img)
-        img = imresize(img, self.img_size)
+        img = resize(img, self.img_size)
         if not self.color:
             img = img.mean(-1, keepdims=True)
         if self.dim_order == 'theano':

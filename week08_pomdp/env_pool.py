@@ -46,8 +46,8 @@ class EnvPool(object):
 
         def env_step(i, action):
             if not self.just_ended[i]:
-                new_observation, cur_reward, is_done, info = self.envs[i].step(
-                    action)
+                new_observation, cur_reward, is_done, info = \
+                    self.envs[i].step(action)
                 if is_done:
                     # Game ends now, will finalize on next tick.
                     self.just_ended[i] = True
@@ -103,10 +103,9 @@ class EnvPool(object):
         # cast to numpy arrays, transpose from [time, batch, ...] to [batch,
         # time, ...]
         history_log = [
-            np.array(tensor).swapaxes(
-                0,
-                1) for tensor in zip(
-                *history_log)]
+            np.array(tensor).swapaxes(0, 1)
+            for tensor in zip(*history_log)
+        ]
         observation_seq, action_seq, reward_seq, is_alive_seq = history_log
 
         return observation_seq, action_seq, reward_seq, is_alive_seq

@@ -67,8 +67,11 @@ class BasicTranslationModel(nn.Module):
         """
         device = next(self.parameters()).device
         batch_size = inp.shape[0]
-        bos = torch.tensor([self.out_voc.bos_ix] *
-                           batch_size, dtype=torch.long, device=device)
+        bos = torch.tensor(
+            [self.out_voc.bos_ix] * batch_size,
+            dtype=torch.long,
+            device=device,
+        )
         logits_seq = [torch.log(to_one_hot(bos, len(self.out_voc)) + eps)]
 
         hid_state = self.encode(inp, **flags)
@@ -91,8 +94,11 @@ class BasicTranslationModel(nn.Module):
         """
         device = next(self.parameters()).device
         batch_size = inp.shape[0]
-        bos = torch.tensor([self.out_voc.bos_ix] *
-                           batch_size, dtype=torch.long, device=device)
+        bos = torch.tensor(
+            [self.out_voc.bos_ix] * batch_size,
+            dtype=torch.long,
+            device=device,
+        )
         mask = torch.ones(batch_size, dtype=torch.uint8, device=device)
         logits_seq = [torch.log(to_one_hot(bos, len(self.out_voc)) + eps)]
         out_seq = [bos]
@@ -115,10 +121,10 @@ class BasicTranslationModel(nn.Module):
             if max_len and len(out_seq) >= max_len:
                 break
 
-        return torch.stack(
-            out_seq, 1), F.log_softmax(
-            torch.stack(
-                logits_seq, 1), dim=-1)
+        return (
+            torch.stack(out_seq, 1),
+            F.log_softmax(torch.stack(logits_seq, 1), dim=-1),
+        )
 
 
 ### Utility functions ###
@@ -173,9 +179,7 @@ def to_one_hot(y, n_dims=None):
     y_one_hot = torch.zeros(
         y_tensor.size()[0],
         n_dims,
-        device=y.device).scatter_(
-        1,
-        y_tensor,
-        1)
+        device=y.device,
+    ).scatter_(1, y_tensor, 1)
     y_one_hot = y_one_hot.view(*y.shape, -1)
     return y_one_hot

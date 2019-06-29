@@ -32,16 +32,23 @@ class BasicTranslationModel:
             # intput layers
             inp = InputLayer((None, None))
             mask = ExpressionLayer(
-                inp, lambda x: get_mask_by_eos(
-                    T.eq(
-                        x, self.out_voc.eos_ix)))
+                inp,
+                lambda x: get_mask_by_eos(T.eq(x, self.out_voc.eos_ix)),
+            )
 
             # embed the tokens
-            emb = EmbeddingLayer(inp, input_size=len(inp_voc),
-                                 output_size=emb_size)
+            emb = EmbeddingLayer(
+                inp,
+                input_size=len(inp_voc),
+                output_size=emb_size,
+            )
 
-            rnn_fw = GRULayer(emb, num_units=hid_size, mask_input=mask,
-                              only_return_final=True)
+            rnn_fw = GRULayer(
+                emb,
+                num_units=hid_size,
+                mask_input=mask,
+                only_return_final=True,
+            )
 
             dec_start = DenseLayer(rnn_fw, hid_size, nonlinearity=None)
 
@@ -62,7 +69,9 @@ class BasicTranslationModel:
 
             probs = NonlinearityLayer(logits, nonlinearity=T.nnet.softmax)
             logprobs = NonlinearityLayer(
-                logits, nonlinearity=T.nnet.logsoftmax)
+                logits,
+                nonlinearity=T.nnet.logsoftmax,
+            )
             out = ProbabilisticResolver(probs, assume_normalized=True)
 
             state_dict = {

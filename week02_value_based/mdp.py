@@ -1,6 +1,6 @@
 # most of this code was politely stolen from https://github.com/berkeleydeeprlcourse/homework/
-# all credit goes to https://github.com/abhishekunique (if i got the
-# author right)
+# all credit goes to https://github.com/abhishekunique
+# (if I got the author right)
 import sys
 import random
 import numpy as np
@@ -9,7 +9,7 @@ try:
     from graphviz import Digraph
     import graphviz
     has_graphviz = True
-except BaseException:
+except ImportError:
     has_graphviz = False
 
 

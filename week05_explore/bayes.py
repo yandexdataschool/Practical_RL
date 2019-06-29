@@ -80,11 +80,9 @@ class NormalApproximation(object):
         # KL divergence KL(q,p) = E_(w~q(w|x)) [log q(w|x) - log P(w)] aka
         # variational cost
         q_p = T.sum(
-            self.log_posterior_approx(
-                W,
-                mean,
-                rho) -
-            self.log_prior(W))
+            self.log_posterior_approx(W, mean, rho) -
+            self.log_prior(W)
+        )
 
         # accumulate variational cost
         layer._bbwrap_var_cost += q_p
@@ -103,9 +101,8 @@ def get_var_cost(layer_or_layers, treat_as_input=None):
     cost = 0
     for layer in lasagne.layers.get_all_layers(
             layer_or_layers, treat_as_input):
-        if hasattr(
-                layer,
-                'get_var_cost'):  # if layer is bayesian or pretends so
+        if hasattr(layer, 'get_var_cost'):
+            # if layer is bayesian or pretends so
             cost += layer.get_var_cost()
     return cost
 
@@ -127,11 +124,8 @@ def bbpwrap(approximation=NormalApproximation()):
             def wrapped(self, spec, shape, name=None, **tags):
                 # we should take care about some user specification
                 # to avoid bbp hook just set tags['variational'] = True
-                if not tags.get(
-                        'trainable',
-                        True) or tags.get(
-                        'variational',
-                        False):
+                if not tags.get('trainable', True) or \
+                        tags.get('variational', False):
                     return add_param(self, spec, shape, name, **tags)
                 else:
                     # we declare that params we add next

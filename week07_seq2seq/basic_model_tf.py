@@ -141,28 +141,38 @@ class BasicTranslationModel:
         def step(blob, t):
             h_prev, y_prev = blob[:-2], blob[-1]
             h_new, logits = self.decode(h_prev, y_prev, **flags)
-            y_new = tf.argmax(logits, axis=-
-                              1) if greedy else tf.multinomial(logits, 1)[:, 0]
+            y_new = (
+                tf.argmax(logits, axis=-1) if greedy
+                else tf.multinomial(logits, 1)[:, 0]
+            )
             return list(h_new) + [logits, tf.cast(y_new, y_prev.dtype)]
 
-        results = tf.scan(step, initializer=list(first_state) +
-                          [first_logits, bos], elems=[tf.range(max_len)])
+        results = tf.scan(
+            step,
+            initializer=list(first_state) + [first_logits, bos],
+            elems=[tf.range(max_len)],
+        )
 
         # gather state, logits and outs, each of shape [time,batch,...]
-        states_seq, logits_seq, out_seq = results[:-
-                                                  2], results[-2], results[-1]
+        states_seq, logits_seq, out_seq = (
+            results[:-2], results[-2], results[-1]
+        )
 
         # add initial state, logits and out
         logits_seq = tf.concat((first_logits[None], logits_seq), axis=0)
         out_seq = tf.concat((bos[None], out_seq), axis=0)
-        states_seq = [tf.concat((init[None], states), axis=0)
-                      for init, states in zip(first_state, states_seq)]
+        states_seq = [
+            tf.concat((init[None], states), axis=0)
+            for init, states in zip(first_state, states_seq)
+        ]
 
         # convert from [time,batch,...] to [batch,time,...]
         logits_seq = tf.transpose(logits_seq, [1, 0, 2])
         out_seq = tf.transpose(out_seq)
-        states_seq = [tf.transpose(states, [1, 0] + list(range(2, states.shape.ndims)))
-                      for states in states_seq]
+        states_seq = [
+            tf.transpose(states, [1, 0] + list(range(2, states.shape.ndims)))
+            for states in states_seq
+        ]
 
         return out_seq, tf.nn.log_softmax(logits_seq)
 
@@ -177,13 +187,13 @@ def initialize_uninitialized(sess=None):
     sess = sess or tf.get_default_session()
     global_vars = tf.global_variables()
     is_not_initialized = sess.run(
-        [tf.is_variable_initialized(var) for var in global_vars])
+        [tf.is_variable_initialized(var) for var in global_vars]
+    )
     not_initialized_vars = [
-        v for (
-            v,
-            f) in zip(
-            global_vars,
-            is_not_initialized) if not f]
+        v for (v, f)
+        in zip(global_vars, is_not_initialized)
+        if not f
+    ]
 
     if len(not_initialized_vars):
         sess.run(tf.variables_initializer(not_initialized_vars))
