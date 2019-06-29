@@ -105,9 +105,12 @@ class SingleEnvBatch(Wrapper, EnvBatch):
         ob, rew, done, info = self.env.step(actions[0])
         if done:
             ob = self.env.reset()
-        return ob[None], np.expand_dims(
-            rew, 0), np.expand_dims(
-            done, 0), [info]
+        return (
+            ob[None],
+            np.expand_dims(rew, 0),
+            np.expand_dims(done, 0),
+            [info],
+        )
 
     def reset(self):
         return self.env.reset()[None]

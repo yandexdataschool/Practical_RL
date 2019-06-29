@@ -108,8 +108,11 @@ class ImagePreprocessing(gym.ObservationWrapper):
         low, high, dtype = ospace.low.min(), ospace.high.max(), ospace.dtype
         if self.grayscale:
             self.observation_space = spaces.Box(
-                low=low, high=high, shape=(
-                    width, height), dtype=dtype)
+                low=low,
+                high=high,
+                shape=(width, height),
+                dtype=dtype,
+            )
         else:
             obs_shape = (width, height) + self.observation_space.shape[2:]
             self.observation_space = spaces.Box(low=low, high=high,
