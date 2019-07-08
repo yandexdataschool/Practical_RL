@@ -27,19 +27,30 @@ class BasicTranslationModel:
         self.inp_voc = inp_voc
         self.out_voc = out_voc
         # encode input sequence
+
         class encoder:
             # intput layers
             inp = InputLayer((None, None))
-            mask = ExpressionLayer(inp, lambda x: get_mask_by_eos(T.eq(x, self.out_voc.eos_ix)))
+            mask = ExpressionLayer(
+                inp,
+                lambda x: get_mask_by_eos(T.eq(x, self.out_voc.eos_ix)),
+            )
 
             # embed the tokens
-            emb = EmbeddingLayer(inp, input_size=len(inp_voc),
-                                 output_size=emb_size)
+            emb = EmbeddingLayer(
+                inp,
+                input_size=len(inp_voc),
+                output_size=emb_size,
+            )
 
-            rnn_fw = GRULayer(emb, num_units=hid_size, mask_input=mask,
-                              only_return_final=True)
+            rnn_fw = GRULayer(
+                emb,
+                num_units=hid_size,
+                mask_input=mask,
+                only_return_final=True,
+            )
 
-            dec_start = DenseLayer(rnn_fw,hid_size,nonlinearity=None)
+            dec_start = DenseLayer(rnn_fw, hid_size, nonlinearity=None)
 
         # make encoder a public field
         self.encoder = encoder
@@ -57,7 +68,10 @@ class BasicTranslationModel:
             logits = DenseLayer(new_hid, len(out_voc), nonlinearity=None)
 
             probs = NonlinearityLayer(logits, nonlinearity=T.nnet.softmax)
-            logprobs = NonlinearityLayer(logits, nonlinearity=T.nnet.logsoftmax)
+            logprobs = NonlinearityLayer(
+                logits,
+                nonlinearity=T.nnet.logsoftmax,
+            )
             out = ProbabilisticResolver(probs, assume_normalized=True)
 
             state_dict = {
@@ -68,19 +82,21 @@ class BasicTranslationModel:
             }
 
             init_dict = {
-                new_hid:encoder.dec_start
+                new_hid: encoder.dec_start
                 # ^^^ this reads "before first step, new_hid is set to outputs of dec_start"
                 # if you add any more recurrent memory units with non-zero init
                 # please make sure they're here
             }
 
             nonseq_dict = {
-                # here you can add anything encoder needs that's gonna be same across time-steps
+                # here you can add anything encoder needs that's gonna be same
+                # across time-steps
             }
 
         self.decoder = decoder
 
-        top_layers = [encoder.dec_start,decoder.out] + list(decoder.state_dict.keys())
+        top_layers = [encoder.dec_start, decoder.out] + \
+            list(decoder.state_dict.keys())
         self.weights = get_all_params(top_layers, trainable=True)
 
     def symbolic_score(self, inp, out, eps=1e-30, **flags):
@@ -96,13 +112,13 @@ class BasicTranslationModel:
         therefore you can get likelihood as logprobas * tf.one_hot(out,n_tokens)
         """
 
-        l_output_sequence = InputLayer([None,None])
+        l_output_sequence = InputLayer([None, None])
 
         # Defining custom recurrent layer out of decoder
         rec = Recurrence(
             state_variables=self.decoder.state_dict,
             state_init=self.decoder.init_dict,
-            input_sequences={self.decoder.inp:l_output_sequence},
+            input_sequences={self.decoder.inp: l_output_sequence},
             input_nonsequences=self.decoder.nonseq_dict,
             tracked_outputs=self.decoder.logprobs,
             unroll_scan=False
@@ -117,19 +133,17 @@ class BasicTranslationModel:
 
         self.auto_updates = rec.get_automatic_updates()
         if len(self.auto_updates) != 0:
-            print("symbolic_score: Please collect auto_updates of random states "
-                  "after you called symbolic_score (available at model.auto_updates)!")
+            print(
+                "symbolic_score: Please collect auto_updates of random states "
+                "after you called symbolic_score (available at model.auto_updates)!")
 
-
-        first_logprobs = T.zeros_like(logprobs[:,:1])
-        logprobs = T.concatenate([first_logprobs,logprobs[:,:-1]],axis=1)
+        first_logprobs = T.zeros_like(logprobs[:, :1])
+        logprobs = T.concatenate([first_logprobs, logprobs[:, :-1]], axis=1)
 
         return logprobs
 
-
-
-    def symbolic_translate(self, inp, greedy=False, max_len = None,
-                           unroll_scan=False, eps = 1e-30, **flags):
+    def symbolic_translate(self, inp, greedy=False, max_len=None,
+                           unroll_scan=False, eps=1e-30, **flags):
         """
         takes symbolic int32 matrix of hebrew words, produces output tokens sampled
         from the model and output log-probabilities for all possible tokens at each tick.
@@ -143,13 +157,14 @@ class BasicTranslationModel:
                  log-probabilities of all tokens at each tick, [batch,time,n_tokens]
         """
         if unroll_scan:
-            assert isinstance(max_len,int), "if scan is unrolled, max_len must be a constant integer"
+            assert isinstance(
+                max_len, int), "if scan is unrolled, max_len must be a constant integer"
 
         max_len = max_len if max_len is not None else 2 * inp.shape[1]
 
         # initial output tokens (BOS)
         bos = T.zeros_like(inp[:, 0]) + self.out_voc.bos_ix
-        l_start = InputLayer((None,),bos)
+        l_start = InputLayer((None,), bos)
 
         # Defining custom recurrent layer out of decoder
         rec = Recurrence(
@@ -163,22 +178,23 @@ class BasicTranslationModel:
         )
 
         translations, logprobs = get_output(rec[self.decoder.out, self.decoder.logprobs],
-                                            {self.encoder.inp:inp,
-                                             l_start:bos},
-                                            recurrence_flags=dict(flags,greedy=greedy),
+                                            {self.encoder.inp: inp,
+                                             l_start: bos},
+                                            recurrence_flags=dict(flags, greedy=greedy),
                                             **flags)
 
         self.auto_updates = rec.get_automatic_updates()
         if len(self.auto_updates) != 0:
-            print("symbolic_translate: Please collect auto_updates of random states "
-                  "after you called symbolic_translate (available at model.auto_updates)!")
+            print(
+                "symbolic_translate: Please collect auto_updates of random states "
+                "after you called symbolic_translate (available at model.auto_updates)!")
 
         # add first step (bos)
-        translations = T.concatenate([bos[:,None],translations],axis=1)
-        first_logprobs = T.zeros_like(logprobs[:,:1])
-        logprobs = T.concatenate([first_logprobs,logprobs],axis=1)
+        translations = T.concatenate([bos[:, None], translations], axis=1)
+        first_logprobs = T.zeros_like(logprobs[:, :1])
+        logprobs = T.concatenate([first_logprobs, logprobs], axis=1)
 
-        return translations,logprobs
+        return translations, logprobs
 
 
 def merge_dicts(*dicts, **kwargs):
@@ -193,6 +209,6 @@ def merge_dicts(*dicts, **kwargs):
     for d in dicts:
         merged_dict.update(d)
     if kwargs.get('check_conflicts'):
-        assert len(merged_dict) == sum(map(len, dicts)), 'dicts have duplicate keys'
+        assert len(merged_dict) == sum(
+            map(len, dicts)), 'dicts have duplicate keys'
     return merged_dict
-

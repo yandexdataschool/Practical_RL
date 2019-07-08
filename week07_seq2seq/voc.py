@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Vocab:
     def __init__(self, tokens, bos="__BOS__", eos="__EOS__", sep=''):
         """
@@ -7,7 +8,7 @@ class Vocab:
         """
         assert bos in tokens, eos in tokens
         self.tokens = tokens
-        self.token_to_ix = {t:i for i,t in enumerate(tokens)}
+        self.token_to_ix = {t: i for i, t in enumerate(tokens)}
 
         self.bos = bos
         self.bos_ix = self.token_to_ix[bos]
@@ -21,16 +22,16 @@ class Vocab:
     @staticmethod
     def from_lines(lines, bos="__BOS__", eos="__EOS__", sep=''):
         flat_lines = sep.join(list(lines))
-        flat_lines = list(flat_lines.split(sep)) if sep != '' else list(flat_lines)
+        flat_lines = list(flat_lines.split(sep)) if sep else list(flat_lines)
         tokens = list(set(sep.join(flat_lines)))
-        tokens = [t for t in tokens if t not in (bos,eos) and len(t) != 0]
-        tokens = [bos,eos] + tokens
-        return Vocab(tokens,bos,eos,sep)
+        tokens = [t for t in tokens if t not in (bos, eos) and len(t) != 0]
+        tokens = [bos, eos] + tokens
+        return Vocab(tokens, bos, eos, sep)
 
-    def tokenize(self,string):
+    def tokenize(self, string):
         """converts string to a list of tokens"""
-        tokens = list(filter(len,string.split(self.sep))) \
-                    if self.sep != '' else list(string)
+        tokens = list(filter(len, string.split(self.sep))) \
+            if self.sep != '' else list(string)
         return [self.bos] + tokens + [self.eos]
 
     def to_matrix(self, lines, max_len=None):
@@ -42,7 +43,7 @@ class Vocab:
          [30 21 15 15 21 14 28 27 13 -1 -1]
          [25 37 31 34 21 20 37 21 28 19 13]]
         """
-        max_len = max_len or max(map(len, lines)) + 2 # 2 for bos and eos
+        max_len = max_len or max(map(len, lines)) + 2  # 2 for bos and eos
 
         matrix = np.zeros((len(lines), max_len), dtype='int32') + self.eos_ix
         for i, seq in enumerate(lines):
@@ -60,7 +61,7 @@ class Vocab:
         :return:
         """
         lines = []
-        for line_ix in map(list,matrix):
+        for line_ix in map(list, matrix):
             if crop:
                 if line_ix[0] == self.bos_ix:
                     line_ix = line_ix[1:]
