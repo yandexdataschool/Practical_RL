@@ -23,7 +23,7 @@
 
 
 ## Practice assignment
-Instant dive in: [__seminar_gym_interface__](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week01_intro/seminar_gym_interface.ipynb), [__crossentropy_method__](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week01_intro/crossentropy_method.ipynb)
+Instant dive in: [__seminar_gym_interface__](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week01_intro/seminar_gym_interface.ipynb), [__crossentropy_method__](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week01_intro/crossentropy_method.ipynb)
 
 * Open `gym_interface.ipynb` and follow instructions from there
 * After you're done there, proceed to `crossentropy_method.ipynb`
