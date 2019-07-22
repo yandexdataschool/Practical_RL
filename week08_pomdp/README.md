@@ -23,6 +23,6 @@ _Links on all articles mentioned during the lecture could be found in "Reference
 
 # Practice
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week08_pomdp/practice_pytorch.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week08_pomdp/practice_pytorch.ipynb)
 
 The assignment is platform and framewerk independent, so choose the framework that suits you best, but pay attention on how many you will need to implement youself in case of nonstandart ones.
