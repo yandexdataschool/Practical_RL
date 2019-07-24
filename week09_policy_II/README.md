@@ -10,9 +10,9 @@ This section covers some steroids for policy gradient methods, along with a cool
 * Original articles - [TRPO](https://arxiv.org/abs/1502.05477), [NPG](https://papers.nips.cc/paper/2073-a-natural-policy-gradient.pdf)
 
 ## Practice
-* Seminar: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week09_policy_II/seminar_TRPO_pytorch.ipynb)
+* Seminar: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week09_policy_II/seminar_TRPO_pytorch.ipynb)
 
-* Homework: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring19/week09_policy_II/ppo.ipynb)
+* Homework: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week09_policy_II/ppo.ipynb)
 
 ## More: Reinforcement learning in large/continuous action spaces
 While you already know algorithms that will work with continuously many actions, it can't hurt to learn something more specialized.
