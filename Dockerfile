@@ -8,7 +8,7 @@ RUN apt-get -qq update
 RUN apt-get install -y gcc g++ libstdc++6 wget curl unzip git
 RUN apt-get install -y libopenblas-dev liblapack-dev libsdl2-dev libboost-all-dev graphviz
 RUN apt-get install -y cmake zlib1g-dev libjpeg-dev 
-RUN apt-get install -y xvfb libav-tools xorg-dev python-opengl python3-opengl
+RUN apt-get install -y xvfb ffmpeg xorg-dev python-opengl python3-opengl
 RUN apt-get -y install swig3.0
 RUN ln -s /usr/bin/swig3.0 /usr/bin/swig
 
