@@ -104,13 +104,9 @@ class BasicTranslationModel:
 
         # add initial state and logits
         logits_seq = tf.concat((first_logits[None], logits_seq), axis=0)
-        states_seq = [tf.concat((init[None], states), axis=0)
-                      for init, states in zip(first_state, states_seq)]
 
         # convert from [time,batch,...] to [batch,time,...]
         logits_seq = tf.transpose(logits_seq, [1, 0, 2])
-        states_seq = [tf.transpose(states, [1, 0] + list(range(2, states.shape.ndims)))
-                      for states in states_seq]
 
         return tf.nn.log_softmax(logits_seq)
 
