@@ -4,7 +4,8 @@ import time
 
 import numpy as np
 
-__doc__="""taken from https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py"""
+__doc__ = """taken from https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py"""
+
 
 def load_dataset():
     # We first define a download function, supporting both Python 2 and 3.
@@ -33,7 +34,7 @@ def load_dataset():
         # The inputs come as bytes, we convert them to float32 in range [0,1].
         # (Actually to range [0, 255/256], for compatibility to the version
         # provided at http://deeplearning.net/data/mnist/mnist.pkl.gz.)
-        return (data / np.float32(256)).squeeze()
+        return data / np.float32(256)
 
     def load_mnist_labels(filename):
         if not os.path.exists(filename):
@@ -57,8 +58,3 @@ def load_dataset():
     # We just return all the arrays in order, as expected in main().
     # (It doesn't matter how we do this as long as we can read them again.)
     return X_train, y_train, X_val, y_val, X_test, y_test
-
-
-
-
-

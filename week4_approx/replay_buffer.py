@@ -1,6 +1,8 @@
-# This code is shamelessly stolen from https://github.com/openai/baselines/blob/master/baselines/deepq/replay_buffer.py
+# This code is shamelessly stolen from
+# https://github.com/openai/baselines/blob/master/baselines/deepq/replay_buffer.py
 import numpy as np
 import random
+
 
 class ReplayBuffer(object):
     def __init__(self, size):
@@ -37,7 +39,13 @@ class ReplayBuffer(object):
             rewards.append(reward)
             obses_tp1.append(np.array(obs_tp1, copy=False))
             dones.append(done)
-        return np.array(obses_t), np.array(actions), np.array(rewards), np.array(obses_tp1), np.array(dones)
+        return (
+            np.array(obses_t),
+            np.array(actions),
+            np.array(rewards),
+            np.array(obses_tp1),
+            np.array(dones)
+        )
 
     def sample(self, batch_size):
         """Sample a batch of experiences.
@@ -59,5 +67,8 @@ class ReplayBuffer(object):
             done_mask[i] = 1 if executing act_batch[i] resulted in
             the end of an episode and 0 otherwise.
         """
-        idxes = [random.randint(0, len(self._storage) - 1) for _ in range(batch_size)]
+        idxes = [
+            random.randint(0, len(self._storage) - 1)
+            for _ in range(batch_size)
+        ]
         return self._encode_sample(idxes)
