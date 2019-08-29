@@ -51,7 +51,7 @@ def submit_assigment(
             's4': {'a1': {'s1': +10}}
         }
 
-        mdp = MDP(transition_probs, rewards, initial_state='s0')
+        mdp = MDP(transition_probs, rewards, initial_state='s0', seed=998244353)
 
         test_Vs = {s: i for i, s in enumerate(sorted(mdp.get_all_states()))}
         qvalue1 = get_action_value(mdp, test_Vs, 's1', 'a0', 0.9)
@@ -90,7 +90,7 @@ def submit_assigment(
 
         # ---
 
-        mdp = FrozenLakeEnv(slip_chance=0.25)
+        mdp = FrozenLakeEnv(slip_chance=0.25, seed=998244353)
         state_values = value_iteration(mdp)
         gamma = 0.9
 
@@ -109,7 +109,7 @@ def submit_assigment(
 
         # ---
 
-        mdp = FrozenLakeEnv(slip_chance=0.25, map_name='8x8')
+        mdp = FrozenLakeEnv(slip_chance=0.25, map_name='8x8', seed=998244353)
         state_values = value_iteration(mdp)
         gamma = 0.9
 

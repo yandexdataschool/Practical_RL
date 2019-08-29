@@ -4,6 +4,7 @@
 import sys
 import random
 import numpy as np
+from gym.utils import seeding
 
 try:
     from graphviz import Digraph
@@ -14,7 +15,7 @@ except ImportError:
 
 
 class MDP:
-    def __init__(self, transition_probs, rewards, initial_state=None):
+    def __init__(self, transition_probs, rewards, initial_state=None, seed=None):
         """
         Defines an MDP. Compatible with gym Env.
         :param transition_probs: transition_probs[s][a][s_next] = P(s_next | s, a)
@@ -55,6 +56,7 @@ class MDP:
         self._initial_state = initial_state
         self.n_states = len(transition_probs)
         self.reset()
+        self.np_random, _ = seeding.np_random(seed)
 
     def get_all_states(self):
         """ return a tuple of all possiblestates """
@@ -88,7 +90,7 @@ class MDP:
     def reset(self):
         """ reset the game, return the initial state"""
         if self._initial_state is None:
-            self._current_state = random.choice(
+            self._current_state = self.np_random.choice(
                 tuple(self._transition_probs.keys()))
         elif self._initial_state in self._transition_probs:
             self._current_state = self._initial_state
@@ -104,7 +106,7 @@ class MDP:
         """ take action, return next_state, reward, is_done, empty_info """
         possible_states, probs = zip(
             *self.get_next_states(self._current_state, action).items())
-        next_state = possible_states[np.random.choice(
+        next_state = possible_states[self.np_random.choice(
             np.arange(len(possible_states)), p=probs)]
         reward = self.get_reward(self._current_state, action, next_state)
         is_done = self.is_terminal(next_state)
@@ -199,7 +201,7 @@ class FrozenLakeEnv(MDP):
         ],
     }
 
-    def __init__(self, desc=None, map_name="4x4", slip_chance=0.2):
+    def __init__(self, desc=None, map_name="4x4", slip_chance=0.2, seed=None):
         if desc is None and map_name is None:
             raise ValueError('Must provide either desc or map_name')
         elif desc is None:
@@ -258,7 +260,7 @@ class FrozenLakeEnv(MDP):
                     if desc[newrow, newcol] == 'G':
                         rewards[row, col][action][newrow, newcol] = 1.0
 
-        MDP.__init__(self, transition_probs, rewards, initial_state)
+        MDP.__init__(self, transition_probs, rewards, initial_state, seed)
 
     def render(self):
         desc_copy = np.copy(self.desc)
