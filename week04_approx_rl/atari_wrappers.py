@@ -113,7 +113,7 @@ class AntiTorchWrapper(gym.ObservationWrapper):
                          ]
         self.observation_space = gym.spaces.Box(0.0, 1.0, self.img_size)
 
-    def _observation(self, img):
+    def observation(self, img):
         """what happens to each observation"""
         img = img.transpose(1, 2, 0)
         return img
