@@ -59,5 +59,4 @@ class PreprocessAtari(Wrapper):
             img = img.mean(-1, keepdims=True)
         if self.dim_order == 'theano':
             img = img.transpose([2, 0, 1])  # [h, w, c] to [c, h, w]
-        img = img.astype('float32') / 255.
         return img
