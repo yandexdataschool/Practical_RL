@@ -1,13 +1,14 @@
 import os
-import numpy as np
-from scipy.misc import imread, imresize
-from sklearn.model_selection import train_test_split
 from glob import glob
+
+import numpy as np
+from imageio import imread
+from skimage.transform import resize
+from sklearn.model_selection import train_test_split
 
 
 def load_notmnist(path='./notMNIST_small', letters='ABCDEFGHIJ',
                   img_shape=(28, 28), test_size=0.25, one_hot=False):
-
     # download data if it's missing. If you have any problems, go to the urls
     # and load it manually.
     if not os.path.exists(path):
@@ -25,7 +26,7 @@ def load_notmnist(path='./notMNIST_small', letters='ABCDEFGHIJ',
         if class_i not in letters:
             continue
         try:
-            data.append(imresize(imread(img_path), img_shape))
+            data.append(resize(imread(img_path), img_shape))
             labels.append(class_i,)
         except BaseException:
             print(
