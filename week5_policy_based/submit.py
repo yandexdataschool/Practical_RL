@@ -1,11 +1,16 @@
 import sys
 import numpy as np
+import gym
 sys.path.append("..")
 import grading
 
 
 def submit_cartpole(generate_session, email, token):
-    sessions = [generate_session() for _ in range(100)]
+    env = gym.make("CartPole-v0")
+    if hasattr(env, '_max_episode_steps'):
+        env = env.env
+
+    sessions = [generate_session(env) for _ in range(100)]
     session_rewards = np.array(sessions)
     grader = grading.Grader("oyT3Bt7yEeeQvhJmhysb5g")
     grader.set_answer("7QKmA", int(np.mean(session_rewards)))
