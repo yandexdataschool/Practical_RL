@@ -51,5 +51,4 @@ python pacman.py -p PacmanQAgent -x 5000 -n 5010 -l smallGrid # example
 * other ./run* files are mostly for your amusement. 
   * ./run_pacman.sh will need more epochs to converge, see [comments](https://github.com/yandexdataschool/Practical_RL/blob/master/week03_model_free/seminar_py2/run_pacman.sh)
   * on windows, just copy the type `python pacman.py -p PacmanQAgent -x 2000 -n 2010 -l smallGrid` in cmd from assignemnt dir
-(YSDA/HSE) Please submit only qlearningAgents.py file and include a brief text report as comments in it.
 
