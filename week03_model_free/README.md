@@ -2,8 +2,9 @@
 ### Materials
 * Russian materials:
    - Lecture - [video](https://yadi.sk/i/jcQ1Bg8n3SrhuQ)
-   - Q-learning seminar - [video](https://yadi.sk/i/dQmolwOy3EtGNK)
-   - Sarsa & stuff - [seminar2](https://yadi.sk/i/XbqNQmjm3ExNsq)
+   - Seminars
+      - Q-learning seminar - [video](https://yadi.sk/i/dQmolwOy3EtGNK) (older version with crawler)
+      - SARSA & stuff - [video](https://yadi.sk/i/XbqNQmjm3ExNsq) 
 * English materials:
    - Lecture by David Silver (english) - [video part I](https://www.youtube.com/watch?v=PnHCvfgC_ZA), [video part II](https://www.youtube.com/watch?v=0g4j2k_Ggc4&t=43s)
    - Alternative lecture by Pieter Abbeel (english) - [video](https://www.youtube.com/watch?v=ifma8G7LegE)
