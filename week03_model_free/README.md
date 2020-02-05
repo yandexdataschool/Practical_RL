@@ -19,37 +19,8 @@
 ### Assignments
 
 Just as usual, start with 
-- `seminar_qlearning.ipynb` 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week03_model_free/seminar_qlearning.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week03_model_free/seminar_qlearning.ipynb)
+`seminar_qlearning.ipynb` _Implement q-learning agent and test it on Taxi and CartPole with binarizer_
 
 and then proceed to 
-
-- `homework.ipynb`
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week03_model_free/homework.ipynb)
-
-Please pay attention for uncommenting first lines in code if you use Colab.
-
----
-(optional) If you're running on a local machine (e.g. your pc) with python2, you can also try `seminar_py2`. It has some neat RL problems with cool visualizations.
-
-### ./seminar_py2
-_this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
-This homework assignment works on __python2 only__. If you stick to py3, consider seminar_alternative. Or just install it for this homework alone and remove afterwards.
-
-This homework also requires some physical display (e.g. laptop monitor). It won't work on binder VM / headless server. Please run it on laptop or consider ./seminar_alternative
-
-
-* You need to implement **QLearining** algorithm.
-
-Once you're done, run use those commands:
-```
-python crawler.py # Crawler with qlearning
-python pacman.py -p <your agent> -x <number of train samples> -n <total number of samples> -l <grid env>
-python pacman.py -p PacmanQAgent -x 5000 -n 5010 -l smallGrid # example
-```
-* Make sure you can tune agent to beat ./run_crawler.sh
- * on windows, just run `python crawler.py` from cmd in the project directory
-* other ./run* files are mostly for your amusement. 
-  * ./run_pacman.sh will need more epochs to converge, see [comments](https://github.com/yandexdataschool/Practical_RL/blob/master/week03_model_free/seminar_py2/run_pacman.sh)
-  * on windows, just copy the type `python pacman.py -p PacmanQAgent -x 2000 -n 2010 -l smallGrid` in cmd from assignemnt dir
-
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week03_model_free/homework.ipynb) `homework.ipynb` _Implement EV-SARSA agent, experience replay + bonus tasks_
