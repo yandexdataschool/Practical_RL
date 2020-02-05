@@ -1,10 +1,18 @@
-# Requirements
+# Disclaimer
+This assignment is not supported now. You can do it at your own risk. 
 
-Python 3.7 or newer (3.6 or older cause on MacOS [problems](https://stackoverflow.com/questions/57400301/how-to-fix-tkinter-every-code-with-gui-crashes-mac-os-with-respring) with [tkinter](https://docs.python.org/3/library/tkinter.html#module-tkinter))
+# Requirements
+__Ubuntu__ - not tested
+
+__MacOS__ Python 3.7.0 (3.6, 3.8 and other cause on MacOS [problems](https://stackoverflow.com/questions/57400301/how-to-fix-tkinter-every-code-with-gui-crashes-mac-os-with-respring) with [tkinter](https://docs.python.org/3/library/tkinter.html#module-tkinter))
+ 
+ Anaconda users just can create new_env:
+ ```bash
+ conda create -n pacman_env python=3.7.0
+ conda activate pacman_env
+ ```
 
 # Assignment notes
-DISCLAIMER - This assignment is not supported now. You can do it at your own risk. 
-
 _this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
 This homework assignment works on __python2 only__. If you stick to py3, consider seminar_alternative. Or just install it for this homework alone and remove afterwards.
 
