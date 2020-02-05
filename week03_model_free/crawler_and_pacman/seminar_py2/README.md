@@ -1,3 +1,6 @@
+# Disclaimer
+This assignment is not supported now. You can do it at your own risk. 
+
 _this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
 This homework assignment works on __python2 only__. If you stick to py3, consider seminar_alternative. Or just install it for this homework alone and remove afterwards.
 
