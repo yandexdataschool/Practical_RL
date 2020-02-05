@@ -1,3 +1,5 @@
+Contributors: [Vlad Lyalin](https://github.com/Guitaricet)
+
 # Disclaimer
 This assignment is not supported now. You can do it at your own risk. 
 
