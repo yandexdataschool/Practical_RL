@@ -4,7 +4,7 @@ This assignment is not supported now. You can do it at your own risk.
 # Requirements
 __Ubuntu__ - not tested
 
-__MacOS__ Python 3.7.0 (3.6, 3.8 and other cause on MacOS [problems](https://stackoverflow.com/questions/57400301/how-to-fix-tkinter-every-code-with-gui-crashes-mac-os-with-respring) with [tkinter](https://docs.python.org/3/library/tkinter.html#module-tkinter))
+__MacOS__ Python 3.7.0 (3.6, 3.8 and other cause on MacOS [problems](https://stackoverflow.com/questions/57400301/how-to-fix-tkinter-every-code-with-gui-crashes-mac-os-with-respring) with _Tkinter_)
  
  Anaconda users just can create new_env:
  ```bash
