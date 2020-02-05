@@ -35,7 +35,7 @@ The problem with those environments is that they have a large amount of unique s
  * and anything else you see fit 
  
 Here's how to get this information from [state](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/pacman.py#L49),
- * Get pacman position: state.getPacmanPosition()](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/pacman.py#L128)
+ * Get pacman position: [state.getPacmanPosition()](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/pacman.py#L128)
  * Is there a wall at (x,y)?: [state.hasWall(x,y)](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/pacman.py#L189)
  * Get ghost positions: [state.getGhostPositions()](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/pacman.py#L144)
  * Get all food positions: [state.getCapsules()](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/pacman.py#L153)
