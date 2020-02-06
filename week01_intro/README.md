@@ -30,5 +30,3 @@ Instant dive in: [__seminar_gym_interface__](https://colab.research.google.com/g
 * After you're done there, proceed to `crossentropy_method.ipynb`
 * You can find homework and bonus assignment descriptions at the end of that notebook.
 * Note: so far it's enough to say `pip install gym` on top of any data-science-stuffed python, but we'd appreciate if you gradually switch to [full installation](https://github.com/openai/gym#installing-everything).
-
-
