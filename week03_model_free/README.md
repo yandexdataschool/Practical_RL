@@ -3,7 +3,7 @@
 * Russian materials:
    - Lecture - [video](https://yadi.sk/i/jcQ1Bg8n3SrhuQ)
    - Seminars
-      - Q-learning seminar - [video](https://yadi.sk/i/dQmolwOy3EtGNK) (older track - [assignment](https://github.com/neer201/Practical_RL/tree/spring20_repair_week03/week03_model_free/crawler_and_pacman/seminar_py2))
+      - Q-learning seminar - [video](https://yadi.sk/i/dQmolwOy3EtGNK) (older track - [assignment](https://github.com/neer201/Practical_RL/tree/spring20/week03_model_free/crawler_and_pacman/seminar_py2))
       - SARSA & stuff - [video](https://yadi.sk/i/XbqNQmjm3ExNsq) 
 * English materials:
    - Lecture by David Silver (english) - [video part I](https://www.youtube.com/watch?v=PnHCvfgC_ZA), [video part II](https://www.youtube.com/watch?v=0g4j2k_Ggc4&t=43s)
