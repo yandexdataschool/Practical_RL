@@ -32,7 +32,7 @@ python pacman.py -p PacmanQAgent -x 5000 -n 5010 -l smallGrid # example
 * Make sure you can tune agent to beat ./run_crawler.sh
  * on windows, just run `python crawler.py` from cmd in the project directory
 * other ./run* files are mostly for your amusement. 
-  * ./run_pacman.sh will need more epochs to converge, see [comments](https://github.com/yandexdataschool/Practical_RL/blob/master/week03_model_free/seminar_py2/run_pacman.sh)
+  * ./run_pacman.sh will need more epochs to converge, see [comments](https://github.com/yandexdataschool/Practical_RL/blob/spring20/week03_model_free/crawler_and_pacman/seminar_py2/run_pacman.sh)
   * on windows, just copy the type `python pacman.py -p PacmanQAgent -x 2000 -n 2010 -l smallGrid` in cmd from assignemnt dir
 
 
