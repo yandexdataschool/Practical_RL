@@ -19,8 +19,8 @@
 ### Assignments
 
 Just as usual, start with 
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week03_model_free/seminar_qlearning.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring20/week03_model_free/seminar_qlearning.ipynb)
 `seminar_qlearning.ipynb` _Implement q-learning agent and test it on Taxi and CartPole with binarizer_
 
 and then proceed to 
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week03_model_free/homework.ipynb) `homework.ipynb` _Implement EV-SARSA agent, experience replay + bonus tasks_
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring20/week03_model_free/homework.ipynb) `homework.ipynb` _Implement EV-SARSA agent, experience replay + bonus tasks_
