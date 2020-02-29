@@ -3,7 +3,7 @@
 * __Russian:__
   * Intro to RL - [video](https://yadi.sk/i/bMo0qa-x3DoqkS)
   * Blackbox optimization - [video](https://yadi.sk/i/5yf_4oGI3EDJhJ)
-  * Seminar - [video](https://yadi.sk/i/dPsWYMK13EDJj7) _only covering crossentropy method_
+  * Seminar - [video](https://yadi.sk/i/gRTVCHfM3SPmHo) _only covering crossentropy method_
 
 * __English:__
   * [__main__] Video-intro by David Silver (english) - [video](https://www.youtube.com/watch?v=2pWv7GOvuf0)
