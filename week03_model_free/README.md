@@ -1,4 +1,4 @@
-#### __Lecture slides__ - [here](https://yadi.sk/i/54qWKtDB3NDeuh)
+#### __Lecture slides__ - [here](https://yadi.sk/i/9bPN0pxsR1-zIA)
 ### Materials
 * Russian materials:
    - Lecture - [video](https://yadi.sk/i/jcQ1Bg8n3SrhuQ)
