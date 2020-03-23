@@ -32,8 +32,8 @@ def submit_taxi(generate_session, policy, email, token):
     grader.submit(email, token)
 
 
-def submit_mountain_car(generate_session, email, token):
-    sessions = [generate_session() for _ in range(100)]
+def submit_mountain_car(generate_session, agent, email, token):
+    sessions = [generate_session(agent) for _ in range(100)]
     _, _, session_rewards = zip(*sessions)
     session_rewards = np.array(session_rewards)
     grader = grading.Grader("EyYJW9bUEeeXyQ5ZPWKHGg")
