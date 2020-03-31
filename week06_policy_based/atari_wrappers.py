@@ -1,12 +1,11 @@
 """ Environment wrappers. """
-from collections import deque
+from collections import defaultdict, deque
 
 import cv2
 import gym
 import gym.spaces as spaces
 from gym.envs import atari
 import numpy as np
-import tensorflow as tf
 
 from env_batch import ParallelEnvBatch
 cv2.ocl.setUseOpenCL(False)
@@ -206,15 +205,13 @@ class ClipReward(gym.RewardWrapper):
         return np.sign(reward)
 
 
-class TFSummaries(gym.Wrapper):
-    """ Writes env summaries."""
+class SummariesBase(gym.Wrapper):
+    """ Env summaries writer base."""
 
-    def __init__(self, env, prefix=None, running_mean_size=100, step_var=None):
-        super(TFSummaries, self).__init__(env)
+    def __init__(self, env, prefix=None, running_mean_size=100):
+        super().__init__(env)
         self.episode_counter = 0
         self.prefix = prefix or self.env.spec.id
-        self.step_var = (step_var if step_var is not None
-                         else tf.train.get_global_step())
 
         nenvs = getattr(self.env.unwrapped, "nenvs", 1)
         self.rewards = np.zeros(nenvs)
@@ -229,27 +226,22 @@ class TFSummaries(gym.Wrapper):
 
     def add_summaries(self):
         """ Writes summaries. """
-        tf.contrib.summary.scalar(
+        self.add_summary_scalar(
             f"{self.prefix}/total_reward",
-            tf.reduce_mean([q[-1] for q in self.reward_queues]),
-            step=self.step_var)
-        tf.contrib.summary.scalar(
+            np.mean([q[-1] for q in self.reward_queues]))
+        self.add_summary_scalar(
             f"{self.prefix}/reward_mean_{self.reward_queues[0].maxlen}",
-            tf.reduce_mean([np.mean(q) for q in self.reward_queues]),
-            step=self.step_var)
-        tf.contrib.summary.scalar(
+            np.mean([np.mean(q) for q in self.reward_queues]))
+        self.add_summary_scalar(
             f"{self.prefix}/episode_length",
-            tf.reduce_mean(self.episode_lengths),
-            step=self.step_var)
+            np.mean(self.episode_lengths))
         if self.had_ended_episodes.size > 1:
-            tf.contrib.summary.scalar(
+            self.add_summary_scalar(
                 f"{self.prefix}/min_reward",
-                min(q[-1] for q in self.reward_queues),
-                step=self.step_var)
-            tf.contrib.summary.scalar(
+                min(q[-1] for q in self.reward_queues))
+            self.add_summary_scalar(
                 f"{self.prefix}/max_reward",
-                max(q[-1] for q in self.reward_queues),
-                step=self.step_var)
+                max(q[-1] for q in self.reward_queues))
         self.episode_lengths.fill(0)
         self.had_ended_episodes.fill(False)
 
@@ -279,8 +271,48 @@ class TFSummaries(gym.Wrapper):
         return self.env.reset(**kwargs)
 
 
+class TFSummaries(SummariesBase):
+    """ Writes env summaries using TensorFlow."""
+
+    def __init__(self, env, prefix=None, running_mean_size=100, step_var=None):
+
+        super().__init__(env, prefix, running_mean_size)
+
+        import tensorflow as tf
+        self.step_var = (step_var if step_var is not None
+                         else tf.train.get_global_step())
+
+    def add_summary_scalar(self, name, value):
+        import tensorflow as tf
+        tf.contrib.summary.scalar(name, value, step = self.step_var)
+
+
+class NumpySummaries(SummariesBase):
+
+    _summaries = defaultdict(list)
+    _summary_step = None
+
+    @classmethod
+    def set_step(cls, step):
+        cls._summary_step = step
+
+    @classmethod
+    def get_values(cls, name):
+        return cls._summaries[name]
+
+    @classmethod
+    def clear(cls):
+        cls._summaries = defaultdict(list)
+
+    def __init__(self, env, prefix = None, running_mean_size = 100):
+        super().__init__(env, prefix, running_mean_size)
+
+    def add_summary_scalar(self, name, value):
+        self._summaries[name].append((self._summary_step, value))
+
+
 def nature_dqn_env(env_id, nenvs=None, seed=None,
-                   summaries=True, clip_reward=True):
+                   summaries='TensorFlow', clip_reward=True):
     """ Wraps env as in Nature DQN paper. """
     if "NoFrameskip" not in env_id:
         raise ValueError(f"env_id must have 'NoFrameskip' but is {env_id}")
@@ -299,7 +331,8 @@ def nature_dqn_env(env_id, nenvs=None, seed=None,
             for i, env_seed in enumerate(seed)
         ])
         if summaries:
-            env = TFSummaries(env, prefix=env_id)
+            summaries_class = NumpySummaries if summaries == 'Numpy' else TFSummaries
+            env = summaries_class(env, prefix=env_id)
         if clip_reward:
             env = ClipReward(env)
         return env
