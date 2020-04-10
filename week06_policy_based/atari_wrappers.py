@@ -339,7 +339,6 @@ def nature_dqn_env(env_id, nenvs=None, seed=None,
 
     env = gym.make(env_id)
     env.seed(seed)
-    np.random.seed(seed)
     if summaries:
         env = TFSummaries(env)
     env = EpisodicLife(env)
