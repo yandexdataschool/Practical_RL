@@ -94,6 +94,7 @@ Course materials and teaching by: _[unordered]_
 - [Mikhail Konobeev](https://github.com/MichaelKonobeev) - seminars, hw checkups
 - [Ivan Kharitonov](https://github.com/neer201) - seminars, hw checkups
 - [Ravil Khisamov](https://github.com/zshrav) - seminars, hw checkups
+- [Anna Klepova](https://github.com/q0o0p) - hw checkups
 - [Fedor Ratnikov](https://github.com/justheuristic) - admin stuff
 
 # Contributions
