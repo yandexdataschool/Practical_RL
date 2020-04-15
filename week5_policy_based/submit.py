@@ -30,7 +30,7 @@ def submit_cartpole_pytorch(generate_session, email, token):
     if hasattr(env, '_max_episode_steps'):
         env = env.env
 
-    sessions = [generate_session()[2] for _ in range(100)]
+    sessions = [np.sum(generate_session()[2]) for _ in range(100)]
     session_rewards = np.array(sessions)
     grader = grading.Grader("oyT3Bt7yEeeQvhJmhysb5g")
     grader.set_answer("7QKmA", int(np.mean(session_rewards)))
