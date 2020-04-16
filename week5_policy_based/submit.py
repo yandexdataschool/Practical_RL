@@ -1,6 +1,8 @@
-import sys
-import numpy as np
 import gym
+import numpy as np
+import tqdm
+
+import sys
 sys.path.append("..")
 import grading
 
@@ -18,7 +20,8 @@ def submit_cartpole(generate_session, email, token):
 
 
 def submit_kungfu(agent, env, evaluate, email, token):
-    sessions = [evaluate(agent=agent, env=env, n_games=1) for _ in range(100)]
+    with tqdm.trange(10, desc='Evaluating your agent') as t:
+        sessions = [evaluate(agent=agent, env=env, n_games=1) for _ in t]
     session_rewards = np.array(sessions)
     grader = grading.Grader("6sPnVCn6EeieSRL7rCBNJA")
     grader.set_answer("HhNVX", int(np.mean(session_rewards)))
