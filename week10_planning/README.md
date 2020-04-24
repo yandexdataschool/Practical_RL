@@ -1,7 +1,7 @@
 ## Assignments
 
 Just as usual, start with  `seminar_MCTS.ipynb` 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week10_planning/seminar_MCTS.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring20/week10_planning/seminar_MCTS.ipynb)
 
 ## Materials: planning
 
