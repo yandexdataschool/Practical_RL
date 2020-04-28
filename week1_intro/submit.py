@@ -24,16 +24,15 @@ def submit_interface(policy, email, token):
 
 
 def submit_taxi(generate_session, policy, email, token):
-    try:
-        env = gym.make('Taxi-v3')
-    except gym.error.DeprecatedEnv:
-        # Taxi-v2 was replaced with Taxi-v3 in gym 0.15.0
-        env = gym.make('Taxi-v2')
+    def make_env():
+        try:
+            return gym.make('Taxi-v3')
+        except gym.error.DeprecatedEnv:
+            # Taxi-v2 was replaced with Taxi-v3 in gym 0.15.0
+            return gym.make('Taxi-v2')
 
-    try:
+    with make_env() as env:
         sessions = [generate_session(env, policy) for _ in range(100)]
-    finally:
-        env.close()
 
     _, _, session_rewards = zip(*sessions)
     session_rewards = np.array(session_rewards)
