@@ -24,7 +24,16 @@ def submit_interface(policy, email, token):
 
 
 def submit_taxi(generate_session, policy, email, token):
-    sessions = [generate_session(policy) for _ in range(100)]
+    def make_env():
+        try:
+            return gym.make('Taxi-v3')
+        except gym.error.DeprecatedEnv:
+            # Taxi-v2 was replaced with Taxi-v3 in gym 0.15.0
+            return gym.make('Taxi-v2')
+
+    with make_env() as env:
+        sessions = [generate_session(env, policy) for _ in range(100)]
+
     _, _, session_rewards = zip(*sessions)
     session_rewards = np.array(session_rewards)
     grader = grading.Grader("s4pTlNbTEeeQvQ7N1-Sa3A")
@@ -33,7 +42,8 @@ def submit_taxi(generate_session, policy, email, token):
 
 
 def submit_mountain_car(generate_session, agent, email, token):
-    sessions = [generate_session(agent) for _ in range(100)]
+    with gym.make("MountainCar-v0").env as env:
+        sessions = [generate_session(env, agent) for _ in range(100)]
     _, _, session_rewards = zip(*sessions)
     session_rewards = np.array(session_rewards)
     grader = grading.Grader("EyYJW9bUEeeXyQ5ZPWKHGg")
