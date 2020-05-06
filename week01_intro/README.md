@@ -2,7 +2,7 @@
 * [__Lecture slides__](https://yadi.sk/i/-EUHXUXOTC5t9Q)
 * __Russian:__
   * Intro to RL - [video](https://yadi.sk/i/HpRw6zYv3SPmFf)
-  * Seminar - [video](https://yadi.sk/i/gRTVCHfM3SPmHo) _only covering crossentropy method_
+  * Seminar - [video](https://yadi.sk/i/gRTVCHfM3SPmHo)
 
 * __English:__
   * [__main__] Video-intro by David Silver (english) - [video](https://www.youtube.com/watch?v=2pWv7GOvuf0)
