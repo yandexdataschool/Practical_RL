@@ -1,5 +1,6 @@
 import sys
 import numpy as np
+import gym
 sys.path.append("..")
 import grading
 
