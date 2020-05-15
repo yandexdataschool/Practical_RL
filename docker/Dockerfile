@@ -37,7 +37,11 @@ RUN python3 -m pip install --upgrade pip && \
                            graphviz \
                            gym gym[box2d] gym[atari] \
                            matplotlib \
-                           seaborn && \
+                           seaborn \
+                           scikit-image \
+                           imageio \
+                           atari-py \
+                           psutil && \
     python3 -m pip install --upgrade https://github.com/Theano/Theano/archive/master.zip \
                            https://github.com/Lasagne/Lasagne/archive/master.zip \
                            https://github.com/yandexdataschool/AgentNet/archive/master.zip \
