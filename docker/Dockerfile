@@ -32,6 +32,7 @@ RUN pip3 install --upgrade pip && \
     pip3 install --upgrade sklearn \
                            jupyter \
                            tqdm \
+                           enum34 \
                            graphviz \
                            gym gym[box2d] gym[atari] \
                            matplotlib \
