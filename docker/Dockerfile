@@ -27,7 +27,7 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted 
                        g++ && \
     ln -s /usr/bin/swig3.0 /usr/bin/swig
 
-RUN pip3 install --upgrade pip==9.0.3 && \
+RUN pip3 install --upgrade pip && \
     pip3 install --upgrade numpy scipy && \
     pip3 install --upgrade sklearn \
                            jupyter \
