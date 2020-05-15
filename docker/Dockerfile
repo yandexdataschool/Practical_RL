@@ -39,7 +39,7 @@ RUN pip3 install --upgrade pip && \
     pip3 install --upgrade https://github.com/Theano/Theano/archive/master.zip \
                            https://github.com/Lasagne/Lasagne/archive/master.zip \
                            https://github.com/yandexdataschool/AgentNet/archive/master.zip \
-                           https://download.pytorch.org/whl/cpu/torch-1.0.1.post2-cp35-cp35m-linux_x86_64.whl \
+                           torch \
                            torchvision \
                            tensorflow \
                            keras && \                           
