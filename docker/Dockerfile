@@ -27,9 +27,10 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted 
                        g++ && \
     ln -s /usr/bin/swig3.0 /usr/bin/swig
 
-RUN pip3 install --upgrade pip && \
-    pip3 install --upgrade numpy scipy && \
-    pip3 install --upgrade sklearn \
+RUN python3 -m pip install --upgrade pip && \
+    python3 -m pip install --upgrade setuptools && \
+    python3 -m pip install --upgrade numpy scipy && \
+    python3 -m pip install --upgrade sklearn \
                            jupyter \
                            tqdm \
                            enum34 \
@@ -37,7 +38,7 @@ RUN pip3 install --upgrade pip && \
                            gym gym[box2d] gym[atari] \
                            matplotlib \
                            seaborn && \
-    pip3 install --upgrade https://github.com/Theano/Theano/archive/master.zip \
+    python3 -m pip install --upgrade https://github.com/Theano/Theano/archive/master.zip \
                            https://github.com/Lasagne/Lasagne/archive/master.zip \
                            https://github.com/yandexdataschool/AgentNet/archive/master.zip \
                            torch \
