@@ -24,7 +24,10 @@ def submit_interface(policy, email, token):
                 break
 
     x, v = s
-    print('Your car ended in state {{x={x}, v={v}}}'.format(x=x, v=v))
+    print('Your car ended in state {{x={x}, v={v}}}.'.format(x=x, v=v))
+
+    flag = 0.46  # Used only for reporting to the learner. Coursera grader stores this number separately.
+    print(f'The flag is located roughly at x={flag}. ' + ('You reached it!' if x >= flag else 'You did not reach it.'))
 
     grader = grading.Grader("3T7pSSz0EeifGhJb4HAv7A")
     grader.set_answer("sDilm", x)
