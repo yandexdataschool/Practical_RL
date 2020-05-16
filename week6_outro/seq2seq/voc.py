@@ -23,7 +23,7 @@ class Vocab:
     def from_lines(lines, bos="__BOS__", eos="__EOS__", sep=''):
         flat_lines = sep.join(list(lines))
         flat_lines = list(flat_lines.split(sep)) if sep else list(flat_lines)
-        tokens = list(set(sep.join(flat_lines)))
+        tokens = sorted(set(sep.join(flat_lines)))
         tokens = [t for t in tokens if t not in (bos, eos) and len(t) != 0]
         tokens = [bos, eos] + tokens
         return Vocab(tokens, bos, eos, sep)
