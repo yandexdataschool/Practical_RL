@@ -13,6 +13,7 @@ dependencies:
   - pyopengl-accelerate
   - pip:
     - atari-py
+    - sklearn
     - matplotlib
     - seaborn
     - scikit-image
