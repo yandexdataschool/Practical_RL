@@ -1,4 +1,4 @@
-name: tensorflow-1.13-cpu
+name: tensorflow-1.13
 channels:
   - defaults
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
   - numpy=1.16.6
   - pip
   - scipy
-  - tensorflow=1.13.1
+  - tensorflow-gpu=1.13.1
   - tqdm
   - pyopengl-accelerate
   - pip:
@@ -24,4 +24,4 @@ dependencies:
     - gym[box2d]
     - gym[atari]
     - requests
-prefix: /opt/conda/envs/tensorflow-1.13-cpu
+prefix: /opt/conda/envs/tensorflow-1.13

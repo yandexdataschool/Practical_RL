@@ -21,13 +21,13 @@ RUN su jupyter -c \
     su jupyter -c "echo '. /opt/conda/etc/profile.d/conda.sh' >> ~/.bashrc" && \
     su jupyter -c "echo 'conda activate base' >> ~/.bashrc"
 
-ADD tensorflow-1.13-cpu.yaml /tmp/tensorflow-1.13-cpu.yaml
+ADD tensorflow-1.13.yaml /tmp/tensorflow-1.13.yaml
 USER jupyter
 SHELL ["/bin/bash", "-i", "-c"]
 RUN conda install -y jupyter
-RUN conda env create -f /tmp/tensorflow-1.13-cpu.yaml && \
-    conda activate tensorflow-1.13-cpu && \
-    python -m ipykernel install --user --name tensorflow-1.13-cpu --display-name "Tensorflow 1.13 CPU"
+RUN conda env create -f /tmp/tensorflow-1.13.yaml && \
+    conda activate tensorflow-1.13 && \
+    python -m ipykernel install --user --name tensorflow-1.13 --display-name "Tensorflow 1.13"
 
 
 EXPOSE 8888
