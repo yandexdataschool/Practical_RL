@@ -1,0 +1,26 @@
+name: tensorflow-1.13-cpu
+channels:
+  - defaults
+dependencies:
+  - graphviz
+  - ipykernel
+  - keras
+  - numpy=1.16.6
+  - pip
+  - scipy
+  - tensorflow=1.13.1
+  - tqdm
+  - pyopengl-accelerate
+  - pip:
+    - atari-py
+    - matplotlib
+    - seaborn
+    - scikit-image
+    - imageio
+    - pyglet==1.3.2
+    - psutil
+    - gym==0.14.0
+    - gym[box2d]
+    - gym[atari]
+    - requests
+prefix: /opt/conda/envs/tensorflow-1.13-cpu

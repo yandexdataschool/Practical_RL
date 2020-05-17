@@ -1,60 +1,40 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 LABEL maintainer "Alexander Panin <justheuristic@gmail.com>, Dmitry Mittov <mittov@gmail.com>"
 
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list && \
-    apt-get -qq update && \
-    apt-get install -y cmake \
-                       wget \
-                       unzip \
-                       git \
-                       zlib1g-dev \
-                       libjpeg-dev \
-                       xvfb \
-                       libav-tools \
-                       xorg-dev \
-                       python-opengl \
-                       swig3.0 \
-                       python3-dev \
-                       python-pip \
-                       python3-pip \
-                       libopenblas-dev \
-                       liblapack-dev \
-                       libsdl2-dev \
-                       libboost-all-dev \
-                       graphviz \
-                       gcc \
-                       g++ && \
-    ln -s /usr/bin/swig3.0 /usr/bin/swig
+RUN apt-get -qq update && \
+    apt-get install -y wget unzip git cmake xvfb sudo freeglut3-dev ffmpeg
 
-RUN python3 -m pip install --upgrade pip && \
-    python3 -m pip install --upgrade setuptools && \
-    python3 -m pip install --upgrade numpy scipy && \
-    python3 -m pip install --upgrade sklearn \
-                           jupyter \
-                           tqdm \
-                           enum34 \
-                           graphviz \
-                           gym gym[box2d] gym[atari] \
-                           matplotlib \
-                           seaborn \
-                           scikit-image \
-                           imageio \
-                           atari-py \
-                           psutil && \
-    python3 -m pip install --upgrade https://github.com/Theano/Theano/archive/master.zip \
-                           https://github.com/Lasagne/Lasagne/archive/master.zip \
-                           https://github.com/yandexdataschool/AgentNet/archive/master.zip \
-                           torch \
-                           torchvision \
-                           tensorflow \
-                           keras && \                           
-    python3 -m ipykernel.kernelspec
+RUN adduser --disabled-password --gecos "Default user" jupyter && \
+    adduser jupyter sudo && \
+    echo "%sudo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+RUN su jupyter -c \
+    "wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh \
+        -O /tmp/anaconda3.sh" && \
+    mkdir -p /opt/conda && \
+    chown -R jupyter /opt/conda && \
+    su jupyter -c "/bin/bash /tmp/anaconda3.sh -b -p /opt/conda -u" && \
+    rm /tmp/anaconda3.sh && \
+    ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    su jupyter -c "echo '. /opt/conda/etc/profile.d/conda.sh' >> ~/.bashrc" && \
+    su jupyter -c "echo 'conda activate base' >> ~/.bashrc"
+
+ADD tensorflow-1.13-cpu.yaml /tmp/tensorflow-1.13-cpu.yaml
+USER jupyter
+SHELL ["/bin/bash", "-i", "-c"]
+RUN conda install -y jupyter
+RUN conda env create -f /tmp/tensorflow-1.13-cpu.yaml && \
+    conda activate tensorflow-1.13-cpu && \
+    python -m ipykernel install --user --name tensorflow-1.13-cpu --display-name "Tensorflow 1.13 CPU"
 
 
 EXPOSE 8888
 VOLUME /notebooks
+USER jupyter
 WORKDIR /notebooks
+ENV PATH /opt/conda/bin:$PATH
 
 COPY run_jupyter.sh /
 CMD ["/run_jupyter.sh"]
