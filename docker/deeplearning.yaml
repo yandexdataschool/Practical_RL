@@ -1,4 +1,4 @@
-name: tensorflow-1.13
+name: deeplearning
 channels:
   - defaults
 dependencies:
@@ -11,6 +11,8 @@ dependencies:
   - tensorflow-gpu=1.13.1
   - tqdm
   - pyopengl-accelerate
+  - pytorch-gpu
+  - torchvision  
   - pip:
     - atari-py
     - sklearn
@@ -18,10 +20,10 @@ dependencies:
     - seaborn
     - scikit-image
     - imageio
-    - pyglet==1.3.2
+    - pyglet
     - psutil
-    - gym==0.14.0
+    - gym
     - gym[box2d]
     - gym[atari]
     - requests
-prefix: /opt/conda/envs/tensorflow-1.13
+prefix: /opt/conda/envs/deeplearning

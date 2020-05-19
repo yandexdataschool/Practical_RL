@@ -21,20 +21,15 @@ RUN su jupyter -c \
     su jupyter -c "echo '. /opt/conda/etc/profile.d/conda.sh' >> ~/.bashrc" && \
     su jupyter -c "echo 'conda activate base' >> ~/.bashrc"
 
-ADD tensorflow-1.13.yaml /tmp/tensorflow-1.13.yaml
-ADD pytorch.yaml /tmp/pytorch.yaml
+ADD deeplearning.yaml /tmp/deeplearning.yaml
 USER jupyter
 SHELL ["/bin/bash", "-i", "-c"]
 
 RUN conda install -y jupyter
 
-RUN conda env create -f /tmp/tensorflow-1.13.yaml && \
-    conda activate tensorflow-1.13 && \
-    python -m ipykernel install --user --name tensorflow-1.13 --display-name "Tensorflow 1.13"
-
-RUN conda env create -f /tmp/pytorch.yaml && \
-    conda activate pytorch && \
-    python -m ipykernel install --user --name pytorch --display-name "Pytorch"
+RUN conda env create -f /tmp/deeplearning.yaml && \
+    conda activate deeplearning && \
+    python -m ipykernel install --user --name python3 --display-name "Deeplearning Python 3"
 
 EXPOSE 8888
 VOLUME /notebooks
