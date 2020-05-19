@@ -8,10 +8,10 @@ dependencies:
   - numpy=1.16.6
   - pip
   - scipy
-  - tensorflow-gpu=1.13.1
+  - {tensorflow}=1.13.1
   - tqdm
   - pyopengl-accelerate
-  - pytorch-gpu
+  - {pytorch}
   - torchvision  
   - pip:
     - atari-py

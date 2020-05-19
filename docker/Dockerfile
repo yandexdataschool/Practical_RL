@@ -1,5 +1,10 @@
-FROM ubuntu:20.04
-LABEL maintainer "Alexander Panin <justheuristic@gmail.com>, Dmitry Mittov <mittov@gmail.com>"
+ARG device
+
+FROM ubuntu:18.04 AS base-cpu
+
+FROM nvidia/cuda:10.2-base-ubuntu18.04 AS base-gpu
+
+FROM base-$device AS base
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -21,15 +26,28 @@ RUN su jupyter -c \
     su jupyter -c "echo '. /opt/conda/etc/profile.d/conda.sh' >> ~/.bashrc" && \
     su jupyter -c "echo 'conda activate base' >> ~/.bashrc"
 
-ADD deeplearning.yaml /tmp/deeplearning.yaml
+USER jupyter
+SHELL ["/bin/bash", "-i", "-c"]
+RUN conda install -y jupyter
+
+ADD deeplearning.yaml /tmp/deeplearning-template.yaml
+
+FROM base AS stage-cpu
+RUN sed -e "s/{tensorflow}/tensorflow/g" -e "s/{pytorch}/pytorch/g" /tmp/deeplearning-template.yaml > /tmp/deeplearning.yaml
+
+FROM base AS stage-gpu
+RUN sed -e "s/{tensorflow}/tensorflow-gpu/g" -e "s/{pytorch}/pytorch-gpu/g" /tmp/deeplearning-template.yaml > /tmp/deeplearning.yaml
+
+FROM stage-$device as final
+
+LABEL maintainer "Alexander Panin <justheuristic@gmail.com>, Dmitry Mittov <mittov@gmail.com>"
+
 USER jupyter
 SHELL ["/bin/bash", "-i", "-c"]
 
-RUN conda install -y jupyter
-
 RUN conda env create -f /tmp/deeplearning.yaml && \
     conda activate deeplearning && \
-    python -m ipykernel install --user --name python3 --display-name "Deeplearning Python 3"
+    python -m ipykernel install --user --name python3 --display-name "DeepLearning Python 3"
 
 EXPOSE 8888
 VOLUME /notebooks
