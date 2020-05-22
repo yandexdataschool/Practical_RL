@@ -12,7 +12,8 @@ dependencies:
   - tqdm
   - pyopengl-accelerate
   - {pytorch}
-  - torchvision  
+  - torchvision
+  - opencv
   - pip:
     - atari-py
     - sklearn
@@ -26,4 +27,5 @@ dependencies:
     - gym[box2d]
     - gym[atari]
     - requests
+    - editdistance
 prefix: /opt/conda/envs/deeplearning
