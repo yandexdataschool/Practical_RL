@@ -13,7 +13,9 @@ RUN apt-get -qq update && \
 
 RUN adduser --disabled-password --gecos "Default user" jupyter && \
     adduser jupyter sudo && \
-    echo "%sudo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+    echo "%sudo ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
+    mkdir /notebooks && \
+    chown -R jupyter /notebooks
 
 RUN su jupyter -c \
     "wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh \
