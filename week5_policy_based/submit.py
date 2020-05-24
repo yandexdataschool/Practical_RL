@@ -12,7 +12,7 @@ def submit_cartpole(generate_session, email, token):
     if hasattr(env, '_max_episode_steps'):
         env = env.env
 
-    sessions = [generate_session(env) for _ in range(100)]
+    sessions = [np.sum(generate_session(env)[2]) for _ in range(100)]
     session_rewards = np.array(sessions)
     grader = grading.Grader("oyT3Bt7yEeeQvhJmhysb5g")
     grader.set_answer("7QKmA", int(np.mean(session_rewards)))
@@ -25,16 +25,4 @@ def submit_kungfu(agent, env, evaluate, email, token):
     session_rewards = np.array(sessions)
     grader = grading.Grader("6sPnVCn6EeieSRL7rCBNJA")
     grader.set_answer("HhNVX", int(np.mean(session_rewards)))
-    grader.submit(email, token)
-
-
-def submit_cartpole_pytorch(generate_session, email, token):
-    env = gym.make("CartPole-v0")
-    if hasattr(env, '_max_episode_steps'):
-        env = env.env
-
-    sessions = [np.sum(generate_session(env)[2]) for _ in range(100)]
-    session_rewards = np.array(sessions)
-    grader = grading.Grader("oyT3Bt7yEeeQvhJmhysb5g")
-    grader.set_answer("7QKmA", int(np.mean(session_rewards)))
     grader.submit(email, token)
