@@ -18,7 +18,7 @@ __MacOS__ Python 3.7.0 (3.6, 3.8 and other cause on MacOS [problems](https://sta
 _this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
 This homework assignment works on __python2 only__. If you stick to py3, consider seminar_alternative. Or just install it for this homework alone and remove afterwards.
 
-This homework also requires some physical display (e.g. laptop monitor). It won't work on binder VM / headless server. Please run it on laptop or consider ./seminar_alternative
+This homework also requires some physical display (e.g. laptop monitor). It won't work on a headless server. Please run it on a laptop or consider ./seminar_alternative
 
 
 * You need to implement **QLearining** algorithm.
