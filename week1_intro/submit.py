@@ -1,51 +1,57 @@
-import sys
-import numpy as np
+from itertools import count
+
 import gym
+import numpy as np
+
+import sys
 sys.path.append("..")
 import grading
 
 
-def submit_interface(policy, email, token):
-    TIME_LIMIT = 250
-    env = gym.wrappers.TimeLimit(gym.envs.classic_control.MountainCarEnv(),
-                                max_episode_steps=TIME_LIMIT + 1)
-    s = env.reset()
-    actions = {'left': 0, 'stop': 1, 'right': 2}
+def make_mountain_car(time_limit=None):
+    env = gym.envs.classic_control.MountainCarEnv()
+    if time_limit is not None:
+        env = gym.wrappers.TimeLimit(env, max_episode_steps=time_limit + 1)
+    return env
 
-    for t in range(TIME_LIMIT):
-        s, r, done, _ = env.step(policy(s, t))
-        if done:
-            break
-    else:
-        s = [-1]
+
+def submit_interface(policy, email, token):
+    with make_mountain_car(time_limit=250) as env:
+        s = env.reset()
+        for t in count():
+            s, r, done, _ = env.step(policy(s, t))
+            if done:
+                break
+
+    x, v = s
+    print('Your car ended in state {{x={x}, v={v}}}'.format(x=x, v=v))
+
     grader = grading.Grader("3T7pSSz0EeifGhJb4HAv7A")
-    grader.set_answer("sDilm", s[0])
+    grader.set_answer("sDilm", x)
     grader.submit(email, token)
 
 
 def submit_taxi(generate_session, policy, email, token):
-    def make_env():
-        try:
-            return gym.make('Taxi-v3')
-        except gym.error.DeprecatedEnv:
-            # Taxi-v2 was replaced with Taxi-v3 in gym 0.15.0
-            return gym.make('Taxi-v2')
-
-    with make_env() as env:
+    with gym.make('Taxi-v3') as env:
         sessions = [generate_session(env, policy) for _ in range(100)]
 
     _, _, session_rewards = zip(*sessions)
-    session_rewards = np.array(session_rewards)
+    mean_reward = np.mean(session_rewards)
+    print('Your average reward is {} over 100 episodes'.format(mean_reward))
+
     grader = grading.Grader("s4pTlNbTEeeQvQ7N1-Sa3A")
-    grader.set_answer("GsMSL", np.mean(session_rewards))
+    grader.set_answer("GsMSL", mean_reward)
     grader.submit(email, token)
 
 
 def submit_mountain_car(generate_session, agent, email, token):
-    with gym.make("MountainCar-v0").env as env:
+    with make_mountain_car() as env:
         sessions = [generate_session(env, agent) for _ in range(100)]
+
     _, _, session_rewards = zip(*sessions)
-    session_rewards = np.array(session_rewards)
+    mean_reward = np.mean(session_rewards)
+    print('Your average reward is {} over 100 episodes'.format(mean_reward))
+
     grader = grading.Grader("EyYJW9bUEeeXyQ5ZPWKHGg")
-    grader.set_answer("mXDUE", np.mean(session_rewards))
+    grader.set_answer("mXDUE", mean_reward)
     grader.submit(email, token)
