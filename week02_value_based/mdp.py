@@ -333,22 +333,17 @@ def plot_graph_with_state_values(mdp, state_values):
     return graph
 
 
-def get_optimal_action_for_plot(mdp, state_values, state, gamma=0.9):
+def get_optimal_action_for_plot(mdp, state_values, state, get_action_value, gamma=0.9):
     """ Finds optimal action using formula above. """
     if mdp.is_terminal(state):
         return None
     next_actions = mdp.get_possible_actions(state)
-    try:
-        from mdp_get_action_value import get_action_value
-    except ImportError:
-        raise ImportError(
-            "Implement get_action_value(mdp, state_values, state, action, gamma) in the file \"mdp_get_action_value.py\".")
     q_values = [get_action_value(mdp, state_values, state, action, gamma) for action in next_actions]
     optimal_action = next_actions[np.argmax(q_values)]
     return optimal_action
 
 
-def plot_graph_optimal_strategy_and_state_values(mdp, state_values, gamma=0.9):
+def plot_graph_optimal_strategy_and_state_values(mdp, state_values, get_action_value, gamma=0.9):
     """ Plot graph with state values and """
     graph = plot_graph(mdp)
     opt_s_a_edge_attrs = {'style': 'bold',
@@ -360,6 +355,6 @@ def plot_graph_optimal_strategy_and_state_values(mdp, state_values, gamma=0.9):
         value = state_values[state_node]
         graph.node(state_node, label=str(state_node) + '\n' + 'V =' + str(value)[:4])
         for action in mdp.get_possible_actions(state_node):
-            if action == get_optimal_action_for_plot(mdp, state_values, state_node, gamma):
+            if action == get_optimal_action_for_plot(mdp, state_values, state_node, get_action_value, gamma):
                 graph.edge(state_node, state_node + "-" + action, **opt_s_a_edge_attrs)
     return graph
