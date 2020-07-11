@@ -54,7 +54,7 @@ RUN conda env create -f /tmp/deeplearning.yaml && \
     conda activate deeplearning && \
     python -m ipykernel install --user --name python3 --display-name "Python 3"
 
-RUN sudo rm -rf /tmp/deeplearning.yaml
+RUN sudo rm /tmp/deeplearning*.yaml
 
 EXPOSE 8888
 VOLUME /notebooks
