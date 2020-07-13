@@ -3,6 +3,7 @@ channels:
   - defaults
 dependencies:
   - graphviz
+  - python-graphviz
   - ipykernel
   - keras
   - numpy=1.16.6
