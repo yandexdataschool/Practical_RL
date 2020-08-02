@@ -133,7 +133,7 @@ class MaxBetweenFrames(gym.ObservationWrapper):
         if (isinstance(env.unwrapped, atari.AtariEnv) and
                 "NoFrameskip" not in env.spec.id):
             raise ValueError(
-                "MaxBetweenFrames requires NoFrameskip in atari env id")
+                "MaxBetweenFrames requires NoFrameskip in Atari env id")
         super(MaxBetweenFrames, self).__init__(env)
         self.last_obs = None
 
@@ -182,7 +182,7 @@ class SkipFrames(gym.Wrapper):
         super(SkipFrames, self).__init__(env)
         if (isinstance(env.unwrapped, atari.AtariEnv) and
                 "NoFrameskip" not in env.spec.id):
-            raise ValueError("SkipFrames requires NoFrameskip in atari env id")
+            raise ValueError("SkipFrames requires NoFrameskip in Atari env id")
         self.nskip = nskip
 
     def step(self, action):
