@@ -280,11 +280,10 @@ class TFSummaries(SummariesBase):
 
         import tensorflow as tf
         self.step_var = (step_var if step_var is not None
-                         else tf.train.get_global_step())
+                         else tf.summary.experimental.get_step())
 
     def add_summary_scalar(self, name, value):
-        import tensorflow as tf
-        tf.contrib.summary.scalar(name, value, step = self.step_var)
+        tf.summary.scalar(name, value, step = self.step_var)
 
 
 class NumpySummaries(SummariesBase):
