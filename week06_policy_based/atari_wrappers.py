@@ -283,7 +283,7 @@ class TFSummaries(SummariesBase):
                          else tf.summary.experimental.get_step())
 
     def add_summary_scalar(self, name, value):
-        tf.summary.scalar(name, value, step = self.step_var)
+        tf.summary.scalar(name, value, step=self.step_var)
 
 
 class NumpySummaries(SummariesBase):
@@ -303,7 +303,7 @@ class NumpySummaries(SummariesBase):
     def clear(cls):
         cls._summaries = defaultdict(list)
 
-    def __init__(self, env, prefix = None, running_mean_size = 100):
+    def __init__(self, env, prefix=None, running_mean_size=100):
         super().__init__(env, prefix, running_mean_size)
 
     def add_summary_scalar(self, name, value):
@@ -315,6 +315,9 @@ def nature_dqn_env(env_id, nenvs=None, seed=None,
     """ Wraps env as in Nature DQN paper. """
     if "NoFrameskip" not in env_id:
         raise ValueError(f"env_id must have 'NoFrameskip' but is {env_id}")
+
+    if summaries:
+        summaries_class = NumpySummaries if summaries == 'Numpy' else TFSummaries
     if nenvs is not None:
         if seed is None:
             seed = list(range(nenvs))
@@ -330,7 +333,6 @@ def nature_dqn_env(env_id, nenvs=None, seed=None,
             for i, env_seed in enumerate(seed)
         ])
         if summaries:
-            summaries_class = NumpySummaries if summaries == 'Numpy' else TFSummaries
             env = summaries_class(env, prefix=env_id)
         if clip_reward:
             env = ClipReward(env)
@@ -339,7 +341,7 @@ def nature_dqn_env(env_id, nenvs=None, seed=None,
     env = gym.make(env_id)
     env.seed(seed)
     if summaries:
-        env = TFSummaries(env)
+        env = summaries_class(env, prefix=env_id)
     env = EpisodicLife(env)
     if "FIRE" in env.unwrapped.get_action_meanings():
         env = FireReset(env)
