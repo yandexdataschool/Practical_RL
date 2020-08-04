@@ -4,7 +4,7 @@
 * Our [lecture](https://yadi.sk/i/yPIPkO_f3TPsNK),  [seminar(pytorch)](https://yadi.sk/i/flW8ezGk3TPsQ5), [seminar(theano)](https://yadi.sk/i/8f9NX_E73GKBkT)
 * Alternative lecture by J. Schulman part 1 - [video](https://www.youtube.com/watch?v=BB-BhTn6DCM)
 * Alternative lecture by J. Schulman part 2 - [video](https://www.youtube.com/watch?v=Wnl-Qh2UHGg)
-* Andrej Karpathy's [post](http://karpathy.github.io/2016/05/31/rl/) on policy gradients 
+* Andrej Karpathy's [post](http://karpathy.github.io/2016/05/31/rl/) on policy gradients
 
 
 ## More materials
@@ -19,6 +19,6 @@
 * Adversarial review of policy gradient - [blog](http://www.argmin.net/2018/02/20/reinforce/)
 
 
-Run seminar notebook in colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week06_policy_based/reinforce_pytorch.ipynb)
+Run seminar notebook in Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week06_policy_based/reinforce_pytorch.ipynb)
 
-Run optional homework notebook in colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week06_policy_based/a2c-optional.ipynb)
+Run optional homework notebook in Colab: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week06_policy_based/a2c-optional.ipynb)

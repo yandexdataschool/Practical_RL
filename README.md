@@ -1,5 +1,5 @@
+# Practical_RL
 
-# Practical_RL [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/yandexdataschool/practical_rl/master)
 An open course on reinforcement learning in the wild.
 Taught on-campus at [HSE](https://cs.hse.ru) and [YSDA](https://yandexdataschool.com/)  and maintained to be friendly to online students (both english and russian).
 
@@ -12,7 +12,7 @@ Taught on-campus at [HSE](https://cs.hse.ru) and [YSDA](https://yandexdataschool
 [![Github contributors](https://img.shields.io/github/contributors/yandexdataschool/Practical_RL.svg?logo=github&logoColor=white)](https://github.com/yandexdataschool/Practical_RL/graphs/contributors)
 
 # Course info
-* __Chat room__ for YSDA & HSE students is [here](https://t.me/joinchat/CDFcMVcoAQvEiI9WAo1pEQ)
+* __Chat room__ for YSDA & HSE students is [here](http://t.me/practical_rl_2020)
 * __Grading__ rules for YSDA & HSE students is [here](https://github.com/yandexdataschool/Practical_RL/wiki/Homeworks-and-grading)
 
 * __FAQ:__ [About the course](https://github.com/yandexdataschool/Practical_RL/wiki/Practical-RL), [Technical issues thread](https://github.com/yandexdataschool/Practical_RL/issues/1), [Lecture Slides](https://yadi.sk/d/loPpY45J3EAYfU), [Online Student Survival Guide](https://github.com/yandexdataschool/Practical_RL/wiki/Online-student's-survival-guide)
@@ -20,9 +20,9 @@ Taught on-campus at [HSE](https://cs.hse.ru) and [YSDA](https://yandexdataschool
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform).
 
 * Virtual course environment: 
+    * [__Google Colab__](https://colab.research.google.com/) - set open -> github -> yandexdataschool/pracical_rl -> {branch name} and select any notebook you want.
     * [Installing dependencies](https://github.com/yandexdataschool/Practical_RL/issues/1) on your local machine (recommended).
-    * [__google colab__](https://colab.research.google.com/) - set open -> github -> yandexdataschool/pracical_rl -> {branch name} and select any notebook you want.
-    * Alternatives: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/yandexdataschool/practical_rl/master) and [Azure Notebooks](https://notebooks.azure.com/).
+    * Alternative: [Azure Notebooks](https://notebooks.azure.com/).
 
 
 # Additional materials
@@ -94,6 +94,7 @@ Course materials and teaching by: _[unordered]_
 - [Mikhail Konobeev](https://github.com/MichaelKonobeev) - seminars, hw checkups
 - [Ivan Kharitonov](https://github.com/neer201) - seminars, hw checkups
 - [Ravil Khisamov](https://github.com/zshrav) - seminars, hw checkups
+- [Anna Klepova](https://github.com/q0o0p) - hw checkups
 - [Fedor Ratnikov](https://github.com/justheuristic) - admin stuff
 
 # Contributions

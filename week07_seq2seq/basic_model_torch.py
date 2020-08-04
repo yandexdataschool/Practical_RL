@@ -136,11 +136,11 @@ def infer_mask(
         include_eos=True,
         dtype=torch.float):
     """
-    compute length given output indices and eos code
+    compute mask given output indices and eos code
     :param seq: tf matrix [time,batch] if batch_first else [batch,time]
     :param eos_ix: integer index of end-of-sentence token
     :param include_eos: if True, the time-step where eos first occurs is has mask = 1
-    :returns: lengths, int32 vector of shape [batch]
+    :returns: mask, float32 matrix with '0's and '1's of same shape as seq
     """
     assert seq.dim() == 2
     is_eos = (seq == eos_ix).to(dtype=torch.float)
@@ -161,11 +161,11 @@ def infer_length(
         include_eos=True,
         dtype=torch.long):
     """
-    compute mask given output indices and eos code
+    compute length given output indices and eos code
     :param seq: tf matrix [time,batch] if time_major else [batch,time]
     :param eos_ix: integer index of end-of-sentence token
     :param include_eos: if True, the time-step where eos first occurs is has mask = 1
-    :returns: mask, float32 matrix with '0's and '1's of same shape as seq
+    :returns: lengths, int32 vector of shape [batch]
     """
     mask = infer_mask(seq, eos_ix, batch_first, include_eos, dtype)
     return torch.sum(mask, dim=1 if batch_first else 0)

@@ -1,5 +1,5 @@
 """
-A thin wrapper for openAI gym environments that maintains a set of parallel games and has a method to generate
+A thin wrapper for OpenAI gym environments that maintains a set of parallel games and has a method to generate
 interaction sessions given agent one-step applier function.
 """
 
@@ -19,7 +19,7 @@ class EnvPool(object):
         :param n_games: Number of parallel games. One game by default.
         :param max_size: Max pool size by default (if appending sessions). By default, pool is not constrained in size.
         """
-        # Create atari games.
+        # Create Atari games.
         self.agent = agent
         self.make_env = make_env
         self.envs = [self.make_env() for _ in range(n_parallel_games)]
@@ -35,7 +35,7 @@ class EnvPool(object):
         self.just_ended = [False] * len(self.envs)
 
     def interact(self, n_steps=100, verbose=False):
-        """Generate interaction sessions with ataries (openAI gym atari environments)
+        """Generate interaction sessions with ataries (OpenAI gym Atari environments)
         Sessions will have length n_steps. Each time one of games is finished, it is immediately getting reset
         and this time is recorded in is_alive_log (See returned values).
 
