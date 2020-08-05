@@ -283,6 +283,7 @@ class TFSummaries(SummariesBase):
                          else tf.summary.experimental.get_step())
 
     def add_summary_scalar(self, name, value):
+        import tensorflow as tf
         tf.summary.scalar(name, value, step=self.step_var)
 
 
