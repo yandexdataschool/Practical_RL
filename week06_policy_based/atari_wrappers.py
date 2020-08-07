@@ -271,22 +271,6 @@ class SummariesBase(gym.Wrapper):
         return self.env.reset(**kwargs)
 
 
-class TFSummaries(SummariesBase):
-    """ Writes env summaries using TensorFlow."""
-
-    def __init__(self, env, prefix=None, running_mean_size=100, step_var=None):
-
-        super().__init__(env, prefix, running_mean_size)
-
-        import tensorflow as tf
-        self.step_var = (step_var if step_var is not None
-                         else tf.summary.experimental.get_step())
-
-    def add_summary_scalar(self, name, value):
-        import tensorflow as tf
-        tf.summary.scalar(name, value, step=self.step_var)
-
-
 class NumpySummaries(SummariesBase):
 
     _summaries = defaultdict(list)
@@ -311,14 +295,11 @@ class NumpySummaries(SummariesBase):
         self._summaries[name].append((self._summary_step, value))
 
 
-def nature_dqn_env(env_id, nenvs=None, seed=None,
-                   summaries='TensorFlow', clip_reward=True):
+def nature_dqn_env(env_id, nenvs=None, seed=None, summaries=True, clip_reward=True):
     """ Wraps env as in Nature DQN paper. """
     if "NoFrameskip" not in env_id:
         raise ValueError(f"env_id must have 'NoFrameskip' but is {env_id}")
 
-    if summaries:
-        summaries_class = NumpySummaries if summaries == 'Numpy' else TFSummaries
     if nenvs is not None:
         if seed is None:
             seed = list(range(nenvs))
@@ -334,7 +315,7 @@ def nature_dqn_env(env_id, nenvs=None, seed=None,
             for i, env_seed in enumerate(seed)
         ])
         if summaries:
-            env = summaries_class(env, prefix=env_id)
+            env = NumpySummaries(env, prefix=env_id)
         if clip_reward:
             env = ClipReward(env)
         return env
@@ -342,7 +323,7 @@ def nature_dqn_env(env_id, nenvs=None, seed=None,
     env = gym.make(env_id)
     env.seed(seed)
     if summaries:
-        env = summaries_class(env, prefix=env_id)
+        env = NumpySummaries(env)
     env = EpisodicLife(env)
     if "FIRE" in env.unwrapped.get_action_meanings():
         env = FireReset(env)
