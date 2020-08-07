@@ -219,6 +219,7 @@ class SummariesBase(gym.Wrapper):
         self.episode_lengths = np.zeros(nenvs)
         self.reward_queues = [deque([], maxlen=running_mean_size)
                               for _ in range(nenvs)]
+        self.global_step = 0
 
     def should_write_summaries(self):
         """ Returns true if it's time to write summaries. """
@@ -261,6 +262,7 @@ class SummariesBase(gym.Wrapper):
             self.rewards[i] = 0
 
         if self.should_write_summaries():
+            self.global_step += 1
             self.add_summaries()
         return obs, rew, done, info
 
@@ -269,6 +271,30 @@ class SummariesBase(gym.Wrapper):
         self.episode_lengths.fill(0)
         self.had_ended_episodes.fill(False)
         return self.env.reset(**kwargs)
+
+
+class TFSummaries(SummariesBase):
+    """ Writes env summaries using TensorFlow."""
+
+    def __init__(self, env, log_dir, prefix=None,
+                 running_mean_size=100, step_var=None):
+
+        super().__init__(env, prefix, running_mean_size)
+
+        if log_dir:
+            self.log_dir = log_dir
+        else:
+            raise ValueError(f"you should specify log_dir if "
+                             f"you want to store tf summaries, "
+                             f"now log_dir is {log_dir}")
+
+        import tensorflow as tf
+        self.summary_writer = tf.summary.create_file_writer(log_dir)
+
+    def add_summary_scalar(self, name, value):
+        import tensorflow as tf
+        with self.summary_writer.as_default():
+            tf.summary.scalar(name, value, self.global_step)
 
 
 class NumpySummaries(SummariesBase):
@@ -295,7 +321,8 @@ class NumpySummaries(SummariesBase):
         self._summaries[name].append((self._summary_step, value))
 
 
-def nature_dqn_env(env_id, nenvs=None, seed=None, summaries=True, clip_reward=True):
+def nature_dqn_env(env_id, nenvs=None, seed=None, summaries='TensorFlow',
+                   log_dir=None, clip_reward=True):
     """ Wraps env as in Nature DQN paper. """
     if "NoFrameskip" not in env_id:
         raise ValueError(f"env_id must have 'NoFrameskip' but is {env_id}")
@@ -314,16 +341,26 @@ def nature_dqn_env(env_id, nenvs=None, seed=None, summaries=True, clip_reward=Tr
                 env_id, seed=env_seed, summaries=False, clip_reward=False)
             for i, env_seed in enumerate(seed)
         ])
-        if summaries:
+        if summaries == 'Numpy':
             env = NumpySummaries(env, prefix=env_id)
+        elif summaries == 'TensorFlow':
+            env = TFSummaries(env, prefix=env_id, log_dir=log_dir)
+        elif summaries:
+            raise ValueError(f"summaries must be either Numpy, "
+                             f"or TensorFlow, or a falsy value, but is {summaries}")
         if clip_reward:
             env = ClipReward(env)
         return env
 
     env = gym.make(env_id)
     env.seed(seed)
-    if summaries:
+    if summaries == 'Numpy':
         env = NumpySummaries(env)
+    elif summaries == 'TensorFlow':
+        env = TFSummaries(env, log_dir=log_dir)
+    elif summaries:
+        raise ValueError(f"summaries must be either Numpy, "
+                         f"or TensorFlow, or a falsy value, but is {summaries}")
     env = EpisodicLife(env)
     if "FIRE" in env.unwrapped.get_action_meanings():
         env = FireReset(env)
