@@ -35,9 +35,9 @@
 
 ## Practice
 
-* Seminar: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring20/week04_approx_rl/seminar_pytorch.ipynb)
-* Homework (main): [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring20/week04_approx_rl/homework_pytorch_main.ipynb#scrollTo=KVvvo7k_ap8w)
-* Homework (debug): [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/spring20/week04_approx_rl/homework_pytorch_debug.ipynb#scrollTo=KVvvo7k_ap8w)
+* Seminar: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week04_approx_rl/seminar_pytorch.ipynb)
+* Homework (main): [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week04_approx_rl/homework_pytorch_main.ipynb#scrollTo=KVvvo7k_ap8w)
+* Homework (debug): [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week04_approx_rl/homework_pytorch_debug.ipynb#scrollTo=KVvvo7k_ap8w)
 
 
 
@@ -47,5 +47,3 @@ Begin with `seminar_<framework>.ipynb` and then proceed with `homework_<framewor
 
 
 __Note: you're not required to submit assignments in all three frameworks. Pick one and go with it. Maybe switch it occasionally if you want more challenge. __
-
-
