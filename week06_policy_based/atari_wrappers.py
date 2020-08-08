@@ -213,12 +213,12 @@ class SummariesBase(gym.Wrapper):
         self.episode_counter = 0
         self.prefix = prefix or self.env.spec.id
 
-        nenvs = getattr(self.env.unwrapped, "nenvs", 1)
-        self.rewards = np.zeros(nenvs)
-        self.had_ended_episodes = np.zeros(nenvs, dtype=np.bool)
-        self.episode_lengths = np.zeros(nenvs)
+        self.nenvs = getattr(self.env.unwrapped, "nenvs", 1)
+        self.rewards = np.zeros(self.nenvs)
+        self.had_ended_episodes = np.zeros(self.nenvs, dtype=np.bool)
+        self.episode_lengths = np.zeros(self.nenvs)
         self.reward_queues = [deque([], maxlen=running_mean_size)
-                              for _ in range(nenvs)]
+                              for _ in range(self.nenvs)]
         self.global_step = 0
 
     def should_write_summaries(self):
@@ -261,8 +261,9 @@ class SummariesBase(gym.Wrapper):
             self.reward_queues[i].append(self.rewards[i])
             self.rewards[i] = 0
 
+        self.global_step += self.nenvs
+
         if self.should_write_summaries():
-            self.global_step += 1
             self.add_summaries()
         return obs, rew, done, info
 
@@ -274,27 +275,22 @@ class SummariesBase(gym.Wrapper):
 
 
 class TFSummaries(SummariesBase):
-    """ Writes env summaries using TensorFlow."""
+    """ Writes env summaries using TensorFlow.
+        In order to write summaries in a specific directory,
+        you may define a writer and set it as default just before
+        training loop as in an example here
+        https://www.tensorflow.org/api_docs/python/tf/summary
+        Other summaries could be added in A2C class or elsewhere
+    """
 
-    def __init__(self, env, log_dir, prefix=None,
+    def __init__(self, env, prefix=None,
                  running_mean_size=100, step_var=None):
 
         super().__init__(env, prefix, running_mean_size)
 
-        if log_dir:
-            self.log_dir = log_dir
-        else:
-            raise ValueError(f"you should specify log_dir if "
-                             f"you want to store tf summaries, "
-                             f"now log_dir is {log_dir}")
-
-        import tensorflow as tf
-        self.summary_writer = tf.summary.create_file_writer(log_dir)
-
     def add_summary_scalar(self, name, value):
         import tensorflow as tf
-        with self.summary_writer.as_default():
-            tf.summary.scalar(name, value, self.global_step)
+        tf.summary.scalar(name, value, self.global_step)
 
 
 class NumpySummaries(SummariesBase):
@@ -321,8 +317,8 @@ class NumpySummaries(SummariesBase):
         self._summaries[name].append((self._summary_step, value))
 
 
-def nature_dqn_env(env_id, nenvs=None, seed=None, summaries='TensorFlow',
-                   log_dir=None, clip_reward=True):
+def nature_dqn_env(env_id, nenvs=None, seed=None,
+                   summaries='TensorFlow', clip_reward=True):
     """ Wraps env as in Nature DQN paper. """
     if "NoFrameskip" not in env_id:
         raise ValueError(f"env_id must have 'NoFrameskip' but is {env_id}")
@@ -344,7 +340,7 @@ def nature_dqn_env(env_id, nenvs=None, seed=None, summaries='TensorFlow',
         if summaries == 'Numpy':
             env = NumpySummaries(env, prefix=env_id)
         elif summaries == 'TensorFlow':
-            env = TFSummaries(env, prefix=env_id, log_dir=log_dir)
+            env = TFSummaries(env, prefix=env_id)
         elif summaries:
             raise ValueError(f"summaries must be either Numpy, "
                              f"or TensorFlow, or a falsy value, but is {summaries}")
@@ -357,7 +353,7 @@ def nature_dqn_env(env_id, nenvs=None, seed=None, summaries='TensorFlow',
     if summaries == 'Numpy':
         env = NumpySummaries(env)
     elif summaries == 'TensorFlow':
-        env = TFSummaries(env, log_dir=log_dir)
+        env = TFSummaries(env)
     elif summaries:
         raise ValueError(f"summaries must be either Numpy, "
                          f"or TensorFlow, or a falsy value, but is {summaries}")
