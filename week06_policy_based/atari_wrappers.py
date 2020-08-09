@@ -337,16 +337,17 @@ def nature_dqn_env(env_id, nenvs=None, seed=None,
 
         env = ParallelEnvBatch([
             lambda i=i, env_seed=env_seed: nature_dqn_env(
-                env_id, seed=env_seed, summaries=False, clip_reward=False)
+                env_id, seed=env_seed, summaries=None, clip_reward=False)
             for i, env_seed in enumerate(seed)
         ])
-        if summaries == 'Numpy':
-            env = NumpySummaries(env, prefix=env_id)
-        elif summaries == 'TensorFlow':
-            env = TFSummaries(env, prefix=env_id)
-        elif summaries:
-            raise ValueError(f"summaries must be either Numpy, "
-                             f"or TensorFlow, or a falsy value, but is {summaries}")
+        if summaries is not None:
+            if summaries == 'Numpy':
+                env = NumpySummaries(env, prefix=env_id)
+            elif summaries == 'TensorFlow':
+                env = TFSummaries(env, prefix=env_id)
+            else:
+                raise ValueError(
+                    f"Unknown `summaries` value: expected either 'Numpy' or 'TensorFlow', got {summaries}")
         if clip_reward:
             env = ClipReward(env)
         return env
