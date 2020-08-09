@@ -213,12 +213,16 @@ class SummariesBase(gym.Wrapper):
         self.episode_counter = 0
         self.prefix = prefix or self.env.spec.id
 
-        nenvs = getattr(self.env.unwrapped, "nenvs", 1)
-        self.rewards = np.zeros(nenvs)
-        self.had_ended_episodes = np.zeros(nenvs, dtype=np.bool)
-        self.episode_lengths = np.zeros(nenvs)
+        self.nenvs = getattr(self.env.unwrapped, "nenvs", 1)
+        self.rewards = np.zeros(self.nenvs)
+        self.had_ended_episodes = np.zeros(self.nenvs, dtype=np.bool)
+        self.episode_lengths = np.zeros(self.nenvs)
         self.reward_queues = [deque([], maxlen=running_mean_size)
-                              for _ in range(nenvs)]
+                              for _ in range(self.nenvs)]
+        self.global_step = 0
+
+    def add_summary_scalar(self, name, value):
+        raise NotImplementedError
 
     def should_write_summaries(self):
         """ Returns true if it's time to write summaries. """
@@ -260,6 +264,8 @@ class SummariesBase(gym.Wrapper):
             self.reward_queues[i].append(self.rewards[i])
             self.rewards[i] = 0
 
+        self.global_step += self.nenvs
+
         if self.should_write_summaries():
             self.add_summaries()
         return obs, rew, done, info
@@ -272,19 +278,22 @@ class SummariesBase(gym.Wrapper):
 
 
 class TFSummaries(SummariesBase):
-    """ Writes env summaries using TensorFlow."""
+    """ Writes env summaries using TensorFlow.
+        In order to write summaries in a specific directory,
+        you may define a writer and set it as default just before
+        training loop as in an example here
+        https://www.tensorflow.org/api_docs/python/tf/summary
+        Other summaries could be added in A2C class or elsewhere
+    """
 
-    def __init__(self, env, prefix=None, running_mean_size=100, step_var=None):
+    def __init__(self, env, prefix=None,
+                 running_mean_size=100, step_var=None):
 
         super().__init__(env, prefix, running_mean_size)
 
-        import tensorflow as tf
-        self.step_var = (step_var if step_var is not None
-                         else tf.train.get_global_step())
-
     def add_summary_scalar(self, name, value):
         import tensorflow as tf
-        tf.contrib.summary.scalar(name, value, step = self.step_var)
+        tf.summary.scalar(name, value, self.global_step)
 
 
 class NumpySummaries(SummariesBase):
@@ -304,7 +313,7 @@ class NumpySummaries(SummariesBase):
     def clear(cls):
         cls._summaries = defaultdict(list)
 
-    def __init__(self, env, prefix = None, running_mean_size = 100):
+    def __init__(self, env, prefix=None, running_mean_size=100):
         super().__init__(env, prefix, running_mean_size)
 
     def add_summary_scalar(self, name, value):
@@ -316,6 +325,7 @@ def nature_dqn_env(env_id, nenvs=None, seed=None,
     """ Wraps env as in Nature DQN paper. """
     if "NoFrameskip" not in env_id:
         raise ValueError(f"env_id must have 'NoFrameskip' but is {env_id}")
+
     if nenvs is not None:
         if seed is None:
             seed = list(range(nenvs))
@@ -327,20 +337,30 @@ def nature_dqn_env(env_id, nenvs=None, seed=None,
 
         env = ParallelEnvBatch([
             lambda i=i, env_seed=env_seed: nature_dqn_env(
-                env_id, seed=env_seed, summaries=False, clip_reward=False)
+                env_id, seed=env_seed, summaries=None, clip_reward=False)
             for i, env_seed in enumerate(seed)
         ])
-        if summaries:
-            summaries_class = NumpySummaries if summaries == 'Numpy' else TFSummaries
-            env = summaries_class(env, prefix=env_id)
+        if summaries is not None:
+            if summaries == 'Numpy':
+                env = NumpySummaries(env, prefix=env_id)
+            elif summaries == 'TensorFlow':
+                env = TFSummaries(env, prefix=env_id)
+            else:
+                raise ValueError(
+                    f"Unknown `summaries` value: expected either 'Numpy' or 'TensorFlow', got {summaries}")
         if clip_reward:
             env = ClipReward(env)
         return env
 
     env = gym.make(env_id)
     env.seed(seed)
-    if summaries:
+    if summaries == 'Numpy':
+        env = NumpySummaries(env)
+    elif summaries == 'TensorFlow':
         env = TFSummaries(env)
+    elif summaries:
+        raise ValueError(f"summaries must be either Numpy, "
+                         f"or TensorFlow, or a falsy value, but is {summaries}")
     env = EpisodicLife(env)
     if "FIRE" in env.unwrapped.get_action_meanings():
         env = FireReset(env)
