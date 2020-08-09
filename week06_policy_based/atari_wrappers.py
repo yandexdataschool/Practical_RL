@@ -221,6 +221,9 @@ class SummariesBase(gym.Wrapper):
                               for _ in range(self.nenvs)]
         self.global_step = 0
 
+    def add_summary_scalar(self, name, value):
+        raise NotImplementedError
+
     def should_write_summaries(self):
         """ Returns true if it's time to write summaries. """
         return np.all(self.had_ended_episodes)
