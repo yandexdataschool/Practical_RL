@@ -118,7 +118,7 @@ class MDP:
             for action in transition_probs[state]:
                 assert isinstance(transition_probs[state][action], dict), \
                     "transition_probs for %s, %s should be a a dictionary but is instead %s" % (
-                        state, action, type(transition_probs[state, action]))
+                        state, action, type(transition_probs[state][action]))
                 next_state_probs = transition_probs[state][action]
                 assert len(next_state_probs) != 0, "from state %s action %s leads to no next states" % (state, action)
                 sum_probs = sum(next_state_probs.values())
@@ -132,7 +132,7 @@ class MDP:
             for action in rewards[state]:
                 assert isinstance(rewards[state][action], dict), \
                     "rewards for %s, %s should be a a dictionary but is instead %s" % (
-                        state, action, type(transition_probs[state, action]))
+                        state, action, type(transition_probs[state][action]))
         msg = "The Enrichment Center once again reminds you that Android Hell is a real place where" \
               " you will be sent at the first sign of defiance."
         assert None not in transition_probs, "please do not use None as a state identifier. " + msg
