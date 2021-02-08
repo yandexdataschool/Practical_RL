@@ -1,0 +1,32 @@
+name: deeplearning
+channels:
+  - defaults
+dependencies:
+  - graphviz
+  - python-graphviz
+  - ipykernel
+  - keras
+  - numpy=1.16.6
+  - pip
+  - scipy
+  - {tensorflow}=1.13.1
+  - tqdm
+  - pyopengl-accelerate
+  - {pytorch}
+  - torchvision
+  - opencv
+  - pip:
+    - atari-py
+    - sklearn
+    - matplotlib
+    - seaborn
+    - scikit-image
+    - imageio
+    - pyglet
+    - psutil
+    - gym
+    - gym[box2d]
+    - gym[atari]
+    - requests
+    - editdistance
+prefix: /opt/conda/envs/deeplearning

@@ -1,13 +1,13 @@
 Contributors: [Vlad Lyalin](https://github.com/Guitaricet)
 
 # Disclaimer
-This assignment is not supported now. You can do it at your own risk. 
+This assignment is not supported now. You can do it at your own risk.
 
 # Requirements
 __Ubuntu__ - not tested
 
 __MacOS__ Python 3.7.0 (3.6, 3.8 and other cause on MacOS [problems](https://stackoverflow.com/questions/57400301/how-to-fix-tkinter-every-code-with-gui-crashes-mac-os-with-respring) with _Tkinter_)
- 
+
  Anaconda users just can create new_env:
  ```bash
  conda create -n pacman_env python=3.7.0
@@ -18,7 +18,7 @@ __MacOS__ Python 3.7.0 (3.6, 3.8 and other cause on MacOS [problems](https://sta
 _this assignment borrows code from awesome [cs188](http://ai.berkeley.edu/project_overview.html)_
 This homework assignment works on __python2 only__. If you stick to py3, consider seminar_alternative. Or just install it for this homework alone and remove afterwards.
 
-This homework also requires some physical display (e.g. laptop monitor). It won't work on binder VM / headless server. Please run it on laptop or consider ./seminar_alternative
+This homework also requires some physical display (e.g. laptop monitor). It won't work on a headless server. Please run it on a laptop or consider ./seminar_alternative
 
 
 * You need to implement **QLearining** algorithm.
@@ -31,8 +31,8 @@ python pacman.py -p PacmanQAgent -x 5000 -n 5010 -l smallGrid # example
 ```
 * Make sure you can tune agent to beat ./run_crawler.sh
  * on windows, just run `python crawler.py` from cmd in the project directory
-* other ./run* files are mostly for your amusement. 
-  * ./run_pacman.sh will need more epochs to converge, see [comments](https://github.com/yandexdataschool/Practical_RL/blob/spring20/week03_model_free/crawler_and_pacman/seminar_py2/run_pacman.sh)
+* other ./run* files are mostly for your amusement.
+  * ./run_pacman.sh will need more epochs to converge, see [comments](https://github.com/yandexdataschool/Practical_RL/blob/master/week03_model_free/crawler_and_pacman/seminar_py2/run_pacman.sh)
   * on windows, just copy the type `python pacman.py -p PacmanQAgent -x 2000 -n 2010 -l smallGrid` in cmd from assignemnt dir
 
 
@@ -49,14 +49,14 @@ The problem with those environments is that they have a large amount of unique s
  * where is nearest food
  * 'center of mass' of all food points (and variance, and whatever)
  * is there a wall in each direction
- * and anything else you see fit 
- 
+ * and anything else you see fit
+
 Here's how to get this information from [state](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/pacman.py#L49),
  * Get pacman position: [state.getPacmanPosition()](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/pacman.py#L128)
  * Is there a wall at (x,y)?: [state.hasWall(x,y)](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/pacman.py#L189)
  * Get ghost positions: [state.getGhostPositions()](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/pacman.py#L144)
  * Get all food positions: [state.getCapsules()](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/pacman.py#L153)
- 
+
 You can call those methods anywhere you see state.
  * e.g. in [agent.getValue(state)](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/qlearningAgents.py#L52)
  * Defining a function that extracts all features and calling it in [getQValue](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/qlearningAgents.py#L38) and [setQValue](https://github.com/yandexdataschool/Practical_RL/blob/7a559f8/week03_model_free/seminar_py2/qlearningAgents.py#L44) is probably enough.

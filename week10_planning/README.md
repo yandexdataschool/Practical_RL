@@ -1,6 +1,6 @@
 ## Assignments
 
-Just as usual, start with  `seminar_MCTS.ipynb` 
+Just as usual, start with  `seminar_MCTS.ipynb`
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week10_planning/seminar_MCTS.ipynb)
 
 ## Materials: planning
@@ -15,7 +15,7 @@ Just as usual, start with  `seminar_MCTS.ipynb`
   * Udacity video on monte-carlo tree search (first part of a chain) - [video](https://www.youtube.com/watch?v=onBYsen2_eA)
   * A Survey of Monte Carlo Tree Search Methods (2011-2012) [pdf](http://mcts.ai/pubs/mcts-survey-master.pdf)
   * Reminder: UCB-1 - [slides](https://www.cs.bham.ac.uk/internal/courses/robotics/lectures/ucb1.pdf)
-  * Guide to MCTS - [url](https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/) 
+  * Guide to MCTS - [url](https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/)
   or [cached](https://webcache.googleusercontent.com/search?q=cache:jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/)
 
 ## Supplementary materials

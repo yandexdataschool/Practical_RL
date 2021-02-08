@@ -1,9 +1,5 @@
-#!/bin/bash
-# a setup script for google colab. Will be updated
-pip install gym
-apt-get update
-apt-get install -y xvfb
-wget https://raw.githubusercontent.com/yandexdataschool/Practical_DL/fall18/xvfb -O ../xvfb
-apt-get install -y python-opengl ffmpeg
-pip install pyglet==1.2.4
+#!/usr/bin/env bash
 
+apt-get -qq update
+apt-get -qq install -y xvfb
+wget -q https://raw.githubusercontent.com/yandexdataschool/Practical_RL/master/xvfb -O ../xvfb

@@ -32,19 +32,19 @@ class MDP:
 
         Here's an example from MDP depicted on http://bit.ly/2jrNHNr
         transition_probs = {
-              's0':{
+            's0': {
                 'a0': {'s0': 0.5, 's2': 0.5},
                 'a1': {'s2': 1}
-              },
-              's1':{
+            },
+            's1': {
                 'a0': {'s0': 0.7, 's1': 0.1, 's2': 0.2},
                 'a1': {'s1': 0.95, 's2': 0.05}
-              },
-              's2':{
-                'a0': {'s0': 0.4, 's1': 0.6},
-                'a1': {'s0': 0.3, 's1': 0.3, 's2':0.4}
-              }
+            },
+            's2': {
+                'a0': {'s0': 0.4, 's2': 0.6},
+                'a1': {'s0': 0.3, 's1': 0.3, 's2': 0.4}
             }
+        }
         rewards = {
             's1': {'a0': {'s0': +5}},
             's2': {'a1': {'s0': -1}}
@@ -72,8 +72,7 @@ class MDP:
 
     def get_next_states(self, state, action):
         """ return a dictionary of {next_state1 : P(next_state1 | state, action), next_state2: ...} """
-        assert action in self.get_possible_actions(
-            state), "cannot do action %s from state %s" % (action, state)
+        assert action in self.get_possible_actions(state), "cannot do action %s from state %s" % (action, state)
         return self._transition_probs[state][action]
 
     def get_transition_prob(self, state, action, next_state):
@@ -82,10 +81,8 @@ class MDP:
 
     def get_reward(self, state, action, next_state):
         """ return the reward you get for taking action in state and landing on next_state"""
-        assert action in self.get_possible_actions(
-            state), "cannot do action %s from state %s" % (action, state)
-        return self._rewards.get(state, {}).get(action, {}).get(next_state,
-                                                                0.0)
+        assert action in self.get_possible_actions(state), "cannot do action %s from state %s" % (action, state)
+        return self._rewards.get(state, {}).get(action, {}).get(next_state, 0.0)
 
     def reset(self):
         """ reset the game, return the initial state"""
@@ -98,16 +95,13 @@ class MDP:
             self._current_state = self._initial_state()
         else:
             raise ValueError(
-                "initial state %s should be either a state or a function() -> state" %
-                self._initial_state)
+                "initial state %s should be either a state or a function() -> state" % self._initial_state)
         return self._current_state
 
     def step(self, action):
         """ take action, return next_state, reward, is_done, empty_info """
-        possible_states, probs = zip(
-            *self.get_next_states(self._current_state, action).items())
-        next_state = possible_states[self.np_random.choice(
-            np.arange(len(possible_states)), p=probs)]
+        possible_states, probs = zip(*self.get_next_states(self._current_state, action).items())
+        next_state = possible_states[self.np_random.choice(np.arange(len(possible_states)), p=probs)]
         reward = self.get_reward(self._current_state, action, next_state)
         is_done = self.is_terminal(next_state)
         self._current_state = next_state
@@ -118,40 +112,29 @@ class MDP:
 
     def _check_param_consistency(self, transition_probs, rewards):
         for state in transition_probs:
-            assert isinstance(transition_probs[state],
-                              dict), "transition_probs for %s should be a dictionary " \
-                                     "but is instead %s" % (
-                                         state, type(transition_probs[state]))
+            assert isinstance(transition_probs[state], dict), \
+                "transition_probs for %s should be a dictionary but is instead %s" % (
+                    state, type(transition_probs[state]))
             for action in transition_probs[state]:
-                assert isinstance(transition_probs[state][action],
-                                  dict), "transition_probs for %s, %s should be a " \
-                                         "a dictionary but is instead %s" % (
-                                             state, action,
-                                             type(transition_probs[
-                                                 state, action]))
+                assert isinstance(transition_probs[state][action], dict), \
+                    "transition_probs for %s, %s should be a a dictionary but is instead %s" % (
+                        state, action, type(transition_probs[state][action]))
                 next_state_probs = transition_probs[state][action]
-                assert len(
-                    next_state_probs) != 0, "from state %s action %s leads to no next states" % (
-                    state, action)
+                assert len(next_state_probs) != 0, "from state %s action %s leads to no next states" % (state, action)
                 sum_probs = sum(next_state_probs.values())
-                assert abs(
-                    sum_probs - 1) <= 1e-10, "next state probabilities for state %s action %s " \
-                                             "add up to %f (should be 1)" % (
-                                                 state, action, sum_probs)
+                assert abs(sum_probs - 1) <= 1e-10, \
+                    "next state probabilities for state %s action %s add up to %f (should be 1)" % (
+                        state, action, sum_probs)
         for state in rewards:
-            assert isinstance(rewards[state],
-                              dict), "rewards for %s should be a dictionary " \
-                                     "but is instead %s" % (
-                                         state, type(transition_probs[state]))
+            assert isinstance(rewards[state], dict), \
+                "rewards for %s should be a dictionary but is instead %s" % (
+                    state, type(rewards[state]))
             for action in rewards[state]:
-                assert isinstance(rewards[state][action],
-                                  dict), "rewards for %s, %s should be a " \
-                                         "a dictionary but is instead %s" % (
-                                             state, action, type(
-                                                 transition_probs[
-                                                     state, action]))
+                assert isinstance(rewards[state][action], dict), \
+                    "rewards for %s, %s should be a a dictionary but is instead %s" % (
+                        state, action, type(rewards[state][action]))
         msg = "The Enrichment Center once again reminds you that Android Hell is a real place where" \
-              " you will be sent at the first sign of defiance. "
+              " you will be sent at the first sign of defiance."
         assert None not in transition_probs, "please do not use None as a state identifier. " + msg
         assert None not in rewards, "please do not use None as an action identifier. " + msg
 
@@ -346,28 +329,21 @@ def plot_graph_with_state_values(mdp, state_values):
     graph = plot_graph(mdp)
     for state_node in mdp._transition_probs:
         value = state_values[state_node]
-        graph.node(state_node,
-                   label=str(state_node) + '\n' + 'V =' + str(value)[:4])
+        graph.node(state_node, label=str(state_node) + '\n' + 'V =' + str(value)[:4])
     return graph
 
 
-def get_optimal_action_for_plot(mdp, state_values, state, gamma=0.9):
+def get_optimal_action_for_plot(mdp, state_values, state, get_action_value, gamma=0.9):
     """ Finds optimal action using formula above. """
     if mdp.is_terminal(state):
         return None
     next_actions = mdp.get_possible_actions(state)
-    try:
-        from mdp_get_action_value import get_action_value
-    except ImportError:
-        raise ImportError(
-            "Implement get_action_value(mdp, state_values, state, action, gamma) in the file \"mdp_get_action_value.py\".")
-    q_values = [get_action_value(mdp, state_values, state, action, gamma) for
-                action in next_actions]
+    q_values = [get_action_value(mdp, state_values, state, action, gamma) for action in next_actions]
     optimal_action = next_actions[np.argmax(q_values)]
     return optimal_action
 
 
-def plot_graph_optimal_strategy_and_state_values(mdp, state_values, gamma=0.9):
+def plot_graph_optimal_strategy_and_state_values(mdp, state_values, get_action_value, gamma=0.9):
     """ Plot graph with state values and """
     graph = plot_graph(mdp)
     opt_s_a_edge_attrs = {'style': 'bold',
@@ -377,13 +353,8 @@ def plot_graph_optimal_strategy_and_state_values(mdp, state_values, gamma=0.9):
 
     for state_node in mdp._transition_probs:
         value = state_values[state_node]
-        graph.node(state_node,
-                   label=str(state_node) + '\n' + 'V =' + str(value)[:4])
+        graph.node(state_node, label=str(state_node) + '\n' + 'V =' + str(value)[:4])
         for action in mdp.get_possible_actions(state_node):
-            if action == get_optimal_action_for_plot(mdp,
-                                                     state_values,
-                                                     state_node,
-                                                     gamma):
-                graph.edge(state_node, state_node + "-" + action,
-                           **opt_s_a_edge_attrs)
+            if action == get_optimal_action_for_plot(mdp, state_values, state_node, get_action_value, gamma):
+                graph.edge(state_node, state_node + "-" + action, **opt_s_a_edge_attrs)
     return graph
