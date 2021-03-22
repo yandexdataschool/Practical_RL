@@ -1,6 +1,6 @@
 import numpy as np
 import psutil
-from scipy.signal import convolve, gaussian
+from scipy.signal import fftconvolve, gaussian
 import torch
 from torch import nn
 import os
@@ -87,4 +87,4 @@ def smoothen(values):
     kernel = gaussian(100, std=100)
     # kernel = np.concatenate([np.arange(100), np.arange(99, -1, -1)])
     kernel = kernel / np.sum(kernel)
-    return convolve(values, kernel, 'valid')
+    return fftconvolve(values, kernel, 'valid')
