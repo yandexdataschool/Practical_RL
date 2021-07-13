@@ -86,7 +86,7 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 
 # Course staff
 Course materials and teaching by: _[unordered]_
-- [Pavel Shvechikov](https://github.com/bestxolodec) - lectures, seminars, hw checkups, reading group
+- [Pavel Shvechikov](https://github.com/pshvechikov) - lectures, seminars, hw checkups, reading group
 - [Nikita Putintsev](https://github.com/qwasser) - seminars, hw checkups, organizing our hot mess
 - [Alexander Fritsler](https://github.com/Fritz449) - lectures, seminars, hw checkups
 - [Oleg Vasilev](https://github.com/Omrigan) - seminars, hw checkups, technical support
