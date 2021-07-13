@@ -13,7 +13,7 @@ Just as usual, start with  `seminar_MCTS.ipynb`
 * Monte-carlo tree search
   * Monte-carlo tree search step-by-step by J.Levine (very intuitive) - [video](https://www.youtube.com/watch?v=UXW2yZndl7U)
   * Udacity video on monte-carlo tree search (first part of a chain) - [video](https://www.youtube.com/watch?v=onBYsen2_eA)
-  * A Survey of Monte Carlo Tree Search Methods (2011-2012) [pdf](http://mcts.ai/pubs/mcts-survey-master.pdf)
+  * A Survey of Monte Carlo Tree Search Methods (2011-2012) [pdf](http://ccg.doc.gold.ac.uk/ccg_old/papers/browne_tciaig12_1.pdf)
   * Reminder: UCB-1 - [slides](https://www.cs.bham.ac.uk/internal/courses/robotics/lectures/ucb1.pdf)
   * Guide to MCTS - [url](https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/)
   or [cached](https://webcache.googleusercontent.com/search?q=cache:jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/)
