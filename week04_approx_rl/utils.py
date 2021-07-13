@@ -1,9 +1,6 @@
 import numpy as np
 import psutil
 from scipy.signal import fftconvolve, gaussian
-import torch
-from torch import nn
-import os
 
 
 def get_cum_discounted_rewards(rewards, gamma):
