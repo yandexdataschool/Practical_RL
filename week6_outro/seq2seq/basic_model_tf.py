@@ -1,4 +1,4 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import keras.layers as L
 
 # This code implements a single-GRU seq2seq model. You will have to improve it later in the assignment.
