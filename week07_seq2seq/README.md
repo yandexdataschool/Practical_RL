@@ -19,7 +19,7 @@ As usual, go to practice_{your framework}.ipynb above and follow instructions fr
 * An [awesome post](http://distill.pub/2016/augmented-rnns/) explaining attention and long-term memory models.
 * [BLEU](http://www.aclweb.org/anthology/P02-1040.pdf) and [CIDEr](https://arxiv.org/pdf/1411.5726.pdf) articles.
 * Image captioning
-  * MSCOCO captioning [challenge](http://mscoco.org/dataset/#captions-challenge2015)
+  * MSCOCO captioning [challenge](https://cocodataset.org/#captions-2015)
   * Captioning tutorial [notebook](https://github.com/yandexdataschool/Practical_DL/tree/980121c7b3147ed28a7c1360df5038d3432b8cc3/week07_seq2seq)
 * Other articles on reinforcement learning for natural language: 
   * [task-oriented conversation system](https://arxiv.org/abs/1703.07055)

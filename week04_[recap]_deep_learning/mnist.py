@@ -1,7 +1,5 @@
 import sys
 import os
-import time
-
 import numpy as np
 
 __doc__ = """taken from https://github.com/Lasagne/Lasagne/blob/master/examples/mnist.py"""
