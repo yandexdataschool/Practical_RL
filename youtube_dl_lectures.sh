@@ -25,7 +25,6 @@ youtube-dl 'https://www.youtube.com/watch?v=IL3gVyJMmhg' --output 'week03_model_
 # week04_recap
 youtube-dl 'https://www.youtube.com/watch?v=uXt8qF2Zzfo' --output 'week04_[recap]_deep_learning/lect/Lecture_basics.mp4'
 youtube-dl 'https://www.youtube.com/watch?v=FmpDIaiMIeA' --output 'week04_[recap]_deep_learning/lect/Lecture_convnets.mp4'
-youtube-dl 'https://www.youtube.com/watch?v=OU8I1oJ9HhI' --output 'week04_[recap]_deep_learning/lect/Tutorial_theano.mp4'
 
 # week04
 youtube-dl 'https://www.youtube.com/watch?v=UoPei5o4fps' --output 'week04_approx_rl/lect/Lecture_Silver.mp4'

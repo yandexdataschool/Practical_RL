@@ -2,11 +2,11 @@
 * [__slides #2 (dpg)__](https://yadi.sk/i/uV6IA-C23UTn7c)
 
 ## Materials
-This section covers some steroids for policy gradient methods, along with a cool general trick called 
+This section covers some steroids for policy gradient methods, along with a cool general trick called
 
 * Lecture on NPG and TRPO by J. Schulman - [video](https://www.youtube.com/watch?v=_t5fpZuuf-4)
 * Alternative lecture on TRPO and open problems by... J. Schulman - [video](https://www.youtube.com/watch?v=gb5Q2XL5c8A)
-* Our videos: [lecture](https://yadi.sk/i/c7GR1kAAJc00Og), [seminar(pytorch)](https://yadi.sk/i/OGZJJjkQH_7h5g) [seminar(theano)](https://yadi.sk/i/b0ol2gUV3HiKKJ) (russian)
+* Our videos: [lecture](https://yadi.sk/i/c7GR1kAAJc00Og), [seminar(PyTorch)](https://yadi.sk/i/OGZJJjkQH_7h5g) (russian)
 * Original articles - [TRPO](https://arxiv.org/abs/1502.05477), [NPG](https://papers.nips.cc/paper/2073-a-natural-policy-gradient.pdf)
 
 ## Practice
@@ -22,4 +22,3 @@ While you already know algorithms that will work with continuously many actions,
  * Stochastic value gradient - [article](https://arxiv.org/abs/1510.09142)
  * Embedding large discrete action spaces for RL - [article](https://arxiv.org/pdf/1512.07679.pdf)
  * Lecture by A. Seleznev, 5vision (russian) - [video](www.youtube.com/watch?v=j1L2FnanXPo&t=119m45s)
-
