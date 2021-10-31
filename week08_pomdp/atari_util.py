@@ -18,7 +18,6 @@ class PreprocessAtari(Wrapper):
         n_channels = (3 * n_frames) if color else n_frames
 
         obs_shape = {
-            'theano': (n_channels, height, width),
             'pytorch': (n_channels, height, width),
             'tensorflow': (height, width, n_channels),
         }[dim_order]

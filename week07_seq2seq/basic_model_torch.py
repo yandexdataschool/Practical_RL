@@ -2,8 +2,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-# Note: unlike official pytorch tutorial, this model doesn't process one sample at a time
-# because it's slow on GPU.  instead it uses masks just like ye olde theano/tensorflow.
+# Note: unlike official PyTorch tutorial, this model doesn't process one sample at a time
+# because it's slow on GPU. Instead it uses masks just like ye olde Tensorflow.
 # it doesn't use torch.nn.utils.rnn.pack_paded_sequence because reasons.
 
 

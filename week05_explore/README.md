@@ -23,16 +23,6 @@
   * Note: UCB-1 is not for bernoulli rewards, but for arbitrary r in [0,1], so you can just scale any reward to [0,1] to obtain a peace of mind. It's derived directly from Hoeffding's inequality.
 
 ## Seminar
-In this seminar, you'll be solvilg basic and contextual bandits with uncertainty-based exploration like Bayesian UCB and Thompson Sampling.
-
-You will also need Bayesian Neural Networks. You will need theano/lasagne for this one:
-```
-# either
-conda install Theano
-# or
-pip install --upgrade https://github.com/Theano/Theano/archive/master.zip
-# and then lasagne
-pip install --upgrade https://github.com/Lasagne/Lasagne/archive/master.zip
-```
+In this seminar, you'll be solving basic and contextual bandits with uncertainty-based exploration like Bayesian UCB and Thompson Sampling. You will also get acquainted with Bayesian Neural Networks.
 
 Everything else is in the notebook :)

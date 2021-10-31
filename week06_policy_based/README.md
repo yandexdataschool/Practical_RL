@@ -1,7 +1,7 @@
 ## Materials
 * [Slides](https://yadi.sk/i/keSzKSgA2oYuwQ)
 * Video lecture by D. Silver - [video](https://www.youtube.com/watch?v=KHZVXao4qXs)
-* Our [lecture](https://yadi.sk/i/yPIPkO_f3TPsNK),  [seminar(pytorch)](https://yadi.sk/i/flW8ezGk3TPsQ5), [seminar(theano)](https://yadi.sk/i/8f9NX_E73GKBkT)
+* Our [lecture](https://yadi.sk/i/yPIPkO_f3TPsNK), [seminar(pytorch)](https://yadi.sk/i/flW8ezGk3TPsQ5)
 * Alternative lecture by J. Schulman part 1 - [video](https://www.youtube.com/watch?v=BB-BhTn6DCM)
 * Alternative lecture by J. Schulman part 2 - [video](https://www.youtube.com/watch?v=Wnl-Qh2UHGg)
 * Andrej Karpathy's [post](http://karpathy.github.io/2016/05/31/rl/) on policy gradients

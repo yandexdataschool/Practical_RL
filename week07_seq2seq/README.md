@@ -13,7 +13,7 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week07_seq2seq/practice_torch.ipynb)
 
 
-As usual, go to practice_{your framework}.ipynb above and follow instructions from there. [pytorch](./practice_torch.ipynb), [tensorflow](./practice_tf.ipynb), [theano](./practice_theano.ipynb)
+As usual, go to practice_{your framework}.ipynb above and follow instructions from there. [PyTorch](./practice_torch.ipynb), [Tensorflow](./practice_tf.ipynb)
 
 ## More materials
 * An [awesome post](http://distill.pub/2016/augmented-rnns/) explaining attention and long-term memory models.
@@ -21,11 +21,10 @@ As usual, go to practice_{your framework}.ipynb above and follow instructions fr
 * Image captioning
   * MSCOCO captioning [challenge](https://cocodataset.org/#captions-2015)
   * Captioning tutorial [notebook](https://github.com/yandexdataschool/Practical_DL/tree/980121c7b3147ed28a7c1360df5038d3432b8cc3/week07_seq2seq)
-* Other articles on reinforcement learning for natural language: 
+* Other articles on reinforcement learning for natural language:
   * [task-oriented conversation system](https://arxiv.org/abs/1703.07055)
   * [generating dialogues](https://arxiv.org/abs/1606.01541)
   * [sequential adversarial networks](https://arxiv.org/abs/1609.05473) (a.k.a. SeqGAN)
   * A large overview for machine translation (touching on RL, including RL failures) - [arxiv](https://arxiv.org/abs/1609.08144)
   * How _not_ to evaluate conversation models - [arxiv](https://arxiv.org/abs/1603.08023)
 * Overview of other non-games applications ("that article again") - [arxiv](https://arxiv.org/abs/1701.07274)
-
