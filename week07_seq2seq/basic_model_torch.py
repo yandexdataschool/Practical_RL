@@ -24,7 +24,7 @@ class BasicTranslationModel(nn.Module):
     def encode(self, inp, **flags):
         """
         Takes symbolic input sequence, computes initial state
-        :param inp: a vector of input tokens  (Variable, int64, 1d)
+        :param inp: input tokens, int64 vector of shape [batch]
         :return: a list of initial decoder state tensors
         """
         inp_emb = self.emb_inp(inp)
