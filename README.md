@@ -65,7 +65,7 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
   * Seminar: REINFORCE, advantage actor-critic
 
 * [__week07_seq2seq__](./week07_seq2seq) Reinforcement Learning for Sequence Models
-  * Lecture: Problems with sequential data. Recurrent neural netowks. Backprop through time. Vanishing & exploding gradients. LSTM, GRU. Gradient clipping
+  * Lecture: Problems with sequential data. Recurrent neural networks. Backprop through time. Vanishing & exploding gradients. LSTM, GRU. Gradient clipping
   * Seminar: character-level RNN language model
 
 * [__week08_pomdp__](./week08_pomdp) Partially Observed MDP
