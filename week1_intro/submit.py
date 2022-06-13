@@ -15,7 +15,7 @@ def make_mountain_car(time_limit=None):
     return env
 
 
-def submit_interface(policy, email, token):
+def interface_test(policy):
     with make_mountain_car(time_limit=250) as env:
         s = env.reset()
         for t in count():
@@ -26,15 +26,13 @@ def submit_interface(policy, email, token):
     x, v = s
     print('Your car ended in state {{x={x}, v={v}}}.'.format(x=x, v=v))
 
-    flag = 0.46  # Used only for reporting to the learner. Coursera grader stores this number separately.
+    flag = 0.46
     print(f'The flag is located roughly at x={flag}. ' + ('You reached it!' if x >= flag else 'You did not reach it.'))
 
-    grader = grading.Grader("3T7pSSz0EeifGhJb4HAv7A")
-    grader.set_answer("sDilm", x)
-    grader.submit(email, token)
+    return x
 
 
-def submit_taxi(generate_session, policy, email, token):
+def taxi_test(generate_session, policy):
     with gym.make('Taxi-v3') as env:
         sessions = [generate_session(env, policy) for _ in range(100)]
 
@@ -42,12 +40,10 @@ def submit_taxi(generate_session, policy, email, token):
     mean_reward = np.mean(session_rewards)
     print('Your average reward is {} over 100 episodes'.format(mean_reward))
 
-    grader = grading.Grader("s4pTlNbTEeeQvQ7N1-Sa3A")
-    grader.set_answer("GsMSL", mean_reward)
-    grader.submit(email, token)
+    return mean_reward
 
 
-def submit_mountain_car(generate_session, agent, email, token):
+def mountain_car_test(generate_session, agent):
     with make_mountain_car() as env:
         sessions = [generate_session(env, agent) for _ in range(100)]
 
@@ -55,6 +51,4 @@ def submit_mountain_car(generate_session, agent, email, token):
     mean_reward = np.mean(session_rewards)
     print('Your average reward is {} over 100 episodes'.format(mean_reward))
 
-    grader = grading.Grader("EyYJW9bUEeeXyQ5ZPWKHGg")
-    grader.set_answer("mXDUE", mean_reward)
-    grader.submit(email, token)
+    return mean_reward
