@@ -5,7 +5,6 @@ import numpy as np
 
 import sys
 sys.path.append("..")
-import grading
 
 
 def make_mountain_car(time_limit=None):
