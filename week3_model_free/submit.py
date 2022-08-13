@@ -3,40 +3,42 @@ import numpy as np
 import sys
 sys.path.append("..")
 
+import grading
 
-def test_qlearning(rewards_q1, rewards_q2):
-    test_outputs = {}
+
+def submit_qlearning(rewards_q1, rewards_q2, email, token):
+    grader = grading.Grader("XbjcGd7xEeeDzRKutDCmyA")
+
     flag1 = np.mean(rewards_q1[-10:])
-    test_outputs['Q-learning I'] = flag1
+    grader.set_answer("5NB4z", flag1)
 
     flag2 = np.mean(rewards_q2[-10:])
-    test_outputs['Q-learning 2'] = flag2
-    
-    return test_outputs
+    grader.set_answer("CkyJ4", flag2)
+
+    grader.submit(email, token)
 
 
-def test_sarsa(rewards_ql, rewards_sarsa):
-    test_outputs = {}
+def submit_sarsa(rewards_ql, rewards_sarsa, email, token):
     flag1 = np.mean(rewards_ql[-100:])
     flag2 = np.mean(rewards_sarsa[-100:])
     flag3 = np.mean(rewards_sarsa[-100:]) - np.mean(rewards_ql[-100:])
 
-    test_outputs['Q-learning rewards'] = flag1
-    test_outputs['SARSA rewards'] = flag2
-    test_outputs['Advantage rewards'] = flag3
-    
-    return test_outputs
+    grader = grading.Grader("pazQX97xEee_JA6t1Myltg")
+    grader.set_answer("ZarWJ", flag1)
+    grader.set_answer("izJi4", flag2)
+    grader.set_answer("frgbU", flag3)
+
+    grader.submit(email, token)
 
 
-def test_experience_replay(rewards_replay, rewards_baseline):
-    test_outputs = {}
-    flag1 = np.mean(rewards_replay[-100:])
-    flag2 = np.mean(rewards_baseline[-100:])
-    flag3 = np.mean(rewards_replay[:100]) - np.mean(rewards_baseline[:100])
-    
-    test_outputs['Replay reward'] = flag1
-    test_outputs['Baseline reward'] = flag2
-    test_outputs['Advantage reward'] = flag3
-    
-    return test_outputs
+def submit_experience_replay(rewards_replay, rewards_baseline, email, token):
+    flag1 = np.mean(rewards_replay[:100]) - np.mean(rewards_baseline[:100])
+    flag2 = np.mean(rewards_replay[-100:])
+    flag3 = np.mean(rewards_baseline[-100:])
 
+    grader = grading.Grader("XUt-8d7yEee8nwq8KJgXXg")
+    grader.set_answer("iEQwT", flag1)
+    grader.set_answer("8N1Wm", flag2)
+    grader.set_answer("F0Am8", flag3)
+
+    grader.submit(email, token)
