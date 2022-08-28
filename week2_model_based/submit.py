@@ -7,16 +7,14 @@ sys.path.append("..")
 import grading
 
 
-def submit_assigment(
+def test_assigment(
         get_action_value,
         get_new_state_value,
         get_optimal_action,
         value_iteration,
-        email,
-        token,
         verbose=False):
-    grader = grading.Grader("EheZDOgLEeenIA4g5qPHFA")
 
+    test_outputs = {}
     with ExitStack() as stack:
         if not verbose:
             stack.enter_context(redirect_stdout(None))
@@ -57,14 +55,15 @@ def submit_assigment(
         qvalue1 = get_action_value(mdp, test_Vs, 's1', 'a0', 0.9)
         qvalue2 = get_action_value(mdp, test_Vs, 's4', 'a1', 0.9)
 
-        grader.set_answer("F16dC", qvalue1 + qvalue2)
+        test_outputs['Qvalue test'] = qvalue1 + qvalue2
 
         # ---
 
         svalue1 = get_new_state_value(mdp, test_Vs, 's2', 0.9)
         svalue2 = get_new_state_value(mdp, test_Vs, 's4', 0.9)
 
-        grader.set_answer("72cBp", svalue1 + svalue2)
+
+        test_outputs['State value test'] = svalue1 + svalue2
 
         # ---
 
@@ -76,7 +75,7 @@ def submit_assigment(
         action1 = get_optimal_action(mdp, state_values, 's1', gamma)
         action2 = get_optimal_action(mdp, state_values, 's2', gamma)
 
-        grader.set_answer("xIuti", action1 + action2)
+        test_outputs['Action test'] = action1 + action2
 
         # ---
 
@@ -86,7 +85,7 @@ def submit_assigment(
             s, r, done, _ = mdp.step(get_optimal_action(mdp, state_values, s, gamma))
             rewards.append(r)
 
-        grader.set_answer("Y8g0j", np.mean(rewards) + np.std(rewards))
+        test_outputs['MDP test'] = np.mean(rewards) + np.std(rewards)
 
         # ---
 
@@ -105,7 +104,7 @@ def submit_assigment(
                     break
             total_rewards.append(np.sum(rewards))
 
-        grader.set_answer("ABf1b", np.mean(total_rewards) + np.std(total_rewards))
+        test_outputs['FrozenLake test'] = np.mean(total_rewards) + np.std(total_rewards)
 
         # ---
 
@@ -124,6 +123,6 @@ def submit_assigment(
                     break
             total_rewards.append(np.sum(rewards))
 
-        grader.set_answer("U3RzE", np.mean(total_rewards) + np.std(total_rewards))
-
-    grader.submit(email, token)
+        test_outputs['FrozenLake test2'] = np.mean(total_rewards) + np.std(total_rewards)
+        
+    return test_outputs
