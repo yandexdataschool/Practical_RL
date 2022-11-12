@@ -46,4 +46,4 @@ From now on, we have two tracks, for pytorch and tensorflow. However, pytorch tr
 Begin with `seminar_<framework>.ipynb` and then proceed with `homework_<framework>.ipynb`.
 
 
-__Note: you're not required to submit assignments in all three frameworks. Pick one and go with it. Maybe switch it occasionally if you want more challenge. __
+__Note: you're not required to submit assignments in all three frameworks. Pick one and go with it. Maybe switch it occasionally if you want more challenge.__
