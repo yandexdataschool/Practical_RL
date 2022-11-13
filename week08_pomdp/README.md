@@ -5,6 +5,7 @@ _Links on all articles mentioned during the lecture could be found in "Reference
 
 ## Basics
 * Our [lecture](https://yadi.sk/i/AHzpTjiT3U8L8e) and [seminar](https://yadi.sk/i/Ka-I7nBp3U8LAG) (russian)
+* A Lecture on Basics by Pavel Shvechikov (english) [Video](https://www.youtube.com/watch?v=aV4wz7FAXmo)
 * A lecture on basics by Andrew NG (english, LQ) - [video](https://www.youtube.com/watch?v=yCqPMD6coO8)
 * A lecture on basics by 5vision (russian) - [video](https://www.youtube.com/watch?v=_dkaynuKUFE)
 * _[alternative]_ Chalkboard-style 2-part lecture by B. Ravindran.  - [part1](https://www.youtube.com/watch?v=9G_KevA8DFY), [part2](https://www.youtube.com/watch?v=dMOUp7YzUpQ)
