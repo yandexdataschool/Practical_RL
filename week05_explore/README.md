@@ -22,6 +22,8 @@
   * Same topics in russian - [video](https://www.youtube.com/watch?v=WCE9hhPbCmc)
   * Note: UCB-1 is not for bernoulli rewards, but for arbitrary r in [0,1], so you can just scale any reward to [0,1] to obtain a peace of mind. It's derived directly from Hoeffding's inequality.
 
+* Very interesting blog post written by Lilian Weng that summarises this week's materials: [The Multi-Armed Bandit Problem and Its Solutions](https://lilianweng.github.io/posts/2018-01-23-multi-armed-bandit/)
+
 ## Seminar
 In this seminar, you'll be solving basic and contextual bandits with uncertainty-based exploration like Bayesian UCB and Thompson Sampling. You will also get acquainted with Bayesian Neural Networks.
 
