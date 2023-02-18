@@ -1,6 +1,9 @@
 """ Environment wrappers. """
 from collections import defaultdict, deque
 
+import multiprocessing
+multiprocessing.set_start_method("fork")
+
 import cv2
 import gym
 import gym.spaces as spaces
