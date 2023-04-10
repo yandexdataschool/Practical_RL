@@ -281,6 +281,10 @@ class TFSummaries(SummariesBase):
 
         super().__init__(env, prefix, running_mean_size)
 
+        raise NotImplementedError(
+            'TFSummaries class no longer works with the latest Tensorflow because '
+            'tf.train.get_global_step() was removed. Use NumpySummaries instead.')
+
         import tensorflow as tf
         self.step_var = (step_var if step_var is not None
                          else tf.train.get_global_step())
@@ -315,7 +319,7 @@ class NumpySummaries(SummariesBase):
 
 
 def nature_dqn_env(env_id, nenvs=None, seed=None,
-                   summaries='TensorFlow', clip_reward=True):
+                   summaries='Numpy', clip_reward=True):
     """ Wraps env as in Nature DQN paper. """
     if "NoFrameskip" not in env_id:
         raise ValueError(f"env_id must have 'NoFrameskip' but is {env_id}")
@@ -334,7 +338,15 @@ def nature_dqn_env(env_id, nenvs=None, seed=None,
             for i, env_seed in enumerate(seed)
         ])
         if summaries:
-            summaries_class = NumpySummaries if summaries == 'Numpy' else TFSummaries
+            summaries_class_map = {
+                'Numpy': NumpySummaries,
+                'TensorFlow': TFSummaries,
+            }
+            if summaries in summaries_class_map:
+                summaries_class = summaries_class_map[summaries]
+            else:
+                raise NotImplementedError(
+                    f'Unknown summaries: {summaries}. Supported summaries: {summaries_class_map.keys()}')
             env = summaries_class(env, prefix=env_id)
         if clip_reward:
             env = ClipReward(env)
