@@ -1,12 +1,12 @@
 import numpy as np
-from gym.spaces.box import Box
-from gym.core import Wrapper
+from gymnasium.spaces import Box
+from gymnasium import Wrapper
 
 
 class FrameBuffer(Wrapper):
-    def __init__(self, env, n_frames=4, dim_order='tensorflow'):
-        """A gym wrapper that reshapes, crops and scales image into the desired shapes"""
-        super(FrameBuffer, self).__init__(env)
+    def __init__(self, env, n_frames=4, dim_order='pytorch'):
+        """A gymnasium wrapper that reshapes, crops and scales image into the desired shapes"""
+        super().__init__(env)
         self.dim_order = dim_order
         if dim_order == 'tensorflow':
             height, width, n_channels = env.observation_space.shape
@@ -20,17 +20,17 @@ class FrameBuffer(Wrapper):
         self.observation_space = Box(0.0, 1.0, obs_shape)
         self.framebuffer = np.zeros(obs_shape, 'float32')
 
-    def reset(self):
+    def reset(self, **kwargs):
         """resets breakout, returns initial frames"""
         self.framebuffer = np.zeros_like(self.framebuffer)
-        self.update_buffer(self.env.reset())
-        return self.framebuffer
+        self.update_buffer(self.env.reset(**kwargs)[0])
+        return self.framebuffer, {}
 
     def step(self, action):
         """plays breakout for 1 step, returns frame buffer"""
-        new_img, reward, done, info = self.env.step(action)
+        new_img, reward, terminated, truncated, info = self.env.step(action)
         self.update_buffer(new_img)
-        return self.framebuffer, reward, done, info
+        return self.framebuffer, reward, terminated, truncated, info
 
     def update_buffer(self, img):
         if self.dim_order == 'tensorflow':
