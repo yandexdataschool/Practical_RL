@@ -26,7 +26,7 @@ def play_and_log_episode(env, agent, gamma=0.99, t_max=10000):
     td_errors = []
     rewards = []
 
-    s = env.reset()
+    s, _ = env.reset()
     for step in range(t_max):
         states.append(s)
         qvalues = agent.get_qvalues([s])
@@ -39,9 +39,9 @@ def play_and_log_episode(env, agent, gamma=0.99, t_max=10000):
 
         action = qvalues.argmax(axis=-1)[0]
 
-        s, r, done, _ = env.step(action)
+        s, r, terminated, truncated, _ = env.step(action)
         rewards.append(r)
-        if done:
+        if terminated or truncated:
             break
     td_errors.append(np.abs(rewards[-1] + gamma * v_agent[-1] - v_agent[-2]))
 
@@ -54,7 +54,7 @@ def play_and_log_episode(env, agent, gamma=0.99, t_max=10000):
         'q_spreads': np.array(q_spreads),
         'td_errors': np.array(td_errors),
         'rewards': np.array(rewards),
-        'episode_finished': np.array(done)
+        'episode_finished': np.array(terminated or truncated)
     }
 
     return return_pack
