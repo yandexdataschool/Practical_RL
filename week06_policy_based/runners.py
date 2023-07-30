@@ -26,11 +26,11 @@ class EnvRunner:
 
     def write(self, name, val):
         """Writes logs"""
-        writer = self.env.env.writer
-        if type(val) is dict:
-            writer.add_scalars(name, val, self.env.env.step_var)
+        writer = self.env.get_wrapper_attr("writer")
+        if isinstance(val, dict):
+            writer.add_scalars(name, val, self.step_var)
         else:
-            writer.add_scalar(name, val, self.env.env.step_var)
+            writer.add_scalar(name, val, self.step_var)
 
     def get_next(self):
         """Runs the agent in the environment."""
