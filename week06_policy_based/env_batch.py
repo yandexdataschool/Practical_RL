@@ -129,7 +129,8 @@ class SingleEnvBatch(Wrapper, EnvBatch):
             obs[None],
             np.expand_dims(rew, 0),
             np.expand_dims(terminated, 0),
-            np.expand_dims(truncated, 0)[info],
+            np.expand_dims(truncated, 0),
+            [info],
         )
 
     def reset(self, **kwargs):

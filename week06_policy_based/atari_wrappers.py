@@ -234,7 +234,7 @@ class SwapImageAxes(ObservationWrapper):
         return np.swapaxes(observation, 2, 0).astype(np.float32) / 255.0
 
 
-class TensorboardSummaries(gym.Wrapper):
+class TensorboardSummaries(Wrapper):
     """Writes env summaries."""
 
     def __init__(self, env, prefix=None, running_mean_size=100, step_var=None):
