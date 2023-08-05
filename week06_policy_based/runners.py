@@ -24,13 +24,10 @@ class EnvRunner:
         self.state["latest_observation"] = self.env.reset(**kwargs)[0]
         self.policy.reset()
 
-    def write(self, name, val):
+    def add_summary(self, name, val):
         """Writes logs"""
-        writer = self.env.get_wrapper_attr("writer")
-        if isinstance(val, dict):
-            writer.add_scalars(name, val, self.step_var)
-        else:
-            writer.add_scalar(name, val, self.step_var)
+        add_summary = self.env.get_wrapper_attr("add_summary")
+        add_summary(name, val)
 
     def get_next(self):
         """Runs the agent in the environment."""

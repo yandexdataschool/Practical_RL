@@ -1,5 +1,5 @@
 """ Environment wrappers. """
-from collections import deque
+from collections import defaultdict, deque
 
 import cv2
 import gymnasium as gym
@@ -234,15 +234,14 @@ class SwapImageAxes(ObservationWrapper):
         return np.swapaxes(observation, 2, 0).astype(np.float32) / 255.0
 
 
-class TensorboardSummaries(Wrapper):
-    """Writes env summaries."""
+class SummariesBase(Wrapper):
+    """Env summaries writer base."""
 
     def __init__(self, env, prefix=None, running_mean_size=100, step_var=None):
         super().__init__(env)
         self.episode_counter = 0
         self.prefix = prefix or self.env.spec.id
-        self.writer = SummaryWriter(f"logs/{self.prefix}")
-        self.step_var = 0
+        self.step_var = step_var or 0
 
         self.nenvs = getattr(self.env.unwrapped, "nenvs", 1)
         self.rewards = np.zeros(self.nenvs)
@@ -258,29 +257,22 @@ class TensorboardSummaries(Wrapper):
 
     def add_summaries(self):
         """Writes summaries."""
-        self.writer.add_scalar(
-            f"Episodes/total_reward",
-            np.mean([q[-1] for q in self.reward_queues]),
-            self.step_var,
+        self.add_summary(
+            f"Episodes/total_reward", np.mean([q[-1] for q in self.reward_queues])
         )
-        self.writer.add_scalar(
+        self.add_summary(
             f"Episodes/reward_mean_{self.reward_queues[0].maxlen}",
             np.mean([np.mean(q) for q in self.reward_queues]),
-            self.step_var,
         )
-        self.writer.add_scalar(
-            f"Episodes/episode_length", np.mean(self.episode_lengths), self.step_var
-        )
+        self.add_summary(f"Episodes/episode_length", np.mean(self.episode_lengths))
         if self.had_ended_episodes.size > 1:
-            self.writer.add_scalar(
+            self.add_summary(
                 f"Episodes/min_reward",
                 min(q[-1] for q in self.reward_queues),
-                self.step_var,
             )
-            self.writer.add_scalar(
+            self.add_summary(
                 f"Episodes/max_reward",
                 max(q[-1] for q in self.reward_queues),
-                self.step_var,
             )
         self.episode_lengths.fill(0)
         self.had_ended_episodes.fill(False)
@@ -320,6 +312,52 @@ class TensorboardSummaries(Wrapper):
         return self.env.reset(**kwargs)
 
 
+class TensorboardSummaries(SummariesBase):
+    """Writes env summaries using Tensorboard."""
+
+    def __init__(self, env, prefix=None, running_mean_size=100, step_var=None):
+        super().__init__(env, prefix, running_mean_size, step_var)
+        self.writer = SummaryWriter(f"logs/{self.prefix}")
+
+    def add_summary(self, name, value):
+        if isinstance(value, dict):
+            self.writer.add_scalars(name, value, self.step_var)
+        else:
+            self.writer.add_scalar(name, value, self.step_var)
+
+
+class NumpySummaries(SummariesBase):
+
+    _summaries = defaultdict(list)
+
+    @classmethod
+    def get_values(cls, name):
+        return cls._summaries[name]
+
+    @classmethod
+    def clear(cls):
+        cls._summaries = defaultdict(list)
+
+    def __init__(self, env, prefix=None, running_mean_size=100, step_var=None):
+        super().__init__(env, prefix, running_mean_size, step_var)
+
+    def add_summary(self, name, value):
+        self._summaries[name].append((self.step_var, value))
+
+
+def get_summaries_class(summaries):
+    summaries_class_map = {
+        "Numpy": NumpySummaries,
+        "Tensorboard": TensorboardSummaries,
+    }
+    if summaries in summaries_class_map:
+        return summaries_class_map[summaries]
+
+    raise NotImplementedError(
+        f"Unknown summaries: {summaries}. Supported summaries: {summaries_class_map.keys()}"
+    )
+
+
 # magic for parallel launching of environments
 class _thunk:
     def __init__(self, i, env_id, **kwargs):
@@ -336,7 +374,7 @@ class _thunk:
         )
 
 
-def nature_dqn_env(env_id, nenvs=None, seed=None, summaries=True, clip_reward=True):
+def nature_dqn_env(env_id, nenvs=None, seed=None, summaries="Numpy", clip_reward=True):
     """Wraps env as in Nature DQN paper."""
     if "NoFrameskip" not in env_id:
         raise ValueError(f"env_id must have 'NoFrameskip' but is {env_id}")
@@ -355,7 +393,8 @@ def nature_dqn_env(env_id, nenvs=None, seed=None, summaries=True, clip_reward=Tr
         env = ParallelEnvBatch(make_env=thunks, seeds=seed)
 
         if summaries:
-            env = TensorboardSummaries(env, prefix=env_id)
+            summaries_class = get_summaries_class(summaries)
+            env = summaries_class(env, prefix=env_id)
         if clip_reward:
             env = ClipReward(env)
         return env
