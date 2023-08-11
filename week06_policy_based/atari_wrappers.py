@@ -108,10 +108,10 @@ class StartWithRandomActions(Wrapper):
 class ImagePreprocessing(ObservationWrapper):
     """Preprocesses image-observations by possibly grayscaling and resizing."""
 
-    def __init__(self, env, width=84, height=84, grayscale=True):
+    def __init__(self, env, height=84, width=84, grayscale=True):
         super().__init__(env)
-        self.width = width
         self.height = height
+        self.width = width
         self.grayscale = grayscale
         ospace = self.env.observation_space
         low, high, dtype = ospace.low.min(), ospace.high.max(), ospace.dtype
@@ -119,20 +119,22 @@ class ImagePreprocessing(ObservationWrapper):
             self.observation_space = Box(
                 low=low,
                 high=high,
-                shape=(width, height),
+                shape=(height, width),
                 dtype=dtype,
             )
         else:
-            obs_shape = (width, height) + self.observation_space.shape[2:]
             self.observation_space = Box(
-                low=low, high=high, shape=obs_shape, dtype=dtype
+                low=low,
+                high=high,
+                shape=(height, width, *self.observation_space.shape[2:]),
+                dtype=dtype,
             )
 
     def observation(self, observation):
         """Performs image preprocessing."""
         if self.grayscale:
             observation = cv2.cvtColor(observation, cv2.COLOR_RGB2GRAY)
-        observation = cv2.resize(observation, (self.width, self.height), cv2.INTER_AREA)
+        observation = cv2.resize(observation, (self.height, self.width), cv2.INTER_AREA)
         return observation
 
 
@@ -226,12 +228,12 @@ class SwapImageAxes(ObservationWrapper):
         self.observation_space = Box(
             low=0.0,
             high=1.0,
-            shape=(old_shape[-1], old_shape[1], old_shape[0]),
+            shape=(old_shape[-1], old_shape[0], old_shape[1]),
             dtype=np.float32,
         )
 
     def observation(self, observation):
-        return np.swapaxes(observation, 2, 0).astype(np.float32) / 255.0
+        return np.transpose(observation, (2, 0, 1)).astype(np.float32) / 255.0
 
 
 class SummariesBase(Wrapper):
