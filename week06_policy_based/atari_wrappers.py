@@ -219,7 +219,7 @@ class ClipReward(RewardWrapper):
 
 class SwapImageAxes(ObservationWrapper):
     """
-    Image shape to num_channels x weight x height and normalization
+    Image shape to num_channels x height x width and normalization
     """
 
     def __init__(self, env):
