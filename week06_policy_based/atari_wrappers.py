@@ -134,7 +134,7 @@ class ImagePreprocessing(ObservationWrapper):
         """Performs image preprocessing."""
         if self.grayscale:
             observation = cv2.cvtColor(observation, cv2.COLOR_RGB2GRAY)
-        observation = cv2.resize(observation, (self.height, self.width), cv2.INTER_AREA)
+        observation = cv2.resize(observation, (self.width, self.height), cv2.INTER_AREA)
         return observation
 
 
