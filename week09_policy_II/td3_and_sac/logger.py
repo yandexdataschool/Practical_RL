@@ -17,7 +17,7 @@ class TensorboardSummaries(gym.Wrapper):
 
         self.nenvs = getattr(self.env.unwrapped, "nenvs", 1)
         self.rewards = np.zeros(self.nenvs)
-        self.had_ended_episodes = np.zeros(self.nenvs, dtype=np.bool)
+        self.had_ended_episodes = np.zeros(self.nenvs, dtype=bool)
         self.episode_lengths = np.zeros(self.nenvs)
         self.reward_queues = [
             deque([], maxlen=running_mean_size) for _ in range(self.nenvs)
