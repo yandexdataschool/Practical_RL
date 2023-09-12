@@ -32,8 +32,7 @@ class EnvPool(object):
 
         # Whether particular session has just been terminated or truncated and needs
         # restarting.
-        self.just_terminated = [False] * len(self.envs)
-        self.just_truncated = [False] * len(self.envs)
+        self.just_ended = [False] * len(self.envs)
 
     def interact(self, n_steps=100, verbose=False):
         """Generate interaction sessions with ataries (Farama gymnasium Atari environments)
@@ -46,13 +45,12 @@ class EnvPool(object):
         """
 
         def env_step(i, action):
-            if not (self.just_terminated[i] or self.just_truncated[i]):
+            if not self.just_ended[i]:
                 new_observation, cur_reward, terminated, truncated, info = \
                     self.envs[i].step(action)
                 if terminated or truncated:
                     # Game ends now, will finalize on next tick.
-                    self.just_terminated[i] = terminated
-                    self.just_truncated[i] = truncated
+                    self.just_ended[i] = True
 
                 # note: is_alive=True in any case because environment is still
                 # alive (last tick alive) in our notation.
@@ -71,11 +69,9 @@ class EnvPool(object):
                 if verbose:
                     print("env %i reloaded" % i)
 
-                is_alive = not self.just_terminated[i]
-                self.just_terminated[i] = False
-                self.just_truncated[i] = False
+                self.just_ended[i] = False
 
-                return new_observation, 0, is_alive, {'end': True}
+                return new_observation, 0, False, {'end': True}
 
         history_log = []
 
