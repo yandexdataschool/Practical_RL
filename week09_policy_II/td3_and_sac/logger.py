@@ -9,7 +9,7 @@ class TensorboardSummaries(gym.Wrapper):
     """Writes env summaries."""
 
     def __init__(self, env, prefix=None, running_mean_size=100, step_var=None):
-        super(TensorboardSummaries, self).__init__(env)
+        super().__init__(env)
         self.episode_counter = 0
         self.prefix = prefix or self.env.spec.id
         self.writer = SummaryWriter(f"logs/{self.prefix}")
