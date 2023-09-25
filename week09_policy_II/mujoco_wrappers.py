@@ -1,6 +1,6 @@
 """ MuJoCo env wrappers. """
 # Adapted from https://github.com/openai/baselines
-import gym
+import gymnasium as gym
 import numpy as np
 
 
@@ -83,17 +83,17 @@ class Normalize(gym.Wrapper):
         return obs
 
     def step(self, action):
-        obs, rews, resets, info = self.env.step(action)
+        obs, rews, terminated, truncated, info = self.env.step(action)
         self.ret = self.ret * self.gamma + rews
         obs = self.observation(obs)
         if self.ret_rmv:
             self.ret_rmv.update(self.ret)
             rews = np.clip(rews / np.sqrt(self.ret_rmv.var + self.eps),
                            -self.cliprew, self.cliprew)
-        self.ret[resets] = 0.
-        return obs, rews, resets, info
+        self.ret[terminated] = 0.
+        return obs, rews, terminated, truncated, info
 
     def reset(self, **kwargs):
         self.ret = np.zeros(getattr(self.env.unwrapped, "nenvs", 1))
-        obs = self.env.reset(**kwargs)
-        return self.observation(obs)
+        obs, info = self.env.reset(**kwargs)
+        return self.observation(obs), info
