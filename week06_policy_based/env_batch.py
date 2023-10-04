@@ -123,7 +123,7 @@ class SingleEnvBatch(Wrapper, EnvBatch):
     def step(self, actions):
         self._check_actions(actions)
         obs, rew, terminated, truncated, info = self.env.step(actions[0])
-        if terminated:
+        if terminated or truncated:
             obs, info = self.env.reset()
         return (
             obs[None],
@@ -148,7 +148,7 @@ def worker(parent_connection, worker_connection, make_env_function, send_spaces=
         cmd, data = worker_connection.recv()
         if cmd == "step":
             obs, rew, terminated, truncated, info = env.step(data)
-            if terminated:
+            if terminated or truncated:
                 obs, info = env.reset()
             worker_connection.send((obs, rew, terminated, truncated, info))
         elif cmd == "reset":
