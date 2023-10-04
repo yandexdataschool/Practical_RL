@@ -53,7 +53,7 @@ class EnvRunner:
             )
             self.state["latest_observation"] = obs
             rewards.append(rew)
-            resets.append(terminated)
+            resets.append(np.logical_or(terminated, truncated))
             self.step_var += self.nenvs or 1
 
             # Only reset if the env is not batched. Batched envs should
