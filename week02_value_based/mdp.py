@@ -249,7 +249,7 @@ class FrozenLakeEnv(MDP):
         print('\n'.join(map(''.join, desc_copy)), end='\n\n')
 
 
-def plot_graph(mdp, graph_size='10,10', s_node_size='1,5',
+def plot_graph(mdp, s_node_size='1,5',
                a_node_size='0,5', rankdir='LR', ):
     """
     Function for pretty drawing MDP graph with graphviz library.
@@ -259,7 +259,6 @@ def plot_graph(mdp, graph_size='10,10', s_node_size='1,5',
     python library for graphviz
     for pip users: pip install graphviz
     :param mdp:
-    :param graph_size: size of graph plot
     :param s_node_size: size of state nodes
     :param a_node_size: size of action nodes
     :param rankdir: order for drawing
@@ -292,7 +291,7 @@ def plot_graph(mdp, graph_size='10,10', s_node_size='1,5',
                       'fontsize': '16'}
 
     graph = Digraph(name='MDP')
-    graph.attr(rankdir=rankdir, size=graph_size)
+    graph.attr(rankdir=rankdir)
     for state_node in mdp._transition_probs:
         graph.node(state_node, **s_node_attrs)
 
