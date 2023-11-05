@@ -7,7 +7,7 @@ _tl;dr [dockerhub url](https://hub.docker.com/r/justheuristic/practical_rl/)_
 We recommend you to use either native docker (recommended for linux) or kitematic(recommended for windows).
 * Installing [kitematic](https://kitematic.com/), a simple interface to docker (all platforms)
 * Pure docker: Guide for [windows](https://docs.docker.com/docker-for-windows/), [linux](https://docs.docker.com/engine/installation/), or [macOS](https://docs.docker.com/docker-for-mac/).
-* If you want to use your GPU make sure you have [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) and [NVidia driver](https://www.nvidia.com/en-us/drivers/unix/) + [CUDA 10.2](https://developer.nvidia.com/cuda-downloads) installed
+* If you want to use your GPU make sure you have [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-container-toolkit) and [NVidia driver](https://www.nvidia.com/en-us/drivers/unix/) + [CUDA 10.2](https://developer.nvidia.com/cuda-downloads) installed
 
 Below are the instructions for both approaches.
 
