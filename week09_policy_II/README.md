@@ -21,4 +21,4 @@ While you already know algorithms that will work with continuously many actions,
  * Deterministic policy gradient - [article](https://arxiv.org/pdf/1512.07679.pdf), [post+code](https://yanpanlau.github.io/2016/10/11/Torcs-Keras.html)
  * Stochastic value gradient - [article](https://arxiv.org/abs/1510.09142)
  * Embedding large discrete action spaces for RL - [article](https://arxiv.org/pdf/1512.07679.pdf)
- * Lecture by A. Seleznev, 5vision (russian) - [video](www.youtube.com/watch?v=j1L2FnanXPo&t=119m45s)
+ * Lecture by A. Seleznev, 5vision (russian) - [video](https://www.youtube.com/watch?v=j1L2FnanXPo&t=119m45s)
