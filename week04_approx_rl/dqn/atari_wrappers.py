@@ -1,53 +1,13 @@
 # taken from stable_baselines3.
 
-import numpy as np
-from gymnasium import Wrapper, RewardWrapper, ObservationWrapper
-from gymnasium.spaces import Box
-
-
-class MaxAndSkipEnv(Wrapper):
-    def __init__(self, env, skip=4):
-        """Return only every `skip`-th frame"""
-        super().__init__(env)
-        # most recent raw observations (for max pooling across time steps)
-        self._obs_buffer = np.zeros(
-            (2,) + env.observation_space.shape, dtype=np.uint8)
-        self._skip = skip
-
-    def step(self, action):
-        """Repeat action, sum reward, and max over last observations."""
-        total_reward = 0.0
-        terminated = truncated = False
-        for i in range(self._skip):
-            obs, reward, terminated, truncated, info = self.env.step(action)
-            if i == self._skip - 2:
-                self._obs_buffer[0] = obs
-            if i == self._skip - 1:
-                self._obs_buffer[1] = obs
-            total_reward += reward
-            if terminated or truncated:
-                break
-        # Note that the observation on the terminated=True frame
-        # doesn't matter
-        max_frame = self._obs_buffer.max(axis=0)
-
-        return max_frame, total_reward, terminated, truncated, info
-
-
-class ClipRewardEnv(RewardWrapper):
-    def __init__(self, env):
-        super().__init__(env)
-
-    def reward(self, reward):
-        """Bin reward to {+1, 0, -1} by its sign."""
-        return np.sign(reward)
+from gymnasium import Wrapper
 
 
 class FireResetEnv(Wrapper):
     def __init__(self, env):
         """Take action on reset for environments that are fixed until firing."""
         super().__init__(env)
-        assert env.unwrapped.get_action_meanings()[1] == 'FIRE'
+        assert env.unwrapped.get_action_meanings()[1] == "FIRE"
         assert len(env.unwrapped.get_action_meanings()) >= 3
 
     def reset(self, **kwargs):
@@ -94,7 +54,7 @@ class EpisodicLifeEnv(Wrapper):
         else:
             # no-op step to advance from terminal/lost life state
             obs, _, terminated, truncated, info = self.env.step(0)
-          
+
             # The no-op step can lead to a game over, so we need to check it again
             # to see if we should reset the environment and avoid the
             # monitor.py `RuntimeError: Tried to step environment that needs reset`
@@ -102,19 +62,3 @@ class EpisodicLifeEnv(Wrapper):
                 obs, info = self.env.reset(**kwargs)
         self.lives = self.env.unwrapped.ale.lives()
         return obs, info
-
-
-# in torch imgs have shape [c, h, w] instead of common [h, w, c]
-class AntiTorchWrapper(ObservationWrapper):
-    def __init__(self, env):
-        super().__init__(env)
-
-        self.img_size = [env.observation_space.shape[i]
-                         for i in [1, 2, 0]
-                         ]
-        self.observation_space = Box(0.0, 1.0, self.img_size)
-
-    def observation(self, img):
-        """what happens to each observation"""
-        img = img.transpose(1, 2, 0)
-        return img
