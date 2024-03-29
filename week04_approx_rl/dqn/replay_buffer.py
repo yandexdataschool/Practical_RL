@@ -103,12 +103,12 @@ class LazyFramesVectorReplayBuffer(ReplayBuffer):
             n_envs = action.shape[0]
             env_idx_chosen_for_sample = random.randint(0, n_envs - 1)
             obses_t.append(
-                np.array(obs_t, copy=False)[:, env_idx_chosen_for_sample],
+                np.array(obs_t, copy=False)[env_idx_chosen_for_sample],
             )
             actions.append(np.array(action, copy=False)[env_idx_chosen_for_sample])
             rewards.append(reward[env_idx_chosen_for_sample])
             obses_tp1.append(
-                np.array(obs_tp1, copy=False)[:, env_idx_chosen_for_sample],
+                np.array(obs_tp1, copy=False)[env_idx_chosen_for_sample],
             )
             dones.append(done[env_idx_chosen_for_sample])
         return (
