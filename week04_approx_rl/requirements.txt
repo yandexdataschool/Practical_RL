@@ -1,4 +1,5 @@
 gymnasium[atari,accept-rom-license,classic-control]
+ale_py
 ipython
 ipywidgets
 notebook
