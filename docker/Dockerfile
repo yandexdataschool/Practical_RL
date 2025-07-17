@@ -1,9 +1,9 @@
 ARG device
 ARG username="jovyan"
 
-FROM ubuntu:18.04 AS base-cpu
+FROM ubuntu:24.04 AS base-cpu
 
-FROM nvidia/cuda:10.2-base-ubuntu18.04 AS base-gpu
+FROM nvidia/cuda:12.9.1-base-ubuntu24.04 AS base-gpu
 
 FROM base-$device AS base
 
@@ -20,7 +20,7 @@ RUN adduser --disabled-password --gecos "Default user" $username && \
     chown -R $username /notebooks
 
 RUN su $username -c \
-    "wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh \
+    "wget https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Linux-x86_64.sh \
         -O /tmp/anaconda3.sh" && \
     mkdir -p /opt/conda && \
     chown -R $username /opt/conda && \
