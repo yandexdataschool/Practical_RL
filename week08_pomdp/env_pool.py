@@ -1,5 +1,5 @@
 """
-A thin wrapper for OpenAI gym environments that maintains a set of parallel games and has a method to generate
+A thin wrapper for Farama gymnasium environments that maintains a set of parallel games and has a method to generate
 interaction sessions given agent one-step applier function.
 """
 
@@ -15,7 +15,7 @@ class EnvPool(object):
         and is capable of some auxilary actions like evaluating agent on one game session (See .evaluate()).
 
         :param agent: Agent which interacts with the environment.
-        :param make_env: Factory that produces environments OR a name of the gym environment.
+        :param make_env: Factory that produces environments OR a name of the gymnasium environment.
         :param n_games: Number of parallel games. One game by default.
         :param max_size: Max pool size by default (if appending sessions). By default, pool is not constrained in size.
         """
@@ -25,17 +25,17 @@ class EnvPool(object):
         self.envs = [self.make_env() for _ in range(n_parallel_games)]
 
         # Initial observations.
-        self.prev_observations = [env.reset() for env in self.envs]
+        self.prev_observations = [env.reset()[0] for env in self.envs]
 
         # Agent memory variables (if you use recurrent networks).
         self.prev_memory_states = agent.get_initial_state(n_parallel_games)
 
-        # Whether particular session has just been terminated and needs
+        # Whether particular session has just been terminated or truncated and needs
         # restarting.
         self.just_ended = [False] * len(self.envs)
 
     def interact(self, n_steps=100, verbose=False):
-        """Generate interaction sessions with ataries (OpenAI gym Atari environments)
+        """Generate interaction sessions with ataries (Farama gymnasium Atari environments)
         Sessions will have length n_steps. Each time one of games is finished, it is immediately getting reset
         and this time is recorded in is_alive_log (See returned values).
 
@@ -46,9 +46,9 @@ class EnvPool(object):
 
         def env_step(i, action):
             if not self.just_ended[i]:
-                new_observation, cur_reward, is_done, info = \
+                new_observation, cur_reward, terminated, truncated, info = \
                     self.envs[i].step(action)
-                if is_done:
+                if terminated or truncated:
                     # Game ends now, will finalize on next tick.
                     self.just_ended[i] = True
 
@@ -58,7 +58,7 @@ class EnvPool(object):
             else:
                 # Reset environment, get new observation to be used on next
                 # tick.
-                new_observation = self.envs[i].reset()
+                new_observation = self.envs[i].reset()[0]
 
                 # Reset memory for new episode.
                 initial_memory_state = self.agent.get_initial_state(

@@ -6,7 +6,7 @@ wget -q https://raw.githubusercontent.com/yandexdataschool/Practical_RL/master/x
 
 # Download & import Atari ROMs (Colab stopped bundling them around the beginning of June 2021)
 
-gdown -q https://drive.google.com/uc?id=1dCLEJcJGDDV4l5ssoexP2TEOVuBfyh7D
+gdown -q https://drive.google.com/uc?id=1c6_W2Fig92hm5FRIc2Mpc_ZZyr6o52lF
 
 # Alternative download:
 # wget -q http://www.atarimania.com/roms/Roms.rar

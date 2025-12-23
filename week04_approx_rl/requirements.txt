@@ -1,0 +1,13 @@
+gymnasium[atari,accept-rom-license,classic-control]
+ale_py
+ipython
+ipywidgets
+notebook
+matplotlib
+moviepy
+numpy
+opencv-python
+scipy
+tensorboard
+torch
+torchvision

@@ -1,5 +1,5 @@
 ## Materials
-* [__slides__](https://docs.google.com/presentation/d/1HEfIyKT0rIuUQCGAsR1PIVGirccDXu5LQvxhVUjuIqM)
+* [__slides__](https://github.com/yandexdataschool/Practical_RL/files/15286337/ysda_practical_rl_lecture_04.pdf)
 * Our [lecture](https://yadi.sk/i/Gd9yWV1dpuB7BQ), [seminar](https://yadi.sk/i/mvtKAIRN2yKU2g) (russian)
 * [__seminar slides__](https://yadi.sk/i/B89gXClSpmYZKw)
 
