@@ -5,13 +5,13 @@ In this week you can find several sections covering advanced topics in RL, along
 
 ## Other
 * Learning by imitation - [video](https://www.youtube.com/watch?v=kl_G95uKTHw), [assignment](http://rll.berkeley.edu/deeprlcourse/docs/hw1.pdf)(berkeley cs294)
-* Inverse reinforcement learning 
+* Inverse reinforcement learning
   * Lecture by Chelsea Finn - [video](https://www.youtube.com/watch?v=d9DlQSJQAoI)
   * Udacity videos - [video](https://www.youtube.com/watch?v=h7uGyBcIeII)
 * Distributional RL - [video](https://www.youtube.com/watch?v=bsuvM1jO-4w)
 * Learning World Models for RL - [blog](https://worldmodels.github.io/)
 * Knowledge transfer in RL - [video](https://www.youtube.com/watch?v=Hx4XpVdJOI0)(berkeley cs294)
-* Hierarchical reinforcemnt learning 
+* Hierarchical reinforcemnt learning
   * Cool article ( Fe__U__dal networks ) - [arxiv](https://arxiv.org/abs/1703.01161)
   * Short lecture by Roy Fox - [video](https://www.youtube.com/watch?v=x_QjJry0hTc)
 * Multi-Agent reinforcement learning

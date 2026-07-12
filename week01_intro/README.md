@@ -20,7 +20,7 @@
 * Video on Ant Colony Algorithm (english) - [video](https://www.youtube.com/watch?v=D58nLNLkb0I)
 * Longer video on Ant Colony Algorithm (english) - [video](https://www.youtube.com/watch?v=xpyKmjJuqhk)
 * Longer video on corssentropy method (russian) - [video](https://yadi.sk/i/5yf_4oGI3EDJhJ)
-  
+
 
 ## Practice assignment
 Instant dive in: [__seminar_gymnasium_interface__](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week01_intro/seminar_gymnasium_interface.ipynb), [__crossentropy_method__](https://colab.research.google.com/github/yandexdataschool/Practical_RL/blob/master/week01_intro/crossentropy_method.ipynb),

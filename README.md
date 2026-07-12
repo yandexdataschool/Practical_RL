@@ -17,7 +17,7 @@ Taught on-campus at [HSE](https://cs.hse.ru) and [YSDA](https://yandexdataschool
 
 * Anonymous [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdurWw97Sm9xCyYwC8g3iB5EibITnoPJW2IkOVQYE_kcXPh6Q/viewform).
 
-* Virtual course environment: 
+* Virtual course environment:
     * [__Google Colab__](https://colab.research.google.com/) - set open -> github -> yandexdataschool/pracical_rl -> {branch name} and select any notebook you want.
     * [Installing dependencies](https://github.com/yandexdataschool/Practical_RL/issues/1) on your local machine (recommended).
     * Alternative: [Azure Notebooks](https://notebooks.azure.com/).
@@ -34,26 +34,26 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 * [__week01_intro__](./week01_intro) Introduction
   * Lecture: RL problems around us. Decision processes. Stochastic optimization, Crossentropy method. Parameter space search vs action space search.
   * Seminar: Welcome into openai gym. Tabular CEM for Taxi-v0, deep CEM for box2d environments.
-  * Homework description - see week1/README.md. 
+  * Homework description - see week1/README.md.
 
 * [__week02_value_based__](./week02_value_based) Value-based methods
   * Lecture: Discounted reward MDP. Value-based approach. Value iteration. Policy iteration. Discounted reward fails.
-  * Seminar: Value iteration.  
-  * Homework description - see week2/README.md. 
-  
+  * Seminar: Value iteration.
+  * Homework description - see week2/README.md.
+
 * [__week03_model_free__](./week03_model_free) Model-free reinforcement learning
   * Lecture: Q-learning. SARSA. Off-policy Vs on-policy algorithms. N-step algorithms. TD(Lambda).
   * Seminar: Qlearning Vs SARSA Vs Expected Value SARSA
-  * Homework description - see week3/README.md. 
+  * Homework description - see week3/README.md.
 
-* [__recap_deep_learning__](./week04_\[recap\]_deep_learning) - deep learning recap 
+* [__recap_deep_learning__](./week04_\[recap\]_deep_learning) - deep learning recap
   * Lecture: Deep learning 101
   * Seminar: Intro to pytorch/tensorflow, simple image classification with convnets
 
 * [__week04_approx_rl__](./week04_approx_rl) Approximate (deep) RL
   * Lecture: Infinite/continuous state space. Value function approximation. Convergence conditions. Multiple agents trick; experience replay, target networks, double/dueling/bootstrap DQN, etc.
   * Seminar:  Approximate Q-learning with experience replay. (CartPole, Atari)
-  
+
 * [__week05_explore__](./week05_explore) Exploration
   * Lecture: Contextual bandits. Thompson Sampling, UCB, bayesian UCB. Exploration in model-based RL, MCTS. "Deep" heuristics for exploration.
   * Seminar: bayesian exploration for contextual bandits. UCB for MCTS.
@@ -69,7 +69,7 @@ The syllabus is approximate: the lectures may occur in a slightly different orde
 * [__week08_pomdp__](./week08_pomdp) Partially Observed MDP
   * Lecture: POMDP intro. POMDP learning (agents with memory). POMDP planning (POMCP, etc)
   * Seminar: Deep kung-fu & doom with recurrent A3C and DRQN
-  
+
 * [__week09_policy_II__](./week09_policy_II) Advanced policy-based methods
   * Lecture: Trust region policy optimization. NPO/PPO. Deterministic policy gradient. DDPG
   * Seminar: Approximate TRPO for simple robot control.
