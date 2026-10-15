@@ -1,11 +1,11 @@
-gymnasium[atari,accept-rom-license,classic-control]
+gymnasium[atari,accept-rom-license,classic-control]==0.29.1
 ale_py
 ipython
 ipywidgets
 notebook
 matplotlib
 moviepy
-numpy
+numpy==1.24.1
 opencv-python
 scipy
 tensorboard
